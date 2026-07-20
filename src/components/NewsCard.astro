@@ -1,24 +1,30 @@
 ---
-import type { NewsItem } from '../data/news';
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-  item: NewsItem;
+  entry: CollectionEntry<'news'>;
   horizontal?: boolean;
 }
 
-const { item, horizontal = false } = Astro.props;
+const { entry, horizontal = false } = Astro.props;
+const { data } = entry;
+const href = `/news/${data.slug}`;
 const formattedDate = new Intl.DateTimeFormat('en', {
   year: 'numeric',
   month: 'short',
   day: 'numeric',
-}).format(new Date(item.date));
+}).format(data.publishedAt);
+const category = data.categories.map((item) => item.name).join(' · ') || 'News';
 ---
 
 <article class:list={['news-card', horizontal && 'news-card--horizontal']}>
-  <img src={item.image} alt="" width="720" height="306" loading="lazy" />
+  <a class="news-card__media" href={href} aria-label={`Read ${data.title}`}>
+    <Image src={data.cover.src} alt={data.cover.alt} loading="lazy" />
+  </a>
   <div class="news-card__body">
-    <p class="news-meta">{item.category} · {formattedDate}</p>
-    <h3>{item.title}</h3>
-    <p>{item.excerpt}</p>
+    <p class="news-meta">{category} · {formattedDate}</p>
+    <h3><a href={href}>{data.title}</a></h3>
+    <p>{data.summary}</p>
   </div>
 </article>

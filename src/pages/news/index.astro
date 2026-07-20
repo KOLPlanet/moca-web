@@ -1,8 +1,15 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NewsCard from '../../components/NewsCard.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
-import { newsItems } from '../../data/news';
+
+const newsItems = (await getCollection('news', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
+);
+const topics = [
+  ...new Set(newsItems.flatMap(({ data }) => data.categories.map(({ name }) => name))),
+].sort();
 ---
 
 <BaseLayout
@@ -20,15 +27,12 @@ import { newsItems } from '../../data/news';
   <section class="section">
     <div class="container news-page-layout">
       <div class="news-list">
-        {newsItems.map((item) => <NewsCard item={item} horizontal />)}
+        {newsItems.map((entry) => <NewsCard entry={entry} horizontal />)}
       </div>
       <aside class="news-sidebar">
         <SectionHeading eyebrow="Browse" title="Topics" align="left" />
         <div class="topic-list">
-          <a href="/news">Digital advertising</a>
-          <a href="/news">E-commerce</a>
-          <a href="/news">Influencer marketing</a>
-          <a href="/news">Market strategy</a>
+          {topics.map((topic) => <span>{topic}</span>)}
         </div>
         <div class="sidebar-cta">
           <p class="eyebrow eyebrow--light">Have a market question?</p>

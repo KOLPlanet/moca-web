@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets';
+import {
+  getCollection,
+  render,
+  type CollectionEntry,
+} from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const posts = await getCollection('news', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.data.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'news'>;
+}
+
+const { post } = Astro.props;
+const { data } = post;
+const { Content } = await render(post);
+const publishedAt = new Intl.DateTimeFormat('en', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(data.publishedAt);
+const categories = data.categories.map(({ name }) => name).join(' · ') || 'News';
+---
+
+<BaseLayout
+  title={data.seoTitle || data.title}
+  description={data.description}
+  canonicalUrl={`/news/${data.slug}`}
+  image={data.cover.src}
+  article={{
+    publishedTime: data.publishedAt.toISOString(),
+    modifiedTime: data.updatedAt.toISOString(),
+  }}
+>
+  <article class="article-page">
+    <header class="article-header container">
+      <a class="article-back" href="/news">← All news</a>
+      <p class="news-meta">{categories} · {publishedAt}</p>
+      <h1>{data.title}</h1>
+      <p class="article-summary">{data.summary}</p>
+      <p class="article-byline">By {data.author.name}</p>
+    </header>
+
+    <div class="article-cover container">
+      <Image
+        src={data.cover.src}
+        alt={data.cover.alt}
+        widths={[720, 1080, 1440]}
+        sizes="(max-width: 1200px) 100vw, 1160px"
+        loading="eager"
+      />
+    </div>
+
+    <div class="article-layout container">
+      <div class="article-content">
+        {
+          data.keyTakeaways.length > 0 && (
+            <aside class="article-takeaways">
+              <p class="eyebrow">Key takeaways</p>
+              <ul>
+                {data.keyTakeaways.map((takeaway) => <li>{takeaway}</li>)}
+              </ul>
+            </aside>
+          )
+        }
+        <Content />
+      </div>
+
+      <aside class="article-aside">
+        <p class="eyebrow">Article details</p>
+        <dl>
+          <div>
+            <dt>Published</dt>
+            <dd>{publishedAt}</dd>
+          </div>
+          <div>
+            <dt>Topics</dt>
+            <dd>{categories}</dd>
+          </div>
+        </dl>
+        <a href={data.sourceUrl} target="_blank" rel="noopener noreferrer">
+          View original source ↗
+        </a>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,8 +1,12 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import NewsCard from '../components/NewsCard.astro';
-import { newsItems } from '../data/news';
+
+const newsItems = (await getCollection('news', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .slice(0, 3);
 ---
 
 <BaseLayout>
@@ -147,7 +151,7 @@ import { newsItems } from '../data/news';
         <a class="text-link" href="/news">View all news</a>
       </div>
       <div class="news-grid" id="latest-news-heading">
-        {newsItems.slice(0, 3).map((item) => <NewsCard item={item} />)}
+        {newsItems.map((entry) => <NewsCard entry={entry} />)}
       </div>
     </div>
   </section>

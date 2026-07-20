@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/q1-2026-social-ad-pricing-k-shaped-divergence.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/q1-2026-social-ad-pricing-k-shaped-divergence.html",
+  "sourceId": "6746",
+  "scrapedAt": "2026-07-20T11:17:07.989Z",
+  "sourceHash": "58f3cdc596de9c140b9f244f3f8baa231d06ad5e8a4c80e68a4f02ae31ce51d1",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2026/05/%E5%AE%98%E7%BD%91_260528.png",
+      "filename": "cover.png",
+      "contentType": "image/png",
+      "bytes": 1704013,
+      "sha256": "c8d20a30009f9bc1fc8a3e2ad106ea42693fa3ab09dcd5df8353a73485ceab3c"
+    },
+    {
+      "role": "body",
+      "alt": "Q1 2026 social ad pricing at a glance: Meta CPM plus 12 percent, Google search revenue plus 19 percent, TikTok CPM plus 11 percent, YouTube CPM minus 21 percent",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2026/05/q1-2026-platform-pricing-card.png",
+      "filename": "q1-2026-platform-pricing-card.png",
+      "contentType": "image/png",
+      "bytes": 1343610,
+      "sha256": "3547a9acde4a7493b0e14449b22a95f0aaee4797428b894de77a65f29f6377fe"
+    }
+  ]
+}
