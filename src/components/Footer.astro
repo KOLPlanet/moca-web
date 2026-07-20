@@ -1,0 +1,26 @@
+---
+import { site } from '../config/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="brand brand--footer" href="/" aria-label={`${site.name} home`}>
+        <img src="/images/moca-logo.png" alt={site.name} width="100" height="36" />
+      </a>
+      <p>{site.description}</p>
+    </div>
+    <div>
+      <p class="footer-heading">Explore</p>
+      <div class="footer-links">
+        {site.navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+      </div>
+    </div>
+    <div>
+      <p class="footer-heading">Contact</p>
+      <a href="/#contact">Start a conversation</a>
+      <p class="copyright">© {year} {site.name}</p>
+    </div>
+  </div>
+</footer>

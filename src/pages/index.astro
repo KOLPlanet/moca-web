@@ -1,0 +1,235 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import NewsCard from '../components/NewsCard.astro';
+import { newsItems } from '../data/news';
+---
+
+<BaseLayout>
+  <section class="hero" aria-labelledby="hero-title">
+    <img
+      class="hero__image"
+      src="/images/homepage-hero.jpg"
+      alt=""
+      width="1199"
+      height="825"
+    />
+    <div class="hero__overlay"></div>
+    <div class="hero__content container">
+      <p class="eyebrow eyebrow--light">Mobile growth across fast-moving markets</p>
+      <h1 id="hero-title">Make every market feel local.</h1>
+      <p>
+        MOCA connects global advertisers with OEM inventory, creators, and
+        market expertise across Asia and beyond.
+      </p>
+      <a class="button button--light" href="#solutions">Explore solutions</a>
+    </div>
+  </section>
+
+  <section id="features" class="section section--soft">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Why choose MOCA"
+        title="Built for mobile growth"
+        description="A flexible foundation for OEM distribution, influencer marketing, and regional campaigns."
+      />
+      <div class="feature-grid">
+        <article class="feature-card">
+          <p class="feature-card__number">01</p>
+          <h3>OEM reach</h3>
+          <p>One coordinated route into leading OEM app stores and device ecosystems.</p>
+        </article>
+        <article class="feature-card">
+          <p class="feature-card__number">02</p>
+          <h3>Local insight</h3>
+          <p>Regional teams translate market context into clearer campaign decisions.</p>
+        </article>
+        <article class="feature-card">
+          <p class="feature-card__number">03</p>
+          <h3>Creator influence</h3>
+          <p>Data-informed creator programs designed for relevance, trust, and scale.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="aboutmoca" class="section">
+    <div class="container split-layout">
+      <div>
+        <SectionHeading
+          eyebrow="Mobile cactus"
+          title="About MOCA"
+          align="left"
+        />
+        <p class="lead">
+          Established in 2012, MOCA is a global OEM aggregator and advertising
+          innovator focused on markets where local knowledge makes the difference.
+        </p>
+        <p>
+          Teams across China, India, Indonesia, and other strategic markets help
+          brands navigate regional audiences, media ecosystems, and growth
+          opportunities with confidence.
+        </p>
+      </div>
+      <figure class="image-frame">
+        <img
+          src="/images/about-moca.jpg"
+          alt="MOCA team and regional marketing collaboration"
+          width="1505"
+          height="800"
+          loading="lazy"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <section id="solutions" class="section section--dark">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Mobile marketing"
+        title="Solutions"
+        description="A modular service framework that can grow with the future homepage redesign."
+      />
+      <div class="solutions-grid">
+        <article>
+          <p class="eyebrow eyebrow--light">Distribution</p>
+          <h3>User acquisition on OEM</h3>
+          <p>App publishing, pre-install programs, acquisition, and brand awareness across OEM channels.</p>
+        </article>
+        <article>
+          <p class="eyebrow eyebrow--light">Awareness</p>
+          <h3>Branding solutions</h3>
+          <p>Contextual formats and media combinations designed around how regional audiences behave.</p>
+        </article>
+        <article>
+          <p class="eyebrow eyebrow--light">Influence</p>
+          <h3>Creator marketing</h3>
+          <p>Creator discovery, campaign delivery, and performance learning powered by KOLPlanet expertise.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases" class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Looking for difference"
+        title="Selected work"
+        description="A lightweight case-study frame ready for richer content in the next homepage pass."
+      />
+      <div class="case-grid">
+        <figure class="case-card case-card--wide">
+          <img src="/images/case-oem.jpg" alt="OEM marketing campaign overview" width="1505" height="800" loading="lazy" />
+          <figcaption>
+            <p class="eyebrow">OEM ecosystem</p>
+            <h3>From market access to measurable growth</h3>
+          </figcaption>
+        </figure>
+        <figure class="case-card">
+          <img src="/images/case-influence.jpg" alt="Influencer campaign collaboration" width="3335" height="1643" loading="lazy" />
+          <figcaption>
+            <p class="eyebrow">Influencer marketing</p>
+            <h3>Local voices, regional impact</h3>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft" aria-labelledby="latest-news-heading">
+    <div class="container">
+      <div class="section-heading-row">
+        <SectionHeading
+          eyebrow="Influenced story"
+          title="Latest news"
+          align="left"
+        />
+        <a class="text-link" href="/news">View all news</a>
+      </div>
+      <div class="news-grid" id="latest-news-heading">
+        {newsItems.slice(0, 3).map((item) => <NewsCard item={item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-section">
+    <div class="container contact-layout">
+      <div>
+        <SectionHeading
+          eyebrow="Let us"
+          title="Connect"
+          align="left"
+        />
+        <p class="lead">
+          Tell us where you want to grow. We’ll connect the right market,
+          channel, and team.
+        </p>
+        <p class="contact-note">
+          Mail delivery is routed through environment configuration, so the
+          service can be swapped without changing this interface.
+        </p>
+      </div>
+      <form class="contact-form" action="/api/contact" method="post" data-contact-form>
+        <div class="form-grid">
+          <label>
+            <span>Name</span>
+            <input name="name" type="text" autocomplete="name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input name="email" type="email" autocomplete="email" required />
+          </label>
+        </div>
+        <label>
+          <span>Subject</span>
+          <input name="subject" type="text" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+        <label class="form-honeypot" aria-hidden="true">
+          <span>Company website</span>
+          <input name="company" type="text" tabindex="-1" autocomplete="off" />
+        </label>
+        <div class="form-actions">
+          <button class="button" type="submit">Send message</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+  const status = form?.querySelector<HTMLElement>('.form-status');
+  const submit = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!status || !submit) return;
+
+    submit.disabled = true;
+    status.textContent = 'Sending…';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      const result = await response.json();
+
+      if (!response.ok) throw new Error(result.message || 'Unable to send your message.');
+
+      form.reset();
+      status.textContent = result.message;
+    } catch (error) {
+      status.textContent =
+        error instanceof Error ? error.message : 'Unable to send your message.';
+    } finally {
+      submit.disabled = false;
+    }
+  });
+</script>

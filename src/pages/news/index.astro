@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import { newsItems } from '../../data/news';
+---
+
+<BaseLayout
+  title="News"
+  description="Market intelligence, campaign thinking, and company updates from MOCA."
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">MOCA intelligence</p>
+      <h1>News</h1>
+      <p>Market shifts, platform changes, and practical thinking for teams growing across borders.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container news-page-layout">
+      <div class="news-list">
+        {newsItems.map((item) => <NewsCard item={item} horizontal />)}
+      </div>
+      <aside class="news-sidebar">
+        <SectionHeading eyebrow="Browse" title="Topics" align="left" />
+        <div class="topic-list">
+          <a href="/news">Digital advertising</a>
+          <a href="/news">E-commerce</a>
+          <a href="/news">Influencer marketing</a>
+          <a href="/news">Market strategy</a>
+        </div>
+        <div class="sidebar-cta">
+          <p class="eyebrow eyebrow--light">Have a market question?</p>
+          <h2>Let’s find the signal.</h2>
+          <a class="button button--light" href="/#contact">Contact MOCA</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
