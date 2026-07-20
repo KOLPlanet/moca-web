@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/indian-companies-nearly-double-the-spend-on-mobile-advertisements-to-rs-300-crore.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/indian-companies-nearly-double-the-spend-on-mobile-advertisements-to-rs-300-crore.html",
+  "sourceId": "1602",
+  "scrapedAt": "2026-07-20T11:37:22.152Z",
+  "sourceHash": "da0e4ee24fdfb60434120729ec7ba52d41d20069f73f0fd072ad06614dbceadb",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%8F%B0-300x150.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 16327,
+      "sha256": "2528546eacd6dea9b2213a4342fd5d04369c2caa0eba72da4dc9627c7d3ad953"
+    }
+  ]
+}

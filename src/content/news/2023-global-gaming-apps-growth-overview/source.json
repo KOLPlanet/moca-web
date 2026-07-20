@@ -1,0 +1,53 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/2023-global-gaming-apps-growth-overview.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/2023-global-gaming-apps-growth-overview.html",
+  "sourceId": "3196",
+  "scrapedAt": "2026-07-20T11:36:07.298Z",
+  "sourceHash": "b842c68f0902dfc3ef2323f7f4c0f112d2581953d98d93f26326e58d33811070",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/11/2023-Global-Gaming-App-Growth-Overview1.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 74718,
+      "sha256": "4476e4ab998ab22ca7186c09cb8db75c02fa6307650ad85233ae5030df6bd679"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/11/2023-Global-Gaming-App-Growth-Overview1-1.jpg",
+      "filename": "2023-global-gaming-app-growth-overview1-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 74718,
+      "sha256": "4476e4ab998ab22ca7186c09cb8db75c02fa6307650ad85233ae5030df6bd679"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/11/image.png",
+      "filename": "image.png",
+      "contentType": "image/png",
+      "bytes": 898971,
+      "sha256": "d76184d19e00d8a3e96f336eff7583e56bc7d2a5f5f3fd5e3407f83f29f1c2b1"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/11/image-1.png",
+      "filename": "image-1.png",
+      "contentType": "image/png",
+      "bytes": 1269124,
+      "sha256": "1c143aff1be44f5389c5d312366f1f171c8f83c8d337a8bf69d5d9f24a8a8cd5"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/11/image-2.png",
+      "filename": "image-2.png",
+      "contentType": "image/png",
+      "bytes": 1008660,
+      "sha256": "f5359d7ef8b14c38f143e9ff856bfa9688c6b05b2e210589dd3759025719ac01"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/unlock-the-thriving-entertainment-music-streaming-market-of-indonesia.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/unlock-the-thriving-entertainment-music-streaming-market-of-indonesia.html",
+  "sourceId": "3114",
+  "scrapedAt": "2026-07-20T11:36:14.847Z",
+  "sourceHash": "59819ad1d51690c0652e677b2b012cfda8c8d8d22d54073440a74c87a7d04bb0",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/09/Indonesian-Entertainment-Music1.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 129139,
+      "sha256": "d9974289c92a582e9c7a09b4f0feb9b294bc2af76d446e26c97cf9383d6fe74a"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/09/image-2.png",
+      "filename": "image-2.png",
+      "contentType": "image/png",
+      "bytes": 1181931,
+      "sha256": "979dbc03c723598fd242aaca26b6551d70c721eb761c942edba04d5cfd1e090f"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/09/image-1.png",
+      "filename": "image-1.png",
+      "contentType": "image/png",
+      "bytes": 970375,
+      "sha256": "64d0d37f9f41f0d2f2f8318a6ce6a51898a236e877acb019b309d8629381fdd5"
+    }
+  ]
+}

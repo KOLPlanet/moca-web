@@ -1,0 +1,44 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/acquire-high-quality-consumers-through-influencer-marketing.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/acquire-high-quality-consumers-through-influencer-marketing.html",
+  "sourceId": "3321",
+  "scrapedAt": "2026-07-20T11:35:54.199Z",
+  "sourceHash": "0680d4dd201b1dfe4aa221924966ee7e57e9dcbd849d7051cd33af8c5b6d90c0",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/02/Key-Insights-for-Influencer-Marketing-in-2024-.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 78047,
+      "sha256": "3a81f8591c1c7164c51d9900e6771598a0e6025cdc8d0304af67f6e5b06c2af4"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/02/image-7.png",
+      "filename": "image-7.png",
+      "contentType": "image/png",
+      "bytes": 1414697,
+      "sha256": "68c6cef88b4e434073cae77cea9b3450e58dbea2638472d092293db890c5a977"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/02/image-6.png",
+      "filename": "image-6.png",
+      "contentType": "image/png",
+      "bytes": 1797172,
+      "sha256": "13fb389c4b9536f10ba5c144ae2bc9b75160059368ed7e9ecb660fe397334ba6"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/02/image-8.png",
+      "filename": "image-8.png",
+      "contentType": "image/png",
+      "bytes": 2640236,
+      "sha256": "8bc306d86a802c26a6de8a828dfec9d4ec95a347826f22756180331afc1a6647"
+    }
+  ]
+}

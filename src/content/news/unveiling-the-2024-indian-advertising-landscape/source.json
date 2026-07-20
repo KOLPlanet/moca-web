@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/unveiling-the-2024-indian-advertising-landscape.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/unveiling-the-2024-indian-advertising-landscape.html",
+  "sourceId": "3358",
+  "scrapedAt": "2026-07-20T11:35:48.925Z",
+  "sourceHash": "ad05d577501ee32d583965fc4c70a24690eb62362aef36e5e913d4f040a2c6aa",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/03/2024-Indian-advertising-1.png",
+      "filename": "cover.png",
+      "contentType": "image/png",
+      "bytes": 739079,
+      "sha256": "abf5ca85f7f965d16522039418a260b01f9d7c71abc859de1d4e810fc229f064"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/03/indian-digital-advertising-2024.png",
+      "filename": "indian-digital-advertising-2024.png",
+      "contentType": "image/png",
+      "bytes": 679723,
+      "sha256": "04ee9e1155506e69f41769e0cf22666ea2d08b9304d371f391aa093f7323296b"
+    }
+  ]
+}

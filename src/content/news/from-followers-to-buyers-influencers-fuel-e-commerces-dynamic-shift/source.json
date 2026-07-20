@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/from-followers-to-buyers-influencers-fuel-e-commerces-dynamic-shift.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/from-followers-to-buyers-influencers-fuel-e-commerces-dynamic-shift.html",
+  "sourceId": "4352",
+  "scrapedAt": "2026-07-20T11:35:30.340Z",
+  "sourceHash": "33e2495a3ee32bca772c8bee76ac3010d5921bed77879910740ee356762c24f8",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/11/influencer-update.png",
+      "filename": "cover.png",
+      "contentType": "image/png",
+      "bytes": 587558,
+      "sha256": "159bdc7f7d84168472d2a8c15cba809bc713501c5809398634fdd283a1db5d3a"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/11/MOCA-INFLUENCER-SEA.png",
+      "filename": "moca-influencer-sea.png",
+      "contentType": "image/png",
+      "bytes": 631945,
+      "sha256": "45f938164b5238e1bac945074faf9bb695489cf8b210c2b43d57d2d8bb371649"
+    }
+  ]
+}

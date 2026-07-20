@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/google-serves-25-percent-of-north-american-internet-traffic.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/google-serves-25-percent-of-north-american-internet-traffic.html",
+  "sourceId": "1608",
+  "scrapedAt": "2026-07-20T11:37:23.315Z",
+  "sourceHash": "6f3964e2ee59d0173d04d467686b73b89b089fffb829bf540e958c0b3ab16de1",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/google-1-300x150.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 20630,
+      "sha256": "b32372e904fd5ce7e1ddccbed94ad2fe57ca030fe7bd7b0ef75cf8acd3e4babe"
+    }
+  ]
+}

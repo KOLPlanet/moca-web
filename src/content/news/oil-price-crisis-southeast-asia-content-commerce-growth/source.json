@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/oil-price-crisis-southeast-asia-content-commerce-growth.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/oil-price-crisis-southeast-asia-content-commerce-growth.html",
+  "sourceId": "6685",
+  "scrapedAt": "2026-07-20T11:35:17.085Z",
+  "sourceHash": "322df70b024327be97298eaf3d9cbe26f2baf9fa635c2b9e67f0a7d986a9cec5",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2026/03/%E5%AE%98%E7%BD%91_260327.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 98344,
+      "sha256": "af3a034df2ac1e77790ce4573d819b0749763c1f769ca5d0b585b5114c7ceabf"
+    }
+  ]
+}

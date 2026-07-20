@@ -1,0 +1,62 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/revolutionizing-user-acquisition-through-content-driven-advertising.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/revolutionizing-user-acquisition-through-content-driven-advertising.html",
+  "sourceId": "3266",
+  "scrapedAt": "2026-07-20T11:36:00.866Z",
+  "sourceHash": "b1bc1702067c98e165736f6a7d9377d15fce1aa76b4b75ead7e5a108cab9ec6a",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/01/reddit1.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 56807,
+      "sha256": "0d2757afe02f25ffaae59a862149e605ac9a27e09680e6cc7c5cce9d2fd5c089"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/01/REDDIT-for-official-website-2.jpg",
+      "filename": "reddit-for-official-website-2.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 102267,
+      "sha256": "7701a9b52d3963ef7fcdd7035b7727ffbf6fe766800aa30a90a1bdfb37cdbed7"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/01/image.png",
+      "filename": "image.png",
+      "contentType": "image/png",
+      "bytes": 2223779,
+      "sha256": "6f4f1e655101dada01c158938aad889dacf735ccee681ecaadf21cbe4bccc46b"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/01/image-1.png",
+      "filename": "image-1.png",
+      "contentType": "image/png",
+      "bytes": 2674685,
+      "sha256": "fcec6512f67415e2147a9c3b823bfab5b27c31f913b70a38402719a4c409be64"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/01/image-2.png",
+      "filename": "image-2.png",
+      "contentType": "image/png",
+      "bytes": 2099612,
+      "sha256": "d09f017db544dd912309bbb4953aa52f38645e7a7191f29bcc9e0b4e3870bd77"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/01/image-3.png",
+      "filename": "image-3.png",
+      "contentType": "image/png",
+      "bytes": 2206673,
+      "sha256": "edba868164038152d21b21a226454642c90c9113fe323a57da6b3653742983f6"
+    }
+  ]
+}

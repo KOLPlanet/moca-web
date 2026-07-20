@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/adtech-new-delhi-event_-attended-by-team-moca.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/adtech-new-delhi-event_-attended-by-team-moca.html",
+  "sourceId": "2613",
+  "scrapedAt": "2026-07-20T11:36:35.782Z",
+  "sourceHash": "8e983fede2b6379d6581f93d607acda60ce11905ea6a69eb20cd8ce1a0f28ef1",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/03/AD-TECH.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 113342,
+      "sha256": "206a904973f12294ed064d6baa9954854a808a4582a5d9443df654e41bd76393"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/03/event-article.jpg",
+      "filename": "event-article.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 289675,
+      "sha256": "6613995ad4265e572d20355d855a179518a6f51aad69224ddec3313fce6776d7"
+    }
+  ]
+}

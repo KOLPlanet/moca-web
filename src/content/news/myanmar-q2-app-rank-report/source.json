@@ -1,0 +1,35 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/myanmar-q2-app-rank-report.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/myanmar-q2-app-rank-report.html",
+  "sourceId": "1538",
+  "scrapedAt": "2026-07-20T11:39:39.246Z",
+  "sourceHash": "e491a27bf4c00b4ae7108a773793d87a712e351ddf5975541467b5df343f5917",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/Q2.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 33964,
+      "sha256": "dcdb3b400d3fb97519aff2041b5c5bfcce8d25572acc9a50dd36bb5cd9f4f1d6"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/1-800x450.png",
+      "filename": "1-800x450.png",
+      "contentType": "image/png",
+      "bytes": 77253,
+      "sha256": "93478b26bf48baa82bc3c66a8a98201fdbb739be52b541975a166fe1481c9490"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/2-800x450.png",
+      "filename": "2-800x450.png",
+      "contentType": "image/png",
+      "bytes": 80827,
+      "sha256": "4b098d0b58d6880ef9eb19ce7a531a8c65566928a101918c291d97f8947922cf"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/harness-the-icc-world-cup-2023-to-battle-for-consumers-mind.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/harness-the-icc-world-cup-2023-to-battle-for-consumers-mind.html",
+  "sourceId": "3078",
+  "scrapedAt": "2026-07-20T11:36:15.952Z",
+  "sourceHash": "bce58751aed12a5b0e4ab11f13d393d0ba85db443ce19fb43233cac8a008287f",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/09/cricket-5.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 248665,
+      "sha256": "3ef31792d21016f89c7607de14cdd2d120dc487e899030fa7d7a5d6110236245"
+    }
+  ]
+}

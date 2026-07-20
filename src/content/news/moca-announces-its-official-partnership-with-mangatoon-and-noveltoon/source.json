@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/moca-announces-its-official-partnership-with-mangatoon-and-noveltoon.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/moca-announces-its-official-partnership-with-mangatoon-and-noveltoon.html",
+  "sourceId": "2411",
+  "scrapedAt": "2026-07-20T11:36:50.134Z",
+  "sourceHash": "8af34c8862d2358d7a579ba319a4701e60c5da538e8df5c965b64a62e1d1064d",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2022/04/fbfab3-1.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 284042,
+      "sha256": "5adf6a11c9e365194e78b0440a70145049e7f2709bd9193b54e9828ae259a517"
+    }
+  ]
+}

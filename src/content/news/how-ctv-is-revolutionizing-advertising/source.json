@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/how-ctv-is-revolutionizing-advertising.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/how-ctv-is-revolutionizing-advertising.html",
+  "sourceId": "2622",
+  "scrapedAt": "2026-07-20T11:36:34.935Z",
+  "sourceHash": "68a33f18b3faae1f2075d00ef695e58621bd924573d73ccfbeedc03232a0e819",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/07/CTV-July-12.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 117754,
+      "sha256": "11cfe8127a2f614d8b916130592595ae958c8626033ea45db77b4172826628b2"
+    }
+  ]
+}

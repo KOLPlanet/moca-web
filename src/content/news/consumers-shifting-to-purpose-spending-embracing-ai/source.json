@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/consumers-shifting-to-purpose-spending-embracing-ai.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/consumers-shifting-to-purpose-spending-embracing-ai.html",
+  "sourceId": "4373",
+  "scrapedAt": "2026-07-20T11:35:28.935Z",
+  "sourceHash": "4d631b4f7ab55170248b86c0e3877f2e99abc8be89d81456702d4f276fbe04a4",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/12/%E5%8D%B0%E5%B0%BC%E6%89%8B%E6%9C%BA%E8%B4%AD%E7%89%A91.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 84021,
+      "sha256": "037403c62f8d8524edf04fc803125236933b95cfd56a39bc18170e081d041c47"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/12/%E5%8D%B0%E5%B0%BC%E6%89%8B%E6%9C%BA%E8%B4%AD%E7%89%A91-1.jpg",
+      "filename": "1-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 84021,
+      "sha256": "037403c62f8d8524edf04fc803125236933b95cfd56a39bc18170e081d041c47"
+    }
+  ]
+}

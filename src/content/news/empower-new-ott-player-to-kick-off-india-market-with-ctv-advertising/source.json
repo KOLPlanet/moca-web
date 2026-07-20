@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/empower-new-ott-player-to-kick-off-india-market-with-ctv-advertising.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/empower-new-ott-player-to-kick-off-india-market-with-ctv-advertising.html",
+  "sourceId": "3282",
+  "scrapedAt": "2026-07-20T11:35:57.793Z",
+  "sourceHash": "cd6f0c3aeaa7044bcf4a17aa0a4646434f1971ed9ba32a105d3476da0e96624b",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/01/CTV-case-study.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 150015,
+      "sha256": "1bbbdfdff89a1b407594ae0b9617c8f34e1c6abd930f075a8f2b286f2036e0ef"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/01/CTV-case-study-1.jpg",
+      "filename": "ctv-case-study-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 150015,
+      "sha256": "1bbbdfdff89a1b407594ae0b9617c8f34e1c6abd930f075a8f2b286f2036e0ef"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/moca-indonesia-team-empower-toyota-new-model-lauching.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/moca-indonesia-team-empower-toyota-new-model-lauching.html",
+  "sourceId": "2626",
+  "scrapedAt": "2026-07-20T11:36:34.380Z",
+  "sourceHash": "8e25c90443c637959ca17ca07ca8b1826a520437af58fc8a1f20841827f1a8df",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/03/Toyota2.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 109933,
+      "sha256": "8a05e3cde7f50414fb69d86074fb7960090c55b22132e97b6787bdb0956db9a2"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/transsion-dominates-the-african-market.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/transsion-dominates-the-african-market.html",
+  "sourceId": "2376",
+  "scrapedAt": "2026-07-20T11:36:54.680Z",
+  "sourceHash": "7ae4ef119190ebaf3b2cacee049e6e38b64c0b4a6b555a0f1ee8237fb9d77e33",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2022/03/Transsion.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 67966,
+      "sha256": "1f1067a3359f87f330b2ed256c6985569342fbf49dd98ff9ed8931176436ea82"
+    }
+  ]
+}

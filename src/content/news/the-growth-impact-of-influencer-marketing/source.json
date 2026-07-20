@@ -1,0 +1,62 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/the-growth-impact-of-influencer-marketing.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/the-growth-impact-of-influencer-marketing.html",
+  "sourceId": "3129",
+  "scrapedAt": "2026-07-20T11:36:13.721Z",
+  "sourceHash": "08d9ab327e4cc105d7930c8574ba8480549b4be20fc0bd6ccd3285c90895cbae",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/Influencer-Marketing.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 167883,
+      "sha256": "945a86b15385c6ac58a5795e40b73598d35a3f6bfda2a23c1fedd679b88c6c28"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/Influencer-Marketing-1.jpg",
+      "filename": "influencer-marketing-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 167883,
+      "sha256": "945a86b15385c6ac58a5795e40b73598d35a3f6bfda2a23c1fedd679b88c6c28"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/image.png",
+      "filename": "image.png",
+      "contentType": "image/png",
+      "bytes": 1145966,
+      "sha256": "892cf413d9a9613ae711bcc422fe40ff56f907c250dc5afb8447949d08043521"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/image-1.png",
+      "filename": "image-1.png",
+      "contentType": "image/png",
+      "bytes": 884814,
+      "sha256": "999f824f1d1d0444fba79b7c7e487fb0bd1f2bbb58413a7fe14caaeee139e8fe"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/image-2.png",
+      "filename": "image-2.png",
+      "contentType": "image/png",
+      "bytes": 1208776,
+      "sha256": "d57edf8a38a3151585ebc2b1e89950ab5584cdbfb99b1f6d7f2a538f136749b6"
+    },
+    {
+      "role": "body",
+      "alt": "influencer marketing",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/image-3.png",
+      "filename": "image-3.png",
+      "contentType": "image/png",
+      "bytes": 1699534,
+      "sha256": "46cb9084b38c722f00a02122b2375c67a1df38e2aad001db89f56e8fcd445cec"
+    }
+  ]
+}

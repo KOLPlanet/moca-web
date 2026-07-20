@@ -1,0 +1,35 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/we-are-also-working-on-setting-up-a-team-in-india-to-cater-to-other-markets-of-sea-vishal-singh-india-gm-global-commercials-vp-moca-technology.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/we-are-also-working-on-setting-up-a-team-in-india-to-cater-to-other-markets-of-sea-vishal-singh-india-gm-global-commercials-vp-moca-technology.html",
+  "sourceId": "2158",
+  "scrapedAt": "2026-07-20T11:37:05.154Z",
+  "sourceHash": "18a9a210cf429b5991616e05e2ae3d28aa55e563ebec4415afe458edff7e9621",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2021/09/12.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 154993,
+      "sha256": "bfc2969c56bab04c9d993ad9d5dc46e0334476c0c9fe54e9d7976e0b709c6c85"
+    },
+    {
+      "role": "body",
+      "alt": "Vishal Singh- India GM & Global Commercials VP, MOCA Technology",
+      "originalUrl": "https://www.mediainfoline.com/wp-content/uploads/2021/09/Vishal-Singh-MOCA-Technologies.jpg",
+      "filename": "vishal-singh-moca-technologies.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 52085,
+      "sha256": "471d82d85eed27daf789c24977ddd3b4c67206b7db69bf70da0941bf9d8afe4d"
+    },
+    {
+      "role": "body",
+      "alt": "Vishal Singh- India GM & Global Commercials VP, MOCA Technology",
+      "originalUrl": "https://www.mediainfoline.com/wp-content/uploads/2021/09/Vishal-Singh-MOCA-Technology.jpg",
+      "filename": "vishal-singh-moca-technology.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 49030,
+      "sha256": "ec38f3fd1113a5eef937e64b5455c94d04d0d58359e202f849e9feb8e03dd0b1"
+    }
+  ]
+}

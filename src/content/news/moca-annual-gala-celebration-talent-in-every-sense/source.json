@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/moca-annual-gala-celebration-talent-in-every-sense.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/moca-annual-gala-celebration-talent-in-every-sense.html",
+  "sourceId": "6658",
+  "scrapedAt": "2026-07-20T11:35:18.224Z",
+  "sourceHash": "e57f0e8f15723c44ee765fb55a8abd89e063d327422c3a1c6de0a593ce761d86",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2026/02/%E5%85%AC%E4%BC%97%E5%8F%B7_20260205.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 629406,
+      "sha256": "66dbd787fea8c133b941600544382232523f80ef53552ca0064306ad8106a586"
+    }
+  ]
+}

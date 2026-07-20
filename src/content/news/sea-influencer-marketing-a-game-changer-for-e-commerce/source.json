@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/sea-influencer-marketing-a-game-changer-for-e-commerce.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/sea-influencer-marketing-a-game-changer-for-e-commerce.html",
+  "sourceId": "3369",
+  "scrapedAt": "2026-07-20T11:35:48.088Z",
+  "sourceHash": "c51615f66d78042addce5aac7c66d0349b1342fbc93afad9d67e53338607505a",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/04/SEA-influencer-marketing-4.10.png",
+      "filename": "cover.png",
+      "contentType": "image/png",
+      "bytes": 773517,
+      "sha256": "1a06e8cdae5280c1c11671a8041a32b291c121dd51796c9c27a1bf29a25af4c9"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/04/image.png",
+      "filename": "image.png",
+      "contentType": "image/png",
+      "bytes": 2338135,
+      "sha256": "93debd2016be47a35e37b9d32320989b051651aaa6db50493da6e137006e87a8"
+    }
+  ]
+}

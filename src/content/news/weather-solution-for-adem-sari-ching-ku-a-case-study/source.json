@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/weather-solution-for-adem-sari-ching-ku-a-case-study.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/weather-solution-for-adem-sari-ching-ku-a-case-study.html",
+  "sourceId": "2165",
+  "scrapedAt": "2026-07-20T11:37:02.780Z",
+  "sourceHash": "b2661c2b5de9964228d5f46fd48dd584bf6022e91920cef47200f9c49f2ccd61",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2021/09/32123.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 21990,
+      "sha256": "17fdc713ab37e68e2213638aff5ba0107ef15b8c78aba659124bf11b81716dce"
+    }
+  ]
+}

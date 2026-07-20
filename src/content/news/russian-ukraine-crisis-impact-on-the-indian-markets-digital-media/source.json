@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/russian-ukraine-crisis-impact-on-the-indian-markets-digital-media.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/russian-ukraine-crisis-impact-on-the-indian-markets-digital-media.html",
+  "sourceId": "2450",
+  "scrapedAt": "2026-07-20T11:36:44.224Z",
+  "sourceHash": "6ff6422eb3c96d0fb8d567b336a6561bf8ff3aed20c88c7c52ee54606ca71daa",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2022/05/1-4.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 170577,
+      "sha256": "fa631ab7e6655ca150b90d9fd2cbe3535a4e613e7435a38ad15d896f34257abe"
+    }
+  ]
+}

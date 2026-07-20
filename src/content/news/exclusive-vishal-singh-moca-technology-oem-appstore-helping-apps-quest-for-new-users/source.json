@@ -1,0 +1,71 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/exclusive-vishal-singh-moca-technology-oem-appstore-helping-apps-quest-for-new-users.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/exclusive-vishal-singh-moca-technology-oem-appstore-helping-apps-quest-for-new-users.html",
+  "sourceId": "2129",
+  "scrapedAt": "2026-07-20T11:37:09.767Z",
+  "sourceHash": "452c33064202a8183f07c62ef77973c2e692146000ba87713fb74fe186edb883",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2021/09/35.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 29030,
+      "sha256": "c968f3b67bd76617c5c0ba825011017e60b9da09a2b0adb5fa80c45899315dda"
+    },
+    {
+      "role": "body",
+      "alt": "IMAGE-exclusive-vishal-singh-moca-technology-MEDIABRIEF-2-1.jpg",
+      "originalUrl": "https://mediabrief.com/wp-content/uploads/2021/09/IMAGE-exclusive-vishal-singh-moca-technology-MEDIABRIEF-2-1.jpg",
+      "filename": "image-exclusive-vishal-singh-moca-technology-mediabrief-2-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 57790,
+      "sha256": "70c39c6b636573521d0d2fa5f3ad2b8488519634e41379f90424cbe344e97505"
+    },
+    {
+      "role": "body",
+      "alt": "IMAGE-exclusive-vishal-singh-moca-technology-MEDIABRIEF-2.jpg",
+      "originalUrl": "https://mediabrief.com/wp-content/uploads/2021/09/IMAGE-exclusive-vishal-singh-moca-technology-MEDIABRIEF-2.jpg",
+      "filename": "image-exclusive-vishal-singh-moca-technology-mediabrief-2.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 59768,
+      "sha256": "8de64041b86c0e590f92497a5ba93242d541d73514f215dea15ad1f02217b5cd"
+    },
+    {
+      "role": "body",
+      "alt": "IMAGE-exclusive-vishal-singh-moca-technology-MEDIABRIEF-3.jpg",
+      "originalUrl": "https://mediabrief.com/wp-content/uploads/2021/09/IMAGE-exclusive-vishal-singh-moca-technology-MEDIABRIEF-3.jpg",
+      "filename": "image-exclusive-vishal-singh-moca-technology-mediabrief-3.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 58570,
+      "sha256": "92e2efffeda0290576cb44bb5d46a91fd56b8ef33937e0fb2b7116d4f57705a7"
+    },
+    {
+      "role": "body",
+      "alt": "IMAGE-exclusive-vishal-singh-moca-technology-MEDIABRIEF-4.jpg",
+      "originalUrl": "https://mediabrief.com/wp-content/uploads/2021/09/IMAGE-exclusive-vishal-singh-moca-technology-MEDIABRIEF-4.jpg",
+      "filename": "image-exclusive-vishal-singh-moca-technology-mediabrief-4.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 62888,
+      "sha256": "0d2a343e2236802f37576c1b16be9c9312860e5a621c64d088919b0159db98a2"
+    },
+    {
+      "role": "body",
+      "alt": "IMAGE-exclusive-vishal-singh-moca-technology-MEDIABRIEF-5.jpg",
+      "originalUrl": "https://mediabrief.com/wp-content/uploads/2021/09/IMAGE-exclusive-vishal-singh-moca-technology-MEDIABRIEF-5.jpg",
+      "filename": "image-exclusive-vishal-singh-moca-technology-mediabrief-5.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 56909,
+      "sha256": "06f61ac4edef9db5d0d1f45d17a408e7dd307b272f8f796aa00ceb7152320018"
+    },
+    {
+      "role": "body",
+      "alt": "IMAGE-exclusive-vishal-singh-moca-technology-MEDIABRIEF-1.jpg",
+      "originalUrl": "https://mediabrief.com/wp-content/uploads/2021/09/IMAGE-exclusive-vishal-singh-moca-technology-MEDIABRIEF-1.jpg",
+      "filename": "image-exclusive-vishal-singh-moca-technology-mediabrief-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 57703,
+      "sha256": "5d9200cd13bb65c066d5c8d97e4a869ac916c325b542fc0f2d74df94bec299bb"
+    }
+  ]
+}

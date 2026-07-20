@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/rmg-driving-india-online-gaming-market.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/rmg-driving-india-online-gaming-market.html",
+  "sourceId": "3380",
+  "scrapedAt": "2026-07-20T11:35:46.701Z",
+  "sourceHash": "e5ff4702948f428346cb1d6c59ab7f5f48b7956ae64c9ebddaaca8054aa7514d",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/04/2024-India-Online-Gaming3.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 130745,
+      "sha256": "b5ed910af31bb6205fb141e43ef4cf7b46b2b0a6992e8f84e357b567cfb969c6"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/04/image-1.png",
+      "filename": "image-1.png",
+      "contentType": "image/png",
+      "bytes": 2118940,
+      "sha256": "e3d1a1262484e1c0b83cf830b3c99a0eb7aaeaef509c68acc0c053075943657f"
+    }
+  ]
+}

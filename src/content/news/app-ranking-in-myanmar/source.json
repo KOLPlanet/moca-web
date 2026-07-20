@@ -1,0 +1,89 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/app-ranking-in-myanmar.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/app-ranking-in-myanmar.html",
+  "sourceId": "1553",
+  "scrapedAt": "2026-07-20T11:39:43.511Z",
+  "sourceHash": "4bdfe501098e7f79e95d33221b2c2cac6d1c149a3750387664372c76d62428b0",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/%E7%BC%85%E7%94%B8Q4%E5%B0%81%E9%9D%A2.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 41254,
+      "sha256": "2bdda06e73869fa9998fa3a8ba21f901aff5e4d97b9cac1439071093d470909e"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/1-1-800x450.png",
+      "filename": "1-1-800x450.png",
+      "contentType": "image/png",
+      "bytes": 351424,
+      "sha256": "f5dbea5e1acc09e6fac4547f06e78d654c67b1b165858fa4b9787613f4ac803c"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/1-2-800x450.png",
+      "filename": "1-2-800x450.png",
+      "contentType": "image/png",
+      "bytes": 285428,
+      "sha256": "c7f381d3d1fb7d9848d34506d6605d3f3360323d8a07f109035c1d24654fd783"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/1-3-800x450.png",
+      "filename": "1-3-800x450.png",
+      "contentType": "image/png",
+      "bytes": 79112,
+      "sha256": "85c33b820f88ba1e2d38596bdd072bf64a362dfd6fef9b734d07e149c9c59217"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/1-4-800x450.png",
+      "filename": "1-4-800x450.png",
+      "contentType": "image/png",
+      "bytes": 79775,
+      "sha256": "16cf9cceb31f30161fc7a0ac5902c1ae421cad886613156711be70cabd0db3c1"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/1-5-800x450.png",
+      "filename": "1-5-800x450.png",
+      "contentType": "image/png",
+      "bytes": 300353,
+      "sha256": "7f7f07e4aae68b3a142b6ffa821e231d6791e4299b68dedad0ea8218a9e5c62e"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/1-6-800x450.png",
+      "filename": "1-6-800x450.png",
+      "contentType": "image/png",
+      "bytes": 307023,
+      "sha256": "9ef77f474767b2c49616f11fe9f86ad616792568dd693c76d234017ba3cea8f3"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/1-7-800x450.png",
+      "filename": "1-7-800x450.png",
+      "contentType": "image/png",
+      "bytes": 90825,
+      "sha256": "6cefb5b3fec89591b60c040c4ea21fcb73ded8e391c10141d30128e5abed1d53"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/1-8-800x450.png",
+      "filename": "1-8-800x450.png",
+      "contentType": "image/png",
+      "bytes": 368295,
+      "sha256": "e10cebcea2f0e72ffb4ccb1393bbae773bf57dec5ebd0795919bb34382a3a187"
+    }
+  ]
+}

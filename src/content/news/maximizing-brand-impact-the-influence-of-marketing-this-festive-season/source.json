@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/maximizing-brand-impact-the-influence-of-marketing-this-festive-season.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/maximizing-brand-impact-the-influence-of-marketing-this-festive-season.html",
+  "sourceId": "3553",
+  "scrapedAt": "2026-07-20T11:35:32.292Z",
+  "sourceHash": "f93290df6b36e840a4476c1dfd23a25d35712df816232e781384983c57ebf962",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/10/Maximizing-Brand-Impact-The-Influence-of-Marketing-This-Festive-Season.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 174323,
+      "sha256": "645b619f6811a010c2c01ae86a9baa9b7602b6c10d58ab995c845de2dbd13123"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/10/Maximizing-Brand-Impact-The-Influence-of-Marketing-This-Festive-Season-1.jpg",
+      "filename": "maximizing-brand-impact-the-influence-of-marketing-this-festive-season-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 174323,
+      "sha256": "645b619f6811a010c2c01ae86a9baa9b7602b6c10d58ab995c845de2dbd13123"
+    }
+  ]
+}

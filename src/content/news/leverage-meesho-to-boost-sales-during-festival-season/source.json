@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/leverage-meesho-to-boost-sales-during-festival-season.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/leverage-meesho-to-boost-sales-during-festival-season.html",
+  "sourceId": "3098",
+  "scrapedAt": "2026-07-20T11:36:15.398Z",
+  "sourceHash": "c4ae89e519d5568b156ed7b84fa68001402f12ee7d95dd139b2c5bb6123dc814",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/09/meesho.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 183203,
+      "sha256": "77027869d18e825fd9d50637a5fb4a9c6eb765952e90c706cbf4466158c92878"
+    }
+  ]
+}

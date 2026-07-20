@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/moca-technology-to-leverage-the-growth-of-ott-short-video-platforms-in-india-and-s-e-a-markets.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/moca-technology-to-leverage-the-growth-of-ott-short-video-platforms-in-india-and-s-e-a-markets.html",
+  "sourceId": "2422",
+  "scrapedAt": "2026-07-20T11:36:48.179Z",
+  "sourceHash": "b87e45dda08128b08dddf2d00b0c9ff44292ad48b92911cdfe2c50b69092cd57",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2022/04/333.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 75617,
+      "sha256": "ab98faea323a952e35294cc179015a6b8f2801294e6ee6ed5d2e90720d55c97b"
+    },
+    {
+      "role": "body",
+      "alt": "IMAGE-MOCA-to-leverage-the-growth-of-OTT-short-video-platforms-MEDIABRIEF.png",
+      "originalUrl": "https://mediabrief.com/wp-content/uploads/2022/04/IMAGE-MOCA-to-leverage-the-growth-of-OTT-short-video-platforms-MEDIABRIEF.png",
+      "filename": "image-moca-to-leverage-the-growth-of-ott-short-video-platforms-mediabrief.png",
+      "contentType": "image/png",
+      "bytes": 46494,
+      "sha256": "2d391d07171716ce9d1ab71ed2f569e9ce4a71199ba3dbf03d70ed230c560796"
+    }
+  ]
+}

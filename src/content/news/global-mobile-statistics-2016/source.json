@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/global-mobile-statistics-2016.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/global-mobile-statistics-2016.html",
+  "sourceId": "1599",
+  "scrapedAt": "2026-07-20T11:37:21.578Z",
+  "sourceHash": "ab46b1fa008192de868e3377c6c0a7debc5212b38a71fef049292e93ac7c412e",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/201412259596205-300x150.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 17626,
+      "sha256": "8996943722784c79839e9c6fa772bbfac261626f91e694ad0b9728325918a344"
+    }
+  ]
+}

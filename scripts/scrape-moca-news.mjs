@@ -155,9 +155,14 @@ async function scrapeArticle(rawUrl, options) {
     normalizeText($('meta[property="og:title"]').attr('content'));
   const seoTitle =
     normalizeText($('meta[property="og:title"]').attr('content')) || title;
-  const description =
+  const bodyLead =
+    normalizeText(content.find('p').first().text()) || normalizeText(content.text());
+  const description = excerptText(
     normalizeText($('meta[name="description"]').attr('content')) ||
-    normalizeText(articleSchema?.description);
+      normalizeText(articleSchema?.description) ||
+      bodyLead ||
+      `${title} — an archived report from MOCA Technology.`,
+  );
   const summary =
     normalizeText(content.find('.article-summary').first().text()).replace(
       /^In This Article:\s*/i,
@@ -523,13 +528,23 @@ function taxonomySlug(href, type) {
 }
 
 async function downloadImage(url, preferredStem, assetsDir, usedNames) {
-  const response = await fetch(url, {
-    headers: {
-      Accept: 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
-      'User-Agent': USER_AGENT,
-    },
-    redirect: 'follow',
-  });
+  let response;
+  try {
+    response = await fetch(url, {
+      headers: {
+        Accept: 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+        'User-Agent': USER_AGENT,
+      },
+      redirect: 'follow',
+    });
+  } catch (error) {
+    throw new Error(
+      `Image request failed: ${url} (${
+        error instanceof Error ? error.message : 'unknown error'
+      })`,
+      { cause: error },
+    );
+  }
 
   if (!response.ok) {
     throw new Error(`Image request failed (${response.status}): ${url}`);
@@ -583,12 +598,40 @@ async function fetchText(url) {
 
 function getImageSource(node) {
   if (!node?.length) return undefined;
-  return (
+  const directSource =
     node.attr('data-lazy-src') ||
     node.attr('data-src') ||
     node.attr('data-original') ||
-    node.attr('src')
-  );
+    node.attr('src');
+
+  if (directSource && !isLocalhostUrl(directSource)) {
+    return directSource;
+  }
+
+  const srcsetSource = largestSrcsetSource(node.attr('srcset'));
+  return srcsetSource || directSource;
+}
+
+function largestSrcsetSource(srcset) {
+  if (!srcset) return undefined;
+
+  return srcset
+    .split(',')
+    .map((candidate, index) => {
+      const [url, descriptor = ''] = candidate.trim().split(/\s+/, 2);
+      const width = Number.parseFloat(descriptor) || index;
+      return { url, width };
+    })
+    .filter(({ url }) => Boolean(url))
+    .sort((a, b) => b.width - a.width)[0]?.url;
+}
+
+function isLocalhostUrl(value) {
+  try {
+    return ['localhost', '127.0.0.1', '::1'].includes(new URL(value).hostname);
+  } catch {
+    return false;
+  }
 }
 
 function extensionFor(contentType, url) {
@@ -633,6 +676,12 @@ function slugify(value) {
 
 function normalizeText(value) {
   return `${value || ''}`.replace(/\s+/g, ' ').trim();
+}
+
+function excerptText(value, maxLength = 320) {
+  const normalized = normalizeText(value);
+  if (normalized.length <= maxLength) return normalized;
+  return `${normalized.slice(0, maxLength - 1).trimEnd()}…`;
 }
 
 function normalizeUrl(value) {

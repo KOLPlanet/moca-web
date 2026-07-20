@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/harness-influencer-marketing-to-drive-performance.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/harness-influencer-marketing-to-drive-performance.html",
+  "sourceId": "3385",
+  "scrapedAt": "2026-07-20T11:35:45.060Z",
+  "sourceHash": "e4a5c9fcf15473d44f3f72dd14910bf285e978fceb918ae1adbf28ffb1f04c4b",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/05/Harness-Influencer-Marketing-to-drive-performance2-2.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 81452,
+      "sha256": "ccede17090f983fceb497e0bdf3b5da40e0a41c5718c9de57397134b3b56c716"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/05/Harness-Influencer-Marketing-to-drive-performance2-1.jpg",
+      "filename": "harness-influencer-marketing-to-drive-performance2-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 138913,
+      "sha256": "d6ee9ff728d0fbfbf08227f632a54e8e2491cfbc0c78790c37dd62f42a6a1bf6"
+    }
+  ]
+}

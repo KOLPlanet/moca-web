@@ -1,0 +1,125 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/harnessing-ramadan-potential-in-indonesia-a-guide-to-success.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/harnessing-ramadan-potential-in-indonesia-a-guide-to-success.html",
+  "sourceId": "2761",
+  "scrapedAt": "2026-07-20T11:36:31.019Z",
+  "sourceHash": "013dca989fa974ed847fefb6394eec74b4c7b24a146e0c7431cbb6d44e1a7a2c",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/05/Ramandan-Marketing-Insights.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 507072,
+      "sha256": "5804756ebc244d3fb5a545b45357c5d1978d7c3a295ccc848e1c85157303cc2c"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/05/Ramadan1.png",
+      "filename": "ramadan1.png",
+      "contentType": "image/png",
+      "bytes": 120134,
+      "sha256": "9f87ddd80621bfc2630e2995bbb8235578132d60e34e1d35520e47e8d88ded2c"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/05/Ramadan2.1.jpg",
+      "filename": "ramadan2-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 120853,
+      "sha256": "b48423ea787aa3f867e8422a70633afe92f53f6c125336bc4d16e6404a9b8c47"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/05/Ramadan3.1.jpg",
+      "filename": "ramadan3-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 103903,
+      "sha256": "7ad80318711736796b5b424e21817fce1d2ceff3c13dae91e62935c3f9f6cb51"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/05/Ramadan4.png",
+      "filename": "ramadan4.png",
+      "contentType": "image/png",
+      "bytes": 79537,
+      "sha256": "55428baf65ec1fc2c731b0b321b7f3133fb7d1607de4c06e991fe9500dc9f276"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/05/Ramadan5.png",
+      "filename": "ramadan5.png",
+      "contentType": "image/png",
+      "bytes": 26521,
+      "sha256": "bc8f9311d78c7e925051d821bacfdcef6dadad45b64b590b6ccaaddb460e9ae1"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/05/Ramadan6.png",
+      "filename": "ramadan6.png",
+      "contentType": "image/png",
+      "bytes": 41927,
+      "sha256": "db257c0dad907785ea4bc7b7cd328aa392bc57743b2c564010b729f83339ce37"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/05/Ramadan7.png",
+      "filename": "ramadan7.png",
+      "contentType": "image/png",
+      "bytes": 145490,
+      "sha256": "fc9c61ea2eda7fa3a62540239b8c7a0fac4aef7a4b25dac80af99818283dbdbb"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/05/Ramadan8.png",
+      "filename": "ramadan8.png",
+      "contentType": "image/png",
+      "bytes": 130333,
+      "sha256": "e893c9641aed1bc0f98452e6a0c2c4d8487bc3d3fac0653a993f0c7a97ff43e9"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/05/Ramadan9.png",
+      "filename": "ramadan9.png",
+      "contentType": "image/png",
+      "bytes": 23150,
+      "sha256": "95ca4790d70e014d7d6129512d0fe989ee083fe8ae9bec1a009aa77ffb130e6f"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/05/Ramadan10.png",
+      "filename": "ramadan10.png",
+      "contentType": "image/png",
+      "bytes": 159673,
+      "sha256": "4986b5f73a31ab6448ccceef4e0a200cbc6bf93b1094e63d696d38c8de902155"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/05/Ramadan11-1.png",
+      "filename": "ramadan11-1.png",
+      "contentType": "image/png",
+      "bytes": 158942,
+      "sha256": "452eb6e77f7637ecad82d45619a5f94b4d3b6085426c22c0e56c03d383d185de"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/05/Ramadan12.png",
+      "filename": "ramadan12.png",
+      "contentType": "image/png",
+      "bytes": 110982,
+      "sha256": "07b7aa24322deb71aa3799dc95441f3d549ee3d38cb6cb00e20eb8be68d11fa2"
+    }
+  ]
+}

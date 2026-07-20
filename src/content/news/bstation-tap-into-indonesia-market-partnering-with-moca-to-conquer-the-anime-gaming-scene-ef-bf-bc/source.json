@@ -1,0 +1,35 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/bstation-tap-into-indonesia-market-partnering-with-moca-to-conquer-the-anime-gaming-scene%ef%bf%bc.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/bstation-tap-into-indonesia-market-partnering-with-moca-to-conquer-the-anime-gaming-scene%ef%bf%bc.html",
+  "sourceId": "3424",
+  "scrapedAt": "2026-07-20T11:35:40.968Z",
+  "sourceHash": "9710196134e963e602824a76ee7e2c2cae7db07551ab0d9fb2b9f87fbc220668",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/06/Bstation15.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 369499,
+      "sha256": "5a8c0a103b7927250909630eea8e088a708bb7487a9cbc5987613755e4ba328d"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/06/image-2.png",
+      "filename": "image-2.png",
+      "contentType": "image/png",
+      "bytes": 2723884,
+      "sha256": "7c7224346e14e29be18841548a702b699cf943a825bc4770864ce25783a922ce"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/06/image-3.png",
+      "filename": "image-3.png",
+      "contentType": "image/png",
+      "bytes": 2459924,
+      "sha256": "f4fad107650f484478ca8ea8cdc8f238f9af68d9e8f2a0cd96b057d6151aaded"
+    }
+  ]
+}

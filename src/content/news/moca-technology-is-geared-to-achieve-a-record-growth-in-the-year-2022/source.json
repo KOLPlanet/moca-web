@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/moca-technology-is-geared-to-achieve-a-record-growth-in-the-year-2022.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/moca-technology-is-geared-to-achieve-a-record-growth-in-the-year-2022.html",
+  "sourceId": "2425",
+  "scrapedAt": "2026-07-20T11:36:46.474Z",
+  "sourceHash": "818b3a71f94857491c90b6d6bee2c7c941bee47e19c4ea93ec9840261dd30c1e",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2022/04/%E6%9C%AA%E6%A0%87%E9%A2%98-5.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 66978,
+      "sha256": "796635bc9b42434e5274e9c73ea1f382ec34f89c95f25340cde87638b2ab0afa"
+    }
+  ]
+}

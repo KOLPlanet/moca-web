@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/harness-ctv-ott-to-peak-performance.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/harness-ctv-ott-to-peak-performance.html",
+  "sourceId": "3236",
+  "scrapedAt": "2026-07-20T11:36:01.696Z",
+  "sourceHash": "083e9cf6947e3b1b9fcb8b3dbdf94ea24f778ccbf75e50fbaf0a1f6575245b6f",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/12/Harness-CTV-OTT-to-Peak-Performance.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 111506,
+      "sha256": "faf793a4fd2b554774b2c24cfa38c91d0720a116cc6919e22e715aa649c02fa3"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/12/Harness-CTV-OTT-to-Peak-Performance-1.jpg",
+      "filename": "harness-ctv-ott-to-peak-performance-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 111506,
+      "sha256": "faf793a4fd2b554774b2c24cfa38c91d0720a116cc6919e22e715aa649c02fa3"
+    }
+  ]
+}

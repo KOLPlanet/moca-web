@@ -1,0 +1,62 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/moca-triumphs-at-adtech-india.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/moca-triumphs-at-adtech-india.html",
+  "sourceId": "3335",
+  "scrapedAt": "2026-07-20T11:35:51.985Z",
+  "sourceHash": "735c8676845c57e71266cbdd0e789e5653a73e0c55bb0e04edc05bedc55f79e0",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/03/screenshot-20240318-100731.png",
+      "filename": "cover.png",
+      "contentType": "image/png",
+      "bytes": 1438482,
+      "sha256": "3c1cb029f3c64bba7386b441f88484682c2e8bdcef3bf57ffb2bb4465b101030"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/03/image.png",
+      "filename": "image.png",
+      "contentType": "image/png",
+      "bytes": 2766307,
+      "sha256": "038f5b8c7ab4dc2ee22701fd51072f7885a29397ec60c13817dd56df5a59c33d"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/03/20240315-091758.jpg",
+      "filename": "20240315-091758.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 854532,
+      "sha256": "958b7f4712fe5ed1bbc15d8dc0b20dd39ad24433096ff50ede4c3b74c48bba25"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/03/image-1.png",
+      "filename": "image-1.png",
+      "contentType": "image/png",
+      "bytes": 1392159,
+      "sha256": "b9a6d2bf374735226d741f2aa3c0efbea80db74dc9409030fbfec3963a005f7b"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/03/20240315-092011.jpg",
+      "filename": "20240315-092011.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 810169,
+      "sha256": "ea746b615e65f03c2565e0e65fec46fa7b19d04faf3791a414a79498b47e720a"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/03/20240315-091949.jpg",
+      "filename": "20240315-091949.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 844974,
+      "sha256": "154a485373e6229ec8aae2bb35e5b3aca695b1228499cd8946a76b3dc40fc8a6"
+    }
+  ]
+}

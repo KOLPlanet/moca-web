@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/indonesias-influencer-marketing-boom-19b-in-2023-projected-30b-by-2027.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/indonesias-influencer-marketing-boom-19b-in-2023-projected-30b-by-2027.html",
+  "sourceId": "3230",
+  "scrapedAt": "2026-07-20T11:36:02.809Z",
+  "sourceHash": "ddf4117e615ebdbf82b33a81cdb8e9b4aff6abfc48609f787d4de7556ae9303a",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/12/Indonesia-Influencer-Marketing2.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 177394,
+      "sha256": "c05f6db865ffd987f1b509502ea03172de28d3e3514ca4965acf8a9ae7d2dc80"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/12/image.png",
+      "filename": "image.png",
+      "contentType": "image/png",
+      "bytes": 1727818,
+      "sha256": "0fdf6c644ce04e4377a962e932f42399e9d203a72aa7f64d60de7d0c716e10d8"
+    }
+  ]
+}

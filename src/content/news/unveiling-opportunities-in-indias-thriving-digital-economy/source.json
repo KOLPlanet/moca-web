@@ -1,0 +1,71 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/unveiling-opportunities-in-indias-thriving-digital-economy.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/unveiling-opportunities-in-indias-thriving-digital-economy.html",
+  "sourceId": "3211",
+  "scrapedAt": "2026-07-20T11:36:05.622Z",
+  "sourceHash": "fa1d0a6e57d306f42ac678ba9ab86f84fd9217f02ed39da8b8fe7d804edb0cd5",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/11/Indian-Digital-Economy5.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 232024,
+      "sha256": "3c44a5b4c78bf9de87f1ac7e6b6fdb7620c79ddb2da84e08b6d0ec3470079231"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/11/image-3.png",
+      "filename": "image-3.png",
+      "contentType": "image/png",
+      "bytes": 2229446,
+      "sha256": "15069837ea6cc3935667b2e319ecaa75ff24b228d9bd826821797d781512127a"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/11/image-4.png",
+      "filename": "image-4.png",
+      "contentType": "image/png",
+      "bytes": 1195161,
+      "sha256": "f4db0f191b38b96e4e11176dc5e5e4cab7b91256a8e3c18160f01e31b654e603"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/11/image-6.png",
+      "filename": "image-6.png",
+      "contentType": "image/png",
+      "bytes": 2159173,
+      "sha256": "766a3196ecedbf51093d8661ff8d6717641dde0d7bb7072558f6a47346d10b5c"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/11/image-5.png",
+      "filename": "image-5.png",
+      "contentType": "image/png",
+      "bytes": 1378255,
+      "sha256": "6d7e4217d0961dbf475e9f11109088ea75295ddfef6ea1957fb423970d1d053b"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/11/image-8.png",
+      "filename": "image-8.png",
+      "contentType": "image/png",
+      "bytes": 806676,
+      "sha256": "9d8e1a5283711eef97758efa9cd4ac725c44701c2535c8be4a6788e681f9acb4"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/11/image-9.png",
+      "filename": "image-9.png",
+      "contentType": "image/png",
+      "bytes": 885226,
+      "sha256": "0ea135213d79696091286b0ed4e9fe082d32dd7bb5e28fc4799b19a6110ea855"
+    }
+  ]
+}

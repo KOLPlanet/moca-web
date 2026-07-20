@@ -1,0 +1,44 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/moca-stands-out-in-2023-chinajoy.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/moca-stands-out-in-2023-chinajoy.html",
+  "sourceId": "3019",
+  "scrapedAt": "2026-07-20T11:36:23.416Z",
+  "sourceHash": "2ad48a796743ec3ab8540d794d5389d1605138b8b1dad68d8b7fd498e1f41466",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/08/chinajoy21.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 227686,
+      "sha256": "97d12c0c4ba844bae1990174a89f6ed56043793029628b43e07041b785187a97"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/08/ALL-CJ.png",
+      "filename": "all-cj.png",
+      "contentType": "image/png",
+      "bytes": 2115260,
+      "sha256": "632f2b9b0dbe3b42c05d71c63c137b14900fc81d08c2a6a0ed24c26ea348cf48"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/08/local-CJ.jpg",
+      "filename": "local-cj.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 488528,
+      "sha256": "b3ebf88d25cfbd7afc82e93ea50b8528c2ce45468d7929b571b31cc12e302c6d"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/08/overseas-cj.jpg",
+      "filename": "overseas-cj.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 508384,
+      "sha256": "36c4aaa1cfcc25d8df9ca7dc087d3402e728b67e35e4c702dea156b766b961ca"
+    }
+  ]
+}

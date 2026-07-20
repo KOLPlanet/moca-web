@@ -1,0 +1,53 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/case-study-of-chocodrink.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/case-study-of-chocodrink.html",
+  "sourceId": "2109",
+  "scrapedAt": "2026-07-20T11:37:12.340Z",
+  "sourceHash": "d38e76449778dd2f26b18e92cfbe6d4f88621c6273d22a1e1c487df7f6ac94bb",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2021/09/33-1.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 25492,
+      "sha256": "ab29e9de01c7a27614ca4e71885940ca7205b57a113a33f706f578e2cc6839a8"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2021/09/4.jpg",
+      "filename": "4.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 42107,
+      "sha256": "9b3b12890a2146930c12fbe2f62e2b216c553060ae7093755285a4bd149b9baa"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2021/09/3.jpg",
+      "filename": "3.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 43193,
+      "sha256": "8fc0a4187ce5ab4a8e58196e6e7734c0e6cb06c6417d0d4ae11d42abfdf25d7f"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2021/09/1-.jpg",
+      "filename": "1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 40313,
+      "sha256": "35dd1f00a93203db1aaba1f8c136b5b9ef1ab71f3ca847eb69c259b04c0b6247"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2021/09/2.jpg",
+      "filename": "2.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 40638,
+      "sha256": "e1c39d99178eee5f4faae68936dc763840ead09416d740836552c3fdf454e1aa"
+    }
+  ]
+}

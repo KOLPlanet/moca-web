@@ -1,0 +1,62 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/indonesia-fintech-market.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/indonesia-fintech-market.html",
+  "sourceId": "2847",
+  "scrapedAt": "2026-07-20T11:36:27.062Z",
+  "sourceHash": "3bae23c1436e7a0d1cc8f42de473c40fe2c30953298ad612b793f28e80eac35c",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/06/Fintech-Market-Trend-Insights-Indonesia5.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 201520,
+      "sha256": "b8a36287582971d353ed45a88829e9e9c7c2d2367aee1f060ce9080083bd078a"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/06/Fintech-India.jpg",
+      "filename": "fintech-india.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 164949,
+      "sha256": "49c2eacea942b812337f8b15a898bd31eb996d03c1c1d7ea606a3f01ed06a823"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/06/image.png",
+      "filename": "image.png",
+      "contentType": "image/png",
+      "bytes": 690746,
+      "sha256": "3ce59c126fd1fcac6b86416c0bb63b3894550c7ea62903d3d53ac695f2d4bf17"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/06/image-1.png",
+      "filename": "image-1.png",
+      "contentType": "image/png",
+      "bytes": 96675,
+      "sha256": "4e357772d957d1d9dfbb15199519733bfb757dd94662fe51c9514926f82e0637"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/06/image-2.png",
+      "filename": "image-2.png",
+      "contentType": "image/png",
+      "bytes": 151906,
+      "sha256": "ea48c1b78329ee3752b398e8d362cbc831440410f069cf93e160eafd94d44999"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/06/image-3.png",
+      "filename": "image-3.png",
+      "contentType": "image/png",
+      "bytes": 159725,
+      "sha256": "740e7c7ca0ed4f60e6de8883255026925efb4a1ac59d472124bff51660572928"
+    }
+  ]
+}

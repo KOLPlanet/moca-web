@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/vietnamese-markets-remain-plagued-by-pandemic-fluctuations.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/vietnamese-markets-remain-plagued-by-pandemic-fluctuations.html",
+  "sourceId": "2353",
+  "scrapedAt": "2026-07-20T11:36:59.561Z",
+  "sourceHash": "015776ee7662f412b772f1cbbbf20910936328c68161a452401e4eee2ae29dc9",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2022/02/%E6%9C%AA%E6%A0%87%E9%A2%98-3.png",
+      "filename": "cover.png",
+      "contentType": "image/png",
+      "bytes": 106144,
+      "sha256": "5d16e4dbd2c1c817c33f18ebcddffdd98e5e0eb243cbf4d31f92d84fc920fd51"
+    }
+  ]
+}

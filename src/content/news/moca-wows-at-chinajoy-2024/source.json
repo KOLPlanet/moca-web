@@ -1,0 +1,35 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/moca-wows-at-chinajoy-2024.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/moca-wows-at-chinajoy-2024.html",
+  "sourceId": "3456",
+  "scrapedAt": "2026-07-20T11:35:37.326Z",
+  "sourceHash": "d9e8467d3e8b74fc9c7d23f66c710aa12291fa6f7c2c3933996fb3a72addf7b7",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/07/chinajoy3.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 261896,
+      "sha256": "8275e392ae5636694ce4a6b819257040471f54303380a177ba0f0f2ba99ea8c6"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/07/cj.png",
+      "filename": "cj.png",
+      "contentType": "image/png",
+      "bytes": 2682116,
+      "sha256": "17a962394886ece503435203cacf288d575776a4fa589808aa4e2a174dd279b4"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/07/IMG_20240728_121742.jpg",
+      "filename": "img-20240728-121742.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 4257477,
+      "sha256": "2814a3b54728bbbdb781f8762fd7608c4cc9a034a5b0d579e74bc2334443ab02"
+    }
+  ]
+}

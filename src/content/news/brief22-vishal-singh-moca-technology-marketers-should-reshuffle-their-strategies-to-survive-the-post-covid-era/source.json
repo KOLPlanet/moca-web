@@ -1,0 +1,44 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/brief22-vishal-singh-moca-technology-marketers-should-reshuffle-their-strategies-to-survive-the-post-covid-era.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/brief22-vishal-singh-moca-technology-marketers-should-reshuffle-their-strategies-to-survive-the-post-covid-era.html",
+  "sourceId": "2365",
+  "scrapedAt": "2026-07-20T11:36:58.420Z",
+  "sourceHash": "7d0d2c555620caa26dd7cf3771a2f5fbf6e9b95b33a37cd9c483b80309f9345b",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2022/03/IMAGE-brief22-vishal-singh-moca-technology-yearender-MEDIABRIEF.png",
+      "filename": "cover.png",
+      "contentType": "image/png",
+      "bytes": 70056,
+      "sha256": "2507e439d7c06b4e8c6a702714906f4095bd3809031fca257adb98aed542521c"
+    },
+    {
+      "role": "body",
+      "alt": "IMAGE-brief22-vishal-singh-moca-technology-yearender-MEDIABRIEF-3.png",
+      "originalUrl": "https://mediabrief.com/wp-content/uploads/2022/02/IMAGE-brief22-vishal-singh-moca-technology-yearender-MEDIABRIEF-3.png",
+      "filename": "image-brief22-vishal-singh-moca-technology-yearender-mediabrief-3.png",
+      "contentType": "image/png",
+      "bytes": 78594,
+      "sha256": "dc50ce1719cd04559c3641f7655e1e92f5c839bf2703bc2761e6842d92270847"
+    },
+    {
+      "role": "body",
+      "alt": "IMAGE-brief22-vishal-singh-moca-technology-yearender-MEDIABRIEF-2.png",
+      "originalUrl": "https://mediabrief.com/wp-content/uploads/2022/02/IMAGE-brief22-vishal-singh-moca-technology-yearender-MEDIABRIEF-2.png",
+      "filename": "image-brief22-vishal-singh-moca-technology-yearender-mediabrief-2.png",
+      "contentType": "image/png",
+      "bytes": 80988,
+      "sha256": "d67f7d24f8b55dcf295743a3eea12b47d40c0092b9b8ca8b4d21b321eedd754a"
+    },
+    {
+      "role": "body",
+      "alt": "IMAGE-brief22-vishal-singh-moca-technology-yearender-MEDIABRIEF-1.png",
+      "originalUrl": "https://mediabrief.com/wp-content/uploads/2022/02/IMAGE-brief22-vishal-singh-moca-technology-yearender-MEDIABRIEF-1.png",
+      "filename": "image-brief22-vishal-singh-moca-technology-yearender-mediabrief-1.png",
+      "contentType": "image/png",
+      "bytes": 81007,
+      "sha256": "eb584b08f5411d58e8bcf4efe000c02fb645f4c29d6d570a3df1816ad53ee767"
+    }
+  ]
+}

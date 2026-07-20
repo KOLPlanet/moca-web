@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/chat-gpt-a-friend-or-foe-to-marketers.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/chat-gpt-a-friend-or-foe-to-marketers.html",
+  "sourceId": "2572",
+  "scrapedAt": "2026-07-20T11:36:36.901Z",
+  "sourceHash": "49443cc17e4941bfd296d51bd0464bf17f087aaf2a75d8b5d49e34222b36c54a",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/02/chat-gpt.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 130852,
+      "sha256": "4c0514a75ee3513de1f0854497aa516f0e780452f0d3f973964ed24951704f0b"
+    }
+  ]
+}

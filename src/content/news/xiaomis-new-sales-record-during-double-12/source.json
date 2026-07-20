@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/xiaomis-new-sales-record-during-double-12.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/xiaomis-new-sales-record-during-double-12.html",
+  "sourceId": "1952",
+  "scrapedAt": "2026-07-20T11:37:15.513Z",
+  "sourceHash": "0a7fd5d425e5e8cc919c33227c85fd3864438c293a38eb9c19eeae826becbd4b",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/12/300_150%E5%B0%8F%E7%B1%B3.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 43361,
+      "sha256": "6f2a4b22e1909348386dc807e00c48b3018ba4a69e24241c317f86f302c84dc0"
+    }
+  ]
+}

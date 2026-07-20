@@ -1,0 +1,53 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/mocas-global-footprint-in-june.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/mocas-global-footprint-in-june.html",
+  "sourceId": "2914",
+  "scrapedAt": "2026-07-20T11:36:25.107Z",
+  "sourceHash": "4f674fbeeb169974c171646d63f263760309607fe6fc22fc2c521c533d5de6ac",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/06/featured-image-edited-1.png",
+      "filename": "cover.png",
+      "contentType": "image/png",
+      "bytes": 1082712,
+      "sha256": "2abc127a4bb2f8dd6f064bbdc201d1eeb7fbf33047cc9571f6f9dc776fe50066"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/06/featured-image-edited.png",
+      "filename": "featured-image-edited.png",
+      "contentType": "image/png",
+      "bytes": 1082712,
+      "sha256": "2abc127a4bb2f8dd6f064bbdc201d1eeb7fbf33047cc9571f6f9dc776fe50066"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/06/Picture_1.jpg",
+      "filename": "picture-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 414605,
+      "sha256": "5b468c53e6abfc255e99167b4e89d9dbf01e4e29349aaaefa987dc458ee41bf9"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/06/Picture_2.jpg",
+      "filename": "picture-2.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 112195,
+      "sha256": "1d374887b7b1193d8a43f1d1b1487233220cf265d1413a0127e38ad56ac90ed6"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/06/Screenshot-2023-06-27-171443.jpg",
+      "filename": "screenshot-2023-06-27-171443.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 44594,
+      "sha256": "3670e574304c933c859e8fc0522baa602b66eec4446c1fd9fd200d7cd52c15a8"
+    }
+  ]
+}

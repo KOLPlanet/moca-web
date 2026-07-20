@@ -1,0 +1,62 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/2024-influencer-market-landscape.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/2024-influencer-market-landscape.html",
+  "sourceId": "3306",
+  "scrapedAt": "2026-07-20T11:35:56.976Z",
+  "sourceHash": "02b30e3d3b1ecae578a8f591def29e7e4fc2c759a3bf078ee3b8d538914dab19",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/02/2024-Influencer-Market-Landscape.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 65664,
+      "sha256": "d24920a6bfae993514baafc52d8f473921431f4c86a58110734fa938147e093a"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/02/2024-Influencer-Market-Landscape-1.jpg",
+      "filename": "2024-influencer-market-landscape-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 65664,
+      "sha256": "d24920a6bfae993514baafc52d8f473921431f4c86a58110734fa938147e093a"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/02/image.png",
+      "filename": "image.png",
+      "contentType": "image/png",
+      "bytes": 1650334,
+      "sha256": "612bcfcff24558d70820e9f2cac4d3da0fe6523eb3e54f495ce9577c3d614c0b"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/02/image-1.png",
+      "filename": "image-1.png",
+      "contentType": "image/png",
+      "bytes": 3038849,
+      "sha256": "eaaaca4103460601e17b12bfab5a027897c74bfc1af1456c3395eeef0f4f42ca"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/02/image-4.png",
+      "filename": "image-4.png",
+      "contentType": "image/png",
+      "bytes": 145416,
+      "sha256": "253189d458241eca807bfa2d104305cf635d9b9d31537f901f395dd485b725ca"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/02/image-3.png",
+      "filename": "image-3.png",
+      "contentType": "image/png",
+      "bytes": 2149113,
+      "sha256": "a95f009ba1ec22f38e5753f453b8a61e8ae43e163aee73143b6f90123246f42a"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/the-impact-of-ipl-on-india-advertising-and-gaming.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/the-impact-of-ipl-on-india-advertising-and-gaming.html",
+  "sourceId": "2702",
+  "scrapedAt": "2026-07-20T11:36:33.259Z",
+  "sourceHash": "64c05dbdbfa95e095466e73db3b850a86b04cd95bc0fb8f95a2a0234b162841a",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/04/IPL-official-website.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 113386,
+      "sha256": "5fcc9592d6386bbdc65af8375d784b0639087b927120c4fd77c89844ba235917"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/04/IPL.jpg",
+      "filename": "ipl.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 113386,
+      "sha256": "5fcc9592d6386bbdc65af8375d784b0639087b927120c4fd77c89844ba235917"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/04/%E5%9B%BE%E7%89%871.jpg",
+      "filename": "1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 48313,
+      "sha256": "2f384d741f7cf36f484e159623fbab4ada175df17520794c63e7b023606052c9"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/04/IPL-2.jpg",
+      "filename": "ipl-2.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 53919,
+      "sha256": "081915d81bb20efa39f08cabf2c50f1183fedf5e2f48b2de0dd3c6bf59b9830d"
+    },
+    {
+      "role": "body",
+      "alt": "IPL advertising growing",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/04/CREDABLE1.png",
+      "filename": "credable1.png",
+      "contentType": "image/png",
+      "bytes": 73483,
+      "sha256": "589ddaa611844e8c76e5c862a0a8d3f8c3bbb9aff4064cc7900efef1dceccf4e"
+    }
+  ]
+}

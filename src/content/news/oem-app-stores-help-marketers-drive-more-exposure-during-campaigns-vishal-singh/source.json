@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/oem-app-stores-help-marketers-drive-more-exposure-during-campaigns-vishal-singh.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/oem-app-stores-help-marketers-drive-more-exposure-during-campaigns-vishal-singh.html",
+  "sourceId": "2176",
+  "scrapedAt": "2026-07-20T11:37:02.174Z",
+  "sourceHash": "c30efa4633da3f5ead95d90049a07531deaf016f1b408ec47a7091587644bba3",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2021/11/oem.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 55696,
+      "sha256": "be10b992b45d8058ef556be87ce3115248c7bae4a5dcbf87c268273ab4cfb675"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2021/11/vishal-main-image-1-1.jpeg",
+      "filename": "vishal-main-image-1-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 105566,
+      "sha256": "a0a86b59e79c3b6a84dd59c259cc67ec0ad5bc8fb4677b8f5b79ea5542823d86"
+    }
+  ]
+}

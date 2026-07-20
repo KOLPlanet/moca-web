@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/the-evolution-of-influencer-marketing-in-the-creator-economy.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/the-evolution-of-influencer-marketing-in-the-creator-economy.html",
+  "sourceId": "3400",
+  "scrapedAt": "2026-07-20T11:35:44.233Z",
+  "sourceHash": "9ab69a26e3ed35b198adec9ef33d4807f6a45aa563e6884301b9302e839d4c91",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/05/The-Evolution-of-Influencer-Marketing2-2.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 187245,
+      "sha256": "314d2565de21d8db358c262db56b9b4f95e8dcd105b1e21db157ca7eba23939c"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/05/The-Evolution-of-Influencer-Marketing2-1.jpg",
+      "filename": "the-evolution-of-influencer-marketing2-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 187245,
+      "sha256": "314d2565de21d8db358c262db56b9b4f95e8dcd105b1e21db157ca7eba23939c"
+    }
+  ]
+}

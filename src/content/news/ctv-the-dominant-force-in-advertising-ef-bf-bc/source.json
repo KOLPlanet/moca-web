@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/ctv-the-dominant-force-in-advertising%ef%bf%bc.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/ctv-the-dominant-force-in-advertising%ef%bf%bc.html",
+  "sourceId": "3518",
+  "scrapedAt": "2026-07-20T11:35:34.806Z",
+  "sourceHash": "2a38ab129764319bb3328c512aca00bbcd3fc66a3aa91ed2e46cad40f24b1738",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/08/CTV-the-Dominant-Force-of-Advertising.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 123061,
+      "sha256": "aed0918078f7e0c2f58582aa040673fcf77881127b829d3b779351f6258e5210"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/08/CTV-the-Dominant-Force-of-Advertising-1.jpg",
+      "filename": "ctv-the-dominant-force-of-advertising-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 123061,
+      "sha256": "aed0918078f7e0c2f58582aa040673fcf77881127b829d3b779351f6258e5210"
+    }
+  ]
+}

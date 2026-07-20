@@ -1,0 +1,35 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/rising-trends-and-challenges-of-indonesia-fmcg-market.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/rising-trends-and-challenges-of-indonesia-fmcg-market.html",
+  "sourceId": "3042",
+  "scrapedAt": "2026-07-20T11:36:19.534Z",
+  "sourceHash": "ed872f4376be5d503fb2e7c0ffff8b8d385809d47b251e63e7132314849448e1",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/08/FMCG-Indonesia.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 146866,
+      "sha256": "8711c66385042f23961e9eb336e54fe35d62b26313eaf434cb5af1214783def5"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/08/image.png",
+      "filename": "image.png",
+      "contentType": "image/png",
+      "bytes": 2927941,
+      "sha256": "1b5e1620800af1c0d292986b8209f9db34b09c87c8600f433674a5ca85aef3ec"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/08/image-1.png",
+      "filename": "image-1.png",
+      "contentType": "image/png",
+      "bytes": 1870262,
+      "sha256": "db78fde637aa08903e4d05cdfa0c4b4a882a566ad1f8593c1d25e561ee826565"
+    }
+  ]
+}

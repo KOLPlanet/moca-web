@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/unveiling-the-remarkable-presence-of-moca-at-ias-2023.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/unveiling-the-remarkable-presence-of-moca-at-ias-2023.html",
+  "sourceId": "3181",
+  "scrapedAt": "2026-07-20T11:36:08.138Z",
+  "sourceHash": "39d8a63f2436b3b90adabea6cef44af4cdf0903e6c87ac9cd1561422c02f491b",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/Article-2.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 330778,
+      "sha256": "e9887396ac703e183e5082b9de661d801a0edcc43d8ae939e0b17b4e2e616c04"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/Article-1.jpg",
+      "filename": "article-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 152167,
+      "sha256": "8451d0c12cfc2cafe39d8e5b93267559d7b2eaa26d304d52edc1a1395031fec9"
+    }
+  ]
+}

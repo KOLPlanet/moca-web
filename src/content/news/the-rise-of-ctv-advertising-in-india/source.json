@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/the-rise-of-ctv-advertising-in-india.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/the-rise-of-ctv-advertising-in-india.html",
+  "sourceId": "2601",
+  "scrapedAt": "2026-07-20T11:36:36.340Z",
+  "sourceHash": "f8fdaf1e3e7cdeb4bde09a6392cb93ae1fa3879157e22c7dcc4eb4ae2749decd",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/12/connected-tv-streaming-success-and-growth1.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 282449,
+      "sha256": "5fe230d17d42621b9d891d65a70c198cc759808a5ceedd9d14fd0d267d97870c"
+    }
+  ]
+}

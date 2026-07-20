@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/indias-digital-ad-spend-hits-new-heights.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/indias-digital-ad-spend-hits-new-heights.html",
+  "sourceId": "4384",
+  "scrapedAt": "2026-07-20T11:35:28.097Z",
+  "sourceHash": "9dce83972f53cf41517a1b52ecf1b7fd8061042eb67be70240da1ba5020597c1",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2025/01/The-State-of-eCommerce-App-Marketing-2024-.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 102463,
+      "sha256": "700de177b651c70f48c7fd7bea906053893329704ddc884b31815d5bbf2e723e"
+    }
+  ]
+}

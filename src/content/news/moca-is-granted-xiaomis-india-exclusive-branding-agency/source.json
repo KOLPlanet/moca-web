@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/moca-is-granted-xiaomis-india-exclusive-branding-agency.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/moca-is-granted-xiaomis-india-exclusive-branding-agency.html",
+  "sourceId": "1841",
+  "scrapedAt": "2026-07-20T11:37:17.242Z",
+  "sourceHash": "8914e324d86c92538683be8298157cc088ac7ab4a26a46ba273bab2d64df793d",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2019/10/xiao-moca%E7%BD%91%E7%AB%99%E6%96%B0%E9%97%BB%E8%83%8C%E6%99%AF.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 18322,
+      "sha256": "7d127b54a1ed6924a239eead1e79c6e484e5b9f13dbb4888510f246309390cdf"
+    }
+  ]
+}

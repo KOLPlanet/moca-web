@@ -1,0 +1,35 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/t-commerce-online-shopping-game-changer.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/t-commerce-online-shopping-game-changer.html",
+  "sourceId": "3059",
+  "scrapedAt": "2026-07-20T11:36:17.602Z",
+  "sourceHash": "7515d5e18d60b757733c5138c300de0af17bfdaa421f01fcb05e57a276cceb4c",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/09/CTV.png",
+      "filename": "cover.png",
+      "contentType": "image/png",
+      "bytes": 78412,
+      "sha256": "4af183fcc47e26b0f3ceb80e105efc54bb75450977c5eabe976142ec2c717735"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/09/CTV-1.png",
+      "filename": "ctv-1.png",
+      "contentType": "image/png",
+      "bytes": 78412,
+      "sha256": "4af183fcc47e26b0f3ceb80e105efc54bb75450977c5eabe976142ec2c717735"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/09/FMCG-CTV.png",
+      "filename": "fmcg-ctv.png",
+      "contentType": "image/png",
+      "bytes": 2958997,
+      "sha256": "728d022ffb912a162c36bc9e89d2206177a92e3b32b356c6daf518a16001a87f"
+    }
+  ]
+}

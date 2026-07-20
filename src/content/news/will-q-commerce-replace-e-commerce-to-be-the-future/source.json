@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/will-q-commerce-replace-e-commerce-to-be-the-future.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/will-q-commerce-replace-e-commerce-to-be-the-future.html",
+  "sourceId": "2295",
+  "scrapedAt": "2026-07-20T11:37:01.302Z",
+  "sourceHash": "20c64af6d796fcb1eb667de6fc2e79e4717067aa48e3a24885bc65331691ef43",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2021/12/12.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 40253,
+      "sha256": "c30cc27b20fa35137ccff77d0217366ca605fb83655a515af8467c80db2fb808"
+    }
+  ]
+}

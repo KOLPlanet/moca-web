@@ -1,0 +1,26 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/navigating-opportunities-and-challenges-in-india-gaming-industry.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/navigating-opportunities-and-challenges-in-india-gaming-industry.html",
+  "sourceId": "3448",
+  "scrapedAt": "2026-07-20T11:35:38.715Z",
+  "sourceHash": "810613bf76f5810146d8a751df58b19cee0a4f1e4348fa5fdd75a4a0def24337",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/07/GST-Rules-Impact-on-India-Gaming-Market.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 173828,
+      "sha256": "daea9dd42d5125a5266348ebfa20dcf7f780903882b0cb515878c5cf9e3937a1"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2024/07/image.png",
+      "filename": "image.png",
+      "contentType": "image/png",
+      "bytes": 2390096,
+      "sha256": "4b83bdf5198affcf96f0203be6c3b936e0f65b46a3453fc8b9ef7155c4209118"
+    }
+  ]
+}

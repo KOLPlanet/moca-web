@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/what-has-made-digital-advertising-industry-a-billion-dollar-industry-in-vietnam.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/what-has-made-digital-advertising-industry-a-billion-dollar-industry-in-vietnam.html",
+  "sourceId": "2475",
+  "scrapedAt": "2026-07-20T11:36:41.424Z",
+  "sourceHash": "2f6ec92cb843684019f65e6123ae1b9cbc8ee3eed2977eafe965fdf14daa7513",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2022/06/%E6%9C%AA%E6%A0%87%E9%A2%98-5-1.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 270017,
+      "sha256": "05ffa669c4b44b5f7aa936a8390afa762676968190e8af772c3f2fc619f6f538"
+    }
+  ]
+}

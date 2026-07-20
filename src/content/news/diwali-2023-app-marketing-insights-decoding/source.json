@@ -1,0 +1,98 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/diwali-2023-app-marketing-insights-decoding.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/diwali-2023-app-marketing-insights-decoding.html",
+  "sourceId": "3149",
+  "scrapedAt": "2026-07-20T11:36:11.490Z",
+  "sourceHash": "9ad35e1727cf5f8905f93cef11826f7c061086bf6e25c4ce6fab266e1aa16cf5",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/diwali2023-2.jpg",
+      "filename": "cover.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 153851,
+      "sha256": "6eda48fb81a1fab764573f97e3f358896711d2558f2d42d4a5170b3864cb200e"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/diwali2023-2-1.jpg",
+      "filename": "diwali2023-2-1.jpg",
+      "contentType": "image/jpeg",
+      "bytes": 153851,
+      "sha256": "6eda48fb81a1fab764573f97e3f358896711d2558f2d42d4a5170b3864cb200e"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/image-4.png",
+      "filename": "image-4.png",
+      "contentType": "image/png",
+      "bytes": 1891587,
+      "sha256": "4937f0b574eb4f42deb46bf660d3e9c09c4a0cd47762c9c8b0eb8f0a89d1d8a9"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/image-5.png",
+      "filename": "image-5.png",
+      "contentType": "image/png",
+      "bytes": 1087923,
+      "sha256": "ddd03146d9ea0ccbedbf53b7b5b7c4cd258d12d3e921b2cc6214e65c9d442405"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/image-6.png",
+      "filename": "image-6.png",
+      "contentType": "image/png",
+      "bytes": 1483091,
+      "sha256": "de19753d1bfd7a8249ecb552764ccc9b79d84b78ea275d59a18545cdabd015ec"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/image-7.png",
+      "filename": "image-7.png",
+      "contentType": "image/png",
+      "bytes": 1105167,
+      "sha256": "76944c5e9b8b9419c076d0af896349664f577bf44acbb27be0f112dcb7c01816"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/image-8.png",
+      "filename": "image-8.png",
+      "contentType": "image/png",
+      "bytes": 1089161,
+      "sha256": "a6b7211873886fdcec1b72dedf6bdb782dede02b952c48793ed785715a7001d4"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/image-9.png",
+      "filename": "image-9.png",
+      "contentType": "image/png",
+      "bytes": 1061392,
+      "sha256": "7260e353a2b7a5c2b58ffdb5e8d2ab86ecddef18bb7bc44bdf3ea56f5ca3fce7"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/image-10.png",
+      "filename": "image-10.png",
+      "contentType": "image/png",
+      "bytes": 46720,
+      "sha256": "35cec38fe7cd5c5417ef1d61869ea6bda6b7a6448aff3c09272a27103f8972d6"
+    },
+    {
+      "role": "body",
+      "alt": "",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2023/10/image-11.png",
+      "filename": "image-11.png",
+      "contentType": "image/png",
+      "bytes": 46269,
+      "sha256": "ce960d1de5400753e3255d7193de756fcd9dbed245438551f32bb0e0e0f11df5"
+    }
+  ]
+}

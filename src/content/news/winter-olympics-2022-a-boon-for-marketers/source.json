@@ -1,0 +1,17 @@
+{
+  "sourceUrl": "https://www.moca-tech.net/news/winter-olympics-2022-a-boon-for-marketers.html",
+  "canonicalUrl": "https://www.moca-tech.net/news/winter-olympics-2022-a-boon-for-marketers.html",
+  "sourceId": "2325",
+  "scrapedAt": "2026-07-20T11:37:00.137Z",
+  "sourceHash": "f52005969d59560e94aa02a93a8a52faaaf7b5c6b7d3a65faecc94cd8864c96a",
+  "media": [
+    {
+      "role": "cover",
+      "originalUrl": "https://www.moca-tech.net/wp-content/uploads/2022/02/20220215_181817_0000.png",
+      "filename": "cover.png",
+      "contentType": "image/png",
+      "bytes": 85561,
+      "sha256": "92b9e12ab651157f3add8d5edc75bb87086bad237a7d84b89ec6d9c0dc3bb9e8"
+    }
+  ]
+}
