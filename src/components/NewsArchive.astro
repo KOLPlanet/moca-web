@@ -1,0 +1,143 @@
+---
+import type { NewsEntry } from '../lib/news';
+import {
+  getArchivePageHref,
+  getTaxonomySummaries,
+} from '../lib/news';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsCard from './NewsCard.astro';
+import Pagination from './Pagination.astro';
+
+interface Props {
+  title: string;
+  eyebrow: string;
+  description: string;
+  entries: NewsEntry[];
+  allEntries: NewsEntry[];
+  currentPage: number;
+  totalPages: number;
+  totalEntries: number;
+  basePath: string;
+  activeFilter?: {
+    kind: 'category' | 'tag';
+    label: string;
+    slug: string;
+  };
+}
+
+const {
+  title,
+  eyebrow,
+  description,
+  entries,
+  allEntries,
+  currentPage,
+  totalPages,
+  totalEntries,
+  basePath,
+  activeFilter,
+} = Astro.props;
+const categories = getTaxonomySummaries(allEntries, 'categories');
+const pageDescription =
+  currentPage === 1 ? description : `${description} Page ${currentPage} of ${totalPages}.`;
+const canonicalUrl = getArchivePageHref(basePath, currentPage);
+---
+
+<BaseLayout title={title} description={pageDescription} canonicalUrl={canonicalUrl}>
+  <section class="page-hero page-hero--news">
+    <div class="container">
+      <p class="eyebrow eyebrow--light">{eyebrow}</p>
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </div>
+  </section>
+
+  <section class="news-archive">
+    <div class="container news-page-layout">
+      <div class="news-results">
+        <div class="news-results__header">
+          <p>
+            <strong>{totalEntries}</strong> {totalEntries === 1 ? 'article' : 'articles'}
+          </p>
+          <p>Page {currentPage} of {totalPages}</p>
+        </div>
+
+        {
+          activeFilter && (
+            <div class="news-results__filters" aria-label="Active news filter">
+              <span class="news-results__filters-label">
+                Active {activeFilter.kind}
+              </span>
+              <a
+                class="filter-chip"
+                href="/news"
+                aria-label={`Clear ${activeFilter.kind} filter: ${activeFilter.label}`}
+              >
+                <span>{activeFilter.label}</span>
+                <span class="filter-chip__remove" aria-hidden="true">×</span>
+              </a>
+            </div>
+          )
+        }
+
+        <div class="news-list">
+          {
+            entries.map((entry, index) => (
+              <NewsCard
+                entry={entry}
+                horizontal
+                headingLevel="h2"
+                priority={index === 0}
+              />
+            ))
+          }
+        </div>
+
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          basePath={basePath}
+        />
+      </div>
+
+      <aside class="news-sidebar" aria-label="News categories">
+        <div class="news-sidebar__panel">
+          <p class="eyebrow">Browse</p>
+          <h2>Categories</h2>
+          <div class="topic-list">
+            {
+              categories.map((category) => {
+                const isActive =
+                  activeFilter?.kind === 'category' &&
+                  activeFilter.slug === category.slug;
+
+                return (
+                  <a
+                    class:list={[isActive && 'is-active']}
+                    href={`/news/category/${category.slug}`}
+                    aria-current={isActive ? 'page' : undefined}
+                  >
+                    <span>{category.name}</span>
+                    <strong
+                      aria-label={`${category.count} ${
+                        category.count === 1 ? 'article' : 'articles'
+                      }`}
+                    >
+                      {category.count}
+                    </strong>
+                  </a>
+                );
+              })
+            }
+          </div>
+        </div>
+
+        <div class="sidebar-cta">
+          <p class="eyebrow eyebrow--light">Have a market question?</p>
+          <h2>Let’s find the signal.</h2>
+          <a class="button button--light" href="/#contact">Contact MOCA</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

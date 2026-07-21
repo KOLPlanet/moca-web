@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+import NewsArchive from '../../../components/NewsArchive.astro';
+import {
+  filterNewsByTaxonomy,
+  getTaxonomyLabel,
+  getTaxonomySummaries,
+  paginateNews,
+  sortNewsEntries,
+} from '../../../lib/news';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const allEntries = sortNewsEntries(
+    await getCollection('news', ({ data }) => !data.draft),
+  );
+  const tags = getTaxonomySummaries(allEntries, 'tags');
+
+  return tags.flatMap((tag) => {
+    const matchingEntries = filterNewsByTaxonomy(allEntries, 'tags', tag.slug);
+    const totalPages = paginateNews(matchingEntries, 1).totalPages;
+
+    return Array.from({ length: totalPages }, (_, index) => {
+      const currentPage = index + 1;
+      return {
+        params: {
+          path: currentPage === 1 ? tag.slug : `${tag.slug}/page/${currentPage}`,
+        },
+        props: {
+          allEntries,
+          matchingEntries,
+          currentPage,
+          slug: tag.slug,
+        },
+      };
+    });
+  });
+}
+
+const {
+  allEntries,
+  matchingEntries,
+  currentPage,
+  slug,
+} = Astro.props;
+const page = paginateNews(matchingEntries, currentPage);
+const label = getTaxonomyLabel(allEntries, 'tags', slug) || slug;
+---
+
+<NewsArchive
+  title={label}
+  eyebrow="News tag"
+  description={`Articles tagged with ${label}.`}
+  entries={page.entries}
+  allEntries={allEntries}
+  currentPage={page.currentPage}
+  totalPages={page.totalPages}
+  totalEntries={page.totalEntries}
+  basePath={`/news/tag/${slug}`}
+  activeFilter={{ kind: 'tag', label, slug }}
+/>

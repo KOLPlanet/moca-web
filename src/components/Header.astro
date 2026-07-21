@@ -1,5 +1,10 @@
 ---
 import { site } from '../config/site';
+
+const currentPath = Astro.url.pathname;
+const isCurrent = (href: string) =>
+  href === '/news' &&
+  (currentPath === '/news' || currentPath.startsWith('/news/'));
 ---
 
 <header class="site-header">
@@ -14,13 +19,19 @@ import { site } from '../config/site';
       aria-expanded="false"
       aria-controls="site-navigation"
     >
-      Menu
+      <span>Menu</span>
     </button>
 
     <nav id="site-navigation" class="site-navigation" aria-label="Primary navigation">
       {
         site.navigation.map((item) => (
-          <a href={item.href} data-nav-link>{item.label}</a>
+          <a
+            href={item.href}
+            aria-current={isCurrent(item.href) ? 'page' : undefined}
+            data-nav-link
+          >
+            {item.label}
+          </a>
         ))
       }
     </nav>
@@ -48,5 +59,12 @@ import { site } from '../config/site';
 
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 800) closeMenu();
+  });
+
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeMenu();
+      toggle?.focus();
+    }
   });
 </script>

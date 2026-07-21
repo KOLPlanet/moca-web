@@ -1,0 +1,86 @@
+---
+import { getArchivePageHref } from '../lib/news';
+
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  basePath: string;
+}
+
+const { currentPage, totalPages, basePath } = Astro.props;
+
+type PaginationItem = number | 'ellipsis';
+
+function getPaginationItems(): PaginationItem[] {
+  if (totalPages <= 7) {
+    return Array.from({ length: totalPages }, (_, index) => index + 1);
+  }
+
+  const pages = new Set([
+    1,
+    totalPages,
+    currentPage - 1,
+    currentPage,
+    currentPage + 1,
+  ]);
+  const sorted = [...pages]
+    .filter((page) => page >= 1 && page <= totalPages)
+    .sort((a, b) => a - b);
+  const items: PaginationItem[] = [];
+
+  sorted.forEach((page, index) => {
+    const previous = sorted[index - 1];
+    if (previous && page - previous > 1) items.push('ellipsis');
+    items.push(page);
+  });
+
+  return items;
+}
+
+const items = getPaginationItems();
+---
+
+{
+  totalPages > 1 && (
+    <nav class="pagination" aria-label="News pagination">
+      <a
+        class:list={['pagination__direction', currentPage === 1 && 'is-disabled']}
+        href={currentPage === 1 ? undefined : getArchivePageHref(basePath, currentPage - 1)}
+        aria-disabled={currentPage === 1 ? 'true' : undefined}
+        tabindex={currentPage === 1 ? -1 : undefined}
+      >
+        <span aria-hidden="true">←</span> Previous
+      </a>
+
+      <div class="pagination__pages">
+        {items.map((item) =>
+          item === 'ellipsis' ? (
+            <span class="pagination__ellipsis" aria-hidden="true">
+              …
+            </span>
+          ) : (
+            <a
+              href={getArchivePageHref(basePath, item)}
+              aria-current={item === currentPage ? 'page' : undefined}
+            >
+              <span class="sr-only">Page </span>
+              {item}
+            </a>
+          ),
+        )}
+      </div>
+
+      <a
+        class:list={[
+          'pagination__direction',
+          currentPage === totalPages && 'is-disabled',
+        ]}
+        href={currentPage === totalPages ? undefined : getArchivePageHref(basePath, currentPage + 1)}
+        aria-disabled={currentPage === totalPages ? 'true' : undefined}
+        tabindex={currentPage === totalPages ? -1 : undefined}
+      >
+        Next <span aria-hidden="true">→</span>
+      </a>
+    </nav>
+  )
+}

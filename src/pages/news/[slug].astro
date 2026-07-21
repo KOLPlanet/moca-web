@@ -6,22 +6,46 @@ import {
   type CollectionEntry,
 } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  getEstimatedReadingMinutes,
+  getTaxonomyCountMap,
+  sortTaxonomyItemsByCount,
+  sortNewsEntries,
+} from '../../lib/news';
 
 export const prerender = true;
 
 export async function getStaticPaths() {
-  const posts = await getCollection('news', ({ data }) => !data.draft);
-  return posts.map((post) => ({
+  const posts = sortNewsEntries(
+    await getCollection('news', ({ data }) => !data.draft),
+  );
+  const taxonomyCounts = {
+    categories: getTaxonomyCountMap(posts, 'categories'),
+    tags: getTaxonomyCountMap(posts, 'tags'),
+  };
+
+  return posts.map((post, index) => ({
     params: { slug: post.data.slug },
-    props: { post },
+    props: {
+      post,
+      taxonomyCounts,
+      newerPost: posts[index - 1],
+      olderPost: posts[index + 1],
+    },
   }));
 }
 
 interface Props {
   post: CollectionEntry<'news'>;
+  taxonomyCounts: {
+    categories: Record<string, number>;
+    tags: Record<string, number>;
+  };
+  newerPost?: CollectionEntry<'news'>;
+  olderPost?: CollectionEntry<'news'>;
 }
 
-const { post } = Astro.props;
+const { post, taxonomyCounts, newerPost, olderPost } = Astro.props;
 const { data } = post;
 const { Content } = await render(post);
 const publishedAt = new Intl.DateTimeFormat('en', {
@@ -29,7 +53,17 @@ const publishedAt = new Intl.DateTimeFormat('en', {
   month: 'long',
   day: 'numeric',
 }).format(data.publishedAt);
-const categories = data.categories.map(({ name }) => name).join(' · ') || 'News';
+const updatedAt = new Intl.DateTimeFormat('en', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(data.updatedAt);
+const readingMinutes = getEstimatedReadingMinutes(post);
+const orderedCategories = sortTaxonomyItemsByCount(
+  data.categories,
+  taxonomyCounts.categories,
+);
+const orderedTags = sortTaxonomyItemsByCount(data.tags, taxonomyCounts.tags);
 ---
 
 <BaseLayout
@@ -42,26 +76,55 @@ const categories = data.categories.map(({ name }) => name).join(' · ') || 'News
     modifiedTime: data.updatedAt.toISOString(),
   }}
 >
-  <article class="article-page">
-    <header class="article-header container">
-      <a class="article-back" href="/news">← All news</a>
-      <p class="news-meta">{categories} · {publishedAt}</p>
+  <div
+    class="reading-progress"
+    role="progressbar"
+    aria-label="Article reading progress"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    data-reading-progress
+  >
+    <span></span>
+  </div>
+
+  <article class="article-page" data-reading-article>
+    <header class="article-header article-shell">
+      <nav class="article-breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/news">News</a>
+      </nav>
+      <div class="article-header__meta">
+        <div class="article-header__categories">
+          {
+            data.categories.map((category) => (
+              <a href={`/news/category/${category.slug}`}>{category.name}</a>
+            ))
+          }
+        </div>
+        <div class="article-header__details">
+          <time datetime={data.publishedAt.toISOString()}>{publishedAt}</time>
+          <span aria-hidden="true">·</span>
+          <span>{readingMinutes} min read</span>
+        </div>
+      </div>
       <h1>{data.title}</h1>
       <p class="article-summary">{data.summary}</p>
       <p class="article-byline">By {data.author.name}</p>
     </header>
 
-    <div class="article-cover container">
+    <div class="article-cover article-shell">
       <Image
         src={data.cover.src}
         alt={data.cover.alt}
-        widths={[720, 1080, 1440]}
-        sizes="(max-width: 1200px) 100vw, 1160px"
+        widths={[720, 1080, 1280]}
+        sizes="(max-width: 1180px) calc(100vw - 40px), 1120px"
         loading="eager"
       />
     </div>
 
-    <div class="article-layout container">
+    <div class="article-layout article-shell">
       <div class="article-content">
         {
           data.keyTakeaways.length > 0 && (
@@ -84,14 +147,119 @@ const categories = data.categories.map(({ name }) => name).join(' · ') || 'News
             <dd>{publishedAt}</dd>
           </div>
           <div>
-            <dt>Topics</dt>
-            <dd>{categories}</dd>
+            <dt>Reading time</dt>
+            <dd>{readingMinutes} minutes</dd>
+          </div>
+          {
+            data.updatedAt.valueOf() !== data.publishedAt.valueOf() && (
+              <div>
+                <dt>Updated</dt>
+                <dd>{updatedAt}</dd>
+              </div>
+            )
+          }
+          <div>
+            <dt>Categories</dt>
+            <dd class="article-aside__links">
+              {
+                data.categories.map((category) => (
+                  <a href={`/news/category/${category.slug}`}>{category.name}</a>
+                ))
+              }
+            </dd>
           </div>
         </dl>
-        <a href={data.sourceUrl} target="_blank" rel="noopener noreferrer">
-          View original source ↗
-        </a>
       </aside>
     </div>
+
+    <footer class="article-footer article-shell">
+      <div class="article-taxonomy">
+        <section aria-labelledby="article-categories-heading">
+          <p class="eyebrow">Filed under</p>
+          <h2 id="article-categories-heading">Categories</h2>
+          <div class="taxonomy-chips">
+            {
+              orderedCategories.map((category) => (
+                <a href={`/news/category/${category.slug}`}>
+                  <span>{category.name}</span>
+                  <strong>{taxonomyCounts.categories[category.slug] || 0}</strong>
+                </a>
+              ))
+            }
+          </div>
+        </section>
+
+        {
+          data.tags.length > 0 && (
+            <section aria-labelledby="article-tags-heading">
+              <p class="eyebrow">Explore more</p>
+              <h2 id="article-tags-heading">Tags</h2>
+              <div class="taxonomy-chips taxonomy-chips--tags">
+                {orderedTags.map((tag) => (
+                  <a href={`/news/tag/${tag.slug}`}>
+                    <span>{tag.name}</span>
+                    <strong>{taxonomyCounts.tags[tag.slug] || 0}</strong>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )
+        }
+      </div>
+
+      <nav class="article-navigation" aria-label="More news articles">
+        {
+          newerPost ? (
+            <a href={`/news/${newerPost.data.slug}`}>
+              <span class="article-navigation__label">Newer article</span>
+              <strong>{newerPost.data.title}</strong>
+            </a>
+          ) : (
+            <span />
+          )
+        }
+        {
+          olderPost && (
+            <a class="article-navigation__next" href={`/news/${olderPost.data.slug}`}>
+              <span class="article-navigation__label">Older article</span>
+              <strong>{olderPost.data.title}</strong>
+            </a>
+          )
+        }
+      </nav>
+    </footer>
   </article>
 </BaseLayout>
+
+<script>
+  const progress = document.querySelector<HTMLElement>('[data-reading-progress]');
+  const article = document.querySelector<HTMLElement>('[data-reading-article]');
+  let frame: number | undefined;
+
+  const updateReadingProgress = () => {
+    if (!progress || !article) return;
+
+    const articleTop = article.getBoundingClientRect().top + window.scrollY;
+    const articleEnd = articleTop + article.offsetHeight - window.innerHeight;
+    const distance = Math.max(1, articleEnd - articleTop);
+    const ratio = Math.min(
+      1,
+      Math.max(0, (window.scrollY - articleTop) / distance),
+    );
+
+    progress.style.setProperty('--reading-progress', `${ratio}`);
+    progress.setAttribute('aria-valuenow', `${Math.round(ratio * 100)}`);
+    frame = undefined;
+  };
+
+  const requestReadingProgressUpdate = () => {
+    if (frame !== undefined) return;
+    frame = window.requestAnimationFrame(updateReadingProgress);
+  };
+
+  updateReadingProgress();
+  window.addEventListener('scroll', requestReadingProgressUpdate, {
+    passive: true,
+  });
+  window.addEventListener('resize', requestReadingProgressUpdate);
+</script>

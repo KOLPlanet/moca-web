@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import NewsArchive from '../../../components/NewsArchive.astro';
+import { paginateNews, sortNewsEntries } from '../../../lib/news';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const entries = sortNewsEntries(
+    await getCollection('news', ({ data }) => !data.draft),
+  );
+  const totalPages = paginateNews(entries, 1).totalPages;
+
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => {
+    const currentPage = index + 2;
+    return {
+      params: { page: `${currentPage}` },
+      props: { entries, currentPage },
+    };
+  });
+}
+
+const { entries: allEntries, currentPage } = Astro.props;
+const page = paginateNews(allEntries, currentPage);
+---
+
+<NewsArchive
+  title="News"
+  eyebrow="MOCA intelligence"
+  description="Market shifts, platform changes, and practical thinking for teams growing across borders."
+  entries={page.entries}
+  allEntries={allEntries}
+  currentPage={page.currentPage}
+  totalPages={page.totalPages}
+  totalEntries={page.totalEntries}
+  basePath="/news"
+/>

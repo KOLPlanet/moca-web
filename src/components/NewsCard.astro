@@ -1,30 +1,79 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import { getEstimatedReadingMinutes } from '../lib/news';
 
 interface Props {
   entry: CollectionEntry<'news'>;
   horizontal?: boolean;
+  headingLevel?: 'h2' | 'h3';
+  priority?: boolean;
 }
 
-const { entry, horizontal = false } = Astro.props;
+const {
+  entry,
+  horizontal = false,
+  headingLevel = 'h3',
+  priority = false,
+} = Astro.props;
 const { data } = entry;
 const href = `/news/${data.slug}`;
+const Heading = headingLevel;
 const formattedDate = new Intl.DateTimeFormat('en', {
   year: 'numeric',
   month: 'short',
   day: 'numeric',
 }).format(data.publishedAt);
-const category = data.categories.map((item) => item.name).join(' · ') || 'News';
+const categories = data.categories.slice(0, horizontal ? 3 : 1);
+const readingMinutes = getEstimatedReadingMinutes(entry);
+const displayTitle = horizontal ? data.title : data.seoTitle || data.title;
+const displaySummary = horizontal ? data.summary : data.description;
 ---
 
-<article class:list={['news-card', horizontal && 'news-card--horizontal']}>
+<article
+  class:list={[
+    'news-card',
+    horizontal ? 'news-card--horizontal' : 'news-card--featured',
+  ]}
+>
   <a class="news-card__media" href={href} aria-label={`Read ${data.title}`}>
-    <Image src={data.cover.src} alt={data.cover.alt} loading="lazy" />
+    <Image
+      src={data.cover.src}
+      alt={data.cover.alt}
+      widths={horizontal ? [320, 480, 640] : [360, 560, 760]}
+      sizes={horizontal
+        ? '(max-width: 799px) calc(100vw - 28px), (max-width: 1100px) 38vw, 320px'
+        : '(max-width: 799px) calc(100vw - 28px), 33vw'}
+      loading={priority ? 'eager' : 'lazy'}
+    />
   </a>
   <div class="news-card__body">
-    <p class="news-meta">{category} · {formattedDate}</p>
-    <h3><a href={href}>{data.title}</a></h3>
-    <p>{data.summary}</p>
+    <div class="news-meta">
+      <div class="news-meta__topics">
+        {
+          categories.length > 0 ? (
+            categories.map((category) => (
+              <a href={`/news/category/${category.slug}`}>{category.name}</a>
+            ))
+          ) : (
+            <span>News</span>
+          )
+        }
+      </div>
+      <div class="news-meta__details">
+        <time datetime={data.publishedAt.toISOString()}>{formattedDate}</time>
+        <span aria-hidden="true">·</span>
+        <span>{readingMinutes} min read</span>
+      </div>
+    </div>
+    <Heading><a href={href}>{displayTitle}</a></Heading>
+    <p class="news-card__summary">{displaySummary}</p>
+    {
+      !horizontal && (
+        <a class="news-card__link" href={href} aria-label={`Read ${data.title}`}>
+          Read article <span aria-hidden="true">→</span>
+        </a>
+      )
+    }
   </div>
 </article>
