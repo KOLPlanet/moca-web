@@ -2,14 +2,18 @@
 import { site } from '../config/site';
 
 const currentPath = Astro.url.pathname;
-const isCurrent = (href: string) =>
-  href === '/news' &&
-  (currentPath === '/news' || currentPath.startsWith('/news/'));
+const isHome = currentPath === '/';
+const isNews = currentPath === '/news' || currentPath.startsWith('/news/');
+const navigation = isNews ? site.newsNavigation : site.navigation;
+const isCurrent = (href: string) => href === '/news' && isNews;
 ---
 
-<header class="site-header">
+<header
+  class:list={['site-header', isHome && 'site-header--home']}
+  data-home-header={isHome ? '' : undefined}
+>
   <div class="site-header__inner container">
-    <a class="brand" href="/" aria-label={`${site.name} home`}>
+    <a class="brand" href="/#top" aria-label={`${site.name} home`}>
       <img src="/images/moca-logo.png" alt={site.name} width="100" height="36" />
     </a>
 
@@ -24,7 +28,7 @@ const isCurrent = (href: string) =>
 
     <nav id="site-navigation" class="site-navigation" aria-label="Primary navigation">
       {
-        site.navigation.map((item) => (
+        navigation.map((item) => (
           <a
             href={item.href}
             aria-current={isCurrent(item.href) ? 'page' : undefined}
@@ -41,6 +45,7 @@ const isCurrent = (href: string) =>
 <script>
   const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
   const navigation = document.querySelector<HTMLElement>('.site-navigation');
+  const homeHeader = document.querySelector<HTMLElement>('[data-home-header]');
 
   const closeMenu = () => {
     toggle?.setAttribute('aria-expanded', 'false');
@@ -67,4 +72,35 @@ const isCurrent = (href: string) =>
       toggle?.focus();
     }
   });
+
+  if (homeHeader) {
+    let scrollFrame = 0;
+
+    const updateHomeHeader = () => {
+      const progress = Math.min(Math.max(window.scrollY, 0) / 240, 1);
+      homeHeader.style.setProperty('--home-header-progress', progress.toFixed(3));
+      homeHeader.style.setProperty(
+        '--home-header-background',
+        `rgba(255, 255, 255, ${(progress * 0.96).toFixed(3)})`,
+      );
+      homeHeader.style.setProperty(
+        '--home-header-border',
+        `rgba(65, 111, 36, ${(progress * 0.16).toFixed(3)})`,
+      );
+      homeHeader.style.setProperty(
+        '--home-header-shadow',
+        `0 8px 30px rgba(24, 32, 24, ${(progress * 0.08).toFixed(3)})`,
+      );
+      homeHeader.classList.toggle('is-solid', progress >= 0.68);
+      scrollFrame = 0;
+    };
+
+    const requestHeaderUpdate = () => {
+      if (scrollFrame) return;
+      scrollFrame = window.requestAnimationFrame(updateHomeHeader);
+    };
+
+    updateHomeHeader();
+    window.addEventListener('scroll', requestHeaderUpdate, { passive: true });
+  }
 </script>

@@ -1,215 +1,445 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionHeading from '../components/SectionHeading.astro';
-import NewsCard from '../components/NewsCard.astro';
+import { site } from '../config/site';
+import { getEstimatedReadingMinutes } from '../lib/news';
+import '../styles/home.css';
 
 const newsItems = (await getCollection('news', ({ data }) => !data.draft))
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
-  .slice(0, 3);
+  .slice(0, 5);
+
+const markets = [
+  { name: 'China', image: '/images/home-figma/market-china.jpg' },
+  { name: 'Philippines', image: '/images/home-figma/market-philippines.jpg' },
+  { name: 'Thailand', image: '/images/home-figma/market-thailand.jpg' },
+  { name: 'USA', image: '/images/home-figma/market-usa.jpg' },
+  { name: 'India', image: '/images/home-figma/market-india.jpg' },
+  { name: 'Indonesia', image: '/images/home-figma/market-indonesia.jpg' },
+  { name: 'Malaysia', image: '/images/home-figma/market-malaysia.jpg' },
+  { name: 'Singapore', image: '/images/home-figma/market-singapore.jpg' },
+];
+
+const presence = [
+  { country: 'China', locations: 'Shanghai, Taiwan', flag: '/images/flags/cn.svg' },
+  { country: 'India', locations: 'Gurgaon, Mumbai, Bangalore', flag: '/images/flags/in.svg' },
+  { country: 'Indonesia', locations: 'Jakarta', flag: '/images/flags/id.svg' },
+  { country: 'Philippines', locations: 'Manila', flag: '/images/flags/ph.svg' },
+  { country: 'Thailand', locations: 'Bangkok', flag: '/images/flags/th.svg' },
+];
+
+const cases = [
+  { image: '/images/home-figma/case-1.jpg', alt: 'Regional consumer campaign' },
+  { image: '/images/home-figma/case-2.jpg', alt: 'Entertainment launch campaign' },
+  { image: '/images/home-figma/case-3.jpg', alt: 'Indonesia fashion creator campaign' },
+  { image: '/images/home-figma/case-4.jpg', alt: 'Influencer marketing case study' },
+  { image: '/images/home-figma/case-5.jpg', alt: 'MOCA client success campaign' },
+];
+
+const brandRows = [
+  [
+    { name: 'Pinterest', logo: '/images/home-figma/logo-pinterest.svg' },
+    { name: 'Dribbble', logo: '/images/home-figma/logo-dribbble.svg' },
+    { name: 'LinkedIn', logo: '/images/home-figma/logo-linkedin.svg' },
+    { name: 'eBay', logo: '/images/home-figma/logo-ebay.svg' },
+    { name: 'Twitter', logo: '/images/home-figma/logo-twitter-word.svg' },
+    { name: 'Zoom', logo: '/images/home-figma/logo-zoom.svg' },
+    { name: 'Twitch', logo: '/images/home-figma/logo-twitch.svg' },
+  ],
+  [
+    { name: 'Discord', logo: '/images/home-figma/logo-discord.svg' },
+    { name: 'TikTok', logo: '/images/home-figma/logo-tiktok.svg' },
+    { name: 'Snapchat', logo: '/images/home-figma/logo-snapchat.svg' },
+    { name: 'YouTube', logo: '/images/home-figma/logo-youtube.svg' },
+    { name: 'Behance', logo: '/images/home-figma/logo-behance.svg' },
+    { name: 'WhatsApp', logo: '/images/home-figma/logo-whatsapp.svg' },
+    { name: 'Spotify', logo: '/images/home-figma/logo-spotify.svg' },
+  ],
+];
+
+const lifeAtMoca = [
+  { label: 'Company', image: '/images/home-figma/life-company.jpg' },
+  { label: 'Office', image: '/images/home-figma/life-office.jpg' },
+  { label: 'Group', image: '/images/home-figma/life-group.jpg' },
+  { label: 'IR', image: '/images/home-figma/life-ir.jpg' },
+];
+
+const publisherLink = site.joinLinks.find((item) => item.type === 'publisher')!;
+const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')!;
 ---
 
-<BaseLayout>
-  <section class="hero" aria-labelledby="hero-title">
+<BaseLayout
+  title="MOCA Technology"
+  description="Global influencer marketing and performance advertising, delivered with local expertise."
+>
+  <section id="top" class="home-hero" aria-labelledby="home-hero-title">
     <img
-      class="hero__image"
-      src="/images/homepage-hero.jpg"
-      alt=""
-      width="1199"
-      height="825"
+      class="home-hero__image"
+      src="/images/home-figma/hero.jpg"
+      alt="MOCA cactus characters looking across a wide desert landscape"
+      width="1672"
+      height="941"
+      fetchpriority="high"
     />
-    <div class="hero__overlay"></div>
-    <div class="hero__content container">
-      <p class="eyebrow eyebrow--light">Mobile growth across fast-moving markets</p>
-      <h1 id="hero-title">Make every market feel local.</h1>
+    <div class="home-hero__shade"></div>
+    <div class="home-hero__content home-container">
+      <h1 id="home-hero-title">Local Heart, Global Scale</h1>
       <p>
-        MOCA connects global advertisers with OEM inventory, creators, and
-        market expertise across Asia and beyond.
+        Empowering brands to ignite influence across the globe. Influencer
+        marketing and performance advertising, powered by local insight.
       </p>
-      <a class="button button--light" href="#solutions">Explore solutions</a>
+      <a class="home-button home-button--glass" href="#services">
+        Explore MOCA <span aria-hidden="true">↓</span>
+      </a>
     </div>
   </section>
 
-  <section id="features" class="section section--soft">
-    <div class="container">
-      <SectionHeading
-        eyebrow="Why choose MOCA"
-        title="Built for mobile growth"
-        description="A flexible foundation for OEM distribution, influencer marketing, and regional campaigns."
-      />
-      <div class="feature-grid">
-        <article class="feature-card">
-          <p class="feature-card__number">01</p>
-          <h3>OEM reach</h3>
-          <p>One coordinated route into leading OEM app stores and device ecosystems.</p>
-        </article>
-        <article class="feature-card">
-          <p class="feature-card__number">02</p>
-          <h3>Local insight</h3>
-          <p>Regional teams translate market context into clearer campaign decisions.</p>
-        </article>
-        <article class="feature-card">
-          <p class="feature-card__number">03</p>
-          <h3>Creator influence</h3>
-          <p>Data-informed creator programs designed for relevance, trust, and scale.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+  <section id="services" class="home-section home-services" aria-labelledby="services-title">
+    <div class="home-container">
+      <header class="home-section-heading">
+        <h2 id="services-title">Core Services</h2>
+        <p>Combining performance-driven advertising with authentic influence.</p>
+      </header>
 
-  <section id="aboutmoca" class="section">
-    <div class="container split-layout">
-      <div>
-        <SectionHeading
-          eyebrow="Mobile cactus"
-          title="About MOCA"
-          align="left"
-        />
-        <p class="lead">
-          Established in 2012, MOCA is a global OEM aggregator and advertising
-          innovator focused on markets where local knowledge makes the difference.
-        </p>
-        <p>
-          Teams across China, India, Indonesia, and other strategic markets help
-          brands navigate regional audiences, media ecosystems, and growth
-          opportunities with confidence.
-        </p>
-      </div>
-      <figure class="image-frame">
-        <img
-          src="/images/about-moca.jpg"
-          alt="MOCA team and regional marketing collaboration"
-          width="1505"
-          height="800"
-          loading="lazy"
-        />
-      </figure>
-    </div>
-  </section>
-
-  <section id="solutions" class="section section--dark">
-    <div class="container">
-      <SectionHeading
-        eyebrow="Mobile marketing"
-        title="Solutions"
-        description="A modular service framework that can grow with the future homepage redesign."
-      />
-      <div class="solutions-grid">
-        <article>
-          <p class="eyebrow eyebrow--light">Distribution</p>
-          <h3>User acquisition on OEM</h3>
-          <p>App publishing, pre-install programs, acquisition, and brand awareness across OEM channels.</p>
-        </article>
-        <article>
-          <p class="eyebrow eyebrow--light">Awareness</p>
-          <h3>Branding solutions</h3>
-          <p>Contextual formats and media combinations designed around how regional audiences behave.</p>
-        </article>
-        <article>
-          <p class="eyebrow eyebrow--light">Influence</p>
-          <h3>Creator marketing</h3>
-          <p>Creator discovery, campaign delivery, and performance learning powered by KOLPlanet expertise.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="cases" class="section">
-    <div class="container">
-      <SectionHeading
-        eyebrow="Looking for difference"
-        title="Selected work"
-        description="A lightweight case-study frame ready for richer content in the next homepage pass."
-      />
-      <div class="case-grid">
-        <figure class="case-card case-card--wide">
-          <img src="/images/case-oem.jpg" alt="OEM marketing campaign overview" width="1505" height="800" loading="lazy" />
-          <figcaption>
-            <p class="eyebrow">OEM ecosystem</p>
-            <h3>From market access to measurable growth</h3>
-          </figcaption>
+      <div class="service-story">
+        <div class="service-story__copy">
+          <p class="home-kicker">Brand awareness</p>
+          <h3>Influencer Marketing</h3>
+          <p>
+            We specialize in building brand authority and trust through
+            meaningful creator partnerships.
+          </p>
+          <ul>
+            <li><strong>One-stop influencer solution</strong> from strategy to delivery.</li>
+            <li>Creator selection, content direction, and measurable reporting.</li>
+            <li>Local storytelling with the scale to move across markets.</li>
+          </ul>
+        </div>
+        <figure class="service-story__visual">
+          <img
+            src="/images/home-figma/service-influencer.jpg"
+            alt="MOCA influencer marketing character and content creation setup"
+            width="1592"
+            height="1177"
+            loading="lazy"
+          />
         </figure>
-        <figure class="case-card">
-          <img src="/images/case-influence.jpg" alt="Influencer campaign collaboration" width="3335" height="1643" loading="lazy" />
-          <figcaption>
-            <p class="eyebrow">Influencer marketing</p>
-            <h3>Local voices, regional impact</h3>
-          </figcaption>
+      </div>
+
+      <div class="service-story service-story--reverse">
+        <div class="service-story__copy">
+          <p class="home-kicker">User acquisition</p>
+          <h3>Performance Advertising</h3>
+          <p>
+            High-velocity growth across OEM partnerships and major advertising
+            platforms, connecting transparent data with efficient scale.
+          </p>
+          <ul>
+            <li>Campaign planning and delivery across priority markets.</li>
+            <li>Optimized for CPI, CPA, and ROAS goals.</li>
+            <li>Scalable acquisition across high-growth markets.</li>
+          </ul>
+        </div>
+        <figure class="service-story__visual">
+          <img
+            src="/images/home-figma/service-performance.jpg"
+            alt="MOCA performance advertising character aiming at a growth target"
+            width="1490"
+            height="1043"
+            loading="lazy"
+          />
         </figure>
       </div>
     </div>
   </section>
 
-  <section class="section section--soft" aria-labelledby="latest-news-heading">
-    <div class="container">
-      <div class="section-heading-row">
-        <SectionHeading
-          id="latest-news-heading"
-          eyebrow="Influenced story"
-          title="Latest news"
-          align="left"
-        />
-        <a class="text-link" href="/news">View all news</a>
+  <section id="about" class="home-about" aria-labelledby="about-title">
+    <img
+      class="home-about__background"
+      src="/images/home-figma/about-bg.jpg"
+      alt=""
+      width="2306"
+      height="1356"
+      loading="lazy"
+    />
+    <div class="home-about__shade"></div>
+    <div class="home-container home-about__content">
+      <article class="about-panel">
+        <header class="home-section-heading">
+          <h2 id="about-title">About MOCA</h2>
+          <p>Your local partner for global ambition.</p>
+        </header>
+        <div class="about-panel__columns">
+          <div class="about-panel__story">
+            <p class="home-kicker">Founded in 2012</p>
+            <p>
+              MOCA is a pioneer in digital marketing for the world’s most
+              vibrant emerging markets.
+            </p>
+            <p>
+              We specialize in helping global brands build long-term authority
+              through authentic influencer collaborations and achieve rapid
+              growth through data-driven performance marketing.
+            </p>
+          </div>
+          <div class="about-panel__presence">
+            <p class="home-kicker">Global Presence</p>
+            <ul class="presence-list">
+              {
+                presence.map((item) => (
+                  <li>
+                    <img src={item.flag} alt={`${item.country} flag`} width="30" height="20" loading="lazy" />
+                    <span>{item.locations}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <div class="markets" aria-labelledby="markets-title">
+        <h3 id="markets-title">Key Markets</h3>
+        <div class="markets__grid">
+          {
+            markets.map((market) => (
+              <figure class="market-card">
+                <img src={market.image} alt="" width="420" height="250" loading="lazy" />
+                <figcaption>{market.name}</figcaption>
+              </figure>
+            ))
+          }
+        </div>
       </div>
-      <div class="news-grid">
+    </div>
+  </section>
+
+  <section id="cases" class="home-section home-cases" aria-labelledby="cases-title">
+    <div class="home-container home-container--wide">
+      <header class="home-section-heading">
+        <h2 id="cases-title">Real Voices, Proven Results</h2>
+        <p>Campaigns shaped by local culture and built to perform.</p>
+      </header>
+      <div class="cases-showcase">
         {
-          newsItems.map((entry, index) => (
-            <NewsCard entry={entry} priority={index === 0} />
+          cases.map((item, index) => (
+            <figure class:list={['case-poster', `case-poster--${index + 1}`]}>
+              <img src={item.image} alt={item.alt} width="460" height="620" loading="lazy" />
+            </figure>
+          ))
+        }
+      </div>
+      <a class="home-button home-button--outline" href="#portfolio">View more</a>
+    </div>
+  </section>
+
+  <section id="portfolio" class="home-portfolio" aria-labelledby="portfolio-title">
+    <img
+      class="home-portfolio__background"
+      src="/images/home-figma/portfolio-bg.jpg"
+      alt=""
+      width="1672"
+      height="941"
+      loading="lazy"
+    />
+    <div class="home-portfolio__shade"></div>
+    <div class="home-portfolio__content">
+      <header class="home-section-heading home-section-heading--light home-container">
+        <h2 id="portfolio-title">Our Portfolio of Success</h2>
+        <p>Brands and platforms connected through ideas that move markets.</p>
+      </header>
+      <p class="sr-only">The brand showcase moves automatically and pauses when hovered.</p>
+      <div class="brand-marquees">
+        {
+          brandRows.map((row, rowIndex) => (
+            <div class:list={['brand-marquee', rowIndex === 1 && 'brand-marquee--reverse']}>
+              <div class="brand-marquee__track">
+                {[false, true].map((duplicate) => (
+                  <ul class="brand-marquee__group" aria-hidden={duplicate ? 'true' : undefined}>
+                    {row.map((brand) => (
+                      <li class="brand-tile">
+                        <img src={brand.logo} alt={duplicate ? '' : brand.name} loading="lazy" />
+                      </li>
+                    ))}
+                  </ul>
+                ))}
+              </div>
+            </div>
           ))
         }
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section contact-section">
-    <div class="container contact-layout">
-      <div>
-        <SectionHeading
-          eyebrow="Let us"
-          title="Connect"
-          align="left"
-        />
-        <p class="lead">
-          Tell us where you want to grow. We’ll connect the right market,
-          channel, and team.
-        </p>
-        <p class="contact-note">
-          Mail delivery is routed through environment configuration, so the
-          service can be swapped without changing this interface.
-        </p>
-      </div>
-      <form class="contact-form" action="/api/contact" method="post" data-contact-form>
-        <div class="form-grid">
-          <label>
-            <span>Name</span>
-            <input name="name" type="text" autocomplete="name" required />
-          </label>
-          <label>
-            <span>Email</span>
-            <input name="email" type="email" autocomplete="email" required />
-          </label>
+  <section id="insights" class="home-section home-insights" aria-labelledby="insights-title">
+    <div class="home-container home-container--wide">
+      <header class="home-section-heading">
+        <h2 id="insights-title">The Pulse of MOCA</h2>
+        <p>Industry deep-dives, event highlights, and company milestones.</p>
+      </header>
+      <div class="insight-carousel">
+        <button
+          class="insight-carousel__button insight-carousel__button--previous"
+          type="button"
+          aria-label="Show previous articles"
+          data-insight-previous
+          disabled
+        >
+          <img src="/images/home-ui/carousel-arrow.svg" alt="" width="20" height="20" />
+        </button>
+        <div class="insight-scroller" data-insight-scroller>
+          {
+            newsItems.map((entry, index) => {
+              const formattedDate = new Intl.DateTimeFormat('en', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric',
+              }).format(entry.data.publishedAt);
+              const readingMinutes = getEstimatedReadingMinutes(entry);
+              return (
+                <article class="home-news-card">
+                  <div class="home-news-card__body">
+                    <div class="home-news-card__meta">
+                      <span>{entry.data.categories[0]?.name || 'MOCA Insight'}</span>
+                      <span aria-hidden="true">·</span>
+                      <time datetime={entry.data.publishedAt.toISOString()}>{formattedDate}</time>
+                      <span aria-hidden="true">·</span>
+                      <span>{readingMinutes} min read</span>
+                    </div>
+                    <h3><a href={`/news/${entry.data.slug}`}>{entry.data.seoTitle || entry.data.title}</a></h3>
+                    <p>{entry.data.description}</p>
+                  </div>
+                  <a class="home-news-card__media" href={`/news/${entry.data.slug}`} aria-label={`Read ${entry.data.title}`}>
+                    <Image
+                      src={entry.data.cover.src}
+                      alt={entry.data.cover.alt}
+                      widths={[320, 480, 640]}
+                      sizes="(max-width: 700px) 82vw, 384px"
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                    />
+                  </a>
+                </article>
+              );
+            })
+          }
         </div>
+        <button
+          class="insight-carousel__button insight-carousel__button--next"
+          type="button"
+          aria-label="Show next articles"
+          data-insight-next
+        >
+          <img src="/images/home-ui/carousel-arrow.svg" alt="" width="20" height="20" />
+        </button>
+      </div>
+      <a class="home-button home-button--outline" href="/news">View more</a>
+    </div>
+  </section>
+
+  <section id="contact" class="home-contact" aria-labelledby="contact-title">
+    <img
+      class="home-contact__background"
+      src="/images/home-figma/contact.jpg"
+      alt="MOCA character delivering a message across a desert road"
+      width="1672"
+      height="941"
+      loading="lazy"
+    />
+    <div class="home-contact__shade"></div>
+    <div class="home-container home-contact__inner">
+      <form class="home-contact-form" action="/api/contact" method="post" data-contact-form>
+        <header class="home-section-heading home-section-heading--light">
+          <h2 id="contact-title">Contact Us</h2>
+          <p>Let’s start a conversation about your next market.</p>
+        </header>
+        <label>
+          <span>Your name</span>
+          <input name="name" type="text" autocomplete="name" required />
+        </label>
+        <label>
+          <span>Your email</span>
+          <input name="email" type="email" autocomplete="email" required />
+        </label>
         <label>
           <span>Subject</span>
           <input name="subject" type="text" required />
         </label>
         <label>
-          <span>Message</span>
-          <textarea name="message" rows="6" required></textarea>
+          <span>Content</span>
+          <textarea name="message" rows="5" required></textarea>
         </label>
         <label class="form-honeypot" aria-hidden="true">
           <span>Company website</span>
           <input name="company" type="text" tabindex="-1" autocomplete="off" />
         </label>
-        <div class="form-actions">
-          <button class="button" type="submit">Send message</button>
-          <p class="form-status" role="status" aria-live="polite"></p>
-        </div>
-        <p class="form-privacy">
-          By submitting this form, you agree that MOCA may use your details to
-          respond to your enquiry. See our <a href="/privacy-policy">Privacy Policy</a>.
+        <button class="home-button home-button--solid" type="submit">Send</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+        <p class="home-contact-form__privacy">
+          By sending this form you agree to our <a href="/privacy-policy">Privacy Policy</a>.
         </p>
       </form>
+    </div>
+  </section>
+
+  <section id="join" class="home-join" aria-labelledby="join-title">
+    <img
+      class="home-join__background"
+      src="/images/home-figma/join.jpg"
+      alt=""
+      width="2306"
+      height="791"
+      loading="lazy"
+    />
+    <div class="home-join__shade"></div>
+    <div class="home-container home-join__content">
+      <header class="home-section-heading home-section-heading--light">
+        <h2 id="join-title">Join MOCA</h2>
+        <p>Choose your role and start growing with us.</p>
+      </header>
+      <div class="join-grid">
+        <article class="join-card">
+          <h3>For Publishers</h3>
+          <p>Monetize your traffic through high-quality campaigns and global advertisers.</p>
+          <a class="join-card__button" href={publisherLink.href} target="_blank" rel="noreferrer">
+            Join as publisher
+          </a>
+        </article>
+        <article class="join-card join-card--brand">
+          <div>
+            <h3>For Brands</h3>
+            <p>Secure your market position with 100% verified influence and ROI-driven UA.</p>
+            <a class="join-card__button join-card__button--outline" href={advertiserLink.href} target="_blank" rel="noreferrer">
+              Work with us
+            </a>
+          </div>
+          <img src="/images/home-figma/join-brand.png" alt="" width="190" height="154" loading="lazy" />
+        </article>
+        <article class="join-card">
+          <h3>For Creators</h3>
+          <p>Collaborate with top brands and turn your content into real income.</p>
+          <a class="join-card__button" href="#contact">Join as creator</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="life" class="home-life" aria-labelledby="life-title">
+    <div class="home-container">
+      <header class="home-section-heading home-section-heading--light">
+        <h2 id="life-title">Life at MOCA</h2>
+        <p>A global team sharing ideas, markets, and moments.</p>
+      </header>
+    </div>
+    <div class="life-grid">
+      {
+        lifeAtMoca.map((item) => (
+          <figure class="life-card">
+            <img src={item.image} alt={`Life at MOCA — ${item.label}`} width="760" height="760" loading="lazy" />
+            <figcaption>{item.label}</figcaption>
+          </figure>
+        ))
+      }
     </div>
   </section>
 </BaseLayout>
@@ -245,4 +475,34 @@ const newsItems = (await getCollection('news', ({ data }) => !data.draft))
       submit.disabled = false;
     }
   });
+
+  const insightScroller = document.querySelector<HTMLElement>('[data-insight-scroller]');
+  const previousButton = document.querySelector<HTMLButtonElement>('[data-insight-previous]');
+  const nextButton = document.querySelector<HTMLButtonElement>('[data-insight-next]');
+
+  const updateInsightControls = () => {
+    if (!insightScroller || !previousButton || !nextButton) return;
+    const maxScroll = insightScroller.scrollWidth - insightScroller.clientWidth;
+    previousButton.disabled = insightScroller.scrollLeft <= 2;
+    nextButton.disabled = insightScroller.scrollLeft >= maxScroll - 2;
+  };
+
+  const moveInsights = (direction: -1 | 1) => {
+    if (!insightScroller) return;
+    const firstCard = insightScroller.querySelector<HTMLElement>('.home-news-card');
+    const styles = window.getComputedStyle(insightScroller);
+    const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
+    const distance = (firstCard?.getBoundingClientRect().width || insightScroller.clientWidth) + gap;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    insightScroller.scrollBy({
+      left: distance * direction,
+      behavior: reducedMotion ? 'auto' : 'smooth',
+    });
+  };
+
+  previousButton?.addEventListener('click', () => moveInsights(-1));
+  nextButton?.addEventListener('click', () => moveInsights(1));
+  insightScroller?.addEventListener('scroll', updateInsightControls, { passive: true });
+  window.addEventListener('resize', updateInsightControls);
+  updateInsightControls();
 </script>

@@ -1,130 +1,89 @@
 ---
 import { site } from '../config/site';
-const year = new Date().getFullYear();
+
+const serviceLinks = [
+  { label: 'Core Services', href: '/#services' },
+  { label: 'Influencer Marketing', href: '/#services' },
+  { label: 'Performance Advertising', href: '/#services' },
+  { label: 'Join MOCA', href: '/#join' },
+];
+
+const resultLinks = [
+  { label: 'Case Studies', href: '/#cases' },
+  { label: 'Partner', href: '/#portfolio' },
+  { label: 'Latest News', href: '/news' },
+  { label: 'Contact Us', href: '/#contact' },
+];
 ---
 
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <a class="brand brand--footer" href="/" aria-label={`${site.name} home`}>
-        <img src="/images/moca-logo.png" alt={site.name} width="100" height="36" />
-      </a>
-      <p>{site.description}</p>
-    </div>
-
-    <nav aria-label="Footer navigation">
-      <p class="footer-heading">Explore</p>
-      <ul class="footer-links">
-        {site.navigation.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
-      </ul>
-    </nav>
-
-    <div class="footer-contact">
-      <p class="footer-heading">Contact</p>
-      <p>
-        <span>Cooperation</span>
-        <a href={`mailto:${site.contact.cooperationEmail}`}>{site.contact.cooperationEmail}</a>
-      </p>
-      <p>
-        <span>Careers</span>
-        <a href={`mailto:${site.contact.careersEmail}`}>{site.contact.careersEmail}</a>
-      </p>
-    </div>
-
-    <div>
-      <p class="footer-heading">Legal</p>
-      <ul class="footer-links">
-        <li><a href={site.legal.privacyPolicyHref}>Privacy Policy</a></li>
-        <li>
-          <a href={site.legal.icpHref} target="_blank" rel="noreferrer">
-            {site.legal.icpNumber}
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="container footer-community">
-    <section class="footer-join" aria-labelledby="footer-join-heading">
-      <p id="footer-join-heading" class="footer-heading">Join MOCA</p>
-      <div class="footer-join__links">
-        {
-          site.joinLinks.map((item) => (
-            <a
-              class={`footer-join__link footer-join__link--${item.type}`}
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>
-                <strong>{item.label}</strong>
-                <small>{item.description}</small>
-              </span>
-              <span class="footer-join__arrow" aria-hidden="true">↗</span>
-              <span class="sr-only">(opens in a new tab)</span>
-            </a>
-          ))
-        }
+  <div class="footer-shell">
+    <div class="footer-grid footer-grid--moca">
+      <div class="footer-brand">
+        <a class="brand brand--footer" href="/#top" aria-label={`${site.name} home`}>
+          <img src="/images/moca-logo.png" alt={site.name} width="137" height="56" />
+        </a>
+        <p>Performance-driven influencer marketing across emerging markets.</p>
+        <ul class="footer-social__links" aria-label="MOCA social media">
+          {
+            site.socialLinks.map((item) => (
+              <li>
+                <a href={item.href} target="_blank" rel="noreferrer" aria-label={`${item.label} — opens in a new tab`}>
+                  {item.icon === 'facebook' && <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103v3.325a26.8 26.8 0 0 0-1.386-.045c-1.92 0-2.728.822-2.728 2.683v1.297h3.919l-.673 3.667h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" /></svg>}
+                  {item.icon === 'linkedin' && <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065Zm1.782 13.019H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0Z" /></svg>}
+                  {item.icon === 'x' && <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993Zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182Z" /></svg>}
+                  {item.icon === 'wechat' && <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55l-.39 2.145c-.08.31.248.59.522.454l2.003-1.114a10.1 10.1 0 0 0 4.265.255c-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348ZM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.162 1.162 0 1 1-2.324 0c0-.651.52-1.18 1.162-1.18Zm5.813 0c.642 0 1.162.529 1.162 1.18a1.162 1.162 0 1 1-2.324 0c0-.651.52-1.18 1.162-1.18Zm5.34 2.867c-3.674-.106-7.928 2.416-7.06 8.006.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336l2.182 1.008c.274.136.602-.144.522-.454l-.53-1.71C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088-.135-.01-.27-.027-.407-.03Zm-2.53 3.274a.976.976 0 1 1 0 1.965.976.976 0 0 1 0-1.965Zm4.844 0a.976.976 0 1 1 0 1.965.976.976 0 0 1 0-1.965Z" /></svg>}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
       </div>
-    </section>
 
-    <section class="footer-social" aria-labelledby="footer-social-heading">
-      <p id="footer-social-heading" class="footer-heading">Follow us</p>
-      <ul class="footer-social__links">
-        {
-          site.socialLinks.map((item) => (
-            <li>
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${item.label} — opens in a new tab`}
-                title={item.label}
-              >
-                {
-                  item.icon === 'facebook' && (
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
-                    </svg>
-                  )
-                }
-                {
-                  item.icon === 'linkedin' && (
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065Zm1.782 13.019H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" />
-                    </svg>
-                  )
-                }
-                {
-                  item.icon === 'x' && (
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993Zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182Z" />
-                    </svg>
-                  )
-                }
-                {
-                  item.icon === 'wechat' && (
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348ZM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18Zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18Zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088v-.002c-.135-.01-.27-.027-.407-.03Zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982Zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982Z" />
-                    </svg>
-                  )
-                }
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-  </div>
+      <nav aria-label="Services">
+        <p class="footer-heading">Services</p>
+        <ul class="footer-links">
+          {serviceLinks.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+        </ul>
+      </nav>
 
-  <div class="container footer-bottom">
-    <p>© {year} {site.name}. All rights reserved.</p>
-    <div class="footer-bottom__links">
-      <a href={site.legal.privacyPolicyHref}>Privacy Policy</a>
-      <span aria-hidden="true">·</span>
-      <a href={site.legal.icpHref} target="_blank" rel="noreferrer">
-        {site.legal.icpNumber}
-      </a>
+      <nav aria-label="Results">
+        <p class="footer-heading">Results</p>
+        <ul class="footer-links">
+          {resultLinks.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+        </ul>
+      </nav>
+
+      <div class="footer-app">
+        <p class="footer-heading">Get KOLPlanet App</p>
+        <p>Manage campaigns anytime, anywhere.<br />For creators only.</p>
+        <div class="footer-app__badges" aria-label="Download the KOLPlanet app">
+          <span
+            class="footer-app-badge footer-app-badge--google"
+            role="img"
+            tabindex="0"
+            aria-label="Google Play app — Coming Soon"
+          >
+            <img src="/images/home-ui/google-play-badge.png" alt="" width="322" height="96" />
+            <span class="footer-app-badge__status" aria-hidden="true">Coming Soon</span>
+          </span>
+          <span
+            class="footer-app-badge footer-app-badge--apple"
+            role="img"
+            tabindex="0"
+            aria-label="App Store app — Coming Soon"
+          >
+            <img src="/images/home-ui/app-store-badge.png" alt="" width="322" height="96" />
+            <span class="footer-app-badge__status" aria-hidden="true">Coming Soon</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright © 2025 Moca Technology – <a href={site.legal.icpHref} target="_blank" rel="noreferrer">{site.legal.icpNumber}</a></p>
+      <p><a href="https://www.kolplanet.com/" target="_blank" rel="noreferrer">Influencer Marketing Solution Powered by KOLPlanet</a></p>
+      <a href={site.legal.privacyPolicyHref}>Term &amp; Policy</a>
     </div>
   </div>
 </footer>
