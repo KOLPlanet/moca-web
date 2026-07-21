@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@astrojs/node": "latest",
+    "@astrojs/vercel": "^11.0.3",
     "astro": "latest",
     "cheerio": "^1.2.0",
     "turndown": "^7.2.4",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "latest",
-    "typescript": "latest"
+    "typescript": "latest",
+    "vercel": "^56.4.1"
   }
 }
