@@ -2,6 +2,7 @@
   --green-700: #416f24;
   --green-600: #5f8f35;
   --green-500: #78a746;
+  --moca-green: #619239;
   --green-100: #eff7e8;
   --ink-950: #182018;
   --ink-900: #263124;
@@ -14,6 +15,31 @@
   --article-width: 1120px;
   --reading-width: 780px;
   --shadow: 0 22px 70px rgba(31, 46, 25, 0.1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Body / UI copy — international corporate readable */
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Headings / nav / CTAs — geometric display contrast */
+  --font-display: Manrope, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Shared type roles */
+  --text-title-weight: 800;
+  --text-title-tracking: -0.015em;
+  --text-subtitle-weight: 700;
+  --text-subtitle-tracking: -0.015em;
+  --text-label-size: 0.72rem;
+  --text-label-weight: 600;
+  --text-label-tracking: 0.08em;
+  --text-button-size: 0.72rem;
+  --text-button-weight: 700;
+  --text-button-tracking: 0.08em;
+  --text-lede-size: 0.92rem;
+  --text-body-size: 1rem;
+  --text-body-muted: rgba(0, 0, 0, 0.58);
+}
+
+::selection {
+  color: var(--ink-950);
+  background: rgba(120, 167, 70, 0.28);
 }
 
 * {
@@ -29,7 +55,7 @@ body {
   margin: 0;
   color: var(--ink-700);
   background: var(--surface);
-  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -63,23 +89,24 @@ h1,
 h2,
 h3 {
   color: var(--ink-950);
-  font-family: Raleway, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.15;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 h1 {
-  font-size: clamp(3rem, 8vw, 6.9rem);
-  letter-spacing: -0.06em;
+  font-size: clamp(2.6rem, 6.5vw, 5.2rem);
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: clamp(2.1rem, 4vw, 3.7rem);
-  letter-spacing: -0.045em;
+  font-size: clamp(1.9rem, 3.5vw, 3rem);
+  letter-spacing: -0.015em;
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
-  letter-spacing: -0.025em;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  letter-spacing: -0.01em;
 }
 
 button,
@@ -141,8 +168,8 @@ textarea {
   right: 0;
   bottom: -1px;
   left: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--green-700), var(--green-500), transparent 72%);
+  height: 1px;
+  background: rgba(65, 111, 36, 0.22);
   content: "";
 }
 
@@ -188,6 +215,10 @@ textarea {
   color: white;
 }
 
+.site-header--home .site-navigation a::after {
+  background: #c9e8aa;
+}
+
 .site-header--home .site-navigation a:hover,
 .site-header--home .site-navigation a:focus-visible {
   color: #d9f2c3;
@@ -205,6 +236,10 @@ textarea {
 .site-header--home.is-solid .site-navigation a:hover,
 .site-header--home.is-solid .site-navigation a:focus-visible {
   color: var(--green-700);
+}
+
+.site-header--home.is-solid .site-navigation a::after {
+  background: var(--green-600);
 }
 
 .site-header__inner {
@@ -236,10 +271,25 @@ textarea {
   position: relative;
   padding-block: 26px 24px;
   color: var(--ink-950);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: var(--text-label-weight);
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
+  transition: color 180ms var(--ease-out);
+}
+
+.site-navigation a::after {
+  position: absolute;
+  right: 0;
+  bottom: 16px;
+  left: 0;
+  height: 2px;
+  background: var(--green-600);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 220ms var(--ease-out);
 }
 
 .site-navigation a:hover,
@@ -248,14 +298,10 @@ textarea {
   color: var(--green-700);
 }
 
+.site-navigation a:hover::after,
+.site-navigation a:focus-visible::after,
 .site-navigation a[aria-current="page"]::after {
-  position: absolute;
-  right: 0;
-  bottom: 16px;
-  left: 0;
-  height: 2px;
-  background: var(--green-600);
-  content: "";
+  transform: scaleX(1);
 }
 
 .menu-toggle {
@@ -265,8 +311,8 @@ textarea {
   background: transparent;
   cursor: pointer;
   font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -321,8 +367,8 @@ textarea {
   margin-bottom: 12px;
   color: var(--green-700);
   font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -341,15 +387,24 @@ textarea {
   background: var(--green-700);
   cursor: pointer;
   font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
-  transition: transform 160ms ease, background 160ms ease;
+  transition:
+    transform 180ms var(--ease-out),
+    background 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .button:hover {
   background: var(--green-600);
+  box-shadow: 0 10px 28px rgba(65, 111, 36, 0.22);
   transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 .button:disabled {
@@ -433,9 +488,9 @@ textarea {
 .feature-card__number {
   margin-bottom: 72px;
   color: var(--green-600);
-  font-family: Raleway, sans-serif;
+  font-family: var(--font-display);
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.16em;
 }
 
@@ -552,8 +607,8 @@ textarea {
   border-bottom: 1px solid var(--green-600);
   color: var(--green-700);
   font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -575,8 +630,8 @@ textarea {
 
 .news-card:hover {
   border-color: rgba(65, 111, 36, 0.38);
-  box-shadow: 0 18px 46px rgba(31, 46, 25, 0.08);
-  transform: translateY(-2px);
+  box-shadow: 0 18px 46px rgba(31, 46, 25, 0.1);
+  transform: translateY(-3px);
 }
 
 .news-card__media {
@@ -664,8 +719,8 @@ textarea {
   margin-bottom: 12px;
   color: var(--green-700);
   font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.11em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -724,8 +779,8 @@ textarea {
   border-bottom: 1px solid rgba(65, 111, 36, 0.42);
   color: var(--green-700);
   font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -771,8 +826,8 @@ textarea {
   margin-bottom: 20px;
   color: var(--ink-950);
   font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -902,7 +957,7 @@ textarea {
   padding-bottom: 12px;
   color: var(--ink-500);
   font-size: 0.78rem;
-  letter-spacing: 0.06em;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -925,8 +980,8 @@ textarea {
 .news-results__filters-label {
   color: var(--ink-500);
   font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -1140,8 +1195,8 @@ textarea {
 .pagination__direction {
   color: var(--green-700);
   font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -1196,8 +1251,8 @@ textarea {
   margin-bottom: 38px;
   color: var(--ink-500);
   font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -1234,7 +1289,7 @@ textarea {
   color: var(--ink-500);
   font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -1398,8 +1453,8 @@ textarea {
 .article-aside dt {
   color: var(--ink-500);
   font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -1417,7 +1472,7 @@ textarea {
 .article-aside__links a {
   color: var(--green-700);
   font-size: 0.78rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .article-aside__links a:hover {
@@ -1440,7 +1495,7 @@ textarea {
 .article-taxonomy h2 {
   margin-bottom: 14px;
   font-size: 0.72rem;
-  letter-spacing: 0.12em;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -1516,14 +1571,14 @@ textarea {
 .article-navigation__label {
   color: var(--green-700);
   font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
 .article-navigation strong {
   color: var(--ink-950);
-  font-family: Raleway, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(1rem, 1.8vw, 1.25rem);
   line-height: 1.35;
 }
@@ -1578,8 +1633,8 @@ textarea {
   margin-bottom: 22px;
   color: white;
   font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -1606,8 +1661,8 @@ textarea {
 .footer-contact span {
   color: rgba(255, 255, 255, 0.38);
   font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -1665,7 +1720,7 @@ textarea {
 }
 
 .footer-join__link strong {
-  font-family: Raleway, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-display);
   font-size: 0.92rem;
   letter-spacing: 0.025em;
 }
@@ -1818,6 +1873,7 @@ textarea {
   color: rgba(255, 255, 255, 0.57);
   font-size: 0.8rem;
   line-height: 1.5;
+  transition: color 180ms ease, transform 180ms ease;
 }
 
 .site-footer .footer-links a:hover,
@@ -1825,6 +1881,10 @@ textarea {
 .site-footer .footer-bottom a:hover,
 .site-footer .footer-bottom a:focus-visible {
   color: white;
+}
+
+.site-footer .footer-links a:hover {
+  transform: translateX(2px);
 }
 
 .site-footer .footer-social__links {
@@ -1891,7 +1951,7 @@ textarea {
   color: white;
   background: rgba(25, 43, 17, 0.9);
   font-size: 0.68rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.1em;
   opacity: 0;
   text-transform: uppercase;
@@ -1976,8 +2036,8 @@ textarea {
 .legal-meta dt {
   color: var(--ink-500);
   font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -2017,8 +2077,8 @@ textarea {
   margin-bottom: 16px;
   color: var(--ink-950);
   font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
 }
 
@@ -2061,7 +2121,7 @@ textarea {
   margin-bottom: 10px;
   color: var(--green-600);
   font-size: 0.7rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.14em;
 }
 
@@ -2226,7 +2286,7 @@ textarea {
     border-bottom: 1px solid var(--line);
   }
 
-  .site-navigation a[aria-current="page"]::after {
+  .site-navigation a::after {
     display: none;
   }
 

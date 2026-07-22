@@ -21,14 +21,6 @@ const markets = [
   { name: 'Singapore', image: '/images/home-figma/market-singapore.jpg' },
 ];
 
-const presence = [
-  { country: 'China', locations: 'Shanghai, Taiwan', flag: '/images/flags/cn.svg' },
-  { country: 'India', locations: 'Gurgaon, Mumbai, Bangalore', flag: '/images/flags/in.svg' },
-  { country: 'Indonesia', locations: 'Jakarta', flag: '/images/flags/id.svg' },
-  { country: 'Philippines', locations: 'Manila', flag: '/images/flags/ph.svg' },
-  { country: 'Thailand', locations: 'Bangkok', flag: '/images/flags/th.svg' },
-];
-
 const cases = [
   { image: '/images/home-figma/case-1.jpg', alt: 'Regional consumer campaign' },
   { image: '/images/home-figma/case-2.jpg', alt: 'Entertainment launch campaign' },
@@ -74,24 +66,31 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
   description="Global influencer marketing and performance advertising, delivered with local expertise."
 >
   <section id="top" class="home-hero" aria-labelledby="home-hero-title">
-    <img
-      class="home-hero__image"
-      src="/images/home-figma/hero.jpg"
-      alt="MOCA cactus characters looking across a wide desert landscape"
-      width="1672"
-      height="941"
-      fetchpriority="high"
-    />
-    <div class="home-hero__shade"></div>
-    <div class="home-hero__content home-container">
-      <h1 id="home-hero-title">Local Heart, Global Scale</h1>
-      <p>
-        Empowering brands to ignite influence across the globe. Influencer
-        marketing and performance advertising, powered by local insight.
-      </p>
-      <a class="home-button home-button--glass" href="#services">
-        Explore MOCA <span aria-hidden="true">↓</span>
-      </a>
+    <div class="home-hero__media" aria-hidden="true">
+      <img
+        class="home-hero__image"
+        src="/images/home-figma/hero.jpg"
+        alt=""
+        width="3840"
+        height="2160"
+        fetchpriority="high"
+      />
+      <div class="home-hero__shade"></div>
+    </div>
+    <div class="home-hero__content">
+      <div class="home-hero__copy">
+        <h1 id="home-hero-title">Local Heart, Global Scale</h1>
+        <p class="home-hero__lede">
+          Empowering brands to capture mindshare with right-fit influencers while
+          driving positive ROI through high-precision performance advertising.
+        </p>
+        <a class="home-hero__cta" href="#services" data-hero-cta>
+          <span class="home-hero__cta-frost" aria-hidden="true" data-hero-cta-frost></span>
+          <span class="home-hero__cta-veil" aria-hidden="true"></span>
+          <span class="home-hero__cta-label">Watch Now</span>
+          <img src="/images/home-ui/hero-play.svg" alt="" width="26" height="26" />
+        </a>
+      </div>
     </div>
   </section>
 
@@ -145,8 +144,8 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
           <img
             src="/images/home-figma/service-performance.jpg"
             alt="MOCA performance advertising character aiming at a growth target"
-            width="1490"
-            height="1043"
+            width="1499"
+            height="1049"
             loading="lazy"
           />
         </figure>
@@ -159,45 +158,15 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
       class="home-about__background"
       src="/images/home-figma/about-bg.jpg"
       alt=""
-      width="2306"
-      height="1356"
+      width="2400"
+      height="1832"
       loading="lazy"
     />
-    <div class="home-about__shade"></div>
     <div class="home-container home-about__content">
-      <article class="about-panel">
-        <header class="home-section-heading">
-          <h2 id="about-title">About MOCA</h2>
-          <p>Your local partner for global ambition.</p>
-        </header>
-        <div class="about-panel__columns">
-          <div class="about-panel__story">
-            <p class="home-kicker">Founded in 2012</p>
-            <p>
-              MOCA is a pioneer in digital marketing for the world’s most
-              vibrant emerging markets.
-            </p>
-            <p>
-              We specialize in helping global brands build long-term authority
-              through authentic influencer collaborations and achieve rapid
-              growth through data-driven performance marketing.
-            </p>
-          </div>
-          <div class="about-panel__presence">
-            <p class="home-kicker">Global Presence</p>
-            <ul class="presence-list">
-              {
-                presence.map((item) => (
-                  <li>
-                    <img src={item.flag} alt={`${item.country} flag`} width="30" height="20" loading="lazy" />
-                    <span>{item.locations}</span>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-        </div>
-      </article>
+      <header class="sr-only">
+        <h2 id="about-title">About MOCA</h2>
+        <p>Your local partner for global ambition.</p>
+      </header>
 
       <div class="markets" aria-labelledby="markets-title">
         <h3 id="markets-title">Key Markets</h3>
@@ -408,7 +377,10 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
         <article class="join-card join-card--brand">
           <div>
             <h3>For Brands</h3>
-            <p>Secure your market position with 100% verified influence and ROI-driven UA.</p>
+            <p>
+              Secure your market position<br />
+              with 100% verified influence and ROI-driven UA.
+            </p>
             <a class="join-card__button join-card__button--outline" href={advertiserLink.href} target="_blank" rel="noreferrer">
               Work with us
             </a>
@@ -445,6 +417,29 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
 </BaseLayout>
 
 <script>
+  const hero = document.querySelector<HTMLElement>('.home-hero');
+  const heroCta = document.querySelector<HTMLElement>('[data-hero-cta]');
+  const heroCtaFrost = document.querySelector<HTMLElement>('[data-hero-cta-frost]');
+
+  const syncHeroCtaFrost = () => {
+    if (!hero || !heroCta || !heroCtaFrost) return;
+
+    const heroRect = hero.getBoundingClientRect();
+    const ctaRect = heroCta.getBoundingClientRect();
+    const pad = 28;
+
+    heroCtaFrost.style.width = `${heroRect.width + pad * 2}px`;
+    heroCtaFrost.style.height = `${heroRect.height + pad * 2}px`;
+    heroCtaFrost.style.left = `${heroRect.left - ctaRect.left - pad}px`;
+    heroCtaFrost.style.top = `${heroRect.top - ctaRect.top - pad}px`;
+    heroCtaFrost.style.backgroundSize = `${heroRect.width}px ${heroRect.height}px`;
+    heroCtaFrost.style.backgroundPosition = `${pad}px ${pad}px`;
+  };
+
+  syncHeroCtaFrost();
+  window.addEventListener('resize', syncHeroCtaFrost, { passive: true });
+  window.addEventListener('scroll', syncHeroCtaFrost, { passive: true });
+
   const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
   const status = form?.querySelector<HTMLElement>('.form-status');
   const submit = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
