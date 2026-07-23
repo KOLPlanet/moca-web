@@ -115,15 +115,11 @@ const cases = [
 const brandRows = [
   [
     { name: 'A23 Rummy', logo: '/images/partners/a23_rummy.png' },
-    { name: 'Airbnb', logo: '/images/partners/airbnb.png' },
     { name: 'Amazon Kindle', logo: '/images/partners/amazon_kindle.png' },
     { name: 'Axis', logo: '/images/partners/axis.png' },
     { name: 'BMW', logo: '/images/partners/bmw.png' },
     { name: 'Canva', logo: '/images/partners/canva.png' },
     { name: 'Chery', logo: '/images/partners/chery.png' },
-    { name: 'Coca-Cola', logo: '/images/partners/coca_cola.png' },
-    { name: 'DBS', logo: '/images/partners/dbs.png' },
-    { name: 'Disney', logo: '/images/partners/disney.png' },
     { name: 'Garena', logo: '/images/partners/garena.png' },
     { name: 'Gojek', logo: '/images/partners/gojek.png' },
     { name: 'Honda', logo: '/images/partners/honda.png' },
@@ -136,13 +132,7 @@ const brandRows = [
     { name: 'McDonald\'s', logo: '/images/partners/mcdonalds.png' },
     { name: 'Miyako', logo: '/images/partners/miyako.png' },
     { name: 'Myntra', logo: '/images/partners/myntra.png' },
-    { name: 'Nestlé', logo: '/images/partners/nestle.png' },
-    { name: 'Nike', logo: '/images/partners/nike.svg' },
     { name: 'Ooredoo', logo: '/images/partners/ooredoo.png' },
-    { name: 'Panasonic', logo: '/images/partners/panasonic.png' },
-    { name: 'Philips', logo: '/images/partners/philips.png' },
-    { name: 'realme', logo: '/images/partners/realme.svg' },
-    { name: 'Samsung', logo: '/images/partners/samsung.png' },
     { name: 'Shopee', logo: '/images/partners/shopee.svg' },
     { name: 'Standard Chartered', logo: '/images/partners/standard_chartered.png' },
     { name: 'Tokopedia', logo: '/images/partners/tokopedia.png' },
@@ -150,6 +140,7 @@ const brandRows = [
     { name: 'Volkswagen', logo: '/images/partners/volkswagen.png' },
     { name: 'Wargaming', logo: '/images/partners/wargaming.png' },
     { name: 'Wings', logo: '/images/partners/wings.png' },
+    { name: 'Xiaohongshu', logo: '/images/partners/xiaohongshu.svg' },
     { name: 'Xiaomi', logo: '/images/partners/xiaomi.png' },
   ],
   [
@@ -161,20 +152,15 @@ const brandRows = [
     { name: 'Cat Fantasy', logo: '/images/partners/cat_fantasy.png' },
     { name: 'Citi', logo: '/images/partners/citibank.png' },
     { name: 'Cotton Ink', logo: '/images/partners/cotton_ink.png' },
-    { name: 'Discovery', logo: '/images/partners/discovery.svg' },
     { name: 'Flipkart', logo: '/images/partners/flipkart.png' },
     { name: 'GoFood', logo: '/images/partners/gofood.png' },
     { name: 'Hollyland', logo: '/images/partners/hollyland.png' },
-    { name: 'HONOR', logo: '/images/partners/honor.png' },
-    { name: 'Infinix', logo: '/images/partners/infinix.png' },
     { name: 'Jisulife', logo: '/images/partners/jisulife.png' },
     { name: 'KFC', logo: '/images/partners/kfc.png' },
     { name: 'KomfyMed', logo: '/images/partners/komfymed.png' },
     { name: 'MamaSuka', logo: '/images/partners/mamasuka.png' },
     { name: 'Mayora', logo: '/images/partners/mayora.svg' },
-    { name: 'Mercedes-Benz', logo: '/images/partners/mercedes_benz.png' },
     { name: 'Moonton', logo: '/images/partners/moonton.png' },
-    { name: 'National Geographic', logo: '/images/partners/national_geographic.svg' },
     { name: 'Netflix', logo: '/images/partners/netflix.png' },
     { name: 'Nissan', logo: '/images/partners/nissan.png' },
     { name: 'OPPO', logo: '/images/partners/oppo.png' },
@@ -187,7 +173,6 @@ const brandRows = [
     { name: 'Toyota', logo: '/images/partners/toyota.png' },
     { name: 'vivo', logo: '/images/partners/vivo.png' },
     { name: 'Want Want', logo: '/images/partners/want_want.png' },
-    { name: 'Watsons', logo: '/images/partners/watsons.png' },
     { name: 'Wuling', logo: '/images/partners/wuling.png' },
     { name: 'Yamaha', logo: '/images/partners/yamaha.svg' },
   ],
@@ -200,10 +185,6 @@ const lifeAtMoca = [
     href: 'https://www.instagram.com/p/DbFxfLEB0Dr/',
   },
   {
-    label: 'Team Building',
-    image: '/images/home-figma/life-office.jpg',
-  },
-  {
     label: 'Excellent Award',
     image: '/images/home-figma/life-group.jpg',
     href: 'https://www.linkedin.com/posts/teamculture-peoplefirst-agencylife-ugcPost-7418857801797562368-C-ab/?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTrIKMB44E1iGXab5omdkAJN1UEqUmMj4I',
@@ -212,6 +193,10 @@ const lifeAtMoca = [
     label: 'Team Talent',
     image: '/images/home-figma/life-ir.jpg',
     href: 'https://www.instagram.com/p/DUYMoi0k3Q-/',
+  },
+  {
+    label: 'Hiring',
+    image: '/images/home-figma/life-office.jpg',
   },
 ];
 
@@ -502,6 +487,16 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
               );
             })
           }
+          <a class="home-news-more-card" href="/news" aria-label="View more articles">
+            <span class="home-news-more-card__eyebrow">Continue</span>
+            <strong class="home-news-more-card__title">View more</strong>
+            <span class="home-news-more-card__line" aria-hidden="true"></span>
+            <span class="home-news-more-card__copy">Explore market shifts, events, and milestones.</span>
+            <span class="home-news-more-card__btn" aria-hidden="true">
+              <span class="home-news-more-card__btn-label">All stories</span>
+              <span class="home-news-more-card__btn-arrow"></span>
+            </span>
+          </a>
         </div>
         <button
           class="insight-carousel__button insight-carousel__button--next"
@@ -512,7 +507,6 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
           <img src="/images/home-ui/carousel-arrow.svg" alt="" width="20" height="20" />
         </button>
       </div>
-      <a class="home-button home-button--outline" href="/news">View more</a>
     </div>
   </section>
 
@@ -612,36 +606,38 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
         <p>A global team sharing ideas, markets, and moments.</p>
       </header>
     </div>
-    <div class="life-grid">
-      {
-        lifeAtMoca.map((item) => {
-          const media = (
-            <>
-              <img src={item.image} alt={`Life at MOCA — ${item.label}`} width="1200" height="1800" loading="lazy" />
-              <span class="media-play" aria-hidden="true">
-                <img src="/images/home-ui/media-play.svg" alt="" width="52" height="52" />
-              </span>
-              <span class="life-card__label">{item.label}</span>
-            </>
-          );
+    <div class="home-container home-container--wide">
+      <div class="life-grid">
+        {
+          lifeAtMoca.map((item) => {
+            const media = (
+              <>
+                <img src={item.image} alt={`Life at MOCA — ${item.label}`} width="1200" height="1800" loading="lazy" />
+                <span class="media-play" aria-hidden="true">
+                  <img src="/images/home-ui/media-play.svg" alt="" width="52" height="52" />
+                </span>
+                <span class="life-card__label">{item.label}</span>
+              </>
+            );
 
-          return item.href ? (
-            <a
-              class="life-card"
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`${item.label} — opens in a new tab`}
-            >
-              {media}
-            </a>
-          ) : (
-            <figure class="life-card">
-              {media}
-            </figure>
-          );
-        })
-      }
+            return item.href ? (
+              <a
+                class="life-card"
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${item.label} — opens in a new tab`}
+              >
+                {media}
+              </a>
+            ) : (
+              <figure class="life-card">
+                {media}
+              </figure>
+            );
+          })
+        }
+      </div>
     </div>
   </section>
 </BaseLayout>
@@ -708,8 +704,12 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
   const updateInsightControls = () => {
     if (!insightScroller || !previousButton || !nextButton) return;
     const maxScroll = insightScroller.scrollWidth - insightScroller.clientWidth;
-    previousButton.disabled = insightScroller.scrollLeft <= 2;
-    nextButton.disabled = insightScroller.scrollLeft >= maxScroll - 2;
+    const atStart = maxScroll <= 2 || insightScroller.scrollLeft <= 2;
+    const atEnd = maxScroll <= 2 || insightScroller.scrollLeft >= maxScroll - 2;
+    previousButton.hidden = atStart;
+    nextButton.hidden = atEnd;
+    previousButton.disabled = atStart;
+    nextButton.disabled = atEnd;
   };
 
   const moveInsights = (direction: -1 | 1) => {
@@ -738,8 +738,12 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
   const updateCasesControls = () => {
     if (!casesScroller || !casesPrevious || !casesNext) return;
     const maxScroll = casesScroller.scrollWidth - casesScroller.clientWidth;
-    casesPrevious.disabled = casesScroller.scrollLeft <= 2;
-    casesNext.disabled = casesScroller.scrollLeft >= maxScroll - 2;
+    const atStart = maxScroll <= 2 || casesScroller.scrollLeft <= 2;
+    const atEnd = maxScroll <= 2 || casesScroller.scrollLeft >= maxScroll - 2;
+    casesPrevious.hidden = atStart;
+    casesNext.hidden = atEnd;
+    casesPrevious.disabled = atStart;
+    casesNext.disabled = atEnd;
   };
 
   const moveCases = (direction: -1 | 1) => {
