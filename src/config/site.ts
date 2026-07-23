@@ -39,15 +39,15 @@ export const site = {
       icon: 'linkedin',
     },
     {
-      label: 'Xiaohongshu',
-      href: 'https://www.xiaohongshu.com/',
-      icon: 'xiaohongshu',
-    },
-    {
       label: 'WeChat',
       href:
         'https://mp.weixin.qq.com/s?__biz=MzU4MjI5Njk1OQ==&mid=2247484113&idx=1&sn=a0ec3f815c2497b50010edeb6a69f129',
       icon: 'wechat',
+    },
+    {
+      label: 'Xiaohongshu',
+      href: 'https://www.xiaohongshu.com/',
+      icon: 'xiaohongshu',
     },
   ],
   navigation: [
