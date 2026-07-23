@@ -10,13 +10,22 @@ const newsItems = (await getCollection('news', ({ data }) => !data.draft))
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
   .slice(0, 5);
 
+const offices = [
+  { name: 'Shanghai, Taiwan', flag: '/images/flags/cn.svg', flagAlt: 'China' },
+  { name: 'Gurgaon, Mumbai, Bangalore', flag: '/images/flags/in.svg', flagAlt: 'India' },
+  { name: 'Kuala Lumpur', flag: '/images/flags/my.svg', flagAlt: 'Malaysia' },
+  { name: 'Jakarta', flag: '/images/flags/id.svg', flagAlt: 'Indonesia' },
+  { name: 'Manila', flag: '/images/flags/ph.svg', flagAlt: 'Philippines' },
+  { name: 'Bangkok', flag: '/images/flags/th.svg', flagAlt: 'Thailand' },
+];
+
 const markets = [
   { name: 'China', image: '/images/home-figma/market-china.jpg' },
   { name: 'India', image: '/images/home-figma/market-india.jpg' },
   { name: 'Indonesia', image: '/images/home-figma/market-indonesia.jpg' },
   { name: 'Malaysia', image: '/images/home-figma/market-malaysia.jpg' },
-  { name: 'Philippines', image: '/images/home-figma/market-philippines.jpg' },
   { name: 'Singapore', image: '/images/home-figma/market-singapore.jpg' },
+  { name: 'Philippines', image: '/images/home-figma/market-philippines.jpg' },
   { name: 'Thailand', image: '/images/home-figma/market-thailand.jpg' },
   { name: 'USA', image: '/images/home-figma/market-usa.jpg' },
 ];
@@ -252,16 +261,25 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
 
       <div class="service-story">
         <div class="service-story__copy">
-          <p class="home-kicker">Brand awareness</p>
+          <p class="home-kicker">Brand Awareness &amp; Growth</p>
           <h3>Influencer Marketing</h3>
           <p>
-            We specialize in building brand authority and trust through
-            meaningful creator partnerships.
+            Transforming content into brand authority and measurable performance.
           </p>
           <ul>
-            <li><strong>One-stop influencer solution</strong> from strategy to delivery.</li>
-            <li>Creator selection, content direction, and measurable reporting.</li>
-            <li>Local storytelling with the scale to move across markets.</li>
+            <li>
+              <strong>Full-Funnel Strategy:</strong> Integrated solutions spanning
+              campaign planning, influencer activation, paid media, and social
+              management.
+            </li>
+            <li>
+              <strong>Creator Partnerships:</strong> Precise influencer selection,
+              tailored content direction, and data-backed performance tracking.
+            </li>
+            <li>
+              <strong>Omnichannel Execution:</strong> Seamless delivery across
+              digital platforms, localized PR, and experiential offline events.
+            </li>
           </ul>
         </div>
         <figure class="service-story__visual">
@@ -277,16 +295,26 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
 
       <div class="service-story service-story--reverse">
         <div class="service-story__copy">
-          <p class="home-kicker">User acquisition</p>
+          <p class="home-kicker">User Acquisition</p>
           <h3>Performance Advertising</h3>
           <p>
-            High-velocity growth across OEM partnerships and major advertising
-            platforms, connecting transparent data with efficient scale.
+            Accelerate rapid user acquisition with clean, direct inventory and
+            proprietary optimization tech to maximize ROI.
           </p>
           <ul>
-            <li>Campaign planning and delivery across priority markets.</li>
-            <li>Optimized for CPI, CPA, and ROAS goals.</li>
-            <li>Scalable acquisition across high-growth markets.</li>
+            <li>
+              <strong>Rapid Scale via Direct Traffic:</strong> Fast-track growth with
+              high-intent, fraud-free traffic directly from OEMs and premium
+              developers.
+            </li>
+            <li>
+              <strong>In-House Platform:</strong> Powered by proprietary algorithms
+              precision-tuned to hit your CPI, CPA, and ROAS targets.
+            </li>
+            <li>
+              <strong>Seamless MMP Integration:</strong> Native connection with major
+              MMPs (AppsFlyer, Adjust, Kochava, Singular) for real-time attribution.
+            </li>
           </ul>
         </div>
         <figure class="service-story__visual">
@@ -311,11 +339,43 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
       height="1832"
       loading="lazy"
     />
+    <div class="home-about__shade" aria-hidden="true"></div>
     <div class="home-container home-about__content">
-      <header class="sr-only">
-        <h2 id="about-title">About MOCA</h2>
-        <p>Your local partner for global ambition.</p>
-      </header>
+      <div class="about-panel">
+        <header class="about-panel__header">
+          <h2 id="about-title">About MOCA</h2>
+          <p>Your Local Partner for Global Ambition.</p>
+        </header>
+
+        <div class="about-panel__body">
+          <div class="about-panel__story">
+            <h3>Founded in 2012</h3>
+            <p>
+              <strong>MOCA</strong> is a pioneer in digital marketing for the world’s
+              most vibrant emerging markets.
+            </p>
+            <p>
+              We specialize in helping global brands build long-term authority through
+              authentic influencer collaborations and achieve rapid growth through
+              data-driven performance marketing.
+            </p>
+          </div>
+
+          <div class="about-panel__presence" aria-labelledby="presence-title">
+            <h3 id="presence-title">Global Presence</h3>
+            <ul class="about-presence-list">
+              {
+                offices.map((office) => (
+                  <li>
+                    <img src={office.flag} alt="" width="30" height="21" loading="lazy" />
+                    <span>{office.name}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
 
       <div class="markets" aria-labelledby="markets-title">
         <h3 id="markets-title">Key Markets</h3>
@@ -436,7 +496,7 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
     </div>
   </section>
 
-  <section id="insights" class="home-section home-insights" aria-labelledby="insights-title">
+  <section id="insights" class="home-section home-insights" aria-labelledby="insights-title" hidden>
     <div class="home-container home-container--wide">
       <header class="home-section-heading">
         <h2 id="insights-title">The Pulse of MOCA</h2>
@@ -465,10 +525,12 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
                 <article class="home-news-card">
                   <div class="home-news-card__body">
                     <div class="home-news-card__meta">
-                      <span>{entry.data.categories[0]?.name || 'MOCA Insight'}</span>
-                      <span aria-hidden="true">·</span>
+                      <span class="home-news-card__category">
+                        {entry.data.categories[0]?.name || 'MOCA Insight'}
+                      </span>
+                      <span class="home-news-card__meta-dot" aria-hidden="true">·</span>
                       <time datetime={entry.data.publishedAt.toISOString()}>{formattedDate}</time>
-                      <span aria-hidden="true">·</span>
+                      <span class="home-news-card__meta-dot" aria-hidden="true">·</span>
                       <span>{readingMinutes} min read</span>
                     </div>
                     <h3><a href={`/news/${entry.data.slug}`}>{entry.data.seoTitle || entry.data.title}</a></h3>
@@ -499,6 +561,48 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
         >
           <img src="/images/home-ui/carousel-arrow.svg" alt="" width="20" height="20" />
         </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="life" class="home-life" aria-labelledby="life-title">
+    <div class="home-container">
+      <header class="home-section-heading home-section-heading--light">
+        <h2 id="life-title">Life at MOCA</h2>
+        <p>A global team sharing ideas, markets, and moments.</p>
+      </header>
+    </div>
+    <div class="home-container home-container--wide">
+      <div class="life-grid">
+        {
+          lifeAtMoca.map((item) => {
+            const media = (
+              <>
+                <img src={item.image} alt={`Life at MOCA — ${item.label}`} width="1200" height="1800" loading="lazy" />
+                <span class="media-play" aria-hidden="true">
+                  <img src="/images/home-ui/media-play.svg" alt="" width="52" height="52" />
+                </span>
+                <span class="life-card__label">{item.label}</span>
+              </>
+            );
+
+            return item.href ? (
+              <a
+                class="life-card"
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${item.label} — opens in a new tab`}
+              >
+                {media}
+              </a>
+            ) : (
+              <figure class="life-card">
+                {media}
+              </figure>
+            );
+          })
+        }
       </div>
     </div>
   </section>
@@ -588,48 +692,6 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
           <p>Collaborate with top brands and turn your content into real income.</p>
           <a class="join-card__button" href="#contact">Join as creator</a>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="life" class="home-life" aria-labelledby="life-title">
-    <div class="home-container">
-      <header class="home-section-heading home-section-heading--light">
-        <h2 id="life-title">Life at MOCA</h2>
-        <p>A global team sharing ideas, markets, and moments.</p>
-      </header>
-    </div>
-    <div class="home-container home-container--wide">
-      <div class="life-grid">
-        {
-          lifeAtMoca.map((item) => {
-            const media = (
-              <>
-                <img src={item.image} alt={`Life at MOCA — ${item.label}`} width="1200" height="1800" loading="lazy" />
-                <span class="media-play" aria-hidden="true">
-                  <img src="/images/home-ui/media-play.svg" alt="" width="52" height="52" />
-                </span>
-                <span class="life-card__label">{item.label}</span>
-              </>
-            );
-
-            return item.href ? (
-              <a
-                class="life-card"
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${item.label} — opens in a new tab`}
-              >
-                {media}
-              </a>
-            ) : (
-              <figure class="life-card">
-                {media}
-              </figure>
-            );
-          })
-        }
       </div>
     </div>
   </section>
