@@ -796,109 +796,26 @@
 }
 
 .home-news-more-card {
-  position: relative;
   align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0;
-  overflow: hidden;
-  padding: 42px 36px 40px;
+  display: grid;
+  place-items: center;
   border: 1px solid rgba(49, 73, 37, 0.1);
   background: white;
   box-shadow: 0 12px 35px rgba(37, 58, 30, 0.05);
   scroll-snap-align: start;
-  text-align: left;
   text-decoration: none;
-  color: inherit;
   transition:
     border-color 220ms ease,
     box-shadow 220ms ease,
     transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.home-news-more-card::before {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(120% 80% at 100% 100%, rgba(97, 146, 57, 0.12), transparent 55%),
-    linear-gradient(165deg, rgba(97, 146, 57, 0.04), transparent 45%);
-  content: "";
+.home-insights__more {
+  min-width: 148px;
+  border-color: #619239;
+  color: #619239;
+  background: transparent;
   pointer-events: none;
-}
-
-.home-news-more-card > * {
-  position: relative;
-  z-index: 1;
-}
-
-.home-news-more-card__eyebrow {
-  margin-bottom: 18px;
-  color: #619239;
-  font-family: var(--font-display);
-  font-size: var(--text-label-size);
-  font-weight: 700;
-  letter-spacing: var(--text-label-tracking);
-  text-transform: uppercase;
-}
-
-.home-news-more-card__title {
-  display: block;
-  margin-bottom: 18px;
-  color: rgba(0, 0, 0, 0.87);
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3vw, 2.45rem);
-  font-weight: var(--text-title-weight);
-  letter-spacing: var(--text-title-tracking);
-  line-height: 1.05;
-  text-transform: uppercase;
-}
-
-.home-news-more-card__line {
-  display: block;
-  width: 42px;
-  height: 2px;
-  margin-bottom: 20px;
-  background: #619239;
-}
-
-.home-news-more-card__copy {
-  max-width: 18em;
-  margin-bottom: 36px;
-  color: var(--text-body-muted);
-  font-family: var(--font-sans);
-  font-size: 0.98rem;
-  line-height: 1.65;
-}
-
-.home-news-more-card__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 44px;
-  padding: 11px 22px;
-  border: 1px solid #619239;
-  color: #619239;
-  font-family: var(--font-display);
-  font-size: var(--text-button-size);
-  font-weight: var(--text-button-weight);
-  letter-spacing: var(--text-button-tracking);
-  line-height: 1;
-  text-transform: uppercase;
-  transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    color 180ms ease,
-    box-shadow 180ms ease;
-}
-
-.home-news-more-card__btn-arrow {
-  width: 8px;
-  height: 8px;
-  border-top: 1.8px solid currentColor;
-  border-right: 1.8px solid currentColor;
-  transform: rotate(45deg);
-  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .home-news-more-card:hover,
@@ -908,17 +825,12 @@
   transform: translateY(-3px);
 }
 
-.home-news-more-card:hover .home-news-more-card__btn,
-.home-news-more-card:focus-visible .home-news-more-card__btn {
+.home-news-more-card:hover .home-insights__more,
+.home-news-more-card:focus-visible .home-insights__more {
   border-color: #619239;
   color: white;
   background: #619239;
   box-shadow: 0 8px 22px rgba(97, 146, 57, 0.18);
-}
-
-.home-news-more-card:hover .home-news-more-card__btn-arrow,
-.home-news-more-card:focus-visible .home-news-more-card__btn-arrow {
-  transform: translateX(2px) rotate(45deg);
 }
 
 .insight-scroller {
@@ -1406,6 +1318,9 @@
   display: block;
   color: inherit;
   text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  transition: border-color 280ms ease, box-shadow 280ms ease;
 }
 
 .life-card::after {
@@ -1414,10 +1329,18 @@
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.74), transparent 55%);
   content: "";
   transition: opacity 300ms ease;
+  pointer-events: none;
 }
 
 a.life-card {
   cursor: pointer;
+}
+
+.life-card:hover {
+  border-color: rgba(255, 255, 255, 0.36);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
 .life-card:hover::after {
