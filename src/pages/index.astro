@@ -12,49 +12,207 @@ const newsItems = (await getCollection('news', ({ data }) => !data.draft))
 
 const markets = [
   { name: 'China', image: '/images/home-figma/market-china.jpg' },
-  { name: 'Philippines', image: '/images/home-figma/market-philippines.jpg' },
-  { name: 'Thailand', image: '/images/home-figma/market-thailand.jpg' },
-  { name: 'USA', image: '/images/home-figma/market-usa.jpg' },
   { name: 'India', image: '/images/home-figma/market-india.jpg' },
   { name: 'Indonesia', image: '/images/home-figma/market-indonesia.jpg' },
   { name: 'Malaysia', image: '/images/home-figma/market-malaysia.jpg' },
+  { name: 'Philippines', image: '/images/home-figma/market-philippines.jpg' },
   { name: 'Singapore', image: '/images/home-figma/market-singapore.jpg' },
+  { name: 'Thailand', image: '/images/home-figma/market-thailand.jpg' },
+  { name: 'USA', image: '/images/home-figma/market-usa.jpg' },
 ];
 
 const cases = [
-  { image: '/images/home-figma/case-1.jpg', alt: 'Regional consumer campaign' },
-  { image: '/images/home-figma/case-2.jpg', alt: 'Entertainment launch campaign' },
-  { image: '/images/home-figma/case-3.jpg', alt: 'Indonesia fashion creator campaign' },
-  { image: '/images/home-figma/case-4.jpg', alt: 'Influencer marketing case study' },
-  { image: '/images/home-figma/case-5.jpg', alt: 'MOCA client success campaign' },
+  {
+    id: 'case-01',
+    name: 'Wuling',
+    poster: '/images/cases/01-wuling.jpg',
+    video: '/videos/cases/case-01.mp4',
+    href: 'https://www.instagram.com/p/DP6SZ4EiXmc/',
+    alt: 'Wuling China-ASEAN Expo influencer campaign',
+  },
+  {
+    id: 'case-02',
+    name: 'IPL',
+    poster: '/images/cases/02-ipl.jpg',
+    video: '/videos/cases/case-02.mp4',
+    href: 'https://www.instagram.com/p/DXZoYVKgav2/',
+    alt: 'IPL creator campaign with 100+ creators',
+  },
+  {
+    id: 'case-03',
+    name: 'Huawei',
+    poster: '/images/cases/03-huawei.jpg',
+    video: '/videos/cases/case-03.mp4',
+    href: 'https://www.instagram.com/p/DQl8U1RiSna/',
+    alt: 'Huawei Singapore cinematic influencer campaign',
+  },
+  {
+    id: 'case-04',
+    name: 'Kalbe',
+    poster: '/images/cases/04-kalbe.jpg',
+    video: '/videos/cases/case-04.mp4',
+    href: 'https://www.instagram.com/p/DQ5xA_rDLl6/',
+    alt: 'Kalbe Mixagrip herbal lozenges creator campaign',
+  },
+  {
+    id: 'case-05',
+    name: 'Thanks MOCA',
+    poster: '/images/cases/05-thanks-moca.jpg',
+    video: '/videos/cases/case-05.mp4',
+    href: 'https://www.instagram.com/p/DPyQonRkU_v/',
+    alt: 'Creator thank-you collaboration with MOCA',
+  },
+  {
+    id: 'case-06',
+    name: 'The Sleep Company',
+    poster: '/images/cases/06-sleep-company.jpg',
+    video: '/videos/cases/case-06.mp4',
+    href: 'https://www.instagram.com/p/DRU21oNEwVS/',
+    alt: 'The Sleep Company influencer campaign',
+  },
+  {
+    id: 'case-07',
+    name: 'Cotton Ink',
+    poster: '/images/cases/07-cotton-ink.jpg',
+    video: '/videos/cases/case-07.mp4',
+    href: 'https://www.instagram.com/p/DRBzgrOkeio/',
+    alt: 'Cotton Ink Indonesia fashion campaign',
+  },
+  {
+    id: 'case-08',
+    name: 'Chery',
+    poster: '/images/cases/08-chery.jpg',
+    video: '/videos/cases/case-08.mp4',
+    href: 'https://www.instagram.com/p/DSKiLInk4nS/',
+    alt: 'Chery Tiggo 2 Pro China brand local insight campaign',
+  },
+  {
+    id: 'case-09',
+    name: 'Komfymed',
+    poster: '/images/cases/09-komfymed.jpg',
+    video: '/videos/cases/case-09.mp4',
+    href: 'https://www.instagram.com/p/DVwHyoQhLBY/',
+    alt: 'Komfymed influencer campaign',
+  },
+  {
+    id: 'case-10',
+    name: 'Indonesia Mall',
+    poster: '/images/cases/10-indonesia-mall.jpg',
+    video: '/videos/cases/case-10.mp4',
+    href: 'https://www.instagram.com/p/DUp2-0kEd3p/',
+    alt: 'Indonesia shopping mall influencer campaign',
+  },
+  {
+    id: 'case-11',
+    name: 'Portable Fan',
+    poster: '/images/cases/11-fan.jpg',
+    video: '/videos/cases/case-11.mp4',
+    href: 'https://www.instagram.com/p/DX6P9xfBpaE/',
+    alt: 'Portable fan stop-the-heat creator campaign',
+  },
 ];
 
 const brandRows = [
   [
-    { name: 'Pinterest', logo: '/images/home-figma/logo-pinterest.svg' },
-    { name: 'Dribbble', logo: '/images/home-figma/logo-dribbble.svg' },
-    { name: 'LinkedIn', logo: '/images/home-figma/logo-linkedin.svg' },
-    { name: 'eBay', logo: '/images/home-figma/logo-ebay.svg' },
-    { name: 'Twitter', logo: '/images/home-figma/logo-twitter-word.svg' },
-    { name: 'Zoom', logo: '/images/home-figma/logo-zoom.svg' },
-    { name: 'Twitch', logo: '/images/home-figma/logo-twitch.svg' },
+    { name: 'A23 Rummy', logo: '/images/partners/a23_rummy.png' },
+    { name: 'Airbnb', logo: '/images/partners/airbnb.png' },
+    { name: 'Amazon Kindle', logo: '/images/partners/amazon_kindle.png' },
+    { name: 'Axis', logo: '/images/partners/axis.png' },
+    { name: 'BMW', logo: '/images/partners/bmw.png' },
+    { name: 'Canva', logo: '/images/partners/canva.png' },
+    { name: 'Chery', logo: '/images/partners/chery.png' },
+    { name: 'Coca-Cola', logo: '/images/partners/coca_cola.png' },
+    { name: 'DBS', logo: '/images/partners/dbs.png' },
+    { name: 'Disney', logo: '/images/partners/disney.png' },
+    { name: 'Garena', logo: '/images/partners/garena.png' },
+    { name: 'Gojek', logo: '/images/partners/gojek.png' },
+    { name: 'Honda', logo: '/images/partners/honda.png' },
+    { name: 'Huawei', logo: '/images/partners/huawei.png' },
+    { name: 'iSpring', logo: '/images/partners/ispring.png' },
+    { name: 'Kalbe', logo: '/images/partners/kalbe.png' },
+    { name: 'KKV', logo: '/images/partners/kkv.svg' },
+    { name: 'LUZZ', logo: '/images/partners/luzz.png' },
+    { name: 'Maruti Suzuki', logo: '/images/partners/maruti_suzuki.png' },
+    { name: 'McDonald\'s', logo: '/images/partners/mcdonalds.png' },
+    { name: 'Miyako', logo: '/images/partners/miyako.png' },
+    { name: 'Myntra', logo: '/images/partners/myntra.png' },
+    { name: 'Nestlé', logo: '/images/partners/nestle.png' },
+    { name: 'Nike', logo: '/images/partners/nike.svg' },
+    { name: 'Ooredoo', logo: '/images/partners/ooredoo.png' },
+    { name: 'Panasonic', logo: '/images/partners/panasonic.png' },
+    { name: 'Philips', logo: '/images/partners/philips.png' },
+    { name: 'realme', logo: '/images/partners/realme.svg' },
+    { name: 'Samsung', logo: '/images/partners/samsung.png' },
+    { name: 'Shopee', logo: '/images/partners/shopee.svg' },
+    { name: 'Standard Chartered', logo: '/images/partners/standard_chartered.png' },
+    { name: 'Tokopedia', logo: '/images/partners/tokopedia.png' },
+    { name: 'Viva Cosmetics', logo: '/images/partners/viva_cosmetics.png' },
+    { name: 'Volkswagen', logo: '/images/partners/volkswagen.png' },
+    { name: 'Wargaming', logo: '/images/partners/wargaming.png' },
+    { name: 'Wings', logo: '/images/partners/wings.png' },
+    { name: 'Xiaomi', logo: '/images/partners/xiaomi.png' },
   ],
   [
-    { name: 'Discord', logo: '/images/home-figma/logo-discord.svg' },
-    { name: 'TikTok', logo: '/images/home-figma/logo-tiktok.svg' },
-    { name: 'Snapchat', logo: '/images/home-figma/logo-snapchat.svg' },
-    { name: 'YouTube', logo: '/images/home-figma/logo-youtube.svg' },
-    { name: 'Behance', logo: '/images/home-figma/logo-behance.svg' },
-    { name: 'WhatsApp', logo: '/images/home-figma/logo-whatsapp.svg' },
-    { name: 'Spotify', logo: '/images/home-figma/logo-spotify.svg' },
+    { name: 'Adidas', logo: '/images/partners/adidas.png' },
+    { name: 'Amazon', logo: '/images/partners/amazon.png' },
+    { name: 'Apple', logo: '/images/partners/apple.png' },
+    { name: 'Bigo Live', logo: '/images/partners/bigo_live.png' },
+    { name: 'Bose', logo: '/images/partners/bose.png' },
+    { name: 'Cat Fantasy', logo: '/images/partners/cat_fantasy.png' },
+    { name: 'Citi', logo: '/images/partners/citibank.png' },
+    { name: 'Cotton Ink', logo: '/images/partners/cotton_ink.png' },
+    { name: 'Discovery', logo: '/images/partners/discovery.svg' },
+    { name: 'Flipkart', logo: '/images/partners/flipkart.png' },
+    { name: 'GoFood', logo: '/images/partners/gofood.png' },
+    { name: 'Hollyland', logo: '/images/partners/hollyland.png' },
+    { name: 'HONOR', logo: '/images/partners/honor.png' },
+    { name: 'Infinix', logo: '/images/partners/infinix.png' },
+    { name: 'Jisulife', logo: '/images/partners/jisulife.png' },
+    { name: 'KFC', logo: '/images/partners/kfc.png' },
+    { name: 'KomfyMed', logo: '/images/partners/komfymed.png' },
+    { name: 'MamaSuka', logo: '/images/partners/mamasuka.png' },
+    { name: 'Mayora', logo: '/images/partners/mayora.svg' },
+    { name: 'Mercedes-Benz', logo: '/images/partners/mercedes_benz.png' },
+    { name: 'Moonton', logo: '/images/partners/moonton.png' },
+    { name: 'National Geographic', logo: '/images/partners/national_geographic.svg' },
+    { name: 'Netflix', logo: '/images/partners/netflix.png' },
+    { name: 'Nissan', logo: '/images/partners/nissan.png' },
+    { name: 'OPPO', logo: '/images/partners/oppo.png' },
+    { name: 'Pepsi', logo: '/images/partners/pepsi.png' },
+    { name: 'POSH', logo: '/images/partners/posh.png' },
+    { name: 'ROX', logo: '/images/partners/rox.png' },
+    { name: 'Shesha Ayurveda', logo: '/images/partners/shesha_ayurveda.png' },
+    { name: 'Sociolla', logo: '/images/partners/sociolla.png' },
+    { name: 'The Sleep Company', logo: '/images/partners/the_sleep_company.png' },
+    { name: 'Toyota', logo: '/images/partners/toyota.png' },
+    { name: 'vivo', logo: '/images/partners/vivo.png' },
+    { name: 'Want Want', logo: '/images/partners/want_want.png' },
+    { name: 'Watsons', logo: '/images/partners/watsons.png' },
+    { name: 'Wuling', logo: '/images/partners/wuling.png' },
+    { name: 'Yamaha', logo: '/images/partners/yamaha.svg' },
   ],
 ];
 
 const lifeAtMoca = [
-  { label: 'Company', image: '/images/home-figma/life-company.jpg' },
-  { label: 'Office', image: '/images/home-figma/life-office.jpg' },
-  { label: 'Group', image: '/images/home-figma/life-group.jpg' },
-  { label: 'IR', image: '/images/home-figma/life-ir.jpg' },
+  {
+    label: 'Company Event',
+    image: '/images/home-figma/life-company.jpg',
+    href: 'https://www.instagram.com/p/DbFxfLEB0Dr/',
+  },
+  {
+    label: 'Team Building',
+    image: '/images/home-figma/life-office.jpg',
+  },
+  {
+    label: 'Excellent Award',
+    image: '/images/home-figma/life-group.jpg',
+    href: 'https://www.linkedin.com/posts/teamculture-peoplefirst-agencylife-ugcPost-7418857801797562368-C-ab/?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTrIKMB44E1iGXab5omdkAJN1UEqUmMj4I',
+  },
+  {
+    label: 'Team Talent',
+    image: '/images/home-figma/life-ir.jpg',
+    href: 'https://www.instagram.com/p/DUYMoi0k3Q-/',
+  },
 ];
 
 const publisherLink = site.joinLinks.find((item) => item.type === 'publisher')!;
@@ -84,7 +242,13 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
           Empowering brands to capture mindshare with right-fit influencers while
           driving positive ROI through high-precision performance advertising.
         </p>
-        <a class="home-hero__cta" href="#services" data-hero-cta>
+        <a
+          class="home-hero__cta"
+          href="https://www.instagram.com/p/DTxtwRJjNyT/"
+          target="_blank"
+          rel="noreferrer"
+          data-hero-cta
+        >
           <span class="home-hero__cta-frost" aria-hidden="true" data-hero-cta-frost></span>
           <span class="home-hero__cta-veil" aria-hidden="true"></span>
           <span class="home-hero__cta-label">Watch Now</span>
@@ -190,16 +354,62 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
         <h2 id="cases-title">Real Voices, Proven Results</h2>
         <p>Campaigns shaped by local culture and built to perform.</p>
       </header>
-      <div class="cases-showcase">
-        {
-          cases.map((item, index) => (
-            <figure class:list={['case-poster', `case-poster--${index + 1}`]}>
-              <img src={item.image} alt={item.alt} width="460" height="620" loading="lazy" />
-            </figure>
-          ))
-        }
+      <div class="cases-carousel">
+        <button
+          class="cases-carousel__button cases-carousel__button--previous"
+          type="button"
+          aria-label="Show previous cases"
+          data-cases-previous
+          disabled
+        >
+          <img src="/images/home-ui/carousel-arrow.svg" alt="" width="20" height="20" />
+        </button>
+        <div class="cases-scroller" data-cases-scroller>
+          {
+            cases.map((item) => (
+              <figure class="case-poster" data-case-card data-case-href={item.href}>
+                <button
+                  class="case-poster__trigger"
+                  type="button"
+                  aria-label={`Play ${item.alt}`}
+                  data-case-video-trigger
+                >
+                  <img
+                    class="case-poster__cover"
+                    src={item.poster}
+                    alt={item.alt}
+                    width="540"
+                    height="960"
+                    loading="lazy"
+                    data-case-cover
+                  />
+                  <span class="media-play" aria-hidden="true">
+                    <img src="/images/home-ui/media-play.svg" alt="" width="52" height="52" />
+                  </span>
+                </button>
+                <video
+                  class="case-poster__video"
+                  data-case-video
+                  data-src={item.video}
+                  poster={item.poster}
+                  playsinline
+                  preload="none"
+                  controls
+                  hidden
+                ></video>
+              </figure>
+            ))
+          }
+        </div>
+        <button
+          class="cases-carousel__button cases-carousel__button--next"
+          type="button"
+          aria-label="Show next cases"
+          data-cases-next
+        >
+          <img src="/images/home-ui/carousel-arrow.svg" alt="" width="20" height="20" />
+        </button>
       </div>
-      <a class="home-button home-button--outline" href="#portfolio">View more</a>
     </div>
   </section>
 
@@ -336,7 +546,7 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
         </label>
         <label>
           <span>Content</span>
-          <textarea name="message" rows="5" required></textarea>
+          <textarea name="message" rows="4" required></textarea>
         </label>
         <label class="form-honeypot" aria-hidden="true">
           <span>Company website</span>
@@ -378,8 +588,7 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
           <div>
             <h3>For Brands</h3>
             <p>
-              Secure your market position<br />
-              with 100% verified influence and ROI-driven UA.
+              Secure your market position with 100% verified influence and ROI-driven UA.
             </p>
             <a class="join-card__button join-card__button--outline" href={advertiserLink.href} target="_blank" rel="noreferrer">
               Work with us
@@ -405,12 +614,33 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
     </div>
     <div class="life-grid">
       {
-        lifeAtMoca.map((item) => (
-          <figure class="life-card">
-            <img src={item.image} alt={`Life at MOCA — ${item.label}`} width="760" height="760" loading="lazy" />
-            <figcaption>{item.label}</figcaption>
-          </figure>
-        ))
+        lifeAtMoca.map((item) => {
+          const media = (
+            <>
+              <img src={item.image} alt={`Life at MOCA — ${item.label}`} width="1200" height="1800" loading="lazy" />
+              <span class="media-play" aria-hidden="true">
+                <img src="/images/home-ui/media-play.svg" alt="" width="52" height="52" />
+              </span>
+              <span class="life-card__label">{item.label}</span>
+            </>
+          );
+
+          return item.href ? (
+            <a
+              class="life-card"
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${item.label} — opens in a new tab`}
+            >
+              {media}
+            </a>
+          ) : (
+            <figure class="life-card">
+              {media}
+            </figure>
+          );
+        })
       }
     </div>
   </section>
@@ -500,4 +730,88 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
   insightScroller?.addEventListener('scroll', updateInsightControls, { passive: true });
   window.addEventListener('resize', updateInsightControls);
   updateInsightControls();
+
+  const casesScroller = document.querySelector<HTMLElement>('[data-cases-scroller]');
+  const casesPrevious = document.querySelector<HTMLButtonElement>('[data-cases-previous]');
+  const casesNext = document.querySelector<HTMLButtonElement>('[data-cases-next]');
+
+  const updateCasesControls = () => {
+    if (!casesScroller || !casesPrevious || !casesNext) return;
+    const maxScroll = casesScroller.scrollWidth - casesScroller.clientWidth;
+    casesPrevious.disabled = casesScroller.scrollLeft <= 2;
+    casesNext.disabled = casesScroller.scrollLeft >= maxScroll - 2;
+  };
+
+  const moveCases = (direction: -1 | 1) => {
+    if (!casesScroller) return;
+    const firstCard = casesScroller.querySelector<HTMLElement>('.case-poster');
+    const styles = window.getComputedStyle(casesScroller);
+    const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
+    const distance = (firstCard?.getBoundingClientRect().width || casesScroller.clientWidth) + gap;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    casesScroller.scrollBy({
+      left: distance * direction,
+      behavior: reducedMotion ? 'auto' : 'smooth',
+    });
+  };
+
+  casesPrevious?.addEventListener('click', () => moveCases(-1));
+  casesNext?.addEventListener('click', () => moveCases(1));
+  casesScroller?.addEventListener('scroll', updateCasesControls, { passive: true });
+  window.addEventListener('resize', updateCasesControls);
+  updateCasesControls();
+
+  const pauseOtherCaseVideos = (active?: HTMLVideoElement) => {
+    casesScroller?.querySelectorAll<HTMLVideoElement>('[data-case-video]').forEach((video) => {
+      if (video === active) return;
+      video.pause();
+      if (!video.hidden) {
+        video.hidden = true;
+        video
+          .closest<HTMLElement>('[data-case-card]')
+          ?.querySelector<HTMLButtonElement>('[data-case-video-trigger]')
+          ?.removeAttribute('hidden');
+      }
+    });
+  };
+
+  casesScroller?.querySelectorAll<HTMLButtonElement>('[data-case-video-trigger]').forEach((trigger) => {
+    trigger.addEventListener('click', async () => {
+      const card = trigger.closest<HTMLElement>('[data-case-card]');
+      const video = card?.querySelector<HTMLVideoElement>('[data-case-video]');
+      if (!card || !video) return;
+
+      const src = video.dataset.src;
+      if (!src) return;
+
+      pauseOtherCaseVideos(video);
+
+      if (!video.getAttribute('src')) {
+        video.src = src;
+      }
+
+      trigger.hidden = true;
+      video.hidden = false;
+
+      try {
+        await video.play();
+      } catch {
+        // Videos may still be pending — fall back to the Instagram source post.
+        video.hidden = true;
+        trigger.hidden = false;
+        const href = card.dataset.caseHref;
+        if (href) window.open(href, '_blank', 'noopener,noreferrer');
+      }
+    });
+  });
+
+  casesScroller?.querySelectorAll<HTMLVideoElement>('[data-case-video]').forEach((video) => {
+    video.addEventListener('ended', () => {
+      video.hidden = true;
+      video
+        .closest('[data-case-card]')
+        ?.querySelector<HTMLButtonElement>('[data-case-video-trigger]')
+        ?.removeAttribute('hidden');
+    });
+  });
 </script>

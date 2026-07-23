@@ -29,9 +29,9 @@ export const site = {
   ],
   socialLinks: [
     {
-      label: 'Facebook',
-      href: 'https://www.facebook.com/MOCATECH/',
-      icon: 'facebook',
+      label: 'Instagram',
+      href: 'https://www.instagram.com/p/DTxtwRJjNyT/',
+      icon: 'instagram',
     },
     {
       label: 'LinkedIn',
@@ -39,9 +39,9 @@ export const site = {
       icon: 'linkedin',
     },
     {
-      label: 'X',
-      href: 'https://twitter.com/MOCATECH',
-      icon: 'x',
+      label: 'Xiaohongshu',
+      href: 'https://www.xiaohongshu.com/',
+      icon: 'xiaohongshu',
     },
     {
       label: 'WeChat',
@@ -55,6 +55,7 @@ export const site = {
     { label: 'Cases', href: '/#cases' },
     { label: 'About Us', href: '/#about' },
     { label: 'Insight', href: '/#insights' },
+    { label: 'News', href: '/news' },
     { label: 'Contact', href: '/#contact' },
   ],
   newsNavigation: [
