@@ -17,13 +17,51 @@
 
 | 方案 | 站点运行方式 | 邮件方式 | `main` 自动更新 | 建议 |
 | --- | --- | --- | --- | --- |
-| Vercel | Astro SSR / Serverless Function | 直接 SMTP，或 HTTPS 邮件 webhook | Vercel Git Integration | 配置最少 |
-| GitHub Pages | 纯静态 | 必须调用外部 HTTPS Contact API | 项目内 GitHub Pages Action | 不能直接运行 SMTP |
-| Cloudflare Pages | 静态页面 + Pages Function | Pages Function 调用 HTTPS 邮件 webhook | Cloudflare Git Integration | 不使用 Nodemailer SMTP |
-| 自有服务器 | Astro Node SSR | 直接 SMTP，或 HTTPS 邮件 webhook | CI 成功后通知部署 webhook | 控制力最高 |
+| Vercel | Astro SSR / Serverless Function | 直接 SMTP、HTTPS webhook，或 Resend Contact API | Vercel Git Integration | 配置最少 |
+| GitHub Pages | 纯静态 | 必须调用外部 HTTPS Contact API，可由 Resend 提供发信能力 | 项目内 GitHub Pages Action | 不能直接运行 SMTP |
+| Cloudflare Pages | 静态页面 + Pages Function | Pages Function 调用 HTTPS webhook 或 Resend API | Cloudflare Git Integration | 不使用 Nodemailer SMTP |
+| 自有服务器 | Astro Node SSR，或静态文件 | 直接 SMTP、HTTPS webhook，或 Resend Contact API | CI 成功后通知部署 webhook | 控制力最高 |
 
 > `PUBLIC_*` 变量会进入浏览器构建结果，只能存放公开地址。SMTP
 > 密码、邮件服务 Token 等必须使用平台 Secret 或服务器环境变量。
+
+## 需要 Nelson 确认的架构选择
+
+部署平台和邮件架构是两个独立决策。最终上线前由 Nelson 确认：
+
+### 方案 A：保留当前混合运行方式
+
+- Vercel和自有服务器运行 Astro SSR，可直接使用 SMTP；
+- GitHub Pages 使用外部 Contact API；
+- Cloudflare Pages 使用 Pages Function；
+- 不同平台继续通过 `DEPLOY_TARGET` 选择静态或 SSR 构建。
+
+适合需要保留自有 SMTP、未来可能增加动态服务端功能的情况。
+
+### 方案 B：统一静态站点 + Resend（推荐）
+
+- Astro 在所有平台都生成相同的静态 `dist`；
+- Contact 表单统一请求一个独立的 HTTPS Contact API；
+- Contact API 推荐部署为 Cloudflare Worker，也可以使用其他 Serverless
+  Function；
+- Function 在服务端读取 `RESEND_API_KEY` 并调用 Resend；
+- Vercel、GitHub Pages、Cloudflare Pages和自有服务器共用同一个
+  `PUBLIC_CONTACT_ENDPOINT`；
+- GitHub 只负责固定的检查和构建，部署平台负责监听 `main`。
+
+适合当前以首页和新闻内容为主、不需要常驻 SSR 服务的站点。选择此方案后，
+需要进行一次性代码收敛：改为统一静态输出，移除 Nodemailer、SMTP 和 Astro
+Node/Vercel SSR adapter。完成改造前，当前代码仍按方案 A 运行。
+
+### Nelson 决策记录
+
+上线前在此确认：
+
+- [ ] 方案 A：混合运行方式
+- [ ] 方案 B：统一静态站点 + Resend
+- [ ] 正式部署平台：Vercel / GitHub Pages / Cloudflare Pages / 自有服务器
+- [ ] 正式域名：
+- [ ] Contact 收件地址：
 
 ## 公共准备工作
 
@@ -89,7 +127,56 @@ CONTACT_SUBJECT_PREFIX=[MOCA Website]
 
 Node/Vercel 版本目前发送相同字段，但旧 webhook 服务忽略额外字段也应正常工作。
 
-### 4. GitHub Actions 总开关
+### 4. Resend 托管发信
+
+Resend 可以托管发信和域名身份验证，因此站点不需要常驻 Astro SSR 或自行连接
+SMTP。它不等于传统邮箱收件箱：Contact 邮件仍会投递到
+`CONTACT_TO_EMAIL` 指定的真实邮箱。
+
+建议使用专门的发信子域名，例如：
+
+```text
+mail.example.com
+```
+
+操作步骤：
+
+1. 在 Resend 添加子域名；
+2. 在 DNS 服务商添加 Resend 提供的 SPF、DKIM 记录；
+3. 建议再添加 DMARC；
+4. 创建仅具有 Sending access 的生产 API Key；
+5. 在 Worker/Function Secret 中配置：
+
+   ```env
+   RESEND_API_KEY=<secret>
+   RESEND_FROM_EMAIL=MOCA Website <website@mail.example.com>
+   CONTACT_TO_EMAIL=hello@example.com
+   CONTACT_ALLOWED_ORIGINS=https://www.example.com
+   ```
+
+6. 在所有静态站点的公开构建变量中配置：
+
+   ```env
+   PUBLIC_CONTACT_ENDPOINT=https://api.example.com/contact
+   ```
+
+浏览器只能向 Contact API 提交表单，不能直接调用 Resend。`RESEND_API_KEY`
+必须保存在 Worker/Function Secret 中。Contact API 还应实现：
+
+- 请求来源白名单；
+- 字段长度和邮箱格式校验；
+- Honeypot 或 Turnstile；
+- IP/时间窗口频率限制；
+- `replyTo` 使用访客填写的邮箱；
+- 失败日志中不记录完整表单和密钥。
+
+Resend 域名验证和 API 文档：
+
+- [Resend domain verification](https://resend.com/docs/dashboard/domains/introduction)
+- [Resend send email API](https://resend.com/docs/api-reference/emails/send-email)
+- [Resend with Cloudflare](https://resend.com/cloudflare)
+
+### 5. GitHub Actions 总开关
 
 仓库内的 `.github/workflows/ci.yml` 会在 Pull Request 和 `main` 更新时执行：
 
@@ -450,4 +537,3 @@ journalctl -u moca-web -f
 - GitHub Pages：Re-run 旧提交对应 Workflow，或 revert `main`。
 - Cloudflare Pages：在 Deployments 中回滚/重新发布旧版本。
 - 自有服务器：切回上一个 immutable release 后重启服务。
-
