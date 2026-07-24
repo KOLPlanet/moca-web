@@ -1,0 +1,66 @@
+name: Deploy webhook
+
+on:
+  workflow_run:
+    workflows:
+      - CI
+    branches:
+      - main
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    if: >-
+      vars.DEPLOY_TARGET == 'self-hosted' &&
+      (
+        github.event_name == 'workflow_dispatch' ||
+        github.event.workflow_run.conclusion == 'success'
+      )
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: production
+
+    steps:
+      - name: Validate deployment secrets
+        env:
+          DEPLOY_WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL }}
+          DEPLOY_WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET }}
+        run: |
+          if [[ -z "$DEPLOY_WEBHOOK_URL" || -z "$DEPLOY_WEBHOOK_SECRET" ]]; then
+            echo "::error::Configure DEPLOY_WEBHOOK_URL and DEPLOY_WEBHOOK_SECRET in the production environment."
+            exit 1
+          fi
+
+      - name: Notify deployment server
+        env:
+          DEPLOY_WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL }}
+          DEPLOY_WEBHOOK_SECRET: ${{ secrets.DEPLOY_WEBHOOK_SECRET }}
+          DEPLOY_REPOSITORY: ${{ github.repository }}
+          DEPLOY_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+          DEPLOY_BRANCH: main
+        run: |
+          payload="$(jq -n \
+            --arg repository "$DEPLOY_REPOSITORY" \
+            --arg sha "$DEPLOY_SHA" \
+            --arg branch "$DEPLOY_BRANCH" \
+            '{repository: $repository, sha: $sha, branch: $branch}')"
+
+          curl --fail-with-body \
+            --silent \
+            --show-error \
+            --retry 3 \
+            --retry-all-errors \
+            --request POST \
+            --header "Authorization: Bearer $DEPLOY_WEBHOOK_SECRET" \
+            --header "Content-Type: application/json" \
+            --data "$payload" \
+            "$DEPLOY_WEBHOOK_URL"

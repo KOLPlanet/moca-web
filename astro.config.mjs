@@ -5,12 +5,19 @@ import { loadEnv } from 'vite';
 
 const mode = process.env.NODE_ENV === 'development' ? 'development' : 'production';
 const env = loadEnv(mode, process.cwd(), '');
+const deployTarget = env.DEPLOY_TARGET || 'node';
+const isStaticTarget = ['github-pages', 'cloudflare-pages'].includes(deployTarget);
 
-// Vercel sets VERCEL=1 during build/deploy; keep Node adapter for local/self-host.
-const adapter = process.env.VERCEL ? vercel() : node({ mode: 'standalone' });
+// Static hosts cannot run Astro API routes. Vercel and self-hosted deployments
+// retain SSR; Cloudflare Pages supplies its contact API through /functions.
+const adapter = isStaticTarget
+  ? undefined
+  : process.env.VERCEL
+    ? vercel()
+    : node({ mode: 'standalone' });
 
 export default defineConfig({
   site: env.PUBLIC_SITE_URL || 'http://localhost:4321',
-  output: 'server',
+  output: isStaticTarget ? 'static' : 'server',
   adapter,
 });

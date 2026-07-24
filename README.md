@@ -7,7 +7,7 @@ Astro foundation for the MOCA marketing site.
 - `/` — homepage sections for Features, About, Solutions, Cases, News, and Contact.
 - `/news` — standalone news index.
 - `/news/[slug]` — statically rendered article pages backed by Astro content collections.
-- `/api/contact` — server endpoint that forwards form submissions to a configured mail-service webhook.
+- `/api/contact` — server endpoint that sends form submissions through SMTP or a configured mail-service webhook.
 
 All header links except News point to sections on `/`.
 
@@ -22,10 +22,15 @@ npm run dev
 The site can run without `.env`, but the contact form returns a configuration
 message until all contact mail variables are set.
 
-## Contact mail contract
+## Contact mail
 
-`CONTACT_MAIL_SERVICE_URL` receives a `POST` request with a bearer token from
-`CONTACT_MAIL_SERVICE_TOKEN` and this JSON body:
+Direct SMTP is the recommended default for the current Node/Vercel runtime.
+Configure `SMTP_HOST`, `SMTP_PORT`, SMTP credentials, and contact routing using
+the documented values in `.env.example`.
+
+The alternative webhook transport sends `CONTACT_MAIL_SERVICE_URL` a `POST`
+request with a bearer token from `CONTACT_MAIL_SERVICE_TOKEN` and this JSON
+body:
 
 ```json
 {
@@ -37,8 +42,18 @@ message until all contact mail variables are set.
 }
 ```
 
-Update the `payload` in `src/pages/api/contact.ts` when a chosen mail provider
-uses a different API shape.
+Update the webhook payload in `src/lib/contact-mail.ts` when a chosen mail
+provider uses a different API shape.
+
+See [Deployment](docs/DEPLOYMENT.md) for SMTP details, GitHub Actions, deployment
+webhook secrets, Vercel setup, self-hosting, and Cloudflare compatibility.
+
+Supported build targets:
+
+- `node` / `vercel`: SSR with direct SMTP or the HTTPS mail webhook.
+- `github-pages`: static site with an external contact endpoint.
+- `cloudflare-pages`: static site plus the included Pages Function, using the
+  HTTPS mail webhook transport.
 
 ## News ingestion
 

@@ -9,6 +9,7 @@ import '../styles/home.css';
 const newsItems = (await getCollection('news', ({ data }) => !data.draft))
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
   .slice(0, 5);
+const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact';
 
 const offices = [
   { name: 'Shanghai, Taiwan', flag: '/images/flags/cn.svg', flagAlt: 'China' },
@@ -618,26 +619,26 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
     />
     <div class="home-contact__shade"></div>
     <div class="home-container home-contact__inner">
-      <form class="home-contact-form" action="/api/contact" method="post" data-contact-form>
+      <form class="home-contact-form" action={contactEndpoint} method="post" data-contact-form>
         <header class="home-section-heading home-section-heading--light">
           <h2 id="contact-title">Contact Us</h2>
           <p>Let’s start a conversation about your next market.</p>
         </header>
         <label>
           <span>Your name</span>
-          <input name="name" type="text" autocomplete="name" required />
+          <input name="name" type="text" autocomplete="name" maxlength="120" required />
         </label>
         <label>
           <span>Your email</span>
-          <input name="email" type="email" autocomplete="email" required />
+          <input name="email" type="email" autocomplete="email" maxlength="254" required />
         </label>
         <label>
           <span>Subject</span>
-          <input name="subject" type="text" required />
+          <input name="subject" type="text" maxlength="180" required />
         </label>
         <label>
           <span>Content</span>
-          <textarea name="message" rows="4" required></textarea>
+          <textarea name="message" rows="4" maxlength="5000" required></textarea>
         </label>
         <label class="form-honeypot" aria-hidden="true">
           <span>Company website</span>
