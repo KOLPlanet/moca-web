@@ -24,7 +24,6 @@
   "devDependencies": {
     "@astrojs/check": "latest",
     "@types/nodemailer": "^8.0.1",
-    "typescript": "latest",
-    "vercel": "^56.4.1"
+    "typescript": "latest"
   }
 }

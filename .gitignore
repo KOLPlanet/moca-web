@@ -139,6 +139,16 @@ dist
 !.yarn/sdks
 !.yarn/versions
 
+# Local AI/editor configuration
+.baoyu-skills/baoyu-url-to-markdown/
+.cursor/rules/
+.codegraph/
+
+# Local visual QA artifacts
+qa-captures/
+reference-captures/
+design-qa.md
+
 # Vite files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
