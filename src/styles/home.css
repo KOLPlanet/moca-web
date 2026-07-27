@@ -2075,6 +2075,15 @@ a.life-card {
     width: 100%;
   }
 
+  .join-card--brand {
+    min-height: 210px;
+    padding-right: 18px;
+  }
+
+  .join-card--brand img {
+    display: none;
+  }
+
   .home-contact-form .home-section-heading h2 {
     font-size: clamp(1.45rem, 5.5vw, 1.7rem);
   }
@@ -2215,10 +2224,6 @@ a.life-card {
   .home-news-card__body {
     min-height: 0;
     padding: 26px 24px 24px;
-  }
-
-  .join-card--brand img {
-    width: 96px;
   }
 
   .cases-scroller {

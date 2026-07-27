@@ -2682,7 +2682,7 @@ textarea {
 
 @media (max-width: 799px) {
   .footer-shell {
-    width: min(calc(100% - 28px), 1440px);
+    width: min(calc(100% - 40px), 1440px);
   }
 
   .footer-grid.footer-grid--moca {
