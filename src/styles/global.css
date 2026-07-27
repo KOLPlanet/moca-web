@@ -306,7 +306,12 @@ textarea {
 
 .menu-toggle {
   display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   border: 0;
+  padding: 10px 12px;
   color: var(--ink-950);
   background: transparent;
   cursor: pointer;
@@ -2001,8 +2006,8 @@ textarea {
 }
 
 .site-footer .footer-social__links a {
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 44px;
   border: 0;
   border-radius: 0;
   color: white;
@@ -2356,7 +2361,7 @@ textarea {
   }
 
   .container {
-    width: min(calc(100% - 28px), var(--max-width));
+    width: min(calc(100% - 40px), var(--max-width));
   }
 
   .site-header__inner {
@@ -2547,6 +2552,17 @@ textarea {
 
   .footer-brand {
     max-width: 480px;
+  }
+
+  .site-footer .footer-links a {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    padding-block: 8px;
+  }
+
+  .footer-bottom {
+    overflow-wrap: anywhere;
   }
 
   .footer-join__links {
