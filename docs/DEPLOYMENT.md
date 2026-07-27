@@ -71,7 +71,12 @@ Node/Vercel SSR adapter。完成改造前，当前代码仍按方案 A 运行。
 
 ```env
 PUBLIC_SITE_URL=https://www.example.com
+PUBLIC_GOOGLE_ANALYTICS_ID=G-WCBXNY8RGV
 ```
+
+`PUBLIC_GOOGLE_ANALYTICS_ID` 是公开的 GA4 Measurement ID，仅在构建时配置。
+留空时不会加载 Google Analytics。正式环境建议只在 Production 中设置，避免
+Preview 和本地访问污染统计数据。
 
 ### 2. SMTP 配置
 
@@ -211,6 +216,7 @@ npm run build
    中确认生产分支为 `main`。
 5. 在 Production Environment Variables 添加：
    - `PUBLIC_SITE_URL`
+   - `PUBLIC_GOOGLE_ANALYTICS_ID`
    - SMTP 配置，或邮件 webhook 配置
 6. 在 **Domains** 添加自定义域名并按提示配置 DNS。
 7. 触发一次 Production Deployment，并真实提交一次 Contact 表单。
@@ -282,6 +288,7 @@ Cloudflare Pages Function 都支持通过 `CONTACT_ALLOWED_ORIGINS` 配置允许
    | `DEPLOY_TARGET` | `github-pages` |
    | `PUBLIC_SITE_URL` | `https://www.example.com` |
    | `PUBLIC_CONTACT_ENDPOINT` | `https://contact-api.example.com/api/contact` |
+   | `PUBLIC_GOOGLE_ANALYTICS_ID` | `G-WCBXNY8RGV` |
 
 3. 在 GitHub **Settings → Pages**：
    - Source 选择 **GitHub Actions**；
@@ -365,6 +372,7 @@ Vercel或自有服务器上，再让 Pages Function 通过 HTTPS 调用。
    ```env
    DEPLOY_TARGET=cloudflare-pages
    PUBLIC_SITE_URL=https://www.example.com
+   PUBLIC_GOOGLE_ANALYTICS_ID=G-WCBXNY8RGV
    ```
 
 5. 在 **Settings → Variables and Secrets** 添加运行时 Secret：

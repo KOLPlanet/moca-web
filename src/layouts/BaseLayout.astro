@@ -31,6 +31,17 @@ const canonical = new URL(canonicalUrl || Astro.url.pathname, siteOrigin).href;
 const imageUrl = image
   ? new URL(typeof image === 'string' ? image : image.src, siteOrigin).href
   : undefined;
+const googleAnalyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID?.trim();
+const googleAnalyticsInit = googleAnalyticsId
+  ? `
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () {
+        window.dataLayer.push(arguments);
+      };
+      window.gtag('js', new Date());
+      window.gtag('config', ${JSON.stringify(googleAnalyticsId)});
+    `
+  : '';
 ---
 
 <!doctype html>
@@ -67,6 +78,22 @@ const imageUrl = image
       rel="stylesheet"
     />
     <title>{pageTitle}</title>
+    {
+      googleAnalyticsId && (
+        <>
+          <script
+            is:inline
+            src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+            type="text/partytown"
+          />
+          <script
+            is:inline
+            type="text/partytown"
+            set:html={googleAnalyticsInit}
+          />
+        </>
+      )
+    }
     <Analytics />
   </head>
   <body>

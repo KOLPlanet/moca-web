@@ -24,6 +24,7 @@ jobs:
       DEPLOY_TARGET: github-pages
       PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
       PUBLIC_CONTACT_ENDPOINT: ${{ vars.PUBLIC_CONTACT_ENDPOINT }}
+      PUBLIC_GOOGLE_ANALYTICS_ID: ${{ vars.PUBLIC_GOOGLE_ANALYTICS_ID }}
 
     steps:
       - name: Check out repository

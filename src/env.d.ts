@@ -22,6 +22,7 @@ interface ImportMetaEnv {
   readonly SMTP_USER?: string;
   readonly SMTP_PASSWORD?: string;
   readonly PUBLIC_CONTACT_ENDPOINT?: string;
+  readonly PUBLIC_GOOGLE_ANALYTICS_ID?: string;
   readonly PUBLIC_SITE_URL?: string;
 }
 
