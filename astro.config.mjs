@@ -19,5 +19,9 @@ const adapter = isStaticTarget
 export default defineConfig({
   site: env.PUBLIC_SITE_URL || 'http://localhost:4321',
   output: isStaticTarget ? 'static' : 'server',
-  adapter,
+  adapter:vercel({
+    webAnalytics: {
+      enabled: true, // set to false when using @vercel/analytics@1.4.0
+    },
+  }),
 });

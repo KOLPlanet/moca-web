@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import { site } from '../config/site';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title?: string;
@@ -66,6 +67,7 @@ const imageUrl = image
       rel="stylesheet"
     />
     <title>{pageTitle}</title>
+    <Analytics />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
