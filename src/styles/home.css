@@ -901,7 +901,23 @@
 }
 
 .home-portfolio__shade {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(28, 68, 54, 0.14));
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.22) 0%,
+    rgba(0, 0, 0, 0.08) 26%,
+    transparent 52%
+  );
+}
+
+.home-portfolio .home-section-heading--light h2 {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.home-portfolio .home-section-heading--light p {
+  color: #fff;
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.4),
+    0 0 14px rgba(0, 0, 0, 0.25);
 }
 
 .home-portfolio__content {
@@ -1987,26 +2003,6 @@ a.life-card {
     object-position: 9% 42%;
     transform: scale(1.2);
     transform-origin: 9% 22%;
-  }
-
-  .home-portfolio__shade {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.28) 0%,
-      rgba(0, 0, 0, 0.1) 22%,
-      transparent 48%
-    );
-  }
-
-  .home-portfolio .home-section-heading--light h2 {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
-  }
-
-  .home-portfolio .home-section-heading--light p {
-    color: #fff;
-    text-shadow:
-      0 1px 1px rgba(0, 0, 0, 0.45),
-      0 0 14px rgba(0, 0, 0, 0.28);
   }
 
   .home-portfolio__content {
