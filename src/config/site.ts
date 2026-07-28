@@ -2,7 +2,14 @@ export const site = {
   name: 'MOCA Technology',
   shortName: 'MOCA',
   description:
-    'Global OEM aggregation, influencer marketing, and advertising solutions built for fast-moving markets.',
+    'MOCA Technology helps brands grow across Asia and emerging markets through influencer marketing, performance advertising, OEM media, and local expertise.',
+  locale: 'en_US',
+  socialImage: {
+    src: '/images/og-default.jpg',
+    alt: 'MOCA characters representing the markets and cultures MOCA serves',
+    width: 1200,
+    height: 630,
+  },
   contact: {
     cooperationEmail: 'business@moca-tech.net',
     careersEmail: 'hr@moca-tech.net',

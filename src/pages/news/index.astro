@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import NewsArchive from '../../components/NewsArchive.astro';
 import { paginateNews, sortNewsEntries } from '../../lib/news';
 
+export const prerender = true;
+
 const allEntries = sortNewsEntries(
   await getCollection('news', ({ data }) => !data.draft),
 );

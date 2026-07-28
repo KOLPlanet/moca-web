@@ -71,9 +71,11 @@ const orderedTags = sortTaxonomyItemsByCount(data.tags, taxonomyCounts.tags);
   description={data.description}
   canonicalUrl={`/news/${data.slug}`}
   image={data.cover.src}
+  imageAlt={data.cover.alt}
   article={{
     publishedTime: data.publishedAt.toISOString(),
     modifiedTime: data.updatedAt.toISOString(),
+    author: data.author.name,
   }}
 >
   <div

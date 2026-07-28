@@ -6,6 +6,8 @@ import { site } from '../config/site';
 import { getEstimatedReadingMinutes } from '../lib/news';
 import '../styles/home.css';
 
+export const prerender = true;
+
 const newsItems = (await getCollection('news', ({ data }) => !data.draft))
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
   .slice(0, 5);
@@ -216,7 +218,7 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
 
 <BaseLayout
   title="MOCA Technology"
-  description="Global influencer marketing and performance advertising, delivered with local expertise."
+  description={site.description}
 >
   <section id="top" class="home-hero" aria-labelledby="home-hero-title">
     <div class="home-hero__media" aria-hidden="true">
