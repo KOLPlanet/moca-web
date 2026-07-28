@@ -21,7 +21,7 @@ interface Props {
 }
 
 const {
-  title = site.name,
+  title = site.homeTitle,
   description = site.description,
   canonicalUrl,
   image,
@@ -30,7 +30,10 @@ const {
   article,
 } = Astro.props;
 
-const pageTitle = title === site.name ? title : `${title} · ${site.shortName}`;
+const pageTitle =
+  title === site.homeTitle || title === site.name
+    ? title
+    : `${title} · ${site.shortName}`;
 const siteOrigin = Astro.site || Astro.url.origin;
 const canonical = new URL(canonicalUrl || Astro.url.pathname, siteOrigin).href;
 const socialImage = image || site.socialImage.src;

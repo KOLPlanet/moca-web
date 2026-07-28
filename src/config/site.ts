@@ -1,12 +1,13 @@
 export const site = {
-  name: 'MOCA Technology',
+  name: 'Moca Technology',
   shortName: 'MOCA',
+  homeTitle: 'Moca Technology, OEM Consolidator & Ad Innovator',
   description:
-    'MOCA Technology helps brands grow across Asia and emerging markets through influencer marketing, performance advertising, OEM media, and local expertise.',
+    'Founded in 2012, MOCA is an innovative global agency, specializing in user acquisition, influencer marketing, CTV, branding and dynamic programmatic.',
   locale: 'en_US',
   socialImage: {
     src: '/images/og-default.jpg',
-    alt: 'MOCA characters representing the markets and cultures MOCA serves',
+    alt: 'MOCA global OEM consolidator & Ad innovator.',
     width: 1200,
     height: 630,
   },
