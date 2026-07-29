@@ -646,17 +646,50 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
         </label>
         <label>
           <span>Content</span>
-          <textarea name="message" rows="4" maxlength="5000" required></textarea>
+          <textarea name="message" rows="3" maxlength="5000" required></textarea>
         </label>
         <label class="form-honeypot" aria-hidden="true">
           <span>Company website</span>
           <input name="company" type="text" tabindex="-1" autocomplete="off" />
         </label>
         <button class="home-button home-button--solid" type="submit">Send</button>
+        <div class="home-contact-quick" aria-label="Direct email">
+          <a
+            class="home-contact-quick__button"
+            href={`mailto:${site.contact.careersEmail}`}
+            title={site.contact.careersEmail}
+          >
+            <span class="home-contact-quick__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                <path
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+                ></path>
+              </svg>
+            </span>
+            <span class="home-contact-quick__copy">
+              <span class="home-contact-quick__label">For Job</span>
+              <span class="home-contact-quick__email">{site.contact.careersEmail}</span>
+            </span>
+          </a>
+          <a
+            class="home-contact-quick__button"
+            href={`mailto:${site.contact.cooperationEmail}`}
+            title={site.contact.cooperationEmail}
+          >
+            <span class="home-contact-quick__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                <path
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+                ></path>
+              </svg>
+            </span>
+            <span class="home-contact-quick__copy">
+              <span class="home-contact-quick__label">For Cooperation</span>
+              <span class="home-contact-quick__email">{site.contact.cooperationEmail}</span>
+            </span>
+          </a>
+        </div>
         <p class="form-status" role="status" aria-live="polite"></p>
-        <p class="home-contact-form__privacy">
-          By sending this form you agree to our <a href="/privacy-policy">Privacy Policy</a>.
-        </p>
       </form>
     </div>
   </section>

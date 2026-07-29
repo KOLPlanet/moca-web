@@ -1287,12 +1287,12 @@
   z-index: 1;
   display: flex;
   justify-content: flex-end;
-  padding-block: 56px;
+  padding-block: 48px;
 }
 
 .home-contact-form {
   width: min(100%, 440px);
-  padding: clamp(24px, 2.8vw, 34px);
+  padding: clamp(20px, 2.4vw, 28px);
   border: 1px solid rgba(255, 255, 255, 0.28);
   background: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(20px);
@@ -1302,12 +1302,12 @@
 }
 
 .home-contact-form .home-section-heading {
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   text-align: left;
 }
 
 .home-contact-form .home-section-heading h2 {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-size: clamp(1.4rem, 2vw, 1.85rem);
   font-weight: var(--text-title-weight);
   letter-spacing: var(--text-title-tracking);
@@ -1323,8 +1323,8 @@
 
 .home-contact-form label {
   display: grid;
-  gap: 5px;
-  margin-bottom: 11px;
+  gap: 4px;
+  margin-bottom: 8px;
   color: rgba(255, 255, 255, 0.88);
   font-family: var(--font-display);
   font-size: 0.7rem;
@@ -1338,7 +1338,7 @@
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 0;
-  padding: 9px 12px;
+  padding: 8px 11px;
   color: rgba(0, 0, 0, 0.82);
   background: rgba(255, 255, 255, 0.78);
   outline: none;
@@ -1351,7 +1351,7 @@
 }
 
 .home-contact-form textarea {
-  min-height: 88px;
+  min-height: 56px;
 }
 
 .home-contact-form input:hover,
@@ -1368,31 +1368,108 @@
 
 .home-contact-form .home-button {
   width: 100%;
-  margin-top: 4px;
+  margin-top: 12px;
   min-height: 44px;
   padding-block: 11px;
   font-size: 0.86rem;
 }
 
+.home-contact-quick {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.home-contact-quick__button {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #619239;
+  background: rgba(255, 255, 255, 0.78);
+  font-family: var(--font-display);
+  text-align: left;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.home-contact-quick__button:hover,
+.home-contact-quick__button:focus-visible {
+  border-color: #619239;
+  color: #436d21;
+  background: rgba(255, 255, 255, 0.94);
+  transform: translateY(-1px);
+}
+
+.home-contact-quick__icon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #619239;
+  background: rgba(97, 146, 57, 0.12);
+}
+
+.home-contact-quick__icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.home-contact-quick__button:hover .home-contact-quick__icon,
+.home-contact-quick__button:focus-visible .home-contact-quick__icon {
+  color: #436d21;
+  background: rgba(67, 109, 33, 0.14);
+}
+
+.home-contact-quick__copy {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.home-contact-quick__label {
+  color: #619239;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+.home-contact-quick__email {
+  color: rgba(24, 32, 24, 0.55);
+  font-family: var(--font-sans);
+  font-size: 0.64rem;
+  font-weight: 500;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.home-contact-quick__button:hover .home-contact-quick__label,
+.home-contact-quick__button:focus-visible .home-contact-quick__label {
+  color: #436d21;
+}
+
+.home-contact-quick__button:hover .home-contact-quick__email,
+.home-contact-quick__button:focus-visible .home-contact-quick__email {
+  color: rgba(24, 32, 24, 0.72);
+}
+
 .home-contact-form .form-status {
   margin: 10px 0 0;
   color: white;
-}
-
-.home-contact-form__privacy {
-  margin: 12px 0 0;
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 0.7rem;
-  line-height: 1.4;
-  text-align: center;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-}
-
-.home-contact-form__privacy a {
-  color: #fff;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .home-join {
