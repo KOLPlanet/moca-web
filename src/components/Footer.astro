@@ -58,19 +58,43 @@ const resultLinks = [
 
       <div class="footer-navs">
         <nav aria-label="Services">
-          <p class="footer-heading">Services</p>
           <ul class="footer-links">
             {serviceLinks.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
           </ul>
         </nav>
 
         <nav aria-label="Results">
-          <p class="footer-heading">Results</p>
           <ul class="footer-links">
             {resultLinks.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
           </ul>
         </nav>
       </div>
+
+      <aside class="footer-kolplanet">
+        <a
+          class="footer-kolplanet__logo"
+          href="https://www.kolplanet.com/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Visit KOLPlanet — opens in a new tab"
+        >
+          <img
+            src="/images/kolplanet/logo-light.svg"
+            alt="KOLPlanet"
+            width="181"
+            height="28"
+          />
+        </a>
+        <p>Put your KOL management on autopilot. An AI-driven platform to discover creators, automate workflows, and scale campaigns.</p>
+        <a
+          class="footer-kolplanet__link"
+          href="https://www.kolplanet.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Visit website
+        </a>
+      </aside>
     </div>
 
     <div class="footer-bottom">

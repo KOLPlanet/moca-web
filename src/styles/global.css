@@ -1927,9 +1927,9 @@ textarea {
 
 .footer-grid.footer-grid--moca {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) repeat(2, minmax(0, 0.85fr));
-  align-items: start;
-  column-gap: clamp(40px, 5vw, 72px);
+  grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 0.7fr)) minmax(0, 1fr);
+  align-items: center;
+  column-gap: clamp(32px, 4vw, 56px);
   color: rgba(255, 255, 255, 0.56);
 }
 
@@ -1963,7 +1963,54 @@ textarea {
   font-family: var(--font-sans);
   font-size: var(--text-lede-size);
   font-weight: 400;
-  line-height: 1.7;
+}
+
+.footer-kolplanet {
+  min-width: 0;
+  max-width: 300px;
+}
+
+.footer-kolplanet__logo {
+  display: inline-flex;
+  margin-bottom: 14px;
+  opacity: 0.92;
+  transition: opacity 180ms ease;
+}
+
+.footer-kolplanet__logo img {
+  display: block;
+  width: auto;
+  height: 22px;
+}
+
+.footer-kolplanet__logo:hover,
+.footer-kolplanet__logo:focus-visible {
+  opacity: 1;
+}
+
+.footer-kolplanet p {
+  margin: 0 0 14px;
+  color: rgba(255, 255, 255, 0.57);
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.footer-kolplanet__link {
+  color: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: var(--text-subtitle-tracking);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 180ms ease;
+}
+
+.footer-kolplanet__link:hover,
+.footer-kolplanet__link:focus-visible {
+  color: white;
 }
 
 .site-footer .footer-heading {
@@ -2678,6 +2725,10 @@ textarea {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: clamp(40px, 12vw, 80px);
   }
+
+  .footer-kolplanet {
+    max-width: none;
+  }
 }
 
 @media (max-width: 799px) {
@@ -2694,6 +2745,10 @@ textarea {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 28px;
+  }
+
+  .footer-kolplanet {
+    max-width: none;
   }
 
   .site-footer .footer-bottom {

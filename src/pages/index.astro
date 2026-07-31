@@ -464,6 +464,44 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
     </div>
   </section>
 
+  <section id="kolplanet" class="home-kolplanet" aria-label="KOLPlanet demo">
+    <button
+      class="kolplanet-demo__trigger"
+      type="button"
+      aria-label="Play KOLPlanet demo video"
+      data-kolplanet-play
+    >
+      <img
+        class="kolplanet-demo__poster"
+        src="/images/kolplanet/demo-poster.jpg"
+        alt="KOLPlanet platform demo preview"
+        width="1600"
+        height="900"
+        loading="lazy"
+      />
+      <span class="media-play" aria-hidden="true">
+        <img src="/images/home-ui/media-play.svg" alt="" width="52" height="52" />
+      </span>
+    </button>
+
+    <dialog class="kolplanet-modal" data-kolplanet-modal aria-label="KOLPlanet demo video">
+      <div class="kolplanet-modal__panel">
+        <button class="kolplanet-modal__close" type="button" aria-label="Close demo video" data-kolplanet-close>
+          Close
+        </button>
+        <div class="kolplanet-modal__frame">
+          <iframe
+            data-kolplanet-iframe
+            title="KOLPlanet demo video"
+            src="about:blank"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </dialog>
+  </section>
+
   <section id="portfolio" class="home-portfolio" aria-labelledby="portfolio-title">
     <img
       class="home-portfolio__background"
@@ -656,23 +694,6 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
         <div class="home-contact-quick" aria-label="Direct email">
           <a
             class="home-contact-quick__button"
-            href={`mailto:${site.contact.careersEmail}`}
-            title={site.contact.careersEmail}
-          >
-            <span class="home-contact-quick__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
-                <path
-                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
-                ></path>
-              </svg>
-            </span>
-            <span class="home-contact-quick__copy">
-              <span class="home-contact-quick__label">For Job</span>
-              <span class="home-contact-quick__email">{site.contact.careersEmail}</span>
-            </span>
-          </a>
-          <a
-            class="home-contact-quick__button"
             href={`mailto:${site.contact.cooperationEmail}`}
             title={site.contact.cooperationEmail}
           >
@@ -686,6 +707,23 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
             <span class="home-contact-quick__copy">
               <span class="home-contact-quick__label">For Cooperation</span>
               <span class="home-contact-quick__email">{site.contact.cooperationEmail}</span>
+            </span>
+          </a>
+          <a
+            class="home-contact-quick__button"
+            href={`mailto:${site.contact.careersEmail}`}
+            title={site.contact.careersEmail}
+          >
+            <span class="home-contact-quick__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                <path
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+                ></path>
+              </svg>
+            </span>
+            <span class="home-contact-quick__copy">
+              <span class="home-contact-quick__label">For Job</span>
+              <span class="home-contact-quick__email">{site.contact.careersEmail}</span>
             </span>
           </a>
         </div>
@@ -914,5 +952,38 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
         ?.querySelector<HTMLButtonElement>('[data-case-video-trigger]')
         ?.removeAttribute('hidden');
     });
+  });
+
+  const kolplanetModal = document.querySelector<HTMLDialogElement>('[data-kolplanet-modal]');
+  const kolplanetPlay = document.querySelector<HTMLButtonElement>('[data-kolplanet-play]');
+  const kolplanetClose = document.querySelector<HTMLButtonElement>('[data-kolplanet-close]');
+  const kolplanetIframe = document.querySelector<HTMLIFrameElement>('[data-kolplanet-iframe]');
+  const kolplanetDemoSrc = 'https://www.youtube.com/embed/OFltA1Ng9P8?autoplay=1&rel=0';
+
+  const closeKolplanetDemo = () => {
+    if (!kolplanetModal) return;
+    if (kolplanetIframe) kolplanetIframe.src = 'about:blank';
+    kolplanetModal.close();
+  };
+
+  kolplanetPlay?.addEventListener('click', () => {
+    if (!kolplanetModal || !kolplanetIframe) return;
+    kolplanetIframe.src = kolplanetDemoSrc;
+    if (typeof kolplanetModal.showModal === 'function') {
+      kolplanetModal.showModal();
+    } else {
+      kolplanetModal.setAttribute('open', '');
+    }
+  });
+
+  kolplanetClose?.addEventListener('click', closeKolplanetDemo);
+  kolplanetModal?.addEventListener('click', (event) => {
+    if (event.target === kolplanetModal) closeKolplanetDemo();
+  });
+  kolplanetModal?.addEventListener('close', () => {
+    if (kolplanetIframe) kolplanetIframe.src = 'about:blank';
+  });
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeKolplanetDemo();
   });
 </script>
