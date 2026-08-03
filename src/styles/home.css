@@ -1736,8 +1736,7 @@
 .home-life {
   padding-top: clamp(84px, 8vw, 130px);
   padding-bottom: clamp(84px, 8vw, 130px);
-  color: white;
-  background: #080908;
+  background: #fff;
 }
 
 .home-life .home-section-heading {
@@ -1758,8 +1757,8 @@
   display: block;
   color: inherit;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(16, 24, 16, 0.08);
+  box-shadow: 0 8px 24px rgba(16, 24, 16, 0.06);
   transition: border-color 280ms ease, box-shadow 280ms ease;
 }
 
@@ -1777,10 +1776,8 @@ a.life-card {
 }
 
 .life-card:hover {
-  border-color: rgba(255, 255, 255, 0.36);
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
-    0 12px 32px rgba(0, 0, 0, 0.35);
+  border-color: rgba(16, 24, 16, 0.16);
+  box-shadow: 0 14px 32px rgba(16, 24, 16, 0.12);
 }
 
 .life-card:hover::after {

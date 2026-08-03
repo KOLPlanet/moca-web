@@ -1928,7 +1928,7 @@ textarea {
 .footer-grid.footer-grid--moca {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 0.7fr)) minmax(0, 1fr);
-  align-items: center;
+  align-items: start;
   column-gap: clamp(32px, 4vw, 56px);
   color: rgba(255, 255, 255, 0.56);
 }
@@ -1943,6 +1943,7 @@ textarea {
 
 .footer-grid.footer-grid--moca > .footer-navs > nav {
   min-width: 0;
+  margin-top: 32px;
 }
 
 .brand--footer {
@@ -1968,6 +1969,7 @@ textarea {
 .footer-kolplanet {
   min-width: 0;
   max-width: 300px;
+  margin-top: 32px;
 }
 
 .footer-kolplanet__logo {
@@ -2162,12 +2164,8 @@ textarea {
   line-height: 1.5;
 }
 
-.site-footer .footer-bottom > *:nth-child(2) {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .site-footer .footer-bottom > a:last-child {
+  margin-left: auto;
   color: rgba(255, 255, 255, 0.52);
   font-family: var(--font-sans);
 }
@@ -2726,6 +2724,11 @@ textarea {
     column-gap: clamp(40px, 12vw, 80px);
   }
 
+  .footer-grid.footer-grid--moca > .footer-navs > nav,
+  .footer-kolplanet {
+    margin-top: 0;
+  }
+
   .footer-kolplanet {
     max-width: none;
   }
@@ -2755,10 +2758,6 @@ textarea {
     align-items: flex-start;
     flex-direction: column;
     gap: 12px;
-  }
-
-  .site-footer .footer-bottom > *:nth-child(2) {
-    margin: 0;
   }
 }
 

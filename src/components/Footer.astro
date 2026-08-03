@@ -2,10 +2,9 @@
 import { site } from '../config/site';
 
 const serviceLinks = [
-  { label: 'Core Services', href: '/#services' },
+  { label: 'About Us', href: '/#about' },
   { label: 'Influencer Marketing', href: '/#services' },
   { label: 'Performance Advertising', href: '/#services' },
-  { label: 'Join MOCA', href: '/#join' },
 ];
 
 const resultLinks = [
@@ -57,7 +56,7 @@ const resultLinks = [
       </div>
 
       <div class="footer-navs">
-        <nav aria-label="Services">
+        <nav aria-label="Company">
           <ul class="footer-links">
             {serviceLinks.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
           </ul>
@@ -85,7 +84,7 @@ const resultLinks = [
             height="28"
           />
         </a>
-        <p>Put your KOL management on autopilot. An AI-driven platform to discover creators, automate workflows, and scale campaigns.</p>
+        <p>Put your KOL management on autopilot.<br />An AI-driven platform to discover creators, automate workflows, and scale campaigns.</p>
         <a
           class="footer-kolplanet__link"
           href="https://www.kolplanet.com/"
@@ -99,7 +98,6 @@ const resultLinks = [
 
     <div class="footer-bottom">
       <p>Copyright © 2025 Moca Technology – <a href={site.legal.icpHref} target="_blank" rel="noreferrer">{site.legal.icpNumber}</a></p>
-      <p><a href="https://www.kolplanet.com/" target="_blank" rel="noreferrer">Influencer Marketing Solution Powered by KOLPlanet</a></p>
       <a href={site.legal.privacyPolicyHref}>Term &amp; Policy</a>
     </div>
   </div>
