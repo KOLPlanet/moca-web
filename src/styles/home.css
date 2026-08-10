@@ -737,9 +737,9 @@
   border: 0;
   border-radius: 0;
   padding: 0;
-  background: #1a2218;
+  background: #f4f8ff;
   cursor: pointer;
-  aspect-ratio: 4.2 / 1;
+  aspect-ratio: 3500 / 835;
 }
 
 .kolplanet-demo__trigger:hover .media-play,
@@ -753,7 +753,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center;
 }
 
 .kolplanet-modal {
