@@ -1775,12 +1775,12 @@ a.life-card {
   cursor: pointer;
 }
 
-.life-card:hover {
+a.life-card:hover {
   border-color: rgba(16, 24, 16, 0.16);
   box-shadow: 0 14px 32px rgba(16, 24, 16, 0.12);
 }
 
-.life-card:hover::after {
+a.life-card:hover::after {
   opacity: 0.85;
 }
 
@@ -1794,7 +1794,7 @@ a.life-card {
   transition: filter 320ms ease, transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.life-card:hover img {
+a.life-card:hover img {
   filter: saturate(1) brightness(0.92);
   transform: scale(1.04);
 }
