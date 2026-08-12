@@ -1,0 +1,756 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CreatorJoinForm from '../../components/CreatorJoinForm.astro';
+import { site } from '../../config/site';
+import '../../styles/home.css';
+
+export const prerender = true;
+
+const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact';
+---
+
+<BaseLayout
+  title="Join as Creator"
+  description="Apply to join MOCA as a creator. Share your profile, categories, social accounts, and collaboration history for brand matching."
+  robots="noindex, follow"
+  bare
+>
+  <div class="creator-join-page">
+    <header class="creator-join-page__top">
+      <a class="creator-join-page__brand" href="/" aria-label={`${site.name} home`}>
+        <img src="/images/moca-logo.svg" alt={site.name} width="120" height="48" />
+      </a>
+    </header>
+
+    <div class="creator-join-page__shell">
+      <header class="creator-join-page__intro">
+        <h1>Join as Creator</h1>
+        <p>Tell us about yourself and how you create.</p>
+      </header>
+
+      <CreatorJoinForm />
+    </div>
+  </div>
+</BaseLayout>
+
+<script define:vars={{ contactEndpoint }}>
+  const form = document.querySelector('[data-creator-join-form]');
+  const status = document.querySelector('[data-creator-join-status]');
+  const submit = document.querySelector('[data-creator-join-submit]');
+  const draftBtn = document.querySelector('[data-creator-draft]');
+  const categories = document.querySelector('[data-creator-categories]');
+  const socialList = document.querySelector('[data-social-list]');
+  const addSocial = document.querySelector('[data-add-social]');
+  const socialTemplate = document.querySelector('[data-social-template]');
+  const collabs = document.querySelector('[data-creator-collabs]');
+  const addCollab = document.querySelector('[data-add-collab]');
+  const collabTemplate = document.querySelector('[data-collab-template]');
+  const tagList = document.querySelector('[data-tag-list]');
+  const tagInput = document.querySelector('[data-tag-input]');
+  const tagSuggest = document.querySelector('[data-tag-suggest]');
+  const tagValue = document.querySelector('[data-tag-value]');
+  const DRAFT_KEY = 'moca-creator-join-draft';
+
+  const maxTags = 5;
+  const maxSocials = 6;
+  const selectedTags = [];
+
+  const platforms = (() => {
+    try {
+      return JSON.parse(form?.getAttribute('data-social-platforms') || '[]');
+    } catch {
+      return [];
+    }
+  })();
+
+  const allTagSuggestions = (() => {
+    try {
+      return JSON.parse(form?.getAttribute('data-tag-suggestions') || '[]');
+    } catch {
+      return [];
+    }
+  })();
+
+  const countryCurrency = (() => {
+    try {
+      return JSON.parse(form?.getAttribute('data-country-currency') || '{}');
+    } catch {
+      return {};
+    }
+  })();
+
+  const countrySelect = document.querySelector('[data-country]');
+  const currencySelect = document.querySelector('[data-currency]');
+  let currencyTouched = false;
+
+  const setStatus = (message = '', tone = 'info') => {
+    if (!status) return;
+    status.textContent = message;
+    status.hidden = !message;
+    status.dataset.tone = tone;
+  };
+
+  const clearInvalid = () => {
+    form?.querySelectorAll('.is-invalid').forEach((el) => el.classList.remove('is-invalid'));
+  };
+
+  const markInvalid = (el) => {
+    if (!(el instanceof Element)) return;
+    el.classList.add('is-invalid');
+    el.closest('.creator-join-form__field')?.classList.add('is-invalid');
+  };
+
+  const focusInvalid = (el) => {
+    if (!(el instanceof HTMLElement)) return;
+    el.focus({ preventScroll: true });
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
+  const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+  const isValidBirthday = (value) => {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+    const [year, month, day] = value.split('-').map(Number);
+    const date = new Date(Date.UTC(year, month - 1, day));
+    return (
+      date.getUTCFullYear() === year &&
+      date.getUTCMonth() === month - 1 &&
+      date.getUTCDate() === day &&
+      year >= 1950 &&
+      year <= new Date().getFullYear() - 13
+    );
+  };
+
+  const formatBirthdayInput = (input) => {
+    const digits = input.value.replace(/\D/g, '').slice(0, 8);
+    const parts = [];
+    if (digits.length > 0) parts.push(digits.slice(0, 4));
+    if (digits.length > 4) parts.push(digits.slice(4, 6));
+    if (digits.length > 6) parts.push(digits.slice(6, 8));
+    input.value = parts.join('-');
+  };
+
+  const updateRatePlaceholders = () => {
+    const code = currencySelect instanceof HTMLSelectElement && currencySelect.value ? currencySelect.value : 'USD';
+    form?.querySelectorAll('[data-rate-amount]').forEach((input) => {
+      if (input instanceof HTMLInputElement) input.placeholder = `e.g. 200 ${code}`;
+    });
+  };
+
+  const syncCurrencyFromCountry = (force = false) => {
+    if (!(currencySelect instanceof HTMLSelectElement) || !(countrySelect instanceof HTMLSelectElement)) return;
+    if (currencyTouched && !force) return;
+    currencySelect.value = countryCurrency[countrySelect.value] || '';
+    updateRatePlaceholders();
+  };
+
+  countrySelect?.addEventListener('change', () => {
+    currencyTouched = false;
+    syncCurrencyFromCountry(true);
+  });
+
+  currencySelect?.addEventListener('change', () => {
+    currencyTouched = Boolean(currencySelect instanceof HTMLSelectElement && currencySelect.value);
+    updateRatePlaceholders();
+  });
+
+  const syncTags = () => {
+    if (!tagList || !tagValue) return;
+    tagList.innerHTML = '';
+    selectedTags.forEach((tag) => {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'creator-join-form__tag';
+      chip.innerHTML = `<span>#${tag}</span><span aria-hidden="true">×</span>`;
+      chip.setAttribute('aria-label', `Remove ${tag}`);
+      chip.addEventListener('click', () => {
+        const index = selectedTags.indexOf(tag);
+        if (index >= 0) selectedTags.splice(index, 1);
+        syncTags();
+        setStatus('');
+        tagInput?.focus();
+      });
+      tagList.appendChild(chip);
+    });
+    tagValue.value = selectedTags.map((tag) => `#${tag}`).join(' ');
+  };
+
+  const normalizeTag = (value) =>
+    String(value || '')
+      .trim()
+      .replace(/^#+/, '')
+      .replace(/\s+/g, '');
+
+  const addTag = (raw) => {
+    const tag = normalizeTag(raw);
+    if (!tag) return false;
+    if (selectedTags.some((item) => item.toLowerCase() === tag.toLowerCase())) {
+      setStatus('Tag already added.', 'info');
+      return false;
+    }
+    if (selectedTags.length >= maxTags) {
+      setStatus(`Up to ${maxTags} tags.`, 'info');
+      return false;
+    }
+    selectedTags.push(tag);
+    syncTags();
+    setStatus('');
+    return true;
+  };
+
+  const hideSuggest = () => {
+    if (!tagSuggest) return;
+    tagSuggest.hidden = true;
+    tagSuggest.innerHTML = '';
+  };
+
+  const availableSuggestions = () =>
+    allTagSuggestions.filter(
+      (item) => !selectedTags.some((tag) => tag.toLowerCase() === item.toLowerCase()),
+    );
+
+  const rankSuggestions = (query) => {
+    const q = normalizeTag(query).toLowerCase();
+    const pool = availableSuggestions();
+    if (!q) return pool.slice(0, 8);
+    const starts = [];
+    const contains = [];
+    for (const item of pool) {
+      const lower = item.toLowerCase();
+      if (lower.startsWith(q)) starts.push(item);
+      else if (q.length >= 2 && lower.includes(q)) contains.push(item);
+    }
+    return [...starts, ...contains].slice(0, 8);
+  };
+
+  const renderSuggest = (query) => {
+    if (!tagSuggest || !tagInput) return;
+    const matches = rankSuggestions(query);
+    if (!matches.length) {
+      hideSuggest();
+      return;
+    }
+    tagSuggest.innerHTML = matches
+      .map(
+        (item) =>
+          `<li role="option"><button type="button" data-tag-option><span aria-hidden="true">#</span>${item}</button></li>`,
+      )
+      .join('');
+    tagSuggest.hidden = false;
+  };
+
+  tagInput?.addEventListener('focus', () => renderSuggest(tagInput.value));
+  tagInput?.addEventListener('input', () => renderSuggest(tagInput.value));
+  tagInput?.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ',' || event.key === 'Tab') {
+      const value = tagInput.value.trim();
+      if (!value) return;
+      event.preventDefault();
+      if (addTag(value)) tagInput.value = '';
+      hideSuggest();
+    } else if (event.key === 'Backspace' && !tagInput.value && selectedTags.length) {
+      selectedTags.pop();
+      syncTags();
+    } else if (event.key === 'Escape') {
+      hideSuggest();
+    }
+  });
+
+  tagSuggest?.addEventListener('click', (event) => {
+    const button = event.target instanceof Element ? event.target.closest('[data-tag-option]') : null;
+    if (!(button instanceof HTMLButtonElement)) return;
+    if (addTag(button.textContent || '')) {
+      if (tagInput) tagInput.value = '';
+      hideSuggest();
+      tagInput?.focus();
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!(event.target instanceof Node)) return;
+    if (tagSuggest && !tagSuggest.contains(event.target) && event.target !== tagInput) hideSuggest();
+  });
+
+  const usedPlatforms = () =>
+    [...(socialList?.querySelectorAll('[data-social-platform]') ?? [])]
+      .map((select) => (select instanceof HTMLSelectElement ? select.value : ''))
+      .filter(Boolean);
+
+  const refreshPlatformOptions = () => {
+    const used = usedPlatforms();
+    socialList?.querySelectorAll('[data-social-item]').forEach((row) => {
+      const select = row.querySelector('[data-social-platform]');
+      if (!(select instanceof HTMLSelectElement)) return;
+      const current = select.value;
+      select.innerHTML = `<option value="">Platform</option>${platforms
+        .map((platform) => {
+          const taken = used.includes(platform) && platform !== current;
+          return `<option value="${platform}" ${platform === current ? 'selected' : ''} ${taken ? 'disabled' : ''}>${platform}</option>`;
+        })
+        .join('')}`;
+    });
+  };
+
+  const clearSocialRow = (row) => {
+    const select = row.querySelector('[data-social-platform]');
+    const input = row.querySelector('[data-social-handle]');
+    if (select instanceof HTMLSelectElement) select.value = '';
+    if (input instanceof HTMLInputElement) {
+      input.value = '';
+      input.classList.remove('is-invalid');
+    }
+    select?.classList.remove('is-invalid');
+    row.querySelectorAll('.is-invalid').forEach((el) => el.classList.remove('is-invalid'));
+    refreshPlatformOptions();
+  };
+
+  const bindSocialRow = (row) => {
+    const select = row.querySelector('[data-social-platform]');
+    const remove = row.querySelector('[data-remove-social]');
+    select?.addEventListener('change', refreshPlatformOptions);
+    remove?.addEventListener('click', () => {
+      const count = socialList?.querySelectorAll('[data-social-item]').length ?? 0;
+      if (count <= 1) {
+        clearSocialRow(row);
+        setStatus('');
+        return;
+      }
+      row.remove();
+      renameSocialRows();
+      refreshPlatformOptions();
+      if (addSocial) addSocial.hidden = false;
+      setStatus('');
+    });
+  };
+
+  const addSocialRow = (platform = '', handle = '') => {
+    if (!socialList || !socialTemplate || !(socialTemplate instanceof HTMLTemplateElement)) return;
+    const count = socialList.querySelectorAll('[data-social-item]').length;
+    if (count >= maxSocials) {
+      setStatus(`Up to ${maxSocials} platforms.`, 'info');
+      if (addSocial) addSocial.hidden = true;
+      return;
+    }
+    const node = socialTemplate.content.cloneNode(true);
+    const row = node.querySelector('[data-social-item]');
+    const select = node.querySelector('[data-social-platform]');
+    const input = node.querySelector('[data-social-handle]');
+    if (input instanceof HTMLInputElement) {
+      input.name = `socialHandle${count + 1}`;
+      input.value = handle;
+    }
+    if (select instanceof HTMLSelectElement) select.name = `socialPlatform${count + 1}`;
+    if (row) bindSocialRow(row);
+    socialList.appendChild(node);
+    refreshPlatformOptions();
+    if (platform && select instanceof HTMLSelectElement) select.value = platform;
+    if (count + 1 >= maxSocials && addSocial) addSocial.hidden = true;
+  };
+
+  const renameSocialRows = () => {
+    socialList?.querySelectorAll('[data-social-item]').forEach((row, index) => {
+      const select = row.querySelector('[data-social-platform]');
+      const input = row.querySelector('[data-social-handle]');
+      if (select instanceof HTMLSelectElement) select.name = `socialPlatform${index + 1}`;
+      if (input instanceof HTMLInputElement) input.name = `socialHandle${index + 1}`;
+    });
+  };
+
+  addSocial?.addEventListener('click', () => {
+    addSocialRow();
+    form?.querySelector('[data-validate-block="socials"]')?.classList.remove('is-invalid');
+    const last = socialList?.querySelector('[data-social-item]:last-child [data-social-platform]');
+    if (last instanceof HTMLSelectElement) last.focus();
+  });
+
+  categories?.addEventListener('change', (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLInputElement) || target.type !== 'checkbox') return;
+    const checked = categories.querySelectorAll('input:checked');
+    if (checked.length > 3) {
+      target.checked = false;
+      setStatus('Up to 3 categories.', 'info');
+    } else if (status?.textContent === 'Up to 3 categories.') {
+      setStatus('');
+    }
+  });
+
+  const renameCollabRows = () => {
+    collabs?.querySelectorAll('[data-collab-item]').forEach((row, index) => {
+      const brand = row.querySelector('[data-collab-brand]');
+      const link = row.querySelector('[data-collab-link]');
+      if (brand instanceof HTMLInputElement) brand.name = `collabBrand${index + 1}`;
+      if (link instanceof HTMLInputElement) link.name = `collabLink${index + 1}`;
+    });
+  };
+
+  const bindCollabRow = (row) => {
+    row.querySelector('[data-remove-collab]')?.addEventListener('click', () => {
+      row.remove();
+      renameCollabRows();
+      if (addCollab) addCollab.hidden = false;
+      setStatus('');
+    });
+  };
+
+  const addCollabRow = (brandValue = '', linkValue = '') => {
+    if (!collabs || !collabTemplate || !(collabTemplate instanceof HTMLTemplateElement)) return;
+    const count = collabs.querySelectorAll('[data-collab-item]').length;
+    if (count >= 3) {
+      setStatus('Up to 3 collaborations.', 'info');
+      if (addCollab) addCollab.hidden = true;
+      return;
+    }
+    const node = collabTemplate.content.cloneNode(true);
+    const row = node.querySelector('[data-collab-item]');
+    const brand = node.querySelector('[data-collab-brand]');
+    const link = node.querySelector('[data-collab-link]');
+    const next = count + 1;
+    if (brand instanceof HTMLInputElement) {
+      brand.name = `collabBrand${next}`;
+      brand.value = brandValue;
+    }
+    if (link instanceof HTMLInputElement) {
+      link.name = `collabLink${next}`;
+      link.value = linkValue;
+    }
+    if (row) bindCollabRow(row);
+    collabs.appendChild(node);
+    if (count + 1 >= 3 && addCollab) addCollab.hidden = true;
+  };
+
+  addCollab?.addEventListener('click', () => {
+    addCollabRow();
+    const last = collabs?.querySelector('[data-collab-item]:last-child [data-collab-brand]');
+    if (last instanceof HTMLInputElement) last.focus();
+  });
+
+  form?.addEventListener('input', (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    if (target instanceof HTMLInputElement && target.hasAttribute('data-birthday')) formatBirthdayInput(target);
+    target.classList.remove('is-invalid');
+    target.closest('.creator-join-form__field')?.classList.remove('is-invalid');
+    target.closest('[data-validate-block]')?.classList.remove('is-invalid');
+  });
+
+  form?.addEventListener('change', (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    target.classList.remove('is-invalid');
+    target.closest('.creator-join-form__field')?.classList.remove('is-invalid');
+    target.closest('[data-validate-block]')?.classList.remove('is-invalid');
+  });
+
+  const validateForm = () => {
+    clearInvalid();
+    setStatus('');
+
+    for (const field of form?.querySelectorAll('[data-required]') ?? []) {
+      if (!(field instanceof HTMLInputElement || field instanceof HTMLSelectElement)) continue;
+      const value = String(field.value ?? '').trim();
+      if (!value) {
+        markInvalid(field);
+        focusInvalid(field);
+        return false;
+      }
+      if (field instanceof HTMLInputElement && field.type === 'email' && !isValidEmail(value)) {
+        markInvalid(field);
+        focusInvalid(field);
+        return false;
+      }
+    }
+
+    const birthday = form?.querySelector('[data-birthday]');
+    if (birthday instanceof HTMLInputElement && birthday.value.trim() && !isValidBirthday(birthday.value.trim())) {
+      markInvalid(birthday);
+      focusInvalid(birthday);
+      setStatus('Use YYYY-MM-DD for date of birth.', 'info');
+      return false;
+    }
+
+    const socialRows = [...(socialList?.querySelectorAll('[data-social-item]') ?? [])];
+    const validSocials = socialRows.filter((row) => {
+      const platform = row.querySelector('[data-social-platform]');
+      const handle = row.querySelector('[data-social-handle]');
+      return (
+        platform instanceof HTMLSelectElement &&
+        handle instanceof HTMLInputElement &&
+        platform.value &&
+        handle.value.trim()
+      );
+    });
+
+    if (!validSocials.length) {
+      if (!socialRows.length) addSocialRow();
+      const firstPlatform = socialList?.querySelector('[data-social-platform]');
+      const firstHandle = socialList?.querySelector('[data-social-handle]');
+      markInvalid(firstPlatform instanceof Element ? firstPlatform : null);
+      markInvalid(firstHandle instanceof Element ? firstHandle : null);
+      form?.querySelector('[data-validate-block="socials"]')?.classList.add('is-invalid');
+      focusInvalid(firstPlatform instanceof HTMLElement ? firstPlatform : null);
+      return false;
+    }
+
+    for (const row of socialRows) {
+      const platform = row.querySelector('[data-social-platform]');
+      const handle = row.querySelector('[data-social-handle]');
+      if (!(platform instanceof HTMLSelectElement) || !(handle instanceof HTMLInputElement)) continue;
+      const hasPlatform = Boolean(platform.value);
+      const hasHandle = Boolean(handle.value.trim());
+      if (hasPlatform !== hasHandle) {
+        markInvalid(hasPlatform ? handle : platform);
+        focusInvalid(hasPlatform ? handle : platform);
+        return false;
+      }
+    }
+
+    return true;
+  };
+
+  const ensureDefaultSocialRow = () => {
+    if (!socialList?.querySelector('[data-social-item]')) addSocialRow();
+    if (addSocial) addSocial.hidden = false;
+  };
+
+  const resetDynamicFields = () => {
+    selectedTags.length = 0;
+    syncTags();
+    if (tagInput) tagInput.value = '';
+    hideSuggest();
+    socialList?.replaceChildren();
+    ensureDefaultSocialRow();
+    collabs?.replaceChildren();
+    if (addCollab) addCollab.hidden = false;
+  };
+
+  const collectDraft = () => {
+    if (!form) return null;
+    const data = new FormData(form);
+    const fields = {};
+    for (const [key, value] of data.entries()) {
+      if (key === 'categories' || key === 'company' || key === 'tags') continue;
+      fields[key] = String(value);
+    }
+    return {
+      fields,
+      categories: data.getAll('categories').map(String),
+      tags: [...selectedTags],
+      currencyTouched,
+      socials: [...(socialList?.querySelectorAll('[data-social-item]') ?? [])]
+        .map((row) => {
+          const platform = row.querySelector('[data-social-platform]');
+          const handle = row.querySelector('[data-social-handle]');
+          return {
+            platform: platform instanceof HTMLSelectElement ? platform.value : '',
+            handle: handle instanceof HTMLInputElement ? handle.value : '',
+          };
+        })
+        .filter((item) => item.platform || item.handle),
+      collabs: [...(collabs?.querySelectorAll('[data-collab-item]') ?? [])]
+        .map((row) => {
+          const brand = row.querySelector('[data-collab-brand]');
+          const link = row.querySelector('[data-collab-link]');
+          return {
+            brand: brand instanceof HTMLInputElement ? brand.value : '',
+            link: link instanceof HTMLInputElement ? link.value : '',
+          };
+        })
+        .filter((item) => item.brand || item.link),
+      savedAt: Date.now(),
+    };
+  };
+
+  const saveDraft = () => {
+    try {
+      const draft = collectDraft();
+      if (!draft) return;
+      localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
+      setStatus('Draft saved on this device.', 'success');
+    } catch {
+      setStatus('Unable to save draft in this browser.', 'error');
+    }
+  };
+
+  const clearDraft = () => {
+    try {
+      localStorage.removeItem(DRAFT_KEY);
+    } catch {
+      /* ignore */
+    }
+  };
+
+  const applyDraft = (draft) => {
+    if (!form || !draft || typeof draft !== 'object') return;
+
+    Object.entries(draft.fields || {}).forEach(([key, value]) => {
+      const field = form.elements.namedItem(key);
+      if (field instanceof RadioNodeList) return;
+      if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement || field instanceof HTMLTextAreaElement) {
+        field.value = String(value ?? '');
+      }
+    });
+
+    categories?.querySelectorAll('input[type="checkbox"]').forEach((input) => {
+      if (input instanceof HTMLInputElement) {
+        input.checked = Array.isArray(draft.categories) && draft.categories.includes(input.value);
+      }
+    });
+
+    selectedTags.length = 0;
+    if (Array.isArray(draft.tags)) {
+      draft.tags.forEach((tag) => {
+        if (typeof tag === 'string' && tag) selectedTags.push(tag);
+      });
+    }
+    syncTags();
+
+    socialList?.replaceChildren();
+    if (addSocial) addSocial.hidden = false;
+    if (Array.isArray(draft.socials) && draft.socials.length) {
+      draft.socials.forEach((item) => addSocialRow(item?.platform || '', item?.handle || ''));
+    } else {
+      ensureDefaultSocialRow();
+    }
+
+    collabs?.replaceChildren();
+    if (addCollab) addCollab.hidden = false;
+    if (Array.isArray(draft.collabs) && draft.collabs.length) {
+      draft.collabs.forEach((item) => addCollabRow(item?.brand || '', item?.link || ''));
+      document.querySelectorAll('.creator-join-form__fold').forEach((fold) => {
+        if (fold instanceof HTMLDetailsElement) fold.open = true;
+      });
+    }
+
+    const hasRates =
+      Boolean(draft.fields?.currency) ||
+      Boolean(draft.fields?.rateReels) ||
+      Boolean(draft.fields?.rateCarousel) ||
+      Boolean(draft.fields?.rateStory) ||
+      Boolean(draft.fields?.rateLive);
+    if (hasRates || draft.fields?.notes) {
+      document.querySelectorAll('.creator-join-form__fold').forEach((fold) => {
+        if (fold instanceof HTMLDetailsElement) fold.open = true;
+      });
+    }
+
+    currencyTouched = Boolean(draft.currencyTouched);
+    if (!currencyTouched) syncCurrencyFromCountry(true);
+    updateRatePlaceholders();
+  };
+
+  const restoreDraft = () => {
+    try {
+      const raw = localStorage.getItem(DRAFT_KEY);
+      if (!raw) return;
+      applyDraft(JSON.parse(raw));
+      setStatus('Draft restored.', 'info');
+    } catch {
+      clearDraft();
+    }
+  };
+
+  draftBtn?.addEventListener('click', saveDraft);
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form || !status || !submit) return;
+    if (!validateForm()) return;
+
+    renameSocialRows();
+    renameCollabRows();
+    const data = new FormData(form);
+    const get = (key) => String(data.get(key) ?? '').trim();
+
+    const socials = [...(socialList?.querySelectorAll('[data-social-item]') ?? [])]
+      .map((row) => {
+        const platform = row.querySelector('[data-social-platform]');
+        const handle = row.querySelector('[data-social-handle]');
+        if (!(platform instanceof HTMLSelectElement) || !(handle instanceof HTMLInputElement)) return null;
+        if (!platform.value || !handle.value.trim()) return null;
+        return `${platform.value}: ${handle.value.trim()}`;
+      })
+      .filter(Boolean);
+
+    const rates = [
+      ['Reels / Short', get('rateReels')],
+      ['Post / Carousel', get('rateCarousel')],
+      ['Story', get('rateStory')],
+      ['Live', get('rateLive')],
+    ].filter(([, value]) => value);
+
+    const collabList = [1, 2, 3]
+      .map((index) => {
+        const brand = get(`collabBrand${index}`);
+        const link = get(`collabLink${index}`);
+        if (!brand && !link) return null;
+        return `${brand || '—'} | ${link || '—'}`;
+      })
+      .filter(Boolean);
+
+    const message = [
+      'Creator join application from moca-web',
+      '',
+      `Account name: ${get('accountName')}`,
+      `Gender: ${get('gender') || '—'}`,
+      `Date of birth: ${get('birthday') || '—'}`,
+      `Country: ${get('country') || '—'}`,
+      `City: ${get('city') || '—'}`,
+      `Language: ${get('language') || '—'}`,
+      `WhatsApp: ${get('whatsapp') || '—'}`,
+      `Categories: ${data.getAll('categories').map(String).join(', ') || '—'}`,
+      `Tags: ${get('tags') || '—'}`,
+      '',
+      'Social accounts:',
+      ...(socials.length ? socials.map((item) => `- ${item}`) : ['- —']),
+      '',
+      'Rate card:',
+      `Currency: ${get('currency') || '—'}`,
+      ...(rates.length
+        ? rates.map(([label, value]) => `- ${label}: ${value}${get('currency') ? ` ${get('currency')}` : ''}`)
+        : ['- —']),
+      '',
+      'Collaboration history:',
+      ...(collabList.length ? collabList.map((item, index) => `- #${index + 1}: ${item}`) : ['- —']),
+      '',
+      `Notes: ${get('notes') || '—'}`,
+    ].join('\n');
+
+    const payload = new FormData();
+    payload.set('name', get('accountName'));
+    payload.set('email', get('email'));
+    payload.set('subject', 'Creator Join Application');
+    payload.set('message', message);
+    payload.set('company', get('company'));
+
+    submit.disabled = true;
+    setStatus('Sending…', 'info');
+
+    try {
+      const response = await fetch(contactEndpoint, {
+        method: 'POST',
+        body: payload,
+        headers: { Accept: 'application/json' },
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.message || 'Unable to submit your application.');
+
+      form.reset();
+      resetDynamicFields();
+      clearDraft();
+      currencyTouched = false;
+      syncCurrencyFromCountry(true);
+      updateRatePlaceholders();
+      setStatus('Thanks — your application has been sent. We’ll be in touch.', 'success');
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : 'Unable to submit your application.', 'error');
+    } finally {
+      submit.disabled = false;
+    }
+  });
+
+  syncCurrencyFromCountry(true);
+  updateRatePlaceholders();
+  ensureDefaultSocialRow();
+  restoreDraft();
+</script>

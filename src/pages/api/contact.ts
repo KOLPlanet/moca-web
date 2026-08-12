@@ -92,12 +92,12 @@ export const POST: APIRoute = async ({ request }) => {
     !isEmail(email) ||
     email.length > 254 ||
     !withinLimit(subject, 180) ||
-    !withinLimit(message, 5_000)
+    !withinLimit(message, 10_000)
   ) {
     return json(
       {
         message:
-          'Please complete every field with a valid email address and keep the message under 5,000 characters.',
+          'Please complete every field with a valid email address and keep the message under 10,000 characters.',
       },
       400,
       origin,

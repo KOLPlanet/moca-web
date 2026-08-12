@@ -13,6 +13,7 @@ interface Props {
   image?: string | ImageMetadata;
   imageAlt?: string;
   robots?: string;
+  bare?: boolean;
   article?: {
     publishedTime: string;
     modifiedTime: string;
@@ -27,6 +28,7 @@ const {
   image,
   imageAlt = site.socialImage.alt,
   robots = 'index, follow, max-image-preview:large',
+  bare = false,
   article,
 } = Astro.props;
 
@@ -129,12 +131,12 @@ const googleAnalyticsInit = googleAnalyticsId
     }
     <Analytics />
   </head>
-  <body>
+  <body class:list={[{ 'layout-bare': bare }]}>
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <Header />
+    {!bare && <Header />}
     <main id="main-content">
       <slot />
     </main>
-    <Footer />
+    {!bare && <Footer />}
   </body>
 </html>

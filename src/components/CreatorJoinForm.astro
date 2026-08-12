@@ -1,0 +1,338 @@
+---
+const categories = [
+  { label: 'Arts', emoji: '🎨' },
+  { label: 'Beauty', emoji: '💄' },
+  { label: 'Fashion', emoji: '👗' },
+  { label: 'Business & Career', emoji: '💼' },
+  { label: 'Finance', emoji: '💰' },
+  { label: 'Food & Drink', emoji: '🍜' },
+  { label: 'Gaming', emoji: '🎮' },
+  { label: 'Lifestyle', emoji: '✨' },
+  { label: 'Tech & Gadgets', emoji: '📱' },
+  { label: 'Travel', emoji: '✈️' },
+  { label: 'Health & Fitness', emoji: '💪' },
+  { label: 'Entertainment', emoji: '🎬' },
+  { label: 'Education', emoji: '📚' },
+  { label: 'Family & Parenting', emoji: '👨‍👩‍👧' },
+  { label: 'Sports', emoji: '⚽' },
+];
+
+const languages = [
+  'English',
+  'Chinese',
+  'Bahasa Indonesia',
+  'Hindi',
+  'Thai',
+  'Malay',
+  'Tagalog',
+  'Vietnamese',
+  'Japanese',
+  'Korean',
+  'Other',
+];
+
+const countries = [
+  { name: 'Indonesia', currency: 'IDR' },
+  { name: 'Malaysia', currency: 'MYR' },
+  { name: 'Singapore', currency: 'SGD' },
+  { name: 'Thailand', currency: 'THB' },
+  { name: 'Vietnam', currency: 'VND' },
+  { name: 'Philippines', currency: 'PHP' },
+  { name: 'India', currency: 'INR' },
+  { name: 'Japan', currency: 'JPY' },
+  { name: 'South Korea', currency: 'KRW' },
+  { name: 'China', currency: 'CNY' },
+  { name: 'Hong Kong', currency: 'HKD' },
+  { name: 'Taiwan', currency: 'TWD' },
+  { name: 'United States', currency: 'USD' },
+  { name: 'United Kingdom', currency: 'GBP' },
+  { name: 'Australia', currency: 'AUD' },
+  { name: 'Other', currency: 'USD' },
+];
+
+const currencies = ['USD', 'IDR', 'MYR', 'SGD', 'THB', 'VND', 'PHP', 'INR', 'JPY', 'KRW', 'CNY', 'HKD', 'TWD', 'GBP', 'AUD', 'EUR'];
+
+const socialPlatforms = [
+  'Instagram',
+  'TikTok',
+  'YouTube',
+  'Facebook',
+  'X / Twitter',
+  'LinkedIn',
+  'Snapchat',
+  'Threads',
+  'Other',
+];
+
+const tagSuggestions = [
+  'Arts',
+  'ASMR',
+  'Beauty',
+  'Budget',
+  'Career',
+  'Comedy',
+  'Cooking',
+  'Education',
+  'Entertainment',
+  'Family',
+  'Fashion',
+  'Finance',
+  'Fitness',
+  'Food',
+  'Gadgets',
+  'Gaming',
+  'Health',
+  'Home',
+  'Lifestyle',
+  'Luxury',
+  'Makeup',
+  'Music',
+  'Parenting',
+  'Pet',
+  'Review',
+  'Skincare',
+  'Sports',
+  'Streetwear',
+  'Sustainable',
+  'Tech',
+  'Travel',
+  'Unboxing',
+  'Vlog',
+  'Wellness',
+];
+
+const rateFields = [
+  { name: 'rateReels', label: 'Reels / Short' },
+  { name: 'rateCarousel', label: 'Post / Carousel' },
+  { name: 'rateStory', label: 'Story' },
+  { name: 'rateLive', label: 'Live' },
+];
+---
+
+<form
+  class="creator-join-form"
+  data-creator-join-form
+  data-tag-suggestions={JSON.stringify(tagSuggestions)}
+  data-social-platforms={JSON.stringify(socialPlatforms)}
+  data-country-currency={JSON.stringify(Object.fromEntries(countries.map((item) => [item.name, item.currency])))}
+  novalidate
+  lang="en"
+>
+  <div class="creator-join-form__card">
+    <section class="creator-join-form__section">
+      <h2>About you</h2>
+      <label class="creator-join-form__field">
+        <span>Account name <i aria-hidden="true">*</i></span>
+        <input name="accountName" type="text" autocomplete="name" maxlength="120" required placeholder="Your creator name" data-required />
+      </label>
+      <div class="creator-join-form__row">
+        <label class="creator-join-form__field">
+          <span>Gender</span>
+          <select name="gender">
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+        <label class="creator-join-form__field">
+          <span>Date of birth</span>
+          <input name="birthday" type="text" inputmode="numeric" maxlength="10" placeholder="YYYY-MM-DD" autocomplete="bday" data-birthday />
+        </label>
+      </div>
+      <div class="creator-join-form__row">
+        <label class="creator-join-form__field">
+          <span>Country <i aria-hidden="true">*</i></span>
+          <select name="country" autocomplete="country-name" required data-country data-required>
+            <option value="">Select</option>
+            {countries.map((item) => (
+              <option value={item.name}>{item.name}</option>
+            ))}
+          </select>
+        </label>
+        <label class="creator-join-form__field">
+          <span>City</span>
+          <input name="city" type="text" maxlength="120" placeholder="e.g. Jakarta" autocomplete="address-level2" />
+        </label>
+      </div>
+      <label class="creator-join-form__field">
+        <span>Language</span>
+        <select name="language">
+          <option value="">Select</option>
+          {languages.map((item) => <option value={item}>{item}</option>)}
+        </select>
+      </label>
+    </section>
+
+    <section class="creator-join-form__section">
+      <h2>Contact</h2>
+      <label class="creator-join-form__field">
+        <span>Work email <i aria-hidden="true">*</i></span>
+        <input name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@email.com" data-required />
+      </label>
+      <label class="creator-join-form__field">
+        <span>WhatsApp</span>
+        <input name="whatsapp" type="tel" maxlength="40" placeholder="+62 …" />
+      </label>
+    </section>
+  </div>
+
+  <div class="creator-join-form__card">
+    <section class="creator-join-form__section" data-validate-block="socials">
+      <h2>Social accounts <i aria-hidden="true">*</i></h2>
+      <p class="creator-join-form__hint">Link or @handle both work.</p>
+      <div class="creator-join-form__socials" data-social-list></div>
+      <button class="creator-join-form__add" type="button" data-add-social>
+        <span aria-hidden="true">+</span> Add platform
+      </button>
+      <template data-social-template>
+        <div class="creator-join-form__social" data-social-item>
+          <label class="creator-join-form__field creator-join-form__field--platform">
+            <span class="sr-only">Platform</span>
+            <select data-social-platform>
+              <option value="">Platform</option>
+            </select>
+          </label>
+          <label class="creator-join-form__field creator-join-form__field--handle">
+            <span class="sr-only">Account or link</span>
+            <input type="text" maxlength="300" placeholder="@handle or https://…" data-social-handle />
+          </label>
+          <button class="creator-join-form__remove" type="button" data-remove-social aria-label="Remove platform">
+            ×
+          </button>
+        </div>
+      </template>
+    </section>
+  </div>
+
+  <div class="creator-join-form__card">
+    <section class="creator-join-form__section">
+      <h2>Categories</h2>
+      <p class="creator-join-form__hint">Choose up to 3.</p>
+      <div class="creator-join-form__chips" data-creator-categories>
+        {
+          categories.map((item) => (
+            <label class="creator-join-form__chip">
+              <input type="checkbox" name="categories" value={item.label} />
+              <span class="creator-join-form__chip-face">
+                <span class="creator-join-form__chip-emoji" aria-hidden="true">{item.emoji}</span>
+                {item.label}
+              </span>
+            </label>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="creator-join-form__section">
+      <h2>Tags</h2>
+      <p class="creator-join-form__hint">Type to search suggestions, or press Enter to add your own. Up to 5.</p>
+      <div class="creator-join-form__tags" data-tag-field>
+        <div class="creator-join-form__tag-list" data-tag-list></div>
+        <div class="creator-join-form__tag-input-wrap">
+          <input
+            class="creator-join-form__tag-input"
+            type="text"
+            maxlength="40"
+            placeholder="Start typing…"
+            autocomplete="off"
+            data-tag-input
+            aria-autocomplete="list"
+            aria-controls="creator-tag-suggestions"
+          />
+          <ul class="creator-join-form__tag-suggest" id="creator-tag-suggestions" role="listbox" hidden data-tag-suggest></ul>
+        </div>
+        <input type="hidden" name="tags" value="" data-tag-value />
+      </div>
+    </section>
+  </div>
+
+  <div class="creator-join-form__card creator-join-form__card--fold">
+    <details class="creator-join-form__fold">
+      <summary>
+        <span>Rate card</span>
+        <em>Optional</em>
+      </summary>
+      <section class="creator-join-form__section">
+        <label class="creator-join-form__field">
+          <span>Currency</span>
+          <select name="currency" data-currency>
+            <option value="">Select</option>
+            {currencies.map((item) => (
+              <option value={item}>{item}</option>
+            ))}
+          </select>
+        </label>
+        <div class="creator-join-form__rates">
+          {
+            rateFields.map((item) => (
+              <label class="creator-join-form__field">
+                <span>{item.label}</span>
+                <input name={item.name} type="text" maxlength="40" inputmode="decimal" placeholder="e.g. 200" data-rate-amount />
+              </label>
+            ))
+          }
+        </div>
+      </section>
+    </details>
+  </div>
+
+  <div class="creator-join-form__card creator-join-form__card--fold">
+    <details class="creator-join-form__fold">
+      <summary>
+        <span>Collaborations & notes</span>
+        <em>Optional</em>
+      </summary>
+      <section class="creator-join-form__section">
+        <h2>Past collaborations</h2>
+        <p class="creator-join-form__hint">Add brand work if you have it.</p>
+        <div class="creator-join-form__collabs" data-creator-collabs></div>
+        <button class="creator-join-form__add" type="button" data-add-collab>
+          <span aria-hidden="true">+</span> Add collaboration
+        </button>
+        <template data-collab-template>
+          <div class="creator-join-form__collab" data-collab-item>
+            <div class="creator-join-form__collab-fields">
+              <label class="creator-join-form__field">
+                <span>Brand name</span>
+                <input type="text" maxlength="120" placeholder="e.g. Nike" data-collab-brand />
+              </label>
+              <label class="creator-join-form__field">
+                <span>Post link</span>
+                <input type="text" maxlength="300" placeholder="https://…" data-collab-link />
+              </label>
+            </div>
+            <button class="creator-join-form__remove" type="button" data-remove-collab aria-label="Remove collaboration">
+              ×
+            </button>
+          </div>
+        </template>
+      </section>
+
+      <section class="creator-join-form__section">
+        <h2>Notes</h2>
+        <label class="creator-join-form__field">
+          <span class="sr-only">Anything else for the team</span>
+          <textarea name="notes" rows="3" maxlength="1500" placeholder="Audience size, markets, exclusivity…"></textarea>
+        </label>
+      </section>
+    </details>
+  </div>
+
+  <label class="form-honeypot" aria-hidden="true">
+    <span>Company website</span>
+    <input name="company" type="text" tabindex="-1" autocomplete="off" />
+  </label>
+
+  <div class="creator-join-form__footer">
+    <p class="creator-join-form__status" role="status" aria-live="polite" data-creator-join-status hidden></p>
+    <div class="creator-join-form__actions" data-creator-actions>
+      <button class="creator-join-form__draft" type="button" data-creator-draft>
+        Save draft
+      </button>
+      <button class="creator-join-form__primary" type="submit" data-creator-join-submit>
+        Submit
+      </button>
+    </div>
+  </div>
+</form>
