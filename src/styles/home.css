@@ -726,6 +726,7 @@
 .home-kolplanet {
   margin: 0;
   padding: 0;
+  background: #ecefeb;
 }
 
 .kolplanet-demo__trigger {
@@ -737,9 +738,18 @@
   border: 0;
   border-radius: 0;
   padding: 0;
-  background: #f4f8ff;
+  background: #ecefeb;
   cursor: pointer;
   aspect-ratio: 3500 / 835;
+}
+
+.kolplanet-demo__trigger::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(16, 24, 16, 0.05);
+  content: "";
+  pointer-events: none;
 }
 
 .kolplanet-demo__trigger:hover .media-play,
@@ -754,6 +764,10 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.kolplanet-demo__trigger .media-play {
+  z-index: 2;
 }
 
 .kolplanet-modal {
