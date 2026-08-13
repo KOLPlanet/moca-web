@@ -120,7 +120,11 @@ export const POST: APIRoute = async ({ request }) => {
   const company = String(form.get('company') ?? '').trim();
 
   if (company) {
-    return json({ message: 'Thanks — your message has been received.' }, 200, origin);
+    return json(
+      { accepted: false, message: 'Thanks — your message has been received.' },
+      200,
+      origin,
+    );
   }
 
   if (
@@ -153,7 +157,11 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     await sendContactMail({ name, email, subject, message, attachment });
-    return json({ message: 'Thanks — your message has been sent.' }, 200, origin);
+    return json(
+      { accepted: true, message: 'Thanks — your message has been sent.' },
+      200,
+      origin,
+    );
   } catch (error) {
     if (error instanceof ContactMailConfigurationError) {
       console.error('[contact] Mail delivery is not configured:', error.message);

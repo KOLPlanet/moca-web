@@ -246,6 +246,9 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
           target="_blank"
           rel="noreferrer"
           data-hero-cta
+          data-analytics-cta="explore_story"
+          data-analytics-location="hero"
+          data-analytics-audience="general"
         >
           <span class="home-hero__cta-frost" aria-hidden="true" data-hero-cta-frost></span>
           <span class="home-hero__cta-veil" aria-hidden="true"></span>
@@ -419,7 +422,13 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
         <div class="cases-scroller" data-cases-scroller>
           {
             cases.map((item) => (
-              <figure class="case-poster" data-case-card data-case-href={item.href}>
+              <figure
+                class="case-poster"
+                data-case-card
+                data-case-href={item.href}
+                data-case-id={item.id}
+                data-case-name={item.name}
+              >
                 <button
                   class="case-poster__trigger"
                   type="button"
@@ -699,6 +708,9 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
             class="home-contact-quick__button"
             href={`mailto:${site.contact.cooperationEmail}`}
             title={site.contact.cooperationEmail}
+            data-analytics-cta="contact_cooperation"
+            data-analytics-location="contact"
+            data-analytics-audience="brand"
           >
             <span class="home-contact-quick__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
@@ -716,6 +728,9 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
             class="home-contact-quick__button"
             href={`mailto:${site.contact.careersEmail}`}
             title={site.contact.careersEmail}
+            data-analytics-cta="contact_careers"
+            data-analytics-location="contact"
+            data-analytics-audience="career"
           >
             <span class="home-contact-quick__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
@@ -754,7 +769,15 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
         <article class="join-card">
           <h3>For Publishers</h3>
           <p>Monetize your traffic through high-quality campaigns and global advertisers.</p>
-          <a class="join-card__button" href={publisherLink.href} target="_blank" rel="noreferrer">
+          <a
+            class="join-card__button"
+            href={publisherLink.href}
+            target="_blank"
+            rel="noreferrer"
+            data-analytics-cta="join_publisher"
+            data-analytics-location="join"
+            data-analytics-audience="publisher"
+          >
             Join as publisher
           </a>
         </article>
@@ -764,7 +787,15 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
             <p>
               Secure your market position with 100% verified influence and ROI-driven UA.
             </p>
-            <a class="join-card__button join-card__button--outline" href={advertiserLink.href} target="_blank" rel="noreferrer">
+            <a
+              class="join-card__button join-card__button--outline"
+              href={advertiserLink.href}
+              target="_blank"
+              rel="noreferrer"
+              data-analytics-cta="work_with_us"
+              data-analytics-location="join"
+              data-analytics-audience="advertiser"
+            >
               Work with us
             </a>
           </div>
@@ -778,6 +809,9 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
             href="/join/creator"
             target="_blank"
             rel="noreferrer"
+            data-analytics-cta="join_creator"
+            data-analytics-location="join"
+            data-analytics-audience="creator"
           >
             Join as creator
           </a>
@@ -788,6 +822,112 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
 </BaseLayout>
 
 <script>
+  import { trackAnalyticsEvent } from '../lib/analytics';
+
+  const sectionIds = [
+    'top',
+    'services',
+    'about',
+    'cases',
+    'kolplanet',
+    'portfolio',
+    'life',
+    'contact',
+    'join',
+  ] as const;
+  const sectionPositions = new Map<string, number>(
+    sectionIds.map((sectionId, index) => [sectionId, index + 1]),
+  );
+  const sectionEntries = new Map<HTMLElement, IntersectionObserverEntry>();
+  const sectionTimers = new Map<HTMLElement, number>();
+  const trackedSections = new Set<string>();
+  let sectionObserver: IntersectionObserver | undefined;
+
+  const hasMeaningfulSectionVisibility = (entry: IntersectionObserverEntry) => {
+    const referenceHeight = Math.min(entry.boundingClientRect.height, window.innerHeight);
+    return (
+      entry.isIntersecting &&
+      referenceHeight > 0 &&
+      entry.intersectionRect.height / referenceHeight >= 0.5
+    );
+  };
+
+  const clearSectionTimer = (section: HTMLElement) => {
+    const timer = sectionTimers.get(section);
+    if (timer === undefined) return;
+    window.clearTimeout(timer);
+    sectionTimers.delete(section);
+  };
+
+  const updateSectionView = (section: HTMLElement) => {
+    const entry = sectionEntries.get(section);
+    const sectionId = section.id;
+    const canTrack =
+      document.visibilityState === 'visible' &&
+      Boolean(entry && hasMeaningfulSectionVisibility(entry));
+
+    if (!canTrack) {
+      clearSectionTimer(section);
+      return;
+    }
+
+    if (trackedSections.has(sectionId) || sectionTimers.has(section)) return;
+
+    const timer = window.setTimeout(() => {
+      sectionTimers.delete(section);
+      const latestEntry = sectionEntries.get(section);
+      if (
+        document.visibilityState !== 'visible' ||
+        !latestEntry ||
+        !hasMeaningfulSectionVisibility(latestEntry)
+      ) {
+        return;
+      }
+
+      trackAnalyticsEvent('section_view', {
+        section_id: sectionId,
+        section_position: sectionPositions.get(sectionId),
+      });
+      trackedSections.add(sectionId);
+      sectionObserver?.unobserve(section);
+      sectionEntries.delete(section);
+    }, 1_000);
+
+    sectionTimers.set(section, timer);
+  };
+
+  if ('IntersectionObserver' in window) {
+    sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const section = entry.target as HTMLElement;
+          sectionEntries.set(section, entry);
+          updateSectionView(section);
+        });
+      },
+      { threshold: [0, 0.25, 0.5, 0.75, 1] },
+    );
+
+    sectionIds.forEach((sectionId) => {
+      const section = document.getElementById(sectionId);
+      if (section && !section.hidden) sectionObserver?.observe(section);
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      sectionEntries.forEach((_entry, section) => updateSectionView(section));
+    });
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-analytics-cta]').forEach((cta) => {
+    cta.addEventListener('click', () => {
+      trackAnalyticsEvent('cta_click', {
+        cta_id: cta.dataset.analyticsCta,
+        cta_location: cta.dataset.analyticsLocation,
+        audience: cta.dataset.analyticsAudience,
+      });
+    });
+  });
+
   const hero = document.querySelector<HTMLElement>('.home-hero');
   const heroCta = document.querySelector<HTMLElement>('[data-hero-cta]');
   const heroCtaFrost = document.querySelector<HTMLElement>('[data-hero-cta-frost]');
@@ -822,19 +962,50 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
     submit.disabled = true;
     status.textContent = 'Sending…';
 
+    let errorType = 'network_error';
+    let httpStatus = 0;
+
     try {
       const response = await fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
         headers: { Accept: 'application/json' },
       });
-      const result = await response.json();
+      httpStatus = response.status;
 
-      if (!response.ok) throw new Error(result.message || 'Unable to send your message.');
+      let result: { accepted?: unknown; message?: unknown };
+      try {
+        result = await response.json();
+      } catch {
+        errorType = 'invalid_response';
+        throw new Error('Unable to read the server response.');
+      }
+
+      const responseMessage =
+        typeof result.message === 'string'
+          ? result.message
+          : 'Unable to send your message.';
+
+      if (!response.ok) {
+        errorType = 'http_error';
+        throw new Error(responseMessage);
+      }
+
+      if (result.accepted === true) {
+        trackAnalyticsEvent('generate_lead', {
+          form_id: 'contact_form',
+          lead_type: 'business_inquiry',
+        });
+      }
 
       form.reset();
-      status.textContent = result.message;
+      status.textContent = responseMessage;
     } catch (error) {
+      trackAnalyticsEvent('contact_form_error', {
+        form_id: 'contact_form',
+        error_type: errorType,
+        http_status: httpStatus,
+      });
       status.textContent =
         error instanceof Error ? error.message : 'Unable to send your message.';
     } finally {
@@ -955,7 +1126,46 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
   });
 
   casesScroller?.querySelectorAll<HTMLVideoElement>('[data-case-video]').forEach((video) => {
+    const trackedProgress = new Set<number>();
+    let started = false;
+    let completed = false;
+
+    const videoParameters = (videoPercent: number) => {
+      const card = video.closest<HTMLElement>('[data-case-card]');
+      return {
+        video_id: card?.dataset.caseId,
+        video_title: card?.dataset.caseName,
+        video_provider: 'self_hosted',
+        video_url: video.dataset.src,
+        video_current_time: Math.round(video.currentTime),
+        video_duration: Number.isFinite(video.duration) ? Math.round(video.duration) : undefined,
+        video_percent: videoPercent,
+        visible: !video.hidden,
+      };
+    };
+
+    video.addEventListener('play', () => {
+      if (started) return;
+      started = true;
+      trackAnalyticsEvent('video_start', videoParameters(0));
+    });
+
+    video.addEventListener('timeupdate', () => {
+      if (!Number.isFinite(video.duration) || video.duration <= 0) return;
+      const playedPercent = (video.currentTime / video.duration) * 100;
+
+      [25, 50, 75].forEach((milestone) => {
+        if (playedPercent < milestone || trackedProgress.has(milestone)) return;
+        trackedProgress.add(milestone);
+        trackAnalyticsEvent('video_progress', videoParameters(milestone));
+      });
+    });
+
     video.addEventListener('ended', () => {
+      if (!completed) {
+        completed = true;
+        trackAnalyticsEvent('video_complete', videoParameters(100));
+      }
       video.hidden = true;
       video
         .closest('[data-case-card]')
@@ -968,7 +1178,7 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
   const kolplanetPlay = document.querySelector<HTMLButtonElement>('[data-kolplanet-play]');
   const kolplanetClose = document.querySelector<HTMLButtonElement>('[data-kolplanet-close]');
   const kolplanetIframe = document.querySelector<HTMLIFrameElement>('[data-kolplanet-iframe]');
-  const kolplanetDemoSrc = 'https://www.youtube.com/embed/OFltA1Ng9P8?autoplay=1&rel=0';
+  const kolplanetDemoSrc = `https://www.youtube.com/embed/OFltA1Ng9P8?autoplay=1&rel=0&enablejsapi=1&origin=${encodeURIComponent(window.location.origin)}`;
 
   const closeKolplanetDemo = () => {
     if (!kolplanetModal) return;
