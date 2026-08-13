@@ -1970,6 +1970,14 @@
   transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
+.creator-join-form__field input::placeholder,
+.creator-join-form__field textarea::placeholder,
+.creator-join-form__tag-input::placeholder,
+.creator-join-form__combo-input::placeholder {
+  color: rgba(0, 0, 0, 0.38);
+  opacity: 1;
+}
+
 .creator-join-form__field select {
   appearance: none;
   -webkit-appearance: none;
@@ -1983,6 +1991,15 @@
     calc(100% - 12px) 50%;
   background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
+}
+
+/* Empty select shows placeholder-style gray; chosen value stays dark */
+.creator-join-form__field select:has(option[value=""]:checked) {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.creator-join-form__field select option {
+  color: rgba(0, 0, 0, 0.86);
 }
 
 .creator-join-form__field textarea {
