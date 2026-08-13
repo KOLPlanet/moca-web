@@ -19,7 +19,7 @@ export const site = {
     privacyPolicyHref: '/privacy-policy',
     icpNumber: '沪ICP备17012977号-1',
     icpHref: 'https://beian.miit.gov.cn/',
-    policyUpdatedAt: 'July 20, 2026',
+    policyUpdatedAt: 'August 13, 2026',
   },
   joinLinks: [
     {

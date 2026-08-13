@@ -1,6 +1,8 @@
 ---
 import { site } from '../config/site';
 
+const analyticsEnabled = Boolean(import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID?.trim());
+
 const serviceLinks = [
   { label: 'About Us', href: '/#about' },
   { label: 'Influencer Marketing', href: '/#services' },
@@ -98,7 +100,16 @@ const resultLinks = [
 
     <div class="footer-bottom">
       <p>Copyright © 2025 Moca Technology – <a href={site.legal.icpHref} target="_blank" rel="noreferrer">{site.legal.icpNumber}</a></p>
-      <a href={site.legal.privacyPolicyHref}>Term &amp; Policy</a>
+      <div class="footer-bottom__links">
+        <a href={site.legal.privacyPolicyHref}>Term &amp; Policy</a>
+        {
+          analyticsEnabled && (
+            <button class="footer-settings" type="button" data-analytics-settings>
+              Cookie settings
+            </button>
+          )
+        }
+      </div>
     </div>
   </div>
 </footer>

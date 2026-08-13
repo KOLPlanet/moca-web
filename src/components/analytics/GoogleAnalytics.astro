@@ -1,0 +1,144 @@
+---
+interface Props {
+  measurementId?: string;
+}
+
+const { measurementId } = Astro.props;
+---
+
+{
+  measurementId && (
+    <script is:inline define:vars={{ measurementId }}>
+      (() => {
+        const consentKey = 'moca.analytics-consent.v1';
+        const granted = 'granted';
+        const denied = 'denied';
+        const root = document.documentElement;
+
+        const readChoice = () => {
+          try {
+            const value = localStorage.getItem(consentKey);
+            return value === granted || value === denied ? value : null;
+          } catch {
+            return null;
+          }
+        };
+
+        const writeChoice = (value) => {
+          try {
+            localStorage.setItem(consentKey, value);
+          } catch {
+            // The current page still honors the choice when storage is unavailable.
+          }
+        };
+
+        const clearAnalyticsCookies = () => {
+          const cookieNames = document.cookie
+            .split(';')
+            .map((cookie) => cookie.split('=')[0].trim())
+            .filter((name) => name === '_ga' || name.startsWith('_ga_'));
+          const hostname = location.hostname;
+          const hostnameParts = hostname.split('.');
+          const parentDomain =
+            hostnameParts.length > 2 ? `.${hostnameParts.slice(-2).join('.')}` : `.${hostname}`;
+          const domains = new Set([hostname, `.${hostname}`, parentDomain]);
+
+          for (const name of cookieNames) {
+            const expiredCookie = `${name}=; Max-Age=0; Path=/; SameSite=Lax`;
+            document.cookie = expiredCookie;
+            domains.forEach((domain) => {
+              document.cookie = `${expiredCookie}; Domain=${domain}`;
+            });
+          }
+        };
+
+        const consentState = (analyticsStorage) => ({
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: analyticsStorage,
+        });
+
+        const disable = () => {
+          root.dataset.analyticsEnabled = 'false';
+          window[`ga-disable-${measurementId}`] = true;
+
+          if (window.__mocaGaLoaded && typeof window.gtag === 'function') {
+            window.gtag('consent', 'update', consentState('denied'));
+          }
+
+          clearAnalyticsCookies();
+        };
+
+        const load = () => {
+          root.dataset.analyticsEnabled = 'true';
+          window[`ga-disable-${measurementId}`] = false;
+
+          if (window.__mocaGaLoaded) {
+            if (typeof window.gtag === 'function') {
+              window.gtag('consent', 'update', consentState('granted'));
+            }
+            return;
+          }
+
+          window.__mocaGaLoaded = true;
+
+          const loader = document.createElement('script');
+          loader.type = 'text/partytown';
+          loader.async = true;
+          loader.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
+          loader.dataset.mocaGa = 'loader';
+
+          const setup = document.createElement('script');
+          setup.type = 'text/partytown';
+          setup.dataset.mocaGa = 'setup';
+          setup.textContent = `
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+            window.gtag('consent', 'default', ${JSON.stringify(consentState('granted'))});
+            window.gtag('set', 'ads_data_redaction', true);
+            window.gtag('js', new Date());
+            window.gtag('config', ${JSON.stringify(measurementId)});
+          `;
+
+          document.head.append(loader, setup);
+          window.dispatchEvent(new CustomEvent('ptupdate'));
+        };
+
+        const setChoice = (value) => {
+          if (value !== granted && value !== denied) return;
+
+          const previousChoice = readChoice();
+          writeChoice(value);
+          root.dataset.analyticsConsent = value;
+
+          if (value === granted) {
+            load();
+          } else {
+            disable();
+          }
+
+          window.dispatchEvent(
+            new CustomEvent('moca:analytics-consent', {
+              detail: { value },
+            }),
+          );
+
+          if (value === denied && previousChoice === granted) {
+            location.reload();
+          }
+        };
+
+        window.mocaAnalytics = { readChoice, setChoice };
+
+        const choice = readChoice();
+        root.dataset.analyticsConsent = choice ?? 'unset';
+        if (choice === granted) {
+          load();
+        } else {
+          disable();
+        }
+      })();
+    </script>
+  )
+}

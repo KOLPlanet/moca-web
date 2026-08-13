@@ -2,9 +2,11 @@
 import type { ImageMetadata } from 'astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import AnalyticsConsent from '../components/analytics/AnalyticsConsent.astro';
+import GoogleAnalytics from '../components/analytics/GoogleAnalytics.astro';
+import VercelAnalytics from '../components/analytics/VercelAnalytics.astro';
 import '../styles/global.css';
 import { site } from '../config/site';
-import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title?: string;
@@ -57,20 +59,15 @@ const imageHeight =
     : socialImage.height;
 const author = article?.author || site.name;
 const googleAnalyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID?.trim();
-const googleAnalyticsInit = googleAnalyticsId
-  ? `
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function () {
-        window.dataLayer.push(arguments);
-      };
-      window.gtag('js', new Date());
-      window.gtag('config', ${JSON.stringify(googleAnalyticsId)});
-    `
-  : '';
 ---
 
 <!doctype html>
-<html lang="en" data-analytics-enabled={googleAnalyticsId ? 'true' : 'false'}>
+<html
+  lang="en"
+  data-analytics-configured={googleAnalyticsId ? 'true' : 'false'}
+  data-analytics-enabled="false"
+  data-analytics-consent={googleAnalyticsId ? 'unset' : 'unavailable'}
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -113,23 +110,7 @@ const googleAnalyticsInit = googleAnalyticsId
       rel="stylesheet"
     />
     <title>{pageTitle}</title>
-    {
-      googleAnalyticsId && (
-        <>
-          <script
-            is:inline
-            src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-            type="text/partytown"
-          />
-          <script
-            is:inline
-            type="text/partytown"
-            set:html={googleAnalyticsInit}
-          />
-        </>
-      )
-    }
-    <Analytics />
+    <GoogleAnalytics measurementId={googleAnalyticsId} />
   </head>
   <body class:list={[{ 'layout-bare': bare }]}>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -138,5 +119,10 @@ const googleAnalyticsInit = googleAnalyticsId
       <slot />
     </main>
     {!bare && <Footer />}
+    <AnalyticsConsent
+      enabled={Boolean(googleAnalyticsId)}
+      privacyHref={site.legal.privacyPolicyHref}
+    />
+    <VercelAnalytics requiresConsent={Boolean(googleAnalyticsId)} />
   </body>
 </html>

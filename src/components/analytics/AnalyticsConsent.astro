@@ -1,0 +1,265 @@
+---
+interface Props {
+  enabled: boolean;
+  privacyHref: string;
+}
+
+const { enabled, privacyHref } = Astro.props;
+---
+
+{
+  enabled && (
+    <aside
+      class="analytics-consent"
+      data-analytics-consent-panel
+      hidden
+      role="dialog"
+      aria-labelledby="analytics-consent-title"
+      aria-describedby="analytics-consent-description"
+    >
+      <div class="analytics-consent__copy">
+        <p class="analytics-consent__eyebrow">Privacy · Analytics</p>
+        <h2 id="analytics-consent-title">Your privacy choices</h2>
+        <p id="analytics-consent-description">
+          We use optional analytics cookies to understand how visitors use MOCA and improve
+          the site. Analytics tools and events stay off until you allow them, and we never
+          send contact-form contents. <a href={privacyHref}>Read our privacy policy</a>.
+        </p>
+      </div>
+      <div class="analytics-consent__actions">
+        <button
+          class="analytics-consent__button analytics-consent__button--quiet"
+          type="button"
+          data-consent-choice="denied"
+        >
+          Necessary only
+        </button>
+        <button
+          class="analytics-consent__button analytics-consent__button--accept"
+          type="button"
+          data-consent-choice="granted"
+        >
+          Allow analytics
+        </button>
+      </div>
+    </aside>
+  )
+}
+
+{
+  enabled && (
+    <script is:inline>
+      (() => {
+        const panel = document.querySelector('[data-analytics-consent-panel]');
+        if (!panel || !window.mocaAnalytics) return;
+
+        let returnFocus = null;
+
+        const show = (trigger) => {
+          returnFocus = trigger instanceof HTMLElement ? trigger : null;
+          panel.hidden = false;
+          requestAnimationFrame(() => {
+            panel.dataset.visible = 'true';
+          });
+        };
+
+        const hide = () => {
+          panel.dataset.visible = 'false';
+          window.setTimeout(() => {
+            panel.hidden = true;
+            returnFocus?.focus();
+            returnFocus = null;
+          }, 220);
+        };
+
+        panel.querySelectorAll('[data-consent-choice]').forEach((button) => {
+          button.addEventListener('click', () => {
+            window.mocaAnalytics.setChoice(button.dataset.consentChoice);
+            hide();
+          });
+        });
+
+        document.querySelectorAll('[data-analytics-settings]').forEach((button) => {
+          button.addEventListener('click', () => show(button));
+        });
+
+        if (window.mocaAnalytics.readChoice() === null) show();
+      })();
+    </script>
+  )
+}
+
+<style>
+  .analytics-consent {
+    position: fixed;
+    z-index: 90;
+    right: max(18px, env(safe-area-inset-right));
+    bottom: max(18px, env(safe-area-inset-bottom));
+    left: max(18px, env(safe-area-inset-left));
+    width: min(calc(100% - 36px), 980px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(24px, 5vw, 58px);
+    margin-inline: auto;
+    padding: clamp(22px, 3.2vw, 32px);
+    border: 1px solid rgba(65, 111, 36, 0.24);
+    border-top: 4px solid var(--moca-green);
+    border-radius: 4px;
+    color: var(--ink-700);
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 24px 72px rgba(24, 32, 24, 0.2);
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 220ms var(--ease-out),
+      transform 220ms var(--ease-out);
+  }
+
+  .analytics-consent[hidden] {
+    display: none;
+  }
+
+  .analytics-consent[data-visible='true'] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .analytics-consent__copy {
+    max-width: 650px;
+  }
+
+  .analytics-consent__eyebrow {
+    margin: 0 0 7px;
+    color: var(--green-700);
+    font-family: var(--font-display);
+    font-size: var(--text-label-size);
+    font-weight: var(--text-label-weight);
+    letter-spacing: var(--text-label-tracking);
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .analytics-consent h2 {
+    margin: 0;
+    color: var(--ink-950);
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+    font-weight: var(--text-title-weight);
+    letter-spacing: var(--text-title-tracking);
+    line-height: 1.2;
+  }
+
+  .analytics-consent__copy > p:last-child {
+    margin: 10px 0 0;
+    color: var(--ink-700);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .analytics-consent__copy a {
+    color: var(--green-700);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .analytics-consent__copy a:hover,
+  .analytics-consent__copy a:focus-visible {
+    color: var(--ink-950);
+  }
+
+  .analytics-consent__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .analytics-consent__button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 0;
+    padding: 11px 18px;
+    font-family: var(--font-display);
+    font-size: var(--text-button-size);
+    font-weight: var(--text-button-weight);
+    letter-spacing: var(--text-button-tracking);
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      color 180ms ease,
+      border-color 180ms ease,
+      background-color 180ms ease,
+      box-shadow 180ms ease,
+      transform 180ms var(--ease-out);
+  }
+
+  .analytics-consent__button:hover,
+  .analytics-consent__button:focus-visible {
+    transform: translateY(-2px);
+  }
+
+  .analytics-consent__button:active {
+    transform: translateY(0);
+  }
+
+  .analytics-consent__button--quiet {
+    border-color: rgba(0, 0, 0, 0.28);
+    color: var(--ink-700);
+    background: var(--surface);
+  }
+
+  .analytics-consent__button--quiet:hover,
+  .analytics-consent__button--quiet:focus-visible {
+    border-color: var(--green-700);
+    color: var(--green-700);
+    background: var(--green-100);
+  }
+
+  .analytics-consent__button--accept {
+    border-color: var(--moca-green);
+    color: white;
+    background: var(--moca-green);
+  }
+
+  .analytics-consent__button--accept:hover,
+  .analytics-consent__button--accept:focus-visible {
+    border-color: #436d21;
+    background: #436d21;
+    box-shadow: 0 10px 26px rgba(67, 109, 33, 0.24);
+  }
+
+  @media (max-width: 760px) {
+    .analytics-consent {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .analytics-consent__actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 520px) {
+    .analytics-consent {
+      right: max(12px, env(safe-area-inset-right));
+      bottom: max(12px, env(safe-area-inset-bottom));
+      left: max(12px, env(safe-area-inset-left));
+      width: min(calc(100% - 24px), 980px);
+      padding: 20px;
+    }
+
+    .analytics-consent__actions {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -884,10 +884,12 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
         return;
       }
 
-      trackAnalyticsEvent('section_view', {
+      const tracked = trackAnalyticsEvent('section_view', {
         section_id: sectionId,
         section_position: sectionPositions.get(sectionId),
       });
+      if (!tracked) return;
+
       trackedSections.add(sectionId);
       sectionObserver?.unobserve(section);
       sectionEntries.delete(section);
@@ -914,6 +916,9 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
     });
 
     document.addEventListener('visibilitychange', () => {
+      sectionEntries.forEach((_entry, section) => updateSectionView(section));
+    });
+    window.addEventListener('moca:analytics-consent', () => {
       sectionEntries.forEach((_entry, section) => updateSectionView(section));
     });
   }
@@ -1146,8 +1151,7 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
 
     video.addEventListener('play', () => {
       if (started) return;
-      started = true;
-      trackAnalyticsEvent('video_start', videoParameters(0));
+      started = trackAnalyticsEvent('video_start', videoParameters(0));
     });
 
     video.addEventListener('timeupdate', () => {
@@ -1156,15 +1160,14 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
 
       [25, 50, 75].forEach((milestone) => {
         if (playedPercent < milestone || trackedProgress.has(milestone)) return;
-        trackedProgress.add(milestone);
-        trackAnalyticsEvent('video_progress', videoParameters(milestone));
+        const tracked = trackAnalyticsEvent('video_progress', videoParameters(milestone));
+        if (tracked) trackedProgress.add(milestone);
       });
     });
 
     video.addEventListener('ended', () => {
       if (!completed) {
-        completed = true;
-        trackAnalyticsEvent('video_complete', videoParameters(100));
+        completed = trackAnalyticsEvent('video_complete', videoParameters(100));
       }
       video.hidden = true;
       video

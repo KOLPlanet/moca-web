@@ -24,10 +24,10 @@ export const trackAnalyticsEvent = (
   eventName: AnalyticsEventName,
   parameters: AnalyticsEventParameters = {},
 ) => {
-  if (document.documentElement.dataset.analyticsEnabled !== 'true') return;
+  if (document.documentElement.dataset.analyticsEnabled !== 'true') return false;
 
   const gtag = (window as AnalyticsWindow).gtag;
-  if (typeof gtag !== 'function') return;
+  if (typeof gtag !== 'function') return false;
 
   const definedParameters = Object.fromEntries(
     Object.entries(parameters).filter((entry): entry is [string, boolean | number | string] =>
@@ -36,4 +36,5 @@ export const trackAnalyticsEvent = (
   );
 
   gtag('event', eventName, definedParameters);
+  return true;
 };

@@ -2164,10 +2164,25 @@ textarea {
   line-height: 1.5;
 }
 
-.site-footer .footer-bottom > a:last-child {
+.site-footer .footer-bottom__links {
   margin-left: auto;
   color: rgba(255, 255, 255, 0.52);
+}
+
+.footer-settings {
+  border: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
   font-family: var(--font-sans);
+  font-size: inherit;
+  cursor: pointer;
+  transition: color 180ms ease;
+}
+
+.footer-settings:hover,
+.footer-settings:focus-visible {
+  color: white;
 }
 
 .legal-hero {
@@ -2758,6 +2773,11 @@ textarea {
     align-items: flex-start;
     flex-direction: column;
     gap: 12px;
+  }
+
+  .site-footer .footer-bottom__links {
+    justify-content: flex-start;
+    margin-left: 0;
   }
 }
 
