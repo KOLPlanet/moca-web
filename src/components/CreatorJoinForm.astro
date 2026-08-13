@@ -1,20 +1,30 @@
 ---
+/* Level 1 from KOL_Tags_Master_Database_V4 */
 const categories = [
-  { label: 'Arts', emoji: '🎨' },
-  { label: 'Beauty', emoji: '💄' },
+  { label: 'Gaming', emoji: '🎮' },
+  { label: 'Beauty & Personal Care', emoji: '💄' },
+  { label: 'Auto & Vehicles', emoji: '🚗' },
   { label: 'Fashion', emoji: '👗' },
   { label: 'Business & Career', emoji: '💼' },
-  { label: 'Finance', emoji: '💰' },
-  { label: 'Food & Drink', emoji: '🍜' },
-  { label: 'Gaming', emoji: '🎮' },
-  { label: 'Lifestyle', emoji: '✨' },
+  { label: 'Finance & Investment', emoji: '💰' },
+  { label: 'Education & Learning', emoji: '📚' },
+  { label: 'Lifestyle & Home', emoji: '✨' },
   { label: 'Tech & Gadgets', emoji: '📱' },
-  { label: 'Travel', emoji: '✈️' },
-  { label: 'Health & Fitness', emoji: '💪' },
-  { label: 'Entertainment', emoji: '🎬' },
-  { label: 'Education', emoji: '📚' },
+  { label: 'Travel & Tourism', emoji: '✈️' },
+  { label: 'Entertainment & Media', emoji: '🎬' },
+  { label: 'Sports & Fitness', emoji: '⚽' },
   { label: 'Family & Parenting', emoji: '👨‍👩‍👧' },
-  { label: 'Sports', emoji: '⚽' },
+  { label: 'Healthcare & Medicine', emoji: '🩺' },
+  { label: 'Food & Drinks', emoji: '🍜' },
+  { label: 'Culture & Identity', emoji: '🌏' },
+  { label: 'Shopping', emoji: '🛍️' },
+  { label: 'Pets & Animals', emoji: '🐾' },
+  { label: 'Public Affairs & Politics', emoji: '🏛️' },
+  { label: 'Art & Design', emoji: '🎨' },
+  { label: 'Podcasts & Documentary', emoji: '🎙️' },
+  { label: 'Professional Services', emoji: '🛠️' },
+  { label: 'Local Service', emoji: '📍' },
+  { label: 'Casino/Betting', emoji: '🎲' },
 ];
 
 const languages = [
@@ -33,104 +43,78 @@ const languages = [
 
 const countries = [
   {
-    name: 'Indonesia',
-    currency: 'IDR',
-    dial: '+62',
-    cities: ['Jakarta', 'Surabaya', 'Bandung', 'Medan', 'Bali', 'Yogyakarta', 'Semarang', 'Makassar', 'Tangerang', 'Bekasi'],
-  },
-  {
-    name: 'Malaysia',
-    currency: 'MYR',
-    dial: '+60',
-    cities: ['Kuala Lumpur', 'Penang', 'Johor Bahru', 'Ipoh', 'Malacca', 'Kota Kinabalu', 'Kuching', 'Shah Alam', 'Petaling Jaya'],
-  },
-  {
-    name: 'Singapore',
-    currency: 'SGD',
-    dial: '+65',
-    cities: ['Singapore'],
-  },
-  {
-    name: 'Thailand',
-    currency: 'THB',
-    dial: '+66',
-    cities: ['Bangkok', 'Chiang Mai', 'Phuket', 'Pattaya', 'Khon Kaen', 'Hat Yai', 'Nonthaburi'],
-  },
-  {
-    name: 'Vietnam',
-    currency: 'VND',
-    dial: '+84',
-    cities: ['Ho Chi Minh City', 'Hanoi', 'Da Nang', 'Hai Phong', 'Can Tho', 'Nha Trang', 'Hue'],
-  },
-  {
-    name: 'Philippines',
-    currency: 'PHP',
-    dial: '+63',
-    cities: ['Manila', 'Quezon City', 'Cebu', 'Davao', 'Makati', 'Taguig', 'Pasig', 'Caloocan'],
-  },
-  {
+    code: 'IN',
     name: 'India',
     currency: 'INR',
     dial: '+91',
     cities: ['Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Chennai', 'Kolkata', 'Pune', 'Gurgaon', 'Noida', 'Ahmedabad'],
   },
   {
-    name: 'Japan',
-    currency: 'JPY',
-    dial: '+81',
-    cities: ['Tokyo', 'Osaka', 'Yokohama', 'Nagoya', 'Sapporo', 'Fukuoka', 'Kyoto', 'Kobe'],
+    code: 'ID',
+    name: 'Indonesia',
+    currency: 'IDR',
+    dial: '+62',
+    cities: ['Jakarta', 'Surabaya', 'Bandung', 'Medan', 'Bali', 'Yogyakarta', 'Semarang', 'Makassar', 'Tangerang', 'Bekasi'],
   },
   {
-    name: 'South Korea',
-    currency: 'KRW',
-    dial: '+82',
-    cities: ['Seoul', 'Busan', 'Incheon', 'Daegu', 'Daejeon', 'Gwangju', 'Suwon'],
+    code: 'MY',
+    name: 'Malaysia',
+    currency: 'MYR',
+    dial: '+60',
+    cities: ['Kuala Lumpur', 'Penang', 'Johor Bahru', 'Ipoh', 'Malacca', 'Kota Kinabalu', 'Kuching', 'Shah Alam', 'Petaling Jaya'],
   },
   {
-    name: 'China',
-    currency: 'CNY',
-    dial: '+86',
-    cities: ['Shanghai', 'Beijing', 'Guangzhou', 'Shenzhen', 'Hangzhou', 'Chengdu', 'Chongqing', 'Wuhan', 'Nanjing', 'Suzhou'],
+    code: 'SG',
+    name: 'Singapore',
+    currency: 'SGD',
+    dial: '+65',
+    cities: ['Singapore'],
   },
   {
-    name: 'Hong Kong',
-    currency: 'HKD',
-    dial: '+852',
-    cities: ['Hong Kong'],
+    code: 'PH',
+    name: 'Philippines',
+    currency: 'PHP',
+    dial: '+63',
+    cities: ['Manila', 'Quezon City', 'Cebu', 'Davao', 'Makati', 'Taguig', 'Pasig', 'Caloocan'],
   },
   {
-    name: 'Taiwan',
-    currency: 'TWD',
-    dial: '+886',
-    cities: ['Taipei', 'Kaohsiung', 'Taichung', 'Tainan', 'Hsinchu', 'Taoyuan'],
+    code: 'TH',
+    name: 'Thailand',
+    currency: 'THB',
+    dial: '+66',
+    cities: ['Bangkok', 'Chiang Mai', 'Phuket', 'Pattaya', 'Khon Kaen', 'Hat Yai', 'Nonthaburi'],
   },
   {
+    code: 'VN',
+    name: 'Vietnam',
+    currency: 'VND',
+    dial: '+84',
+    cities: ['Ho Chi Minh City', 'Hanoi', 'Da Nang', 'Hai Phong', 'Can Tho', 'Nha Trang', 'Hue'],
+  },
+  {
+    code: 'US',
     name: 'United States',
     currency: 'USD',
     dial: '+1',
     cities: ['New York', 'Los Angeles', 'San Francisco', 'Chicago', 'Miami', 'Seattle', 'Austin', 'Boston', 'Houston'],
   },
   {
-    name: 'United Kingdom',
-    currency: 'GBP',
-    dial: '+44',
-    cities: ['London', 'Manchester', 'Birmingham', 'Edinburgh', 'Glasgow', 'Bristol', 'Leeds', 'Liverpool'],
+    code: 'CA',
+    name: 'Canada',
+    currency: 'CAD',
+    dial: '+1',
+    cities: ['Toronto', 'Vancouver', 'Montreal', 'Calgary', 'Ottawa', 'Edmonton', 'Winnipeg', 'Quebec City'],
   },
   {
-    name: 'Australia',
-    currency: 'AUD',
-    dial: '+61',
-    cities: ['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide', 'Canberra', 'Gold Coast'],
-  },
-  {
-    name: 'Other',
-    currency: 'USD',
-    dial: '+',
-    cities: [],
+    code: 'CN',
+    name: 'China',
+    currency: 'CNY',
+    dial: '+86',
+    cities: ['Shanghai', 'Beijing', 'Guangzhou', 'Shenzhen', 'Hangzhou', 'Chengdu', 'Chongqing', 'Wuhan', 'Nanjing', 'Suzhou'],
   },
 ];
 
-const currencies = ['USD', 'IDR', 'MYR', 'SGD', 'THB', 'VND', 'PHP', 'INR', 'JPY', 'KRW', 'CNY', 'HKD', 'TWD', 'GBP', 'AUD', 'EUR'];
+const currencies = ['USD', 'CAD', 'IDR', 'MYR', 'SGD', 'THB', 'VND', 'PHP', 'INR', 'CNY', 'EUR'];
 
 const socialPlatforms = [
   { name: 'Instagram', icon: '/images/social/instagram.svg' },
@@ -253,7 +237,7 @@ const rateScopeGroups = [
         <label class="creator-join-form__field">
           <span>Gender</span>
           <select name="gender">
-            <option value="">Select</option>
+            <option value="" selected disabled hidden></option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Other">Other</option>
@@ -268,9 +252,9 @@ const rateScopeGroups = [
         <label class="creator-join-form__field">
           <span>Country <i aria-hidden="true">*</i></span>
           <select name="country" autocomplete="country-name" required data-country data-required>
-            <option value="">Select</option>
+            <option value="" selected disabled hidden>Select Country</option>
             {countries.map((item) => (
-              <option value={item.name}>{item.name}</option>
+              <option value={item.name}>{item.code}</option>
             ))}
           </select>
         </label>
@@ -281,7 +265,7 @@ const rateScopeGroups = [
               class="creator-join-form__combo-input"
               type="text"
               maxlength="120"
-              placeholder="Search City…"
+              placeholder="Search City"
               autocomplete="off"
               data-combo-input
               aria-autocomplete="list"
@@ -299,7 +283,7 @@ const rateScopeGroups = [
             class="creator-join-form__combo-input"
             type="text"
             maxlength="80"
-            placeholder="Search Language…"
+            placeholder="Search Language"
             autocomplete="off"
             data-combo-input
             aria-autocomplete="list"
@@ -404,7 +388,7 @@ const rateScopeGroups = [
             class="creator-join-form__tag-input"
             type="text"
             maxlength="40"
-            placeholder="Start typing…"
+            placeholder="Start typing"
             autocomplete="off"
             data-tag-input
             aria-autocomplete="list"
@@ -504,7 +488,7 @@ const rateScopeGroups = [
   <div class="creator-join-form__card creator-join-form__card--fold">
     <details class="creator-join-form__fold">
       <summary>
-        <span>Collaborations & Notes</span>
+        <span>Collaborations</span>
       </summary>
       <section class="creator-join-form__section">
         <h2>Past Collaborations</h2>
@@ -531,7 +515,14 @@ const rateScopeGroups = [
           </div>
         </template>
       </section>
+    </details>
+  </div>
 
+  <div class="creator-join-form__card creator-join-form__card--fold">
+    <details class="creator-join-form__fold">
+      <summary>
+        <span>Notes</span>
+      </summary>
       <section class="creator-join-form__section">
         <h2>Notes</h2>
         <label class="creator-join-form__field">

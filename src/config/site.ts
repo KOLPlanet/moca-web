@@ -63,13 +63,13 @@ export const site = {
     { label: 'Cases', href: '/#cases' },
     { label: 'About Us', href: '/#about' },
     { label: 'News', href: '/news' },
-    { label: 'Contact', href: '/#contact' },
+    { label: 'Contact Us', href: '/#contact' },
   ],
   newsNavigation: [
     { label: 'Core Services', href: '/#services' },
     { label: 'Cases', href: '/#cases' },
     { label: 'About Us', href: '/#about' },
     { label: 'News', href: '/news' },
-    { label: 'Contact', href: '/#contact' },
+    { label: 'Contact Us', href: '/#contact' },
   ],
 } as const;

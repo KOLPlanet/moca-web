@@ -3131,13 +3131,14 @@ a.life-card:hover img {
   }
 
   .kolplanet-demo__trigger {
-    aspect-ratio: 3.2 / 1;
+    aspect-ratio: 3.6 / 1;
   }
 
   .kolplanet-demo__poster {
-    /* Mobile: milder side-crop than desktop zoom; keep orb under the play button. */
-    object-position: 50% 56%;
-    transform: translate3d(0, -5%, 0) scale(1.16);
+    /* Keep the AI orb centered; scale only enough to trim side gutters. */
+    object-position: 50% 50%;
+    transform: translate3d(0, -4%, 0) scale(1.18);
+    transform-origin: center center;
   }
 
   .kolplanet-modal {
