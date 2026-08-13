@@ -948,8 +948,6 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     refreshScopeOptions();
     syncScopeUi();
     closeScopeMenu();
-    const lastPrice = scopeList.querySelector('[data-scope-item]:last-child [data-scope-price]');
-    if (lastPrice instanceof HTMLInputElement) lastPrice.focus();
   };
 
   addScope?.addEventListener('click', (event) => {
