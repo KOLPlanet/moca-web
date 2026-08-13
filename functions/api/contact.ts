@@ -15,6 +15,50 @@ interface PagesContext {
 
 type PagesHandler = (context: PagesContext) => Promise<Response> | Response;
 
+const MAX_BODY_BYTES = 4_000_000;
+const MAX_FILE_BYTES = 3_500_000;
+const ALLOWED_FILE_TYPES = new Set([
+  'image/jpeg',
+  'image/png',
+  'image/webp',
+  'image/gif',
+  'image/heic',
+  'image/heif',
+  'application/pdf',
+]);
+
+const bytesToBase64 = (bytes: Uint8Array) => {
+  let binary = '';
+  const chunk = 0x8000;
+  for (let index = 0; index < bytes.length; index += chunk) {
+    binary += String.fromCharCode(...bytes.subarray(index, index + chunk));
+  }
+  return btoa(binary);
+};
+
+const safeFilename = (name: string) =>
+  name.replace(/[^\w.\- ()[\]]+/g, '_').replace(/^\.+/, '').slice(0, 80) || 'rate-card';
+
+const readRateCard = async (form: FormData) => {
+  const file = form.get('rateCard');
+  if (!(file instanceof File) || file.size === 0) return undefined;
+  if (file.size > MAX_FILE_BYTES) {
+    throw new Error('The rate card file is too large. Please use a file under 3.5MB.');
+  }
+  const type = file.type || '';
+  const lower = file.name.toLowerCase();
+  const allowed =
+    ALLOWED_FILE_TYPES.has(type) ||
+    /\.(jpe?g|png|webp|gif|heic|heif|pdf)$/.test(lower);
+  if (!allowed) {
+    throw new Error('Please upload a photo, screenshot, or PDF.');
+  }
+  return {
+    filename: safeFilename(file.name),
+    contentType: type || (lower.endsWith('.pdf') ? 'application/pdf' : 'image/jpeg'),
+    content: bytesToBase64(new Uint8Array(await file.arrayBuffer())),
+  };
+};
 const isEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 const withinLimit = (value: string, maximum: number) =>
   value.length > 0 && value.length <= maximum;
@@ -73,7 +117,7 @@ export const onRequestPost: PagesHandler = async ({ env, request }) => {
   }
 
   const contentLength = Number(request.headers.get('content-length') ?? 0);
-  if (Number.isFinite(contentLength) && contentLength > 64_000) {
+  if (Number.isFinite(contentLength) && contentLength > MAX_BODY_BYTES) {
     return json({ message: 'The submitted message is too large.' }, 413, origin);
   }
 
@@ -111,6 +155,19 @@ export const onRequestPost: PagesHandler = async ({ env, request }) => {
     );
   }
 
+  let attachment;
+  try {
+    attachment = await readRateCard(form);
+  } catch (error) {
+    return json(
+      {
+        message: error instanceof Error ? error.message : 'Unable to read the rate card file.',
+      },
+      400,
+      origin,
+    );
+  }
+
   const endpoint = env.CONTACT_MAIL_SERVICE_URL?.trim();
   const token = env.CONTACT_MAIL_SERVICE_TOKEN?.trim();
   const from = env.CONTACT_FROM_EMAIL?.trim();
@@ -138,6 +195,15 @@ export const onRequestPost: PagesHandler = async ({ env, request }) => {
         replyTo: email,
         subject: `${prefix} ${safeSubject}`,
         text: [`Name: ${name}`, `Email: ${email}`, '', message].join('\n'),
+        attachments: attachment
+          ? [
+              {
+                filename: attachment.filename,
+                contentType: attachment.contentType,
+                content: attachment.content,
+              },
+            ]
+          : undefined,
       }),
     });
 

@@ -1,10 +1,17 @@
 import nodemailer from 'nodemailer';
 
+export interface ContactAttachment {
+  filename: string;
+  contentType: string;
+  content: Buffer;
+}
+
 export interface ContactMessage {
   name: string;
   email: string;
   subject: string;
   message: string;
+  attachment?: ContactAttachment;
 }
 
 export class ContactMailConfigurationError extends Error {
@@ -78,6 +85,15 @@ async function sendWithSmtp(contact: ContactMessage) {
     },
     subject: subjectFor(contact.subject),
     text: textFor(contact),
+    attachments: contact.attachment
+      ? [
+          {
+            filename: contact.attachment.filename,
+            content: contact.attachment.content,
+            contentType: contact.attachment.contentType,
+          },
+        ]
+      : undefined,
   });
 }
 
@@ -100,6 +116,15 @@ async function sendWithWebhook(contact: ContactMessage) {
       replyTo: contact.email,
       subject: subjectFor(contact.subject),
       text: textFor(contact),
+      attachments: contact.attachment
+        ? [
+            {
+              filename: contact.attachment.filename,
+              contentType: contact.attachment.contentType,
+              content: contact.attachment.content.toString('base64'),
+            },
+          ]
+        : undefined,
     }),
   });
 

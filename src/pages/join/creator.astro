@@ -45,10 +45,25 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
   const collabs = document.querySelector('[data-creator-collabs]');
   const addCollab = document.querySelector('[data-add-collab]');
   const collabTemplate = document.querySelector('[data-collab-template]');
+  const scopeList = document.querySelector('[data-scope-list]');
+  const scopeTemplate = document.querySelector('[data-scope-template]');
+  const addScope = document.querySelector('[data-add-scope]');
+  const scopeMenu = document.querySelector('[data-scope-menu]');
+  const scopeOptions = document.querySelector('[data-scope-options]');
+  const scopeCount = document.querySelector('[data-scope-count]');
+  const scopeEmpty = document.querySelector('[data-scope-empty]');
   const tagList = document.querySelector('[data-tag-list]');
   const tagInput = document.querySelector('[data-tag-input]');
   const tagSuggest = document.querySelector('[data-tag-suggest]');
   const tagValue = document.querySelector('[data-tag-value]');
+  const rateFile = document.querySelector('[data-rate-file]');
+  const rateFileHit = document.querySelector('[data-rate-file-hit]');
+  const ratePreview = document.querySelector('[data-rate-preview]');
+  const ratePreviewImage = document.querySelector('[data-rate-preview-image]');
+  const ratePreviewName = document.querySelector('[data-rate-preview-name]');
+  const rateFileClear = document.querySelector('[data-rate-file-clear]');
+  let rateCardFile = null;
+  let ratePreviewUrl = '';
   const DRAFT_KEY = 'moca-creator-join-draft';
 
   const maxTags = 5;
@@ -57,15 +72,35 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
   const platforms = (() => {
     try {
-      return JSON.parse(form?.getAttribute('data-social-platforms') || '[]');
+      const raw = JSON.parse(form?.getAttribute('data-social-platforms') || '[]');
+      return raw.map((item) => (typeof item === 'string' ? { name: item, icon: '' } : item));
     } catch {
       return [];
     }
   })();
 
+  const platformByName = (name) => platforms.find((item) => item.name === name);
+
+  const normalizePlatform = (name) => {
+    if (name === 'X / Twitter') return 'X';
+    if (name === 'Other') return '';
+    return platformByName(name) ? name : '';
+  };
+
   const allTagSuggestions = (() => {
     try {
       return JSON.parse(form?.getAttribute('data-tag-suggestions') || '[]');
+    } catch {
+      return [];
+    }
+  })();
+
+  const rateScopeGroups = (() => {
+    try {
+      const raw = JSON.parse(form?.getAttribute('data-rate-scope-groups') || '[]');
+      if (Array.isArray(raw) && raw[0]?.items) return raw;
+      if (Array.isArray(raw)) return [{ label: 'Standard Deliverables', items: raw }];
+      return [];
     } catch {
       return [];
     }
@@ -79,8 +114,35 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     }
   })();
 
+  const countryDial = (() => {
+    try {
+      return JSON.parse(form?.getAttribute('data-country-dial') || '{}');
+    } catch {
+      return {};
+    }
+  })();
+
+  const countryCities = (() => {
+    try {
+      return JSON.parse(form?.getAttribute('data-country-cities') || '{}');
+    } catch {
+      return {};
+    }
+  })();
+
+  const languageOptions = (() => {
+    try {
+      return JSON.parse(form?.getAttribute('data-languages') || '[]');
+    } catch {
+      return [];
+    }
+  })();
+
   const countrySelect = document.querySelector('[data-country]');
   const currencySelect = document.querySelector('[data-currency]');
+  const whatsappDial = document.querySelector('[data-whatsapp-dial]');
+  const whatsappDialValue = document.querySelector('[data-whatsapp-dial-value]');
+  const whatsappNumber = document.querySelector('[data-whatsapp-number]');
   let currencyTouched = false;
 
   const setStatus = (message = '', tone = 'info') => {
@@ -102,8 +164,13 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
   const focusInvalid = (el) => {
     if (!(el instanceof HTMLElement)) return;
-    el.focus({ preventScroll: true });
-    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const target =
+      el instanceof HTMLInputElement && el.matches('[data-social-platform]')
+        ? el.closest('[data-platform-picker]')?.querySelector('[data-platform-toggle]') ?? el
+        : el;
+    if (!(target instanceof HTMLElement)) return;
+    target.focus({ preventScroll: true });
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
   const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -130,10 +197,30 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     input.value = parts.join('-');
   };
 
+  const currencySymbols = {
+    USD: '$',
+    IDR: 'Rp',
+    MYR: 'RM',
+    SGD: 'S$',
+    THB: '฿',
+    VND: '₫',
+    PHP: '₱',
+    INR: '₹',
+    JPY: '¥',
+    KRW: '₩',
+    CNY: '¥',
+    HKD: 'HK$',
+    TWD: 'NT$',
+    GBP: '£',
+    AUD: 'A$',
+    EUR: '€',
+  };
+
   const updateRatePlaceholders = () => {
-    const code = currencySelect instanceof HTMLSelectElement && currencySelect.value ? currencySelect.value : 'USD';
-    form?.querySelectorAll('[data-rate-amount]').forEach((input) => {
-      if (input instanceof HTMLInputElement) input.placeholder = `e.g. 200 ${code}`;
+    const code = currencySelect instanceof HTMLSelectElement ? currencySelect.value : '';
+    const symbol = currencySymbols[code] || '$';
+    form?.querySelectorAll('[data-rate-prefix]').forEach((el) => {
+      el.textContent = symbol;
     });
   };
 
@@ -144,14 +231,265 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     updateRatePlaceholders();
   };
 
+  const syncWhatsappDial = () => {
+    if (!(countrySelect instanceof HTMLSelectElement)) return;
+    const dial = countrySelect.value ? countryDial[countrySelect.value] || '+' : '—';
+    if (whatsappDial) whatsappDial.textContent = dial;
+    if (whatsappDialValue instanceof HTMLInputElement) {
+      whatsappDialValue.value = dial === '—' ? '' : dial;
+    }
+  };
+
+  const setupCombo = (root, getOptions, { allowCustom = false } = {}) => {
+    if (!(root instanceof HTMLElement)) return null;
+    const input = root.querySelector('[data-combo-input]');
+    const valueInput = root.querySelector('[data-combo-value]');
+    const list = root.querySelector('[data-combo-list]');
+    if (!(input instanceof HTMLInputElement) || !(valueInput instanceof HTMLInputElement) || !(list instanceof HTMLElement)) {
+      return null;
+    }
+
+    const hide = () => {
+      list.hidden = true;
+      list.innerHTML = '';
+    };
+
+    const setValue = (value) => {
+      valueInput.value = value;
+      input.value = value;
+      hide();
+    };
+
+    const render = (query = '') => {
+      const options = getOptions();
+      const q = String(query || '').trim().toLowerCase();
+      const matches = (q ? options.filter((item) => item.toLowerCase().includes(q)) : options).slice(0, 8);
+      if (!matches.length) {
+        hide();
+        return;
+      }
+      list.innerHTML = matches
+        .map((item) => `<li role="option"><button type="button" data-combo-option>${item}</button></li>`)
+        .join('');
+      list.hidden = false;
+    };
+
+    input.addEventListener('focus', () => render(input.value));
+    input.addEventListener('input', () => {
+      if (!allowCustom) valueInput.value = '';
+      else valueInput.value = input.value.trim();
+      render(input.value);
+    });
+    input.addEventListener('blur', () => {
+      window.setTimeout(() => {
+        const typed = input.value.trim();
+        if (!typed) {
+          setValue('');
+          return;
+        }
+        const exact = getOptions().find((item) => item.toLowerCase() === typed.toLowerCase());
+        if (exact) {
+          setValue(exact);
+          return;
+        }
+        if (allowCustom) {
+          setValue(typed);
+          return;
+        }
+        input.value = valueInput.value;
+        hide();
+      }, 120);
+    });
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') hide();
+      if (event.key === 'Enter') {
+        const first = list.querySelector('[data-combo-option]');
+        if (first instanceof HTMLButtonElement) {
+          event.preventDefault();
+          setValue(first.textContent || '');
+        } else if (allowCustom && input.value.trim()) {
+          event.preventDefault();
+          setValue(input.value.trim());
+        }
+      }
+    });
+    list.addEventListener('click', (event) => {
+      const button = event.target instanceof Element ? event.target.closest('[data-combo-option]') : null;
+      if (!(button instanceof HTMLButtonElement)) return;
+      setValue(button.textContent || '');
+    });
+    document.addEventListener('click', (event) => {
+      if (!(event.target instanceof Node)) return;
+      if (!root.contains(event.target)) hide();
+    });
+
+    return {
+      setValue,
+      clear() {
+        setValue('');
+      },
+      getValue() {
+        return valueInput.value.trim();
+      },
+      syncFromHidden() {
+        input.value = valueInput.value;
+      },
+    };
+  };
+
+  const cityCombo = setupCombo(
+    form?.querySelector('[data-combo="city"]'),
+    () => {
+      const country = countrySelect instanceof HTMLSelectElement ? countrySelect.value : '';
+      return countryCities[country] || [];
+    },
+    { allowCustom: true },
+  );
+
+  const languageCombo = setupCombo(
+    form?.querySelector('[data-combo="language"]'),
+    () => languageOptions,
+    { allowCustom: false },
+  );
+
   countrySelect?.addEventListener('change', () => {
     currencyTouched = false;
     syncCurrencyFromCountry(true);
+    syncWhatsappDial();
+    const cities = countryCities[countrySelect instanceof HTMLSelectElement ? countrySelect.value : ''] || [];
+    if (cityCombo && cityCombo.getValue() && !cities.includes(cityCombo.getValue())) {
+      cityCombo.clear();
+    }
   });
 
   currencySelect?.addEventListener('change', () => {
     currencyTouched = Boolean(currencySelect instanceof HTMLSelectElement && currencySelect.value);
     updateRatePlaceholders();
+  });
+
+  whatsappNumber?.addEventListener('input', () => {
+    if (!(whatsappNumber instanceof HTMLInputElement)) return;
+    whatsappNumber.value = whatsappNumber.value.replace(/[^\d\s-]/g, '');
+  });
+
+  const clearRateCardFile = () => {
+    if (ratePreviewUrl) URL.revokeObjectURL(ratePreviewUrl);
+    ratePreviewUrl = '';
+    rateCardFile = null;
+    if (rateFile instanceof HTMLInputElement) rateFile.value = '';
+    if (rateFileHit) rateFileHit.hidden = false;
+    if (ratePreview) ratePreview.hidden = true;
+    if (ratePreviewImage instanceof HTMLImageElement) {
+      ratePreviewImage.removeAttribute('src');
+      ratePreviewImage.hidden = true;
+    }
+    if (ratePreviewName) ratePreviewName.textContent = '';
+  };
+
+  const showRateCardFile = (file) => {
+    if (ratePreviewUrl) URL.revokeObjectURL(ratePreviewUrl);
+    rateCardFile = file;
+    const isImage = file.type.startsWith('image/');
+    if (rateFileHit) rateFileHit.hidden = true;
+    if (ratePreview) ratePreview.hidden = false;
+    if (ratePreviewName) ratePreviewName.textContent = file.name;
+    if (ratePreviewImage instanceof HTMLImageElement) {
+      if (isImage) {
+        ratePreviewUrl = URL.createObjectURL(file);
+        ratePreviewImage.src = ratePreviewUrl;
+        ratePreviewImage.hidden = false;
+      } else {
+        ratePreviewImage.removeAttribute('src');
+        ratePreviewImage.hidden = true;
+      }
+    }
+  };
+
+  const prepareRateCardFile = (file) =>
+    new Promise((resolve, reject) => {
+      if (!file) {
+        resolve(null);
+        return;
+      }
+      const isPdf = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
+      if (isPdf) {
+        if (file.size > 3_500_000) {
+          reject(new Error('PDF must be under 3.5MB.'));
+          return;
+        }
+        resolve(file);
+        return;
+      }
+      if (!file.type.startsWith('image/') && !/\.(jpe?g|png|webp|gif|heic|heif)$/i.test(file.name)) {
+        reject(new Error('Please choose a photo, screenshot, or PDF.'));
+        return;
+      }
+      if (file.size > 10_000_000) {
+        reject(new Error('Please choose a file under 10MB.'));
+        return;
+      }
+      const url = URL.createObjectURL(file);
+      const image = new Image();
+      image.onload = () => {
+        const max = 1600;
+        let width = image.naturalWidth || image.width;
+        let height = image.naturalHeight || image.height;
+        if (width > max || height > max) {
+          const scale = Math.min(max / width, max / height);
+          width = Math.round(width * scale);
+          height = Math.round(height * scale);
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        const context = canvas.getContext('2d');
+        if (!context) {
+          URL.revokeObjectURL(url);
+          resolve(file.size <= 3_500_000 ? file : null);
+          return;
+        }
+        context.drawImage(image, 0, 0, width, height);
+        canvas.toBlob(
+          (blob) => {
+            URL.revokeObjectURL(url);
+            if (!blob) {
+              resolve(file.size <= 3_500_000 ? file : null);
+              return;
+            }
+            const name = file.name.replace(/\.[^.]+$/, '') || 'rate-card';
+            resolve(new File([blob], `${name}.jpg`, { type: 'image/jpeg' }));
+          },
+          'image/jpeg',
+          0.82,
+        );
+      };
+      image.onerror = () => {
+        URL.revokeObjectURL(url);
+        if (file.size > 3_500_000) {
+          reject(new Error('Please use a JPG, PNG, or PDF under 3.5MB.'));
+          return;
+        }
+        resolve(file);
+      };
+      image.src = url;
+    });
+
+  rateFile?.addEventListener('change', () => {
+    const file = rateFile instanceof HTMLInputElement ? rateFile.files?.[0] : null;
+    if (!file) return;
+    if (file.size > 10_000_000) {
+      clearRateCardFile();
+      setStatus('Please choose a file under 10MB.', 'info');
+      return;
+    }
+    showRateCardFile(file);
+    setStatus('');
+    form?.querySelector('[data-rate-upload]')?.closest('.creator-join-form__fold')?.setAttribute('open', '');
+  });
+
+  rateFileClear?.addEventListener('click', () => {
+    clearRateCardFile();
+    setStatus('');
   });
 
   const syncTags = () => {
@@ -273,41 +611,95 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
   const usedPlatforms = () =>
     [...(socialList?.querySelectorAll('[data-social-platform]') ?? [])]
-      .map((select) => (select instanceof HTMLSelectElement ? select.value : ''))
+      .map((input) => (input instanceof HTMLInputElement ? input.value : ''))
       .filter(Boolean);
+
+  const closePlatformLists = (except) => {
+    socialList?.querySelectorAll('[data-platform-list]').forEach((list) => {
+      if (list !== except) list.hidden = true;
+    });
+    socialList?.querySelectorAll('[data-platform-toggle]').forEach((btn) => {
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  const setPlatformValue = (row, name) => {
+    const input = row.querySelector('[data-social-platform]');
+    const label = row.querySelector('[data-platform-label]');
+    const icon = row.querySelector('[data-platform-icon]');
+    const platform = platformByName(name);
+    if (input instanceof HTMLInputElement) input.value = name || '';
+    if (label) label.textContent = name || 'Platform';
+    row.querySelector('[data-platform-toggle]')?.classList.toggle('is-empty', !name);
+    row.querySelector('.creator-join-form__field--platform')?.classList.remove('is-invalid');
+    input?.classList.remove('is-invalid');
+    if (icon instanceof HTMLImageElement) {
+      if (platform?.icon) {
+        icon.src = platform.icon;
+        icon.alt = '';
+        icon.hidden = false;
+      } else {
+        icon.removeAttribute('src');
+        icon.hidden = true;
+      }
+    }
+    row.querySelector('[data-platform-list]')?.setAttribute('hidden', '');
+    row.querySelector('[data-platform-toggle]')?.setAttribute('aria-expanded', 'false');
+  };
 
   const refreshPlatformOptions = () => {
     const used = usedPlatforms();
     socialList?.querySelectorAll('[data-social-item]').forEach((row) => {
-      const select = row.querySelector('[data-social-platform]');
-      if (!(select instanceof HTMLSelectElement)) return;
-      const current = select.value;
-      select.innerHTML = `<option value="">Platform</option>${platforms
+      const list = row.querySelector('[data-platform-list]');
+      const current = row.querySelector('[data-social-platform]');
+      if (!(list instanceof HTMLElement) || !(current instanceof HTMLInputElement)) return;
+      list.innerHTML = platforms
         .map((platform) => {
-          const taken = used.includes(platform) && platform !== current;
-          return `<option value="${platform}" ${platform === current ? 'selected' : ''} ${taken ? 'disabled' : ''}>${platform}</option>`;
+          const taken = used.includes(platform.name) && platform.name !== current.value;
+          return `<li role="option">
+            <button type="button" data-platform-option="${platform.name}" ${taken ? 'disabled' : ''}>
+              <img src="${platform.icon}" alt="" width="20" height="20" />
+              <span>${platform.name}</span>
+            </button>
+          </li>`;
         })
-        .join('')}`;
+        .join('');
     });
   };
 
   const clearSocialRow = (row) => {
-    const select = row.querySelector('[data-social-platform]');
-    const input = row.querySelector('[data-social-handle]');
-    if (select instanceof HTMLSelectElement) select.value = '';
-    if (input instanceof HTMLInputElement) {
-      input.value = '';
-      input.classList.remove('is-invalid');
+    const handle = row.querySelector('[data-social-handle]');
+    setPlatformValue(row, '');
+    if (handle instanceof HTMLInputElement) {
+      handle.value = '';
+      handle.classList.remove('is-invalid');
     }
-    select?.classList.remove('is-invalid');
     row.querySelectorAll('.is-invalid').forEach((el) => el.classList.remove('is-invalid'));
     refreshPlatformOptions();
   };
 
   const bindSocialRow = (row) => {
-    const select = row.querySelector('[data-social-platform]');
+    const toggle = row.querySelector('[data-platform-toggle]');
+    const list = row.querySelector('[data-platform-list]');
     const remove = row.querySelector('[data-remove-social]');
-    select?.addEventListener('change', refreshPlatformOptions);
+
+    toggle?.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const open = list instanceof HTMLElement && !list.hidden;
+      closePlatformLists();
+      if (list instanceof HTMLElement) {
+        list.hidden = open;
+        toggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+      }
+    });
+
+    list?.addEventListener('click', (event) => {
+      const button = event.target instanceof Element ? event.target.closest('[data-platform-option]') : null;
+      if (!(button instanceof HTMLButtonElement) || button.disabled) return;
+      setPlatformValue(row, button.getAttribute('data-platform-option') || '');
+      refreshPlatformOptions();
+    });
+
     remove?.addEventListener('click', () => {
       const count = socialList?.querySelectorAll('[data-social-item]').length ?? 0;
       if (count <= 1) {
@@ -339,11 +731,11 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       input.name = `socialHandle${count + 1}`;
       input.value = handle;
     }
-    if (select instanceof HTMLSelectElement) select.name = `socialPlatform${count + 1}`;
+    if (select instanceof HTMLInputElement) select.name = `socialPlatform${count + 1}`;
     if (row) bindSocialRow(row);
     socialList.appendChild(node);
+    if (row) setPlatformValue(row, normalizePlatform(platform));
     refreshPlatformOptions();
-    if (platform && select instanceof HTMLSelectElement) select.value = platform;
     if (count + 1 >= maxSocials && addSocial) addSocial.hidden = true;
   };
 
@@ -351,7 +743,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     socialList?.querySelectorAll('[data-social-item]').forEach((row, index) => {
       const select = row.querySelector('[data-social-platform]');
       const input = row.querySelector('[data-social-handle]');
-      if (select instanceof HTMLSelectElement) select.name = `socialPlatform${index + 1}`;
+      if (select instanceof HTMLInputElement) select.name = `socialPlatform${index + 1}`;
       if (input instanceof HTMLInputElement) input.name = `socialHandle${index + 1}`;
     });
   };
@@ -359,8 +751,18 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
   addSocial?.addEventListener('click', () => {
     addSocialRow();
     form?.querySelector('[data-validate-block="socials"]')?.classList.remove('is-invalid');
-    const last = socialList?.querySelector('[data-social-item]:last-child [data-social-platform]');
-    if (last instanceof HTMLSelectElement) last.focus();
+    const last = socialList?.querySelector('[data-social-item]:last-child [data-platform-toggle]');
+    if (last instanceof HTMLButtonElement) last.focus();
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!(event.target instanceof Node)) return;
+    if (event.target instanceof Element && event.target.closest('[data-platform-picker]')) return;
+    closePlatformLists();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closePlatformLists();
   });
 
   categories?.addEventListener('change', (event) => {
@@ -425,6 +827,160 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     if (last instanceof HTMLInputElement) last.focus();
   });
 
+  const maxScopes = 10;
+
+  const usedScopes = () =>
+    [...(scopeList?.querySelectorAll('[data-scope-name]') ?? [])]
+      .map((input) => (input instanceof HTMLInputElement ? input.value : ''))
+      .filter(Boolean);
+
+  const syncScopeUi = () => {
+    const count = scopeList?.querySelectorAll('[data-scope-item]').length ?? 0;
+    if (scopeCount instanceof HTMLElement) {
+      scopeCount.textContent = String(count);
+      scopeCount.hidden = count === 0;
+    }
+    if (scopeEmpty) scopeEmpty.hidden = count > 0;
+    if (addScope) addScope.hidden = count >= maxScopes;
+  };
+
+  const closeScopeMenu = () => {
+    if (scopeMenu instanceof HTMLElement) {
+      scopeMenu.hidden = true;
+      scopeMenu.classList.remove('is-up');
+    }
+  };
+
+  const positionScopeMenu = () => {
+    if (!(scopeMenu instanceof HTMLElement) || !(addScope instanceof HTMLElement)) return;
+    scopeMenu.classList.remove('is-up');
+    const trigger = addScope.getBoundingClientRect();
+    const footer = document.querySelector('.creator-join-form__footer');
+    const footerHeight =
+      footer instanceof HTMLElement ? Math.max(0, window.innerHeight - footer.getBoundingClientRect().top) : 0;
+    const menuHeight = Math.min(scopeMenu.offsetHeight || 280, window.innerHeight * 0.42);
+    const spaceBelow = window.innerHeight - trigger.bottom - footerHeight - 12;
+    const spaceAbove = trigger.top - 12;
+    if (spaceBelow < menuHeight && spaceAbove > spaceBelow) {
+      scopeMenu.classList.add('is-up');
+    }
+  };
+
+  const scopeKind = (scopeName) => {
+    const addonGroup = rateScopeGroups.find((group) => /add-?ons/i.test(group.label || ''));
+    return addonGroup?.items?.includes(scopeName) ? 'addon' : 'deliverable';
+  };
+
+  const refreshScopeOptions = () => {
+    if (!scopeOptions) return;
+    const used = usedScopes();
+    const html = rateScopeGroups
+      .map((group) => {
+        const items = group.items || [];
+        if (!items.length) return '';
+        const kind = /add-?ons/i.test(group.label || '') ? 'addon' : 'deliverable';
+        return `<div class="creator-join-form__scope-group" data-scope-kind="${kind}">
+          <p class="creator-join-form__scope-menu-label">${group.label}</p>
+          <ul>
+            ${items
+              .map((name) => {
+                const taken = used.includes(name);
+                return `<li><button type="button" data-scope-option="${name}" data-scope-kind="${kind}" ${taken ? 'disabled' : ''}>${name}</button></li>`;
+              })
+              .join('')}
+          </ul>
+        </div>`;
+      })
+      .join('');
+    scopeOptions.innerHTML = html;
+  };
+
+  const renameScopeRows = () => {
+    scopeList?.querySelectorAll('[data-scope-item]').forEach((row, index) => {
+      const name = row.querySelector('[data-scope-name]');
+      const price = row.querySelector('[data-scope-price]');
+      if (name instanceof HTMLInputElement) name.name = `rateScope${index + 1}`;
+      if (price instanceof HTMLInputElement) price.name = `ratePrice${index + 1}`;
+    });
+  };
+
+  const bindScopeRow = (row) => {
+    row.querySelector('[data-remove-scope]')?.addEventListener('click', () => {
+      row.remove();
+      renameScopeRows();
+      refreshScopeOptions();
+      syncScopeUi();
+      setStatus('');
+    });
+  };
+
+  const addScopeRow = (scopeName = '', priceValue = '') => {
+    if (!scopeList || !scopeTemplate || !(scopeTemplate instanceof HTMLTemplateElement)) return;
+    const count = scopeList.querySelectorAll('[data-scope-item]').length;
+    if (count >= maxScopes) {
+      setStatus(`Up to ${maxScopes} scopes.`, 'info');
+      closeScopeMenu();
+      syncScopeUi();
+      return;
+    }
+    if (scopeName && usedScopes().includes(scopeName)) return;
+    const node = scopeTemplate.content.cloneNode(true);
+    const row = node.querySelector('[data-scope-item]');
+    const name = node.querySelector('[data-scope-name]');
+    const label = node.querySelector('[data-scope-label]');
+    const price = node.querySelector('[data-scope-price]');
+    if (name instanceof HTMLInputElement) {
+      name.name = `rateScope${count + 1}`;
+      name.value = scopeName;
+    }
+    if (label) label.textContent = scopeName;
+    if (price instanceof HTMLInputElement) {
+      price.name = `ratePrice${count + 1}`;
+      price.value = priceValue;
+    }
+    if (row instanceof HTMLElement) {
+      row.dataset.scopeKind = scopeKind(scopeName);
+      row.classList.toggle('creator-join-form__scope--addon', scopeKind(scopeName) === 'addon');
+      bindScopeRow(row);
+    }
+    scopeList.appendChild(node);
+    updateRatePlaceholders();
+    refreshScopeOptions();
+    syncScopeUi();
+    closeScopeMenu();
+    const lastPrice = scopeList.querySelector('[data-scope-item]:last-child [data-scope-price]');
+    if (lastPrice instanceof HTMLInputElement) lastPrice.focus();
+  };
+
+  addScope?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    if (!(scopeMenu instanceof HTMLElement)) return;
+    const open = !scopeMenu.hidden;
+    if (open) {
+      closeScopeMenu();
+      return;
+    }
+    refreshScopeOptions();
+    scopeMenu.hidden = false;
+    requestAnimationFrame(positionScopeMenu);
+  });
+
+  scopeOptions?.addEventListener('click', (event) => {
+    const button = event.target instanceof Element ? event.target.closest('[data-scope-option]') : null;
+    if (!(button instanceof HTMLButtonElement) || button.disabled) return;
+    addScopeRow(button.getAttribute('data-scope-option') || '');
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!(event.target instanceof Element)) return;
+    if (event.target.closest('[data-scope-picker]')) return;
+    closeScopeMenu();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeScopeMenu();
+  });
+
   form?.addEventListener('input', (event) => {
     const target = event.target;
     if (!(target instanceof Element)) return;
@@ -474,7 +1030,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       const platform = row.querySelector('[data-social-platform]');
       const handle = row.querySelector('[data-social-handle]');
       return (
-        platform instanceof HTMLSelectElement &&
+        platform instanceof HTMLInputElement &&
         handle instanceof HTMLInputElement &&
         platform.value &&
         handle.value.trim()
@@ -495,7 +1051,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     for (const row of socialRows) {
       const platform = row.querySelector('[data-social-platform]');
       const handle = row.querySelector('[data-social-handle]');
-      if (!(platform instanceof HTMLSelectElement) || !(handle instanceof HTMLInputElement)) continue;
+      if (!(platform instanceof HTMLInputElement) || !(handle instanceof HTMLInputElement)) continue;
       const hasPlatform = Boolean(platform.value);
       const hasHandle = Boolean(handle.value.trim());
       if (hasPlatform !== hasHandle) {
@@ -522,6 +1078,10 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     ensureDefaultSocialRow();
     collabs?.replaceChildren();
     if (addCollab) addCollab.hidden = false;
+    scopeList?.replaceChildren();
+    refreshScopeOptions();
+    syncScopeUi();
+    clearRateCardFile();
   };
 
   const collectDraft = () => {
@@ -529,7 +1089,9 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     const data = new FormData(form);
     const fields = {};
     for (const [key, value] of data.entries()) {
+      if (typeof value !== 'string') continue;
       if (key === 'categories' || key === 'company' || key === 'tags') continue;
+      if (/^rate(Scope|Price)\d+$/.test(key)) continue;
       fields[key] = String(value);
     }
     return {
@@ -542,7 +1104,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
           const platform = row.querySelector('[data-social-platform]');
           const handle = row.querySelector('[data-social-handle]');
           return {
-            platform: platform instanceof HTMLSelectElement ? platform.value : '',
+            platform: platform instanceof HTMLInputElement ? platform.value : '',
             handle: handle instanceof HTMLInputElement ? handle.value : '',
           };
         })
@@ -557,6 +1119,16 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
           };
         })
         .filter((item) => item.brand || item.link),
+      rates: [...(scopeList?.querySelectorAll('[data-scope-item]') ?? [])]
+        .map((row) => {
+          const name = row.querySelector('[data-scope-name]');
+          const price = row.querySelector('[data-scope-price]');
+          return {
+            scope: name instanceof HTMLInputElement ? name.value : '',
+            price: price instanceof HTMLInputElement ? price.value : '',
+          };
+        })
+        .filter((item) => item.scope || item.price),
       savedAt: Date.now(),
     };
   };
@@ -591,6 +1163,16 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       }
     });
 
+    cityCombo?.syncFromHidden();
+    languageCombo?.syncFromHidden();
+    syncWhatsappDial();
+    if (draft.fields?.whatsappDial && whatsappDial) {
+      whatsappDial.textContent = String(draft.fields.whatsappDial);
+    }
+    if (draft.fields?.whatsappDial && whatsappDialValue instanceof HTMLInputElement) {
+      whatsappDialValue.value = String(draft.fields.whatsappDial);
+    }
+
     categories?.querySelectorAll('input[type="checkbox"]').forEach((input) => {
       if (input instanceof HTMLInputElement) {
         input.checked = Array.isArray(draft.categories) && draft.categories.includes(input.value);
@@ -622,8 +1204,24 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       });
     }
 
+    scopeList?.replaceChildren();
+    const restoredRates = Array.isArray(draft.rates)
+      ? draft.rates
+      : [
+          { scope: 'IG Reel', price: draft.fields?.rateReels },
+          { scope: 'IG Carousel', price: draft.fields?.rateCarousel },
+          { scope: 'IG Story', price: draft.fields?.rateStory },
+          { scope: 'IG Live', price: draft.fields?.rateLive },
+        ].filter((item) => item.price);
+    restoredRates.forEach((item) => {
+      if (item?.scope || item?.price) addScopeRow(item?.scope || '', item?.price || '');
+    });
+    refreshScopeOptions();
+    syncScopeUi();
+
     const hasRates =
       Boolean(draft.fields?.currency) ||
+      (Array.isArray(draft.rates) && draft.rates.length > 0) ||
       Boolean(draft.fields?.rateReels) ||
       Boolean(draft.fields?.rateCarousel) ||
       Boolean(draft.fields?.rateStory) ||
@@ -659,6 +1257,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
     renameSocialRows();
     renameCollabRows();
+    renameScopeRows();
     const data = new FormData(form);
     const get = (key) => String(data.get(key) ?? '').trim();
 
@@ -666,18 +1265,22 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       .map((row) => {
         const platform = row.querySelector('[data-social-platform]');
         const handle = row.querySelector('[data-social-handle]');
-        if (!(platform instanceof HTMLSelectElement) || !(handle instanceof HTMLInputElement)) return null;
+        if (!(platform instanceof HTMLInputElement) || !(handle instanceof HTMLInputElement)) return null;
         if (!platform.value || !handle.value.trim()) return null;
         return `${platform.value}: ${handle.value.trim()}`;
       })
       .filter(Boolean);
 
-    const rates = [
-      ['Reels / Short', get('rateReels')],
-      ['Post / Carousel', get('rateCarousel')],
-      ['Story', get('rateStory')],
-      ['Live', get('rateLive')],
-    ].filter(([, value]) => value);
+    const rates = [...(scopeList?.querySelectorAll('[data-scope-item]') ?? [])]
+      .map((row) => {
+        const name = row.querySelector('[data-scope-name]');
+        const price = row.querySelector('[data-scope-price]');
+        const scope = name instanceof HTMLInputElement ? name.value.trim() : '';
+        const amount = price instanceof HTMLInputElement ? price.value.trim() : '';
+        if (!scope && !amount) return null;
+        return `${scope || '—'}: ${amount || '—'}`;
+      })
+      .filter(Boolean);
 
     const collabList = [1, 2, 3]
       .map((index) => {
@@ -697,7 +1300,11 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       `Country: ${get('country') || '—'}`,
       `City: ${get('city') || '—'}`,
       `Language: ${get('language') || '—'}`,
-      `WhatsApp: ${get('whatsapp') || '—'}`,
+      `WhatsApp: ${
+        get('whatsappNumber')
+          ? `${get('whatsappDial') || ''} ${get('whatsappNumber')}`.trim()
+          : '—'
+      }`,
       `Categories: ${data.getAll('categories').map(String).join(', ') || '—'}`,
       `Tags: ${get('tags') || '—'}`,
       '',
@@ -706,9 +1313,8 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       '',
       'Rate card:',
       `Currency: ${get('currency') || '—'}`,
-      ...(rates.length
-        ? rates.map(([label, value]) => `- ${label}: ${value}${get('currency') ? ` ${get('currency')}` : ''}`)
-        : ['- —']),
+      `Rate card file: ${rateCardFile ? rateCardFile.name : '—'}`,
+      ...(rates.length ? rates.map((item) => `- ${item}${get('currency') ? ` ${get('currency')}` : ''}`) : ['- —']),
       '',
       'Collaboration history:',
       ...(collabList.length ? collabList.map((item, index) => `- #${index + 1}: ${item}`) : ['- —']),
@@ -727,6 +1333,12 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     setStatus('Sending…', 'info');
 
     try {
+      if (rateCardFile) {
+        setStatus('Preparing photo…', 'info');
+        const attachment = await prepareRateCardFile(rateCardFile);
+        if (attachment) payload.set('rateCard', attachment);
+        setStatus('Sending…', 'info');
+      }
       const response = await fetch(contactEndpoint, {
         method: 'POST',
         body: payload,
@@ -737,9 +1349,13 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
       form.reset();
       resetDynamicFields();
+      clearRateCardFile();
       clearDraft();
       currencyTouched = false;
+      cityCombo?.clear();
+      languageCombo?.clear();
       syncCurrencyFromCountry(true);
+      syncWhatsappDial();
       updateRatePlaceholders();
       setStatus('Thanks — your application has been sent. We’ll be in touch.', 'success');
     } catch (error) {
@@ -750,7 +1366,10 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
   });
 
   syncCurrencyFromCountry(true);
+  syncWhatsappDial();
   updateRatePlaceholders();
+  refreshScopeOptions();
+  syncScopeUi();
   ensureDefaultSocialRow();
   restoreDraft();
 </script>

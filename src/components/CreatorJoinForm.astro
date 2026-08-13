@@ -32,36 +32,130 @@ const languages = [
 ];
 
 const countries = [
-  { name: 'Indonesia', currency: 'IDR' },
-  { name: 'Malaysia', currency: 'MYR' },
-  { name: 'Singapore', currency: 'SGD' },
-  { name: 'Thailand', currency: 'THB' },
-  { name: 'Vietnam', currency: 'VND' },
-  { name: 'Philippines', currency: 'PHP' },
-  { name: 'India', currency: 'INR' },
-  { name: 'Japan', currency: 'JPY' },
-  { name: 'South Korea', currency: 'KRW' },
-  { name: 'China', currency: 'CNY' },
-  { name: 'Hong Kong', currency: 'HKD' },
-  { name: 'Taiwan', currency: 'TWD' },
-  { name: 'United States', currency: 'USD' },
-  { name: 'United Kingdom', currency: 'GBP' },
-  { name: 'Australia', currency: 'AUD' },
-  { name: 'Other', currency: 'USD' },
+  {
+    name: 'Indonesia',
+    currency: 'IDR',
+    dial: '+62',
+    cities: ['Jakarta', 'Surabaya', 'Bandung', 'Medan', 'Bali', 'Yogyakarta', 'Semarang', 'Makassar', 'Tangerang', 'Bekasi'],
+  },
+  {
+    name: 'Malaysia',
+    currency: 'MYR',
+    dial: '+60',
+    cities: ['Kuala Lumpur', 'Penang', 'Johor Bahru', 'Ipoh', 'Malacca', 'Kota Kinabalu', 'Kuching', 'Shah Alam', 'Petaling Jaya'],
+  },
+  {
+    name: 'Singapore',
+    currency: 'SGD',
+    dial: '+65',
+    cities: ['Singapore'],
+  },
+  {
+    name: 'Thailand',
+    currency: 'THB',
+    dial: '+66',
+    cities: ['Bangkok', 'Chiang Mai', 'Phuket', 'Pattaya', 'Khon Kaen', 'Hat Yai', 'Nonthaburi'],
+  },
+  {
+    name: 'Vietnam',
+    currency: 'VND',
+    dial: '+84',
+    cities: ['Ho Chi Minh City', 'Hanoi', 'Da Nang', 'Hai Phong', 'Can Tho', 'Nha Trang', 'Hue'],
+  },
+  {
+    name: 'Philippines',
+    currency: 'PHP',
+    dial: '+63',
+    cities: ['Manila', 'Quezon City', 'Cebu', 'Davao', 'Makati', 'Taguig', 'Pasig', 'Caloocan'],
+  },
+  {
+    name: 'India',
+    currency: 'INR',
+    dial: '+91',
+    cities: ['Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Chennai', 'Kolkata', 'Pune', 'Gurgaon', 'Noida', 'Ahmedabad'],
+  },
+  {
+    name: 'Japan',
+    currency: 'JPY',
+    dial: '+81',
+    cities: ['Tokyo', 'Osaka', 'Yokohama', 'Nagoya', 'Sapporo', 'Fukuoka', 'Kyoto', 'Kobe'],
+  },
+  {
+    name: 'South Korea',
+    currency: 'KRW',
+    dial: '+82',
+    cities: ['Seoul', 'Busan', 'Incheon', 'Daegu', 'Daejeon', 'Gwangju', 'Suwon'],
+  },
+  {
+    name: 'China',
+    currency: 'CNY',
+    dial: '+86',
+    cities: ['Shanghai', 'Beijing', 'Guangzhou', 'Shenzhen', 'Hangzhou', 'Chengdu', 'Chongqing', 'Wuhan', 'Nanjing', 'Suzhou'],
+  },
+  {
+    name: 'Hong Kong',
+    currency: 'HKD',
+    dial: '+852',
+    cities: ['Hong Kong'],
+  },
+  {
+    name: 'Taiwan',
+    currency: 'TWD',
+    dial: '+886',
+    cities: ['Taipei', 'Kaohsiung', 'Taichung', 'Tainan', 'Hsinchu', 'Taoyuan'],
+  },
+  {
+    name: 'United States',
+    currency: 'USD',
+    dial: '+1',
+    cities: ['New York', 'Los Angeles', 'San Francisco', 'Chicago', 'Miami', 'Seattle', 'Austin', 'Boston', 'Houston'],
+  },
+  {
+    name: 'United Kingdom',
+    currency: 'GBP',
+    dial: '+44',
+    cities: ['London', 'Manchester', 'Birmingham', 'Edinburgh', 'Glasgow', 'Bristol', 'Leeds', 'Liverpool'],
+  },
+  {
+    name: 'Australia',
+    currency: 'AUD',
+    dial: '+61',
+    cities: ['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide', 'Canberra', 'Gold Coast'],
+  },
+  {
+    name: 'Other',
+    currency: 'USD',
+    dial: '+',
+    cities: [],
+  },
 ];
 
 const currencies = ['USD', 'IDR', 'MYR', 'SGD', 'THB', 'VND', 'PHP', 'INR', 'JPY', 'KRW', 'CNY', 'HKD', 'TWD', 'GBP', 'AUD', 'EUR'];
 
 const socialPlatforms = [
-  'Instagram',
-  'TikTok',
-  'YouTube',
-  'Facebook',
-  'X / Twitter',
-  'LinkedIn',
-  'Snapchat',
-  'Threads',
-  'Other',
+  { name: 'Instagram', icon: '/images/social/instagram.svg' },
+  { name: 'TikTok', icon: '/images/social/tiktok.svg' },
+  { name: 'YouTube', icon: '/images/social/youtube.svg' },
+  { name: 'Xiaohongshu', icon: '/images/social/xiaohongshu.svg' },
+  { name: 'Facebook', icon: '/images/social/facebook.svg' },
+  { name: 'WeChat', icon: '/images/social/wechat.svg' },
+  { name: 'Telegram', icon: '/images/social/telegram.svg' },
+  { name: 'X', icon: '/images/social/x.svg' },
+  { name: 'LinkedIn', icon: '/images/social/linkedin.svg' },
+  { name: 'Snapchat', icon: '/images/social/snapchat.svg' },
+  { name: 'Pinterest', icon: '/images/social/pinterest.svg' },
+  { name: 'Line', icon: '/images/social/line.svg' },
+  { name: 'VK', icon: '/images/social/vk.svg' },
+  { name: 'Twitch', icon: '/images/social/twitch.svg' },
+  { name: 'Tumblr', icon: '/images/social/tumblr.svg' },
+  { name: 'Kakao', icon: '/images/social/kakao.svg' },
+  { name: 'Viber', icon: '/images/social/viber.svg' },
+  { name: 'Moj', icon: '/images/social/moj.svg' },
+  { name: 'Bilibili', icon: '/images/social/bilibili.svg' },
+  { name: 'Shopee', icon: '/images/social/shopee.svg' },
+  { name: 'Threads', icon: '/images/social/threads.svg' },
+  { name: 'Lemon8', icon: '/images/social/lemon8.svg' },
+  { name: 'Discord', icon: '/images/social/discord.svg' },
 ];
 
 const tagSuggestions = [
@@ -101,11 +195,37 @@ const tagSuggestions = [
   'Wellness',
 ];
 
-const rateFields = [
-  { name: 'rateReels', label: 'Reels / Short' },
-  { name: 'rateCarousel', label: 'Post / Carousel' },
-  { name: 'rateStory', label: 'Story' },
-  { name: 'rateLive', label: 'Live' },
+const rateScopeGroups = [
+  {
+    label: 'Standard Deliverables',
+    items: [
+      'IG Reel',
+      'IG Story',
+      'IG Carousel',
+      'IG Live',
+      'TikTok Video',
+      'TikTok Live',
+      'YT Shorts',
+      'YT Integrated Video',
+      'YT Dedicated Video',
+      'YT Live',
+      'RedNote Carousel',
+      'RedNote Video',
+    ],
+  },
+  {
+    label: 'Add-ons & Rights',
+    items: [
+      'Content Usage (Digital)',
+      'Post Retention',
+      'Whitelisting (Post Boosting)',
+      'Competitor Exclusivity',
+      'Collab Post',
+      'Onsite / Event',
+      'Cross-posting (Mirroring)',
+      'Link in Bio',
+    ],
+  },
 ];
 ---
 
@@ -114,15 +234,19 @@ const rateFields = [
   data-creator-join-form
   data-tag-suggestions={JSON.stringify(tagSuggestions)}
   data-social-platforms={JSON.stringify(socialPlatforms)}
+  data-rate-scope-groups={JSON.stringify(rateScopeGroups)}
+  data-languages={JSON.stringify(languages)}
   data-country-currency={JSON.stringify(Object.fromEntries(countries.map((item) => [item.name, item.currency])))}
+  data-country-dial={JSON.stringify(Object.fromEntries(countries.map((item) => [item.name, item.dial])))}
+  data-country-cities={JSON.stringify(Object.fromEntries(countries.map((item) => [item.name, item.cities])))}
   novalidate
   lang="en"
 >
   <div class="creator-join-form__card">
     <section class="creator-join-form__section">
-      <h2>About you</h2>
+      <h2>About You</h2>
       <label class="creator-join-form__field">
-        <span>Account name <i aria-hidden="true">*</i></span>
+        <span>Account Name <i aria-hidden="true">*</i></span>
         <input name="accountName" type="text" autocomplete="name" maxlength="120" required placeholder="Your creator name" data-required />
       </label>
       <div class="creator-join-form__row">
@@ -136,7 +260,7 @@ const rateFields = [
           </select>
         </label>
         <label class="creator-join-form__field">
-          <span>Date of birth</span>
+          <span>Date of Birth</span>
           <input name="birthday" type="text" inputmode="numeric" maxlength="10" placeholder="YYYY-MM-DD" autocomplete="bday" data-birthday />
         </label>
       </div>
@@ -152,49 +276,95 @@ const rateFields = [
         </label>
         <label class="creator-join-form__field">
           <span>City</span>
-          <input name="city" type="text" maxlength="120" placeholder="e.g. Jakarta" autocomplete="address-level2" />
+          <div class="creator-join-form__combo" data-combo="city">
+            <input
+              class="creator-join-form__combo-input"
+              type="text"
+              maxlength="120"
+              placeholder="Search City…"
+              autocomplete="off"
+              data-combo-input
+              aria-autocomplete="list"
+              aria-controls="creator-city-options"
+            />
+            <input type="hidden" name="city" value="" data-combo-value />
+            <ul class="creator-join-form__combo-list" id="creator-city-options" role="listbox" hidden data-combo-list></ul>
+          </div>
         </label>
       </div>
       <label class="creator-join-form__field">
         <span>Language</span>
-        <select name="language">
-          <option value="">Select</option>
-          {languages.map((item) => <option value={item}>{item}</option>)}
-        </select>
+        <div class="creator-join-form__combo" data-combo="language">
+          <input
+            class="creator-join-form__combo-input"
+            type="text"
+            maxlength="80"
+            placeholder="Search Language…"
+            autocomplete="off"
+            data-combo-input
+            aria-autocomplete="list"
+            aria-controls="creator-language-options"
+          />
+          <input type="hidden" name="language" value="" data-combo-value />
+          <ul class="creator-join-form__combo-list" id="creator-language-options" role="listbox" hidden data-combo-list></ul>
+        </div>
       </label>
     </section>
 
     <section class="creator-join-form__section">
       <h2>Contact</h2>
       <label class="creator-join-form__field">
-        <span>Work email <i aria-hidden="true">*</i></span>
+        <span>Work Email <i aria-hidden="true">*</i></span>
         <input name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@email.com" data-required />
       </label>
-      <label class="creator-join-form__field">
+      <div class="creator-join-form__field">
         <span>WhatsApp</span>
-        <input name="whatsapp" type="tel" maxlength="40" placeholder="+62 …" />
-      </label>
+        <div class="creator-join-form__whatsapp">
+          <span class="creator-join-form__whatsapp-dial" data-whatsapp-dial>—</span>
+          <input type="hidden" name="whatsappDial" value="" data-whatsapp-dial-value />
+          <input
+            name="whatsappNumber"
+            type="tel"
+            inputmode="numeric"
+            maxlength="20"
+            placeholder="Phone Number"
+            autocomplete="tel-national"
+            data-whatsapp-number
+          />
+        </div>
+      </div>
     </section>
   </div>
 
   <div class="creator-join-form__card">
     <section class="creator-join-form__section" data-validate-block="socials">
-      <h2>Social accounts <i aria-hidden="true">*</i></h2>
+      <h2>Social Accounts <i aria-hidden="true">*</i></h2>
       <p class="creator-join-form__hint">Link or @handle both work.</p>
       <div class="creator-join-form__socials" data-social-list></div>
       <button class="creator-join-form__add" type="button" data-add-social>
-        <span aria-hidden="true">+</span> Add platform
+        <span aria-hidden="true">+</span> Add Platform
       </button>
       <template data-social-template>
         <div class="creator-join-form__social" data-social-item>
-          <label class="creator-join-form__field creator-join-form__field--platform">
+          <div class="creator-join-form__field creator-join-form__field--platform">
             <span class="sr-only">Platform</span>
-            <select data-social-platform>
-              <option value="">Platform</option>
-            </select>
-          </label>
+            <div class="creator-join-form__platform" data-platform-picker>
+              <button
+                class="creator-join-form__platform-btn is-empty"
+                type="button"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                data-platform-toggle
+              >
+                <img class="creator-join-form__platform-icon" alt="" hidden data-platform-icon />
+                <span data-platform-label>Platform</span>
+              </button>
+              <input type="hidden" value="" data-social-platform />
+              <ul class="creator-join-form__platform-list" role="listbox" hidden data-platform-list></ul>
+            </div>
+          </div>
           <label class="creator-join-form__field creator-join-form__field--handle">
-            <span class="sr-only">Account or link</span>
+            <span class="sr-only">Account or Link</span>
             <input type="text" maxlength="300" placeholder="@handle or https://…" data-social-handle />
           </label>
           <button class="creator-join-form__remove" type="button" data-remove-social aria-label="Remove platform">
@@ -250,8 +420,7 @@ const rateFields = [
   <div class="creator-join-form__card creator-join-form__card--fold">
     <details class="creator-join-form__fold">
       <summary>
-        <span>Rate card</span>
-        <em>Optional</em>
+        <span>Rate Card</span>
       </summary>
       <section class="creator-join-form__section">
         <label class="creator-join-form__field">
@@ -263,15 +432,70 @@ const rateFields = [
             ))}
           </select>
         </label>
-        <div class="creator-join-form__rates">
-          {
-            rateFields.map((item) => (
-              <label class="creator-join-form__field">
-                <span>{item.label}</span>
-                <input name={item.name} type="text" maxlength="40" inputmode="decimal" placeholder="e.g. 200" data-rate-amount />
+
+        <div class="creator-join-form__upload" data-rate-upload>
+          <label class="creator-join-form__upload-hit" data-rate-file-hit>
+            <input
+              class="creator-join-form__upload-input"
+              type="file"
+              accept="image/*,application/pdf"
+              data-rate-file
+            />
+            <span class="creator-join-form__upload-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                <path d="M12 16V7m0 0-3.2 3.2M12 7l3.2 3.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6.5 16.5v1.2c0 .7.6 1.3 1.3 1.3h8.4c.7 0 1.3-.6 1.3-1.3v-1.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span>Tap to add a rate card photo</span>
+            <small>On your phone: take a photo or pick from albums. PDF also works. Not kept in draft.</small>
+          </label>
+          <div class="creator-join-form__upload-preview" hidden data-rate-preview>
+            <img alt="" data-rate-preview-image hidden />
+            <div class="creator-join-form__upload-meta">
+              <strong data-rate-preview-name></strong>
+              <button class="creator-join-form__add" type="button" data-rate-file-clear>
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="creator-join-form__scopes">
+          <div class="creator-join-form__scopes-head">
+            <h2>
+              Plan Scope
+              <b data-scope-count hidden>0</b>
+            </h2>
+            <div class="creator-join-form__scope-add" data-scope-picker>
+              <button class="creator-join-form__add" type="button" data-add-scope>
+                <span aria-hidden="true">+</span> Add Scope
+              </button>
+              <div class="creator-join-form__scope-menu" hidden data-scope-menu>
+                <div class="creator-join-form__scope-groups" data-scope-options></div>
+              </div>
+            </div>
+          </div>
+          <p class="creator-join-form__hint" data-scope-empty>Add the deliverables you price. Optional.</p>
+          <div class="creator-join-form__scope-list" data-scope-list></div>
+          <template data-scope-template>
+            <div class="creator-join-form__scope" data-scope-item>
+              <div class="creator-join-form__scope-name">
+                <strong data-scope-label></strong>
+                <input type="hidden" data-scope-name />
+              </div>
+              <label class="creator-join-form__field creator-join-form__field--price">
+                <span class="sr-only">Price</span>
+                <span class="creator-join-form__price">
+                  <em data-rate-prefix>$</em>
+                  <input type="text" maxlength="40" inputmode="decimal" placeholder="Price" data-rate-amount data-scope-price />
+                </span>
               </label>
-            ))
-          }
+              <button class="creator-join-form__remove" type="button" data-remove-scope aria-label="Remove scope">
+                ×
+              </button>
+            </div>
+          </template>
         </div>
       </section>
     </details>
@@ -280,25 +504,24 @@ const rateFields = [
   <div class="creator-join-form__card creator-join-form__card--fold">
     <details class="creator-join-form__fold">
       <summary>
-        <span>Collaborations & notes</span>
-        <em>Optional</em>
+        <span>Collaborations & Notes</span>
       </summary>
       <section class="creator-join-form__section">
-        <h2>Past collaborations</h2>
+        <h2>Past Collaborations</h2>
         <p class="creator-join-form__hint">Add brand work if you have it.</p>
         <div class="creator-join-form__collabs" data-creator-collabs></div>
         <button class="creator-join-form__add" type="button" data-add-collab>
-          <span aria-hidden="true">+</span> Add collaboration
+          <span aria-hidden="true">+</span> Add Collaboration
         </button>
         <template data-collab-template>
           <div class="creator-join-form__collab" data-collab-item>
             <div class="creator-join-form__collab-fields">
               <label class="creator-join-form__field">
-                <span>Brand name</span>
+                <span>Brand Name</span>
                 <input type="text" maxlength="120" placeholder="e.g. Nike" data-collab-brand />
               </label>
               <label class="creator-join-form__field">
-                <span>Post link</span>
+                <span>Post Link</span>
                 <input type="text" maxlength="300" placeholder="https://…" data-collab-link />
               </label>
             </div>
@@ -328,7 +551,7 @@ const rateFields = [
     <p class="creator-join-form__status" role="status" aria-live="polite" data-creator-join-status hidden></p>
     <div class="creator-join-form__actions" data-creator-actions>
       <button class="creator-join-form__draft" type="button" data-creator-draft>
-        Save draft
+        Save Draft
       </button>
       <button class="creator-join-form__primary" type="submit" data-creator-join-submit>
         Submit

@@ -10,6 +10,42 @@ const isStaticDeployment = ['github-pages', 'cloudflare-pages'].includes(
 
 export const prerender = isStaticDeployment;
 
+const MAX_BODY_BYTES = 4_000_000;
+const MAX_FILE_BYTES = 3_500_000;
+const ALLOWED_FILE_TYPES = new Set([
+  'image/jpeg',
+  'image/png',
+  'image/webp',
+  'image/gif',
+  'image/heic',
+  'image/heif',
+  'application/pdf',
+]);
+
+const safeFilename = (name: string) =>
+  name.replace(/[^\w.\- ()[\]]+/g, '_').replace(/^\.+/, '').slice(0, 80) || 'rate-card';
+
+const readRateCard = async (form: FormData) => {
+  const file = form.get('rateCard');
+  if (!(file instanceof File) || file.size === 0) return undefined;
+  if (file.size > MAX_FILE_BYTES) {
+    throw new Error('The rate card file is too large. Please use a file under 3.5MB.');
+  }
+  const type = file.type || '';
+  const lower = file.name.toLowerCase();
+  const allowed =
+    ALLOWED_FILE_TYPES.has(type) ||
+    /\.(jpe?g|png|webp|gif|heic|heif|pdf)$/.test(lower);
+  if (!allowed) {
+    throw new Error('Please upload a photo, screenshot, or PDF.');
+  }
+  return {
+    filename: safeFilename(file.name),
+    contentType: type || (lower.endsWith('.pdf') ? 'application/pdf' : 'image/jpeg'),
+    content: Buffer.from(await file.arrayBuffer()),
+  };
+};
+
 const permittedOrigin = (request: Request) => {
   const origin = request.headers.get('Origin');
   if (!origin) return null;
@@ -72,7 +108,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   const contentLength = Number(request.headers.get('content-length') ?? 0);
 
-  if (Number.isFinite(contentLength) && contentLength > 64_000) {
+  if (Number.isFinite(contentLength) && contentLength > MAX_BODY_BYTES) {
     return json({ message: 'The submitted message is too large.' }, 413, origin);
   }
 
@@ -104,8 +140,19 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
 
+  let attachment;
   try {
-    await sendContactMail({ name, email, subject, message });
+    attachment = await readRateCard(form);
+  } catch (error) {
+    return json(
+      { message: error instanceof Error ? error.message : 'Unable to read the rate card file.' },
+      400,
+      origin,
+    );
+  }
+
+  try {
+    await sendContactMail({ name, email, subject, message, attachment });
     return json({ message: 'Thanks — your message has been sent.' }, 200, origin);
   } catch (error) {
     if (error instanceof ContactMailConfigurationError) {

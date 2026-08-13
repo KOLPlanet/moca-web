@@ -1875,6 +1875,7 @@
 
 .creator-join-form__fold > summary::after {
   content: '+';
+  margin-left: auto;
   color: #619239;
   font-size: 1.1rem;
   font-weight: 500;
@@ -1882,16 +1883,6 @@
 
 .creator-join-form__fold[open] > summary::after {
   content: '–';
-}
-
-.creator-join-form__fold > summary em {
-  margin-left: auto;
-  margin-right: 8px;
-  color: rgba(0, 0, 0, 0.42);
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-style: normal;
-  font-weight: 400;
 }
 
 .creator-join-form__fold[open] > summary {
@@ -1961,7 +1952,8 @@
 .creator-join-form__field input,
 .creator-join-form__field select,
 .creator-join-form__field textarea,
-.creator-join-form__tag-input {
+.creator-join-form__tag-input,
+.creator-join-form__combo-input {
   width: 100%;
   min-height: 44px;
   border: 1px solid rgba(16, 24, 16, 0.14);
@@ -1998,10 +1990,76 @@
 .creator-join-form__field input:focus,
 .creator-join-form__field select:focus,
 .creator-join-form__field textarea:focus,
-.creator-join-form__tag-input:focus {
+.creator-join-form__tag-input:focus,
+.creator-join-form__combo-input:focus {
   outline: 2px solid rgba(97, 146, 57, 0.35);
   outline-offset: 1px;
   border-color: #619239;
+}
+
+.creator-join-form__combo {
+  position: relative;
+}
+
+.creator-join-form__combo-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 6;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border: 1px solid rgba(16, 24, 16, 0.12);
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(16, 24, 16, 0.12);
+  max-height: 240px;
+  overflow: auto;
+}
+
+.creator-join-form__combo-list button {
+  width: 100%;
+  min-height: 40px;
+  border: 0;
+  padding: 8px 10px;
+  color: rgba(0, 0, 0, 0.78);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.creator-join-form__combo-list button:hover,
+.creator-join-form__combo-list button:focus-visible {
+  color: #436d21;
+  background: rgba(97, 146, 57, 0.1);
+}
+
+.creator-join-form__whatsapp {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 8px;
+  align-items: stretch;
+}
+
+.creator-join-form__whatsapp-dial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid rgba(16, 24, 16, 0.14);
+  color: rgba(0, 0, 0, 0.72);
+  background: #f7f8f5;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.creator-join-form__whatsapp input {
+  min-width: 0;
 }
 
 .creator-join-form__field.is-invalid input,
@@ -2010,6 +2068,10 @@
 .creator-join-form__field input.is-invalid,
 .creator-join-form__field select.is-invalid,
 .creator-join-form__tag-input.is-invalid,
+.creator-join-form__combo-input.is-invalid,
+.creator-join-form__field.is-invalid .creator-join-form__combo-input,
+.creator-join-form__field.is-invalid .creator-join-form__whatsapp-dial,
+.creator-join-form__field.is-invalid .creator-join-form__platform-btn,
 .creator-join-form__section.is-invalid .creator-join-form__chips,
 .creator-join-form__section.is-invalid .creator-join-form__tags,
 .creator-join-form__section.is-invalid .creator-join-form__socials {
@@ -2151,9 +2213,127 @@
 
 .creator-join-form__social {
   display: grid;
-  grid-template-columns: minmax(120px, 0.42fr) minmax(0, 1fr) 44px;
+  grid-template-columns: minmax(168px, 0.48fr) minmax(0, 1fr) 44px;
   gap: 8px;
   align-items: end;
+}
+
+.creator-join-form__platform {
+  position: relative;
+}
+
+.creator-join-form__platform-btn {
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(16, 24, 16, 0.14);
+  border-radius: 0;
+  padding: 8px 42px 8px 12px;
+  color: rgba(0, 0, 0, 0.86);
+  background-color: #fff;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(0, 0, 0, 0.55) 50%),
+    linear-gradient(135deg, rgba(0, 0, 0, 0.55) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 50%,
+    calc(100% - 12px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.creator-join-form__platform-btn:focus,
+.creator-join-form__platform-btn:focus-visible {
+  outline: 2px solid rgba(97, 146, 57, 0.35);
+  outline-offset: 1px;
+  border-color: #619239;
+}
+
+.creator-join-form__platform-icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.creator-join-form__platform-icon[hidden],
+.creator-join-form__platform-btn.is-empty .creator-join-form__platform-icon {
+  display: none;
+}
+
+.creator-join-form__platform-btn.is-empty {
+  color: rgba(0, 0, 0, 0.42);
+}
+
+.creator-join-form__platform-btn [data-platform-label] {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: inherit;
+  font-size: inherit;
+}
+
+.creator-join-form__platform-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 8;
+  min-width: 220px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border: 1px solid rgba(16, 24, 16, 0.12);
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(16, 24, 16, 0.12);
+  max-height: 320px;
+  overflow: auto;
+}
+
+.creator-join-form__platform-list button {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: rgba(0, 0, 0, 0.78);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.creator-join-form__platform-list button img {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.creator-join-form__platform-list button:hover,
+.creator-join-form__platform-list button:focus-visible {
+  color: #436d21;
+  background: rgba(97, 146, 57, 0.1);
+}
+
+.creator-join-form__platform-list button:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  background: transparent;
 }
 
 .creator-join-form__remove {
@@ -2178,10 +2358,323 @@
   background: rgba(180, 60, 60, 0.06);
 }
 
-.creator-join-form__rates {
+.creator-join-form__upload {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.creator-join-form__upload-hit {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  min-height: 96px;
+  padding: 18px 16px;
+  border: 1px dashed rgba(16, 24, 16, 0.22);
+  color: rgba(0, 0, 0, 0.72);
+  background: #fafbf8;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+}
+
+.creator-join-form__upload-input {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  font-size: 0;
+}
+
+.creator-join-form__upload-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: #436d21;
+}
+
+.creator-join-form__upload-hit small {
+  color: rgba(0, 0, 0, 0.48);
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.creator-join-form__upload-preview {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
   gap: 12px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid rgba(16, 24, 16, 0.12);
+  background: #fff;
+}
+
+.creator-join-form__upload-preview[hidden] {
+  display: none;
+}
+
+.creator-join-form__upload-preview img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  background: #f3f4f1;
+}
+
+.creator-join-form__upload-preview img[hidden] {
+  display: none;
+}
+
+.creator-join-form__upload-meta {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  justify-items: start;
+}
+
+.creator-join-form__upload-meta strong {
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.78);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.creator-join-form__scopes {
+  display: grid;
+  gap: 10px;
+}
+
+.creator-join-form__scopes-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.creator-join-form__scopes-head h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.creator-join-form__scopes-head h2 b {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  color: #436d21;
+  background: rgba(97, 146, 57, 0.14);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.creator-join-form__scope-add {
+  position: relative;
+}
+
+.creator-join-form__scope-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  bottom: auto;
+  right: 0;
+  left: auto;
+  z-index: 8;
+  width: min(288px, calc(100vw - 28px));
+  overflow: hidden;
+  border: 1px solid rgba(16, 24, 16, 0.1);
+  background: #fff;
+  box-shadow: 0 16px 36px rgba(16, 24, 16, 0.14);
+}
+
+.creator-join-form__scope-menu.is-up {
+  top: auto;
+  bottom: calc(100% + 8px);
+  box-shadow: 0 -12px 32px rgba(16, 24, 16, 0.12);
+}
+
+.creator-join-form__scope-groups {
+  max-height: min(280px, 42vh);
+  overflow: auto;
+  padding: 8px 6px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.creator-join-form__scope-group + .creator-join-form__scope-group {
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(16, 24, 16, 0.06);
+}
+
+.creator-join-form__scope-menu-label {
+  margin: 4px 8px 6px;
+  color: rgba(67, 109, 33, 0.9);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.creator-join-form__scope-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.creator-join-form__scope-menu ul button {
+  width: 100%;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  padding: 8px 10px;
+  color: rgba(0, 0, 0, 0.78);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+}
+
+.creator-join-form__scope-menu ul button::before {
+  content: '';
+  flex: none;
+  width: 3px;
+  height: 14px;
+  background: #619239;
+}
+
+.creator-join-form__scope-group[data-scope-kind='addon'] .creator-join-form__scope-menu-label {
+  color: rgba(106, 78, 160, 0.95);
+}
+
+.creator-join-form__scope-group[data-scope-kind='addon'] ul button::before {
+  background: #7a5bb5;
+}
+
+.creator-join-form__scope-menu ul button:hover,
+.creator-join-form__scope-menu ul button:focus-visible {
+  color: #436d21;
+  background: rgba(97, 146, 57, 0.1);
+}
+
+.creator-join-form__scope-group[data-scope-kind='addon'] ul button:hover,
+.creator-join-form__scope-group[data-scope-kind='addon'] ul button:focus-visible {
+  color: #5a3f8f;
+  background: rgba(122, 91, 181, 0.1);
+}
+
+.creator-join-form__scope-menu ul button:disabled {
+  opacity: 0.36;
+  cursor: not-allowed;
+  background: transparent;
+}
+
+.creator-join-form__scope-list {
+  display: grid;
+  gap: 8px;
+}
+
+.creator-join-form__scope-list:empty {
+  display: none;
+}
+
+.creator-join-form__scope {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(104px, 0.9fr) 44px;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.creator-join-form__scope-name {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  min-height: 44px;
+  padding-left: 10px;
+  border-left: 3px solid #619239;
+}
+
+.creator-join-form__scope--addon .creator-join-form__scope-name {
+  border-left-color: #7a5bb5;
+}
+
+.creator-join-form__scope-name strong {
+  display: block;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.82);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.creator-join-form__price {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 44px;
+  min-height: 44px;
+  border: 1px solid rgba(16, 24, 16, 0.14);
+  background: #fff;
+}
+
+.creator-join-form__price em {
+  flex: none;
+  padding: 0 0 0 10px;
+  color: rgba(0, 0, 0, 0.45);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-style: normal;
+}
+
+.creator-join-form__price input {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border: 0;
+  padding: 0 10px 0 6px;
+  background: transparent;
+  font-size: 0.92rem;
+}
+
+.creator-join-form__scope .creator-join-form__remove {
+  width: 44px;
+  height: 44px;
+  align-self: stretch;
+}
+
+.creator-join-form__field--price {
+  gap: 0;
+}
+
+.creator-join-form__price input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.creator-join-form__price:focus-within {
+  border-color: #619239;
+  outline: 2px solid rgba(97, 146, 57, 0.35);
+  outline-offset: 1px;
+}
+
+.creator-join-form__field.is-invalid .creator-join-form__price {
+  border-color: rgba(180, 60, 60, 0.55);
 }
 
 .creator-join-form__collabs {
@@ -2287,10 +2780,10 @@
   color: rgba(0, 0, 0, 0.72);
   background: #fff;
   font-family: var(--font-display);
-  font-size: var(--text-button-size);
+  font-size: 0.85rem;
   font-weight: var(--text-button-weight);
-  letter-spacing: var(--text-button-tracking);
-  text-transform: uppercase;
+  letter-spacing: normal;
+  text-transform: none;
   cursor: pointer;
   transition:
     border-color 160ms ease,
@@ -2315,10 +2808,10 @@
     linear-gradient(180deg, #6ea343 0%, #619239 55%, #568233 100%);
   box-shadow: 0 10px 24px rgba(97, 146, 57, 0.28);
   font-family: var(--font-display);
-  font-size: var(--text-button-size);
+  font-size: 0.85rem;
   font-weight: var(--text-button-weight);
-  letter-spacing: var(--text-button-tracking);
-  text-transform: uppercase;
+  letter-spacing: normal;
+  text-transform: none;
   cursor: pointer;
   transition:
     transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -2358,10 +2851,35 @@
     padding: 16px 14px;
   }
 
+  .creator-join-form__card--fold {
+    padding: 0;
+  }
+
+  .creator-join-form__fold > summary {
+    padding: 0 14px;
+  }
+
+  .creator-join-form__fold > .creator-join-form__section {
+    padding: 14px 14px 16px;
+  }
+
+  .creator-join-form__tags {
+    padding: 10px;
+  }
+
   .creator-join-form__row,
-  .creator-join-form__rates,
   .creator-join-form__collab-fields {
     grid-template-columns: 1fr;
+  }
+
+  .creator-join-form__scope {
+    grid-template-columns: minmax(0, 1fr) minmax(96px, 120px) 44px;
+    gap: 6px;
+  }
+
+  .creator-join-form__scope-menu {
+    right: -4px;
+    width: min(300px, calc(100vw - 24px));
   }
 
   .creator-join-form__social {
