@@ -2003,6 +2003,15 @@
   line-height: 1.45;
 }
 
+.creator-join-form__section > h2 + .creator-join-form__hint {
+  margin: -6px 0 14px;
+}
+
+.creator-join-form__hint--inline {
+  margin: -2px 0 6px;
+  font-size: 0.8rem;
+}
+
 .creator-join-form__row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

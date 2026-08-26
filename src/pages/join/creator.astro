@@ -11,7 +11,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
 <BaseLayout
   title="Join as Creator"
-  description="Apply to join MOCA as a creator. Share your profile, categories, social accounts, and collaboration history for brand matching."
+  description="Apply to join KOLPlanet as a creator. Share your profile, social accounts, and categories to get matched with brand campaigns in India and Southeast Asia."
   robots="noindex, follow"
   bare
 >
@@ -25,7 +25,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     <div class="creator-join-page__shell">
       <header class="creator-join-page__intro">
         <h1>Join as Creator</h1>
-        <p>Tell us about yourself and how you create.</p>
+        <p>Apply to join KOLPlanet and get matched with brand campaigns in your market.</p>
       </header>
 
       <CreatorJoinForm />
@@ -629,7 +629,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     const icon = row.querySelector('[data-platform-icon]');
     const platform = platformByName(name);
     if (input instanceof HTMLInputElement) input.value = name || '';
-    if (label) label.textContent = name || 'Platform';
+    if (label) label.textContent = name || 'Choose platform';
     row.querySelector('[data-platform-toggle]')?.classList.toggle('is-empty', !name);
     row.querySelector('.creator-join-form__field--platform')?.classList.remove('is-invalid');
     input?.classList.remove('is-invalid');
