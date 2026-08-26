@@ -1914,7 +1914,7 @@ textarea {
 
 /* Figma homepage footer */
 .site-footer {
-  padding: 72px 0 28px;
+  padding: 64px 0 24px;
   border-top: 0;
   color: rgba(255, 255, 255, 0.58);
   background: #050505;
@@ -1926,15 +1926,15 @@ textarea {
 }
 
 .footer-grid.footer-grid--moca {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 0.7fr)) minmax(0, 1fr);
-  align-items: start;
-  column-gap: clamp(32px, 4vw, 56px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   color: rgba(255, 255, 255, 0.56);
 }
 
 .footer-brand {
-  max-width: none;
+  flex: 0 0 auto;
+  max-width: 280px;
 }
 
 .footer-navs {
@@ -1942,47 +1942,70 @@ textarea {
 }
 
 .footer-grid.footer-grid--moca > .footer-navs > nav {
-  min-width: 0;
-  margin-top: 32px;
+  flex: 0 0 auto;
+  margin-top: 6px;
 }
 
 .brand--footer {
   width: fit-content;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .brand--footer img {
-  width: 137px;
+  width: 120px;
   height: auto;
   filter: grayscale(1) brightness(0) invert(1);
 }
 
 .footer-brand > p {
-  max-width: 320px;
-  margin-bottom: 24px;
-  color: rgba(255, 255, 255, 0.57);
+  max-width: 260px;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.5);
   font-family: var(--font-sans);
-  font-size: var(--text-lede-size);
+  font-size: 0.88rem;
   font-weight: 400;
+  line-height: 1.5;
 }
 
 .footer-kolplanet {
+  flex: 0 0 auto;
   min-width: 0;
-  max-width: 300px;
-  margin-top: 32px;
+  margin-top: 6px;
+}
+
+.footer-kolplanet__layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.footer-kolplanet__left {
+  flex: 0 0 auto;
+  width: 230px;
+  max-width: 230px;
+  margin-top: 2px;
+}
+
+.footer-kolplanet__top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 24px;
+  margin-bottom: 12px;
 }
 
 .footer-kolplanet__logo {
   display: inline-flex;
-  margin-bottom: 14px;
-  opacity: 0.92;
+  flex-shrink: 0;
+  margin: 0;
+  opacity: 0.9;
   transition: opacity 180ms ease;
 }
 
 .footer-kolplanet__logo img {
   display: block;
   width: auto;
-  height: 22px;
+  height: 18px;
 }
 
 .footer-kolplanet__logo:hover,
@@ -1990,19 +2013,58 @@ textarea {
   opacity: 1;
 }
 
-.footer-kolplanet p {
-  margin: 0 0 14px;
-  color: rgba(255, 255, 255, 0.57);
+.footer-kolplanet__copy > p {
+  margin: 0 0 12px;
+  color: rgba(255, 255, 255, 0.48);
   font-family: var(--font-sans);
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   font-weight: 400;
   line-height: 1.45;
 }
 
+.footer-kolplanet .footer-kolplanet__qrs {
+  display: flex;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-kolplanet .kolplanet-qr--footer {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+
+.footer-kolplanet .kolplanet-qr--footer img {
+  width: 108px;
+  height: 108px;
+  border: 0;
+  border-radius: 2px;
+}
+
+.footer-kolplanet .kolplanet-qr--footer figcaption {
+  margin: 0;
+  min-width: 108px;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: none;
+  white-space: nowrap;
+}
+
 .footer-kolplanet__link {
+  display: inline-block;
   color: rgba(255, 255, 255, 0.72);
   font-family: var(--font-display);
-  font-size: 0.88rem;
+  font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: var(--text-subtitle-tracking);
   text-decoration: underline;
@@ -2026,15 +2088,15 @@ textarea {
 }
 
 .site-footer .footer-links {
-  gap: 12px;
+  gap: 8px;
 }
 
 .site-footer .footer-links a {
-  color: rgba(255, 255, 255, 0.57);
+  color: rgba(255, 255, 255, 0.52);
   font-family: var(--font-display);
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 24px;
   letter-spacing: var(--text-subtitle-tracking);
   transition: color 180ms ease, transform 180ms ease;
 }
@@ -2051,15 +2113,15 @@ textarea {
 }
 
 .site-footer .footer-social__links {
-  gap: 26px;
+  gap: 16px;
 }
 
 .site-footer .footer-social__links a {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border: 0;
   border-radius: 0;
-  color: white;
+  color: rgba(255, 255, 255, 0.72);
   background: transparent;
 }
 
@@ -2072,8 +2134,8 @@ textarea {
 }
 
 .site-footer .footer-social__links svg {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   display: block;
   fill: currentColor;
 }
@@ -2083,8 +2145,8 @@ textarea {
 }
 
 .site-footer .footer-social__links .footer-social__icon--xiaohongshu {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
 }
 
 .footer-app > p:not(.footer-heading) {
@@ -2151,14 +2213,14 @@ textarea {
 }
 
 .site-footer .footer-bottom {
-  min-height: 52px;
+  min-height: 48px;
   align-items: center;
   margin-top: 48px;
-  padding-top: 28px;
-  border-color: rgba(255, 255, 255, 0.18);
-  color: rgba(255, 255, 255, 0.42);
+  padding-top: 24px;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.38);
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.5;
@@ -2729,23 +2791,29 @@ textarea {
 
 @media (max-width: 1050px) {
   .footer-grid.footer-grid--moca {
-    grid-template-columns: 1fr;
-    row-gap: 42px;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+
+  .footer-brand {
+    max-width: none;
   }
 
   .footer-navs {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: clamp(40px, 12vw, 80px);
+    column-gap: 48px;
   }
 
-  .footer-grid.footer-grid--moca > .footer-navs > nav,
-  .footer-kolplanet {
-    margin-top: 0;
+  .footer-kolplanet__layout {
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .footer-kolplanet {
-    max-width: none;
+  .footer-kolplanet__left {
+    width: auto;
+    max-width: 230px;
   }
 }
 
@@ -2755,17 +2823,24 @@ textarea {
   }
 
   .footer-grid.footer-grid--moca {
-    grid-template-columns: 1fr;
-    row-gap: 36px;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 32px;
   }
 
   .footer-navs {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 28px;
+    column-gap: 32px;
   }
 
-  .footer-kolplanet {
+  .footer-kolplanet__layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-kolplanet__left {
+    width: auto;
     max-width: none;
   }
 
