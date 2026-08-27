@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FormSuccessToast from '../components/FormSuccessToast.astro';
 import { site } from '../config/site';
 import { getEstimatedReadingMinutes } from '../lib/news';
 import '../styles/home.css';
@@ -835,6 +836,7 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
       </div>
     </div>
   </section>
+  <FormSuccessToast title="Message sent" />
 </BaseLayout>
 
 <script>
@@ -975,12 +977,27 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
   const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
   const status = form?.querySelector<HTMLElement>('.form-status');
   const submit = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+  const successToast = document.querySelector<HTMLElement>('[data-form-success-toast]');
+  const submitLabel = submit?.textContent?.trim() || 'Send';
+
+  const setContactSubmitting = (isSubmitting: boolean) => {
+    if (!submit) return;
+    submit.disabled = isSubmitting;
+    submit.setAttribute('aria-busy', String(isSubmitting));
+    submit.textContent = isSubmitting ? 'Sending…' : submitLabel;
+  };
+
+  const showContactSuccess = (message: string) => {
+    successToast?.dispatchEvent(
+      new CustomEvent('moca:form-success', { detail: { message } }),
+    );
+  };
 
   form?.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (!status || !submit) return;
 
-    submit.disabled = true;
+    setContactSubmitting(true);
     status.textContent = 'Sending…';
 
     let errorType = 'network_error';
@@ -1020,7 +1037,8 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
       }
 
       form.reset();
-      status.textContent = responseMessage;
+      status.textContent = '';
+      showContactSuccess(responseMessage);
     } catch (error) {
       trackAnalyticsEvent('contact_form_error', {
         form_id: 'contact_form',
@@ -1030,7 +1048,7 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
       status.textContent =
         error instanceof Error ? error.message : 'Unable to send your message.';
     } finally {
-      submit.disabled = false;
+      setContactSubmitting(false);
     }
   });
 

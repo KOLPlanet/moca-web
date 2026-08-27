@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CreatorJoinForm from '../../components/CreatorJoinForm.astro';
+import FormSuccessToast from '../../components/FormSuccessToast.astro';
 import { site } from '../../config/site';
 import '../../styles/home.css';
 
@@ -30,6 +31,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
       <CreatorJoinForm />
     </div>
+    <FormSuccessToast title="Application sent" />
   </div>
 </BaseLayout>
 
@@ -37,6 +39,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
   const form = document.querySelector('[data-creator-join-form]');
   const status = document.querySelector('[data-creator-join-status]');
   const submit = document.querySelector('[data-creator-join-submit]');
+  const successToast = document.querySelector('[data-form-success-toast]');
   const draftBtn = document.querySelector('[data-creator-draft]');
   const categories = document.querySelector('[data-creator-categories]');
   const socialList = document.querySelector('[data-social-list]');
@@ -52,6 +55,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
   const scopeOptions = document.querySelector('[data-scope-options]');
   const scopeCount = document.querySelector('[data-scope-count]');
   const scopeEmpty = document.querySelector('[data-scope-empty]');
+  const tagField = document.querySelector('[data-tag-field]');
   const tagList = document.querySelector('[data-tag-list]');
   const tagInput = document.querySelector('[data-tag-input]');
   const tagSuggest = document.querySelector('[data-tag-suggest]');
@@ -65,6 +69,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
   let rateCardFile = null;
   let ratePreviewUrl = '';
   const DRAFT_KEY = 'moca-creator-join-draft';
+  const submitLabel = submit?.textContent?.trim() || 'Submit';
 
   const maxTags = 5;
   const maxSocials = 6;
@@ -150,6 +155,19 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     status.textContent = message;
     status.hidden = !message;
     status.dataset.tone = tone;
+  };
+
+  const setCreatorSubmitting = (isSubmitting, label = 'Submitting…') => {
+    if (!submit) return;
+    submit.disabled = isSubmitting;
+    submit.setAttribute('aria-busy', String(isSubmitting));
+    submit.textContent = isSubmitting ? label : submitLabel;
+  };
+
+  const showCreatorSuccess = (message) => {
+    successToast?.dispatchEvent(
+      new CustomEvent('moca:form-success', { detail: { message } }),
+    );
   };
 
   const clearInvalid = () => {
@@ -540,6 +558,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     if (!tagSuggest) return;
     tagSuggest.hidden = true;
     tagSuggest.innerHTML = '';
+    tagInput?.setAttribute('aria-expanded', 'false');
   };
 
   const availableSuggestions = () =>
@@ -563,6 +582,10 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
   const renderSuggest = (query) => {
     if (!tagSuggest || !tagInput) return;
+    if (selectedTags.length >= maxTags) {
+      hideSuggest();
+      return;
+    }
     const matches = rankSuggestions(query);
     if (!matches.length) {
       hideSuggest();
@@ -575,20 +598,27 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       )
       .join('');
     tagSuggest.hidden = false;
+    tagInput.setAttribute('aria-expanded', 'true');
   };
 
   tagInput?.addEventListener('focus', () => renderSuggest(tagInput.value));
+  tagInput?.addEventListener('click', () => renderSuggest(tagInput.value));
   tagInput?.addEventListener('input', () => renderSuggest(tagInput.value));
   tagInput?.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' || event.key === ',' || event.key === 'Tab') {
       const value = tagInput.value.trim();
       if (!value) return;
       event.preventDefault();
-      if (addTag(value)) tagInput.value = '';
-      hideSuggest();
+      if (addTag(value)) {
+        tagInput.value = '';
+        renderSuggest('');
+      } else {
+        renderSuggest(tagInput.value);
+      }
     } else if (event.key === 'Backspace' && !tagInput.value && selectedTags.length) {
       selectedTags.pop();
       syncTags();
+      renderSuggest('');
     } else if (event.key === 'Escape') {
       hideSuggest();
     }
@@ -599,14 +629,14 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     if (!(button instanceof HTMLButtonElement)) return;
     if (addTag(button.textContent || '')) {
       if (tagInput) tagInput.value = '';
-      hideSuggest();
       tagInput?.focus();
+      renderSuggest('');
     }
   });
 
   document.addEventListener('click', (event) => {
-    if (!(event.target instanceof Node)) return;
-    if (tagSuggest && !tagSuggest.contains(event.target) && event.target !== tagInput) hideSuggest();
+    if (tagField && event.composedPath().includes(tagField)) return;
+    hideSuggest();
   });
 
   const usedPlatforms = () =>
@@ -1327,15 +1357,17 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     payload.set('message', message);
     payload.set('company', get('company'));
 
-    submit.disabled = true;
-    setStatus('Sending…', 'info');
+    setCreatorSubmitting(true);
+    setStatus('Submitting…', 'info');
 
     try {
       if (rateCardFile) {
+        setCreatorSubmitting(true, 'Preparing…');
         setStatus('Preparing photo…', 'info');
         const attachment = await prepareRateCardFile(rateCardFile);
         if (attachment) payload.set('rateCard', attachment);
-        setStatus('Sending…', 'info');
+        setCreatorSubmitting(true);
+        setStatus('Submitting…', 'info');
       }
       const response = await fetch(contactEndpoint, {
         method: 'POST',
@@ -1355,11 +1387,12 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       syncCurrencyFromCountry(true);
       syncWhatsappDial();
       updateRatePlaceholders();
-      setStatus('Thanks — your application has been sent. We’ll be in touch.', 'success');
+      setStatus('', 'success');
+      showCreatorSuccess('Thanks — your application has been sent. We’ll be in touch.');
     } catch (error) {
       setStatus(error instanceof Error ? error.message : 'Unable to submit your application.', 'error');
     } finally {
-      submit.disabled = false;
+      setCreatorSubmitting(false);
     }
   });
 

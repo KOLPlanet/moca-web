@@ -133,6 +133,31 @@
   box-shadow: 0 10px 26px rgba(67, 109, 33, 0.28);
 }
 
+.home-contact-form .home-button:disabled {
+  opacity: 0.78;
+  cursor: wait;
+  transform: none;
+  box-shadow: none;
+}
+
+@keyframes form-submit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.home-contact-form .home-button[aria-busy='true']::before,
+.creator-join-form__primary[aria-busy='true']::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+  border: 2px solid rgba(255, 255, 255, 0.38);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: form-submit-spin 720ms linear infinite;
+}
+
 .home-hero {
   position: relative;
   min-height: min(100svh, 1080px);
@@ -2899,6 +2924,10 @@
 .creator-join-form__primary {
   width: 100%;
   min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   border: 1px solid #619239;
   padding: 0 24px;
   color: #fff;
