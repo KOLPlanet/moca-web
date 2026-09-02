@@ -6,7 +6,10 @@ export interface ContactAttachment {
   content: Buffer;
 }
 
+export type ContactType = 'business' | 'creator';
+
 export interface ContactMessage {
+  contactType: ContactType;
   name: string;
   email: string;
   subject: string;
@@ -34,6 +37,13 @@ const required = (name: string) => {
   return value;
 };
 
+const recipientFor = (contactType: ContactType) =>
+  required(
+    contactType === 'business'
+      ? 'CONTACT_BUSINESS_TO_EMAIL'
+      : 'CONTACT_CREATOR_TO_EMAIL',
+  );
+
 const subjectFor = (subject: string) => {
   const prefix = process.env.CONTACT_SUBJECT_PREFIX?.trim() || '[MOCA Website]';
   const safeSubject = subject.replace(/[\r\n]+/g, ' ').trim();
@@ -48,7 +58,7 @@ async function sendWithSmtp(contact: ContactMessage) {
   const portValue = process.env.SMTP_PORT?.trim() || '587';
   const port = Number.parseInt(portValue, 10);
   const from = required('CONTACT_FROM_EMAIL');
-  const to = required('CONTACT_TO_EMAIL');
+  const to = recipientFor(contact.contactType);
   const user = process.env.SMTP_USER?.trim();
   const password = process.env.SMTP_PASSWORD;
 
@@ -101,7 +111,7 @@ async function sendWithWebhook(contact: ContactMessage) {
   const endpoint = required('CONTACT_MAIL_SERVICE_URL');
   const token = required('CONTACT_MAIL_SERVICE_TOKEN');
   const from = required('CONTACT_FROM_EMAIL');
-  const to = required('CONTACT_TO_EMAIL');
+  const to = recipientFor(contact.contactType);
 
   const response = await fetch(endpoint, {
     method: 'POST',

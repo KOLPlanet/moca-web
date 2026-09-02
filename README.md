@@ -35,7 +35,7 @@ body:
 ```json
 {
   "from": "website@example.com",
-  "to": "hello@example.com",
+  "to": "business@moca-tech.net",
   "replyTo": "visitor@example.com",
   "subject": "[MOCA Website] Visitor subject",
   "text": "Name: Visitor\nEmail: visitor@example.com\n\nMessage body"

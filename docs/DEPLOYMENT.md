@@ -92,9 +92,14 @@ SMTP_USER=website@example.com
 SMTP_PASSWORD=<app-password>
 CONTACT_FROM_EMAIL=website@example.com
 CONTACT_FROM_NAME=MOCA Website
-CONTACT_TO_EMAIL=hello@example.com
+CONTACT_BUSINESS_TO_EMAIL=business@moca-tech.net
+CONTACT_CREATOR_TO_EMAIL=collaboration@kolplanet.com
 CONTACT_SUBJECT_PREFIX=[MOCA Website]
 ```
+
+首页 Contact 表单使用 `CONTACT_BUSINESS_TO_EMAIL`，Creator 申请使用
+`CONTACT_CREATOR_TO_EMAIL`。对应变量为空时，该表单返回 `503` 且不会回退到
+另一个收件地址；缺少或提交未知表单类型时返回 `400`。
 
 通常：
 
@@ -113,7 +118,8 @@ CONTACT_MAIL_SERVICE_URL=https://mail-service.example.com/send
 CONTACT_MAIL_SERVICE_TOKEN=<secret-token>
 CONTACT_FROM_EMAIL=website@example.com
 CONTACT_FROM_NAME=MOCA Website
-CONTACT_TO_EMAIL=hello@example.com
+CONTACT_BUSINESS_TO_EMAIL=business@moca-tech.net
+CONTACT_CREATOR_TO_EMAIL=collaboration@kolplanet.com
 CONTACT_SUBJECT_PREFIX=[MOCA Website]
 ```
 
@@ -136,7 +142,7 @@ Node/Vercel 版本目前发送相同字段，但旧 webhook 服务忽略额外�
 
 Resend 可以托管发信和域名身份验证，因此站点不需要常驻 Astro SSR 或自行连接
 SMTP。它不等于传统邮箱收件箱：Contact 邮件仍会投递到
-`CONTACT_TO_EMAIL` 指定的真实邮箱。
+`CONTACT_BUSINESS_TO_EMAIL` 或 `CONTACT_CREATOR_TO_EMAIL` 指定的真实邮箱。
 
 建议使用专门的发信子域名，例如：
 
@@ -155,7 +161,8 @@ mail.example.com
    ```env
    RESEND_API_KEY=<secret>
    RESEND_FROM_EMAIL=MOCA Website <website@mail.example.com>
-   CONTACT_TO_EMAIL=hello@example.com
+   CONTACT_BUSINESS_TO_EMAIL=business@moca-tech.net
+   CONTACT_CREATOR_TO_EMAIL=collaboration@kolplanet.com
    CONTACT_ALLOWED_ORIGINS=https://www.example.com
    ```
 
@@ -240,9 +247,10 @@ Vercel Git Integration 会自动：
 部署后检查：
 
 1. Contact 表单返回 `Thanks — your message has been sent.`；
-2. `CONTACT_TO_EMAIL` 收到邮件；
-3. 邮件 Reply-To 是访客填写的地址；
-4. Vercel Function Logs 没有 SMTP 或鉴权错误。
+2. 首页 Contact 表单邮件由 `CONTACT_BUSINESS_TO_EMAIL` 收到；
+3. Creator 申请邮件由 `CONTACT_CREATOR_TO_EMAIL` 收到；
+4. 邮件 Reply-To 是访客填写的地址；
+5. Vercel Function Logs 没有 SMTP 或鉴权错误。
 
 官方文档：
 
@@ -382,7 +390,8 @@ Vercel或自有服务器上，再让 Pages Function 通过 HTTPS 调用。
    CONTACT_MAIL_SERVICE_TOKEN=<secret-token>
    CONTACT_FROM_EMAIL=website@example.com
    CONTACT_FROM_NAME=MOCA Website
-   CONTACT_TO_EMAIL=hello@example.com
+   CONTACT_BUSINESS_TO_EMAIL=business@moca-tech.net
+   CONTACT_CREATOR_TO_EMAIL=collaboration@kolplanet.com
    CONTACT_SUBJECT_PREFIX=[MOCA Website]
    ```
 

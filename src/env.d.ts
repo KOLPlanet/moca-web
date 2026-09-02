@@ -8,13 +8,14 @@ interface ImportMetaEnv {
     | 'cloudflare-pages'
     | 'self-hosted';
   readonly CONTACT_ALLOWED_ORIGINS?: string;
+  readonly CONTACT_BUSINESS_TO_EMAIL?: string;
+  readonly CONTACT_CREATOR_TO_EMAIL?: string;
   readonly CONTACT_MAIL_TRANSPORT?: 'smtp' | 'webhook';
   readonly CONTACT_MAIL_SERVICE_URL?: string;
   readonly CONTACT_MAIL_SERVICE_TOKEN?: string;
   readonly CONTACT_FROM_EMAIL?: string;
   readonly CONTACT_FROM_NAME?: string;
   readonly CONTACT_SUBJECT_PREFIX?: string;
-  readonly CONTACT_TO_EMAIL?: string;
   readonly SMTP_HOST?: string;
   readonly SMTP_PORT?: string;
   readonly SMTP_SECURE?: string;

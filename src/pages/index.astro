@@ -695,6 +695,7 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
     <div class="home-contact__shade"></div>
     <div class="home-container home-contact__inner">
       <form class="home-contact-form" action={contactEndpoint} method="post" data-contact-form>
+        <input name="contactType" type="hidden" value="business" />
         <header class="home-section-heading home-section-heading--light">
           <h2 id="contact-title">Contact Us</h2>
           <p>Let’s start a conversation about your next market.</p>

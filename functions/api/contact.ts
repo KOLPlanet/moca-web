@@ -1,11 +1,12 @@
 interface Env {
   CONTACT_ALLOWED_ORIGINS?: string;
+  CONTACT_BUSINESS_TO_EMAIL?: string;
+  CONTACT_CREATOR_TO_EMAIL?: string;
   CONTACT_FROM_NAME?: string;
   CONTACT_FROM_EMAIL?: string;
   CONTACT_MAIL_SERVICE_TOKEN?: string;
   CONTACT_MAIL_SERVICE_URL?: string;
   CONTACT_SUBJECT_PREFIX?: string;
-  CONTACT_TO_EMAIL?: string;
 }
 
 interface PagesContext {
@@ -14,6 +15,7 @@ interface PagesContext {
 }
 
 type PagesHandler = (context: PagesContext) => Promise<Response> | Response;
+type ContactType = 'business' | 'creator';
 
 const MAX_BODY_BYTES = 4_000_000;
 const MAX_FILE_BYTES = 3_500_000;
@@ -62,6 +64,19 @@ const readRateCard = async (form: FormData) => {
 const isEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 const withinLimit = (value: string, maximum: number) =>
   value.length > 0 && value.length <= maximum;
+const contactTypeFor = (value: FormDataEntryValue | null): ContactType | null => {
+  const normalized = String(value ?? '').trim().toLowerCase();
+  return normalized === 'business' || normalized === 'creator' ? normalized : null;
+};
+const recipientFor = (env: Env, contactType: ContactType) =>
+  (contactType === 'business'
+    ? env.CONTACT_BUSINESS_TO_EMAIL
+    : env.CONTACT_CREATOR_TO_EMAIL
+  )?.trim();
+const mailUnavailableMessage = (contactType: ContactType) =>
+  contactType === 'business'
+    ? 'Mail delivery is temporarily unavailable. Please email business@moca-tech.net directly.'
+    : 'Mail delivery is temporarily unavailable. Please email collaboration@kolplanet.com directly.';
 
 const permittedOrigin = (request: Request, env: Env) => {
   const origin = request.headers.get('Origin');
@@ -133,9 +148,14 @@ export const onRequestPost: PagesHandler = async ({ env, request }) => {
   const subject = String(form.get('subject') ?? '').trim();
   const message = String(form.get('message') ?? '').trim();
   const company = String(form.get('company') ?? '').trim();
+  const contactType = contactTypeFor(form.get('contactType'));
 
   if (company) {
     return json({ message: 'Thanks — your message has been received.' }, 200, origin);
+  }
+
+  if (!contactType) {
+    return json({ message: 'The contact form type is invalid.' }, 400, origin);
   }
 
   if (
@@ -171,11 +191,11 @@ export const onRequestPost: PagesHandler = async ({ env, request }) => {
   const endpoint = env.CONTACT_MAIL_SERVICE_URL?.trim();
   const token = env.CONTACT_MAIL_SERVICE_TOKEN?.trim();
   const from = env.CONTACT_FROM_EMAIL?.trim();
-  const to = env.CONTACT_TO_EMAIL?.trim();
+  const to = recipientFor(env, contactType);
 
   if (!endpoint || !token || !from || !to) {
-    console.error('[contact] Cloudflare mail webhook variables are incomplete.');
-    return json({ message: 'Mail delivery is not configured yet.' }, 503, origin);
+    console.error(`[contact] Cloudflare mail webhook variables are incomplete for ${contactType}.`);
+    return json({ message: mailUnavailableMessage(contactType) }, 503, origin);
   }
 
   const safeSubject = subject.replace(/[\r\n]+/g, ' ').trim();

@@ -1351,6 +1351,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     ].join('\n');
 
     const payload = new FormData();
+    payload.set('contactType', 'creator');
     payload.set('name', get('accountName'));
     payload.set('email', get('email'));
     payload.set('subject', 'Creator Join Application');

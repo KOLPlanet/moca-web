@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro';
 import {
   ContactMailConfigurationError,
   sendContactMail,
+  type ContactType,
 } from '../../lib/contact-mail';
 
 const isStaticDeployment = ['github-pages', 'cloudflare-pages'].includes(
@@ -88,6 +89,14 @@ const json = (
 const isEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 const withinLimit = (value: string, maximum: number) =>
   value.length > 0 && value.length <= maximum;
+const contactTypeFor = (value: FormDataEntryValue | null): ContactType | null => {
+  const normalized = String(value ?? '').trim().toLowerCase();
+  return normalized === 'business' || normalized === 'creator' ? normalized : null;
+};
+const mailUnavailableMessage = (contactType: ContactType) =>
+  contactType === 'business'
+    ? 'Mail delivery is temporarily unavailable. Please email business@moca-tech.net directly.'
+    : 'Mail delivery is temporarily unavailable. Please email collaboration@kolplanet.com directly.';
 
 export const GET: APIRoute = () =>
   json({ message: 'The contact endpoint only accepts POST requests.' }, 405);
@@ -118,6 +127,7 @@ export const POST: APIRoute = async ({ request }) => {
   const subject = String(form.get('subject') ?? '').trim();
   const message = String(form.get('message') ?? '').trim();
   const company = String(form.get('company') ?? '').trim();
+  const contactType = contactTypeFor(form.get('contactType'));
 
   if (company) {
     return json(
@@ -125,6 +135,10 @@ export const POST: APIRoute = async ({ request }) => {
       200,
       origin,
     );
+  }
+
+  if (!contactType) {
+    return json({ message: 'The contact form type is invalid.' }, 400, origin);
   }
 
   if (
@@ -156,7 +170,7 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   try {
-    await sendContactMail({ name, email, subject, message, attachment });
+    await sendContactMail({ contactType, name, email, subject, message, attachment });
     return json(
       { accepted: true, message: 'Thanks — your message has been sent.' },
       200,
@@ -167,8 +181,7 @@ export const POST: APIRoute = async ({ request }) => {
       console.error('[contact] Mail delivery is not configured:', error.message);
       return json(
         {
-          message:
-            'Mail delivery is not configured yet. Add the contact variables from .env.example.',
+          message: mailUnavailableMessage(contactType),
         },
         503,
         origin,
