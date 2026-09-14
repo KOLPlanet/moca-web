@@ -326,25 +326,45 @@
     radial-gradient(circle at 18% 20%, rgba(97, 146, 57, 0.16), transparent 42%),
     radial-gradient(circle at 88% 30%, rgba(97, 146, 57, 0.1), transparent 36%),
     linear-gradient(180deg, #f4f8f0 0%, #ffffff 48%, #ffffff 100%);
-  padding-block: clamp(56px, 6vw, 96px);
+  box-sizing: border-box;
+  height: 900px;
+  min-height: 900px;
+  max-height: 900px;
+  padding-block: 40px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-services > .home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .home-services .home-section-heading {
-  margin-bottom: clamp(28px, 4vw, 48px);
+  margin-bottom: 28px;
 }
-
 
 .services-orbit {
   position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  min-height: 0;
 }
 
 .services-orbit__system {
   position: relative;
   isolation: isolate;
-  width: min(100%, 960px);
+  width: min(100%, 900px);
   margin: 0 auto;
-  min-height: clamp(640px, 68vw, 780px);
+  height: 680px;
+  min-height: 0;
 }
 
 .services-orbit__halo {
@@ -427,7 +447,7 @@
 
 .services-orbit__face img {
   width: 100%;
-  max-height: 320px;
+  max-height: 300px;
   height: auto;
   object-fit: contain;
   display: block;
@@ -2367,6 +2387,67 @@
   line-height: 1.55;
 }
 
+.creator-join-success {
+  margin-top: 8px;
+}
+
+.creator-join-success[hidden] {
+  display: none !important;
+}
+
+.creator-join-success__card {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding: clamp(36px, 6vw, 56px) 24px;
+  border: 1px solid rgba(16, 24, 16, 0.08);
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(16, 24, 16, 0.05);
+  text-align: center;
+}
+
+.creator-join-success__icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #619239;
+}
+
+.creator-join-success__card h2 {
+  margin: 0;
+  color: rgba(16, 24, 16, 0.92);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.creator-join-success__card p {
+  margin: 0;
+  max-width: 34rem;
+  color: rgba(0, 0, 0, 0.58);
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.creator-join-success__home {
+  margin-top: 8px;
+  color: #4f7a2f;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.creator-join-success__home:hover,
+.creator-join-success__home:focus-visible {
+  text-decoration: underline;
+}
+
 .creator-join-form {
   display: grid;
   gap: 16px;
@@ -2374,6 +2455,11 @@
   border: 0;
   background: transparent;
   box-shadow: none;
+}
+
+.creator-join-form[hidden],
+.creator-join-page__intro[hidden] {
+  display: none !important;
 }
 
 .creator-join-form__card {
@@ -2487,6 +2573,61 @@
 .creator-join-form__hint--inline {
   margin: -2px 0 6px;
   font-size: 0.8rem;
+}
+
+.creator-join-form__error {
+  display: block;
+  margin: 2px 0 0;
+  min-height: calc(0.78rem * 1.4);
+  color: #8a2f2f;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+/* Keep the slot in layout so showing/hiding errors doesn't shift fields. */
+.creator-join-form__error[hidden] {
+  display: block !important;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.creator-join-form__socials + .creator-join-form__error {
+  margin-top: 0;
+}
+
+.creator-join-form__check {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+  margin-top: -2px;
+  color: rgba(0, 0, 0, 0.68);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.creator-join-form__check input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: #619239;
+}
+
+.creator-join-form__chips--compact {
+  gap: 8px;
+}
+
+.creator-join-form__chips--compact .creator-join-form__chip-face {
+  padding: 8px 12px;
+  font-size: 0.82rem;
+}
+
+.creator-join-form__field--currency {
+  max-width: 220px;
+  margin: 4px 0 2px;
 }
 
 .creator-join-form__row {
@@ -2648,14 +2789,19 @@
 .creator-join-form__field.is-invalid .creator-join-form__whatsapp-dial,
 .creator-join-form__field.is-invalid .creator-join-form__platform-btn,
 .creator-join-form__section.is-invalid .creator-join-form__chips,
-.creator-join-form__section.is-invalid .creator-join-form__tags,
-.creator-join-form__section.is-invalid .creator-join-form__socials {
+.creator-join-form__section.is-invalid .creator-join-form__tags {
   border-color: rgba(180, 60, 60, 0.55);
   box-shadow: 0 0 0 3px rgba(180, 60, 60, 0.1);
 }
 
 .creator-join-form__section.is-invalid > h2 {
   color: #8a2f2f;
+}
+
+.creator-join-form__social.is-invalid .creator-join-form__platform-btn,
+.creator-join-form__social.is-invalid [data-social-handle] {
+  border-color: rgba(180, 60, 60, 0.55);
+  box-shadow: 0 0 0 3px rgba(180, 60, 60, 0.1);
 }
 
 .creator-join-form__chips {
@@ -2790,7 +2936,12 @@
   display: grid;
   grid-template-columns: minmax(168px, 0.48fr) minmax(0, 1fr) 44px;
   gap: 8px;
-  align-items: end;
+  align-items: start;
+}
+
+.creator-join-form__social > .creator-join-form__remove {
+  align-self: start;
+  height: 44px;
 }
 
 .creator-join-form__platform {
@@ -3303,7 +3454,6 @@
 }
 
 .creator-join-form__add[hidden],
-.creator-join-form__draft[hidden],
 .creator-join-form__primary[hidden] {
   display: none !important;
 }
@@ -3344,33 +3494,7 @@
 
 .creator-join-form__actions {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
   gap: 10px;
-}
-
-.creator-join-form__draft {
-  min-height: 48px;
-  border: 1px solid rgba(16, 24, 16, 0.16);
-  padding: 0 20px;
-  color: rgba(0, 0, 0, 0.72);
-  background: #fff;
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: var(--text-button-weight);
-  letter-spacing: normal;
-  text-transform: none;
-  cursor: pointer;
-  transition:
-    border-color 160ms ease,
-    color 160ms ease,
-    background-color 160ms ease;
-}
-
-.creator-join-form__draft:hover,
-.creator-join-form__draft:focus-visible {
-  border-color: rgba(16, 24, 16, 0.32);
-  color: rgba(0, 0, 0, 0.88);
-  background: #f7f8f5;
 }
 
 .creator-join-form__primary {
@@ -3475,13 +3599,6 @@
     bottom: 8px;
   }
 
-  .creator-join-form__actions {
-    grid-template-columns: 1fr;
-  }
-
-  .creator-join-form__draft {
-    order: 2;
-  }
 }
 
 .home-life {
@@ -3577,8 +3694,25 @@ a.life-card:hover img {
     font-size: clamp(1.9rem, 4vw, 3rem);
   }
 
+  .home-services {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    display: block;
+    padding-block: clamp(40px, 5vw, 64px);
+  }
+
+  .home-services > .home-container {
+    display: block;
+  }
+
+  .services-orbit {
+    display: block;
+  }
+
   .services-orbit__system {
     width: 100%;
+    height: auto;
     min-height: 0;
   }
 
@@ -3813,7 +3947,15 @@ a.life-card:hover img {
   }
 
   .home-services {
-    padding-block: clamp(56px, 12vw, 88px);
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    padding-block: clamp(48px, 10vw, 72px);
+    display: block;
+  }
+
+  .home-services > .home-container {
+    display: block;
   }
 
   .home-services .home-section-heading {
@@ -3968,6 +4110,7 @@ a.life-card:hover img {
 
   .services-orbit__system {
     width: 100%;
+    height: auto;
     min-height: 0;
   }
 

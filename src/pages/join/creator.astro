@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CreatorJoinForm from '../../components/CreatorJoinForm.astro';
-import FormSuccessToast from '../../components/FormSuccessToast.astro';
 import { site } from '../../config/site';
 import '../../styles/home.css';
 
@@ -26,12 +25,29 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     <div class="creator-join-page__shell">
       <header class="creator-join-page__intro">
         <h1>Join as Creator</h1>
-        <p>Join KOLPlanet to work with brands in India & Southeast Asia.</p>
+        <p>
+          Join KOLPlanet to connect with leading global brands. Complete your profile to unlock
+          brand collaborations with top-tier global brands.
+        </p>
       </header>
 
       <CreatorJoinForm />
+      <div class="creator-join-success" data-creator-join-success hidden>
+        <div class="creator-join-success__card">
+          <span class="creator-join-success__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
+              <path d="m5 12.5 4.25 4.25L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <h2>Profile received!</h2>
+          <p>
+            Our team is reviewing your portfolio. We’ll reach out via email as soon as a matching
+            brand collaboration becomes available.
+          </p>
+          <a class="creator-join-success__home" href="/">Back to homepage</a>
+        </div>
+      </div>
     </div>
-    <FormSuccessToast title="Application submitted" />
   </div>
 </BaseLayout>
 
@@ -39,9 +55,11 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
   const form = document.querySelector('[data-creator-join-form]');
   const status = document.querySelector('[data-creator-join-status]');
   const submit = document.querySelector('[data-creator-join-submit]');
-  const successToast = document.querySelector('[data-form-success-toast]');
-  const draftBtn = document.querySelector('[data-creator-draft]');
+  const successPanel = document.querySelector('[data-creator-join-success]');
+  const pageIntro = document.querySelector('.creator-join-page__intro');
   const categories = document.querySelector('[data-creator-categories]');
+  const languagesRoot = document.querySelector('[data-creator-languages]');
+  const languageValue = document.querySelector('[data-language-value]');
   const socialList = document.querySelector('[data-social-list]');
   const addSocial = document.querySelector('[data-add-social]');
   const socialTemplate = document.querySelector('[data-social-template]');
@@ -54,7 +72,6 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
   const scopeMenu = document.querySelector('[data-scope-menu]');
   const scopeOptions = document.querySelector('[data-scope-options]');
   const scopeCount = document.querySelector('[data-scope-count]');
-  const scopeEmpty = document.querySelector('[data-scope-empty]');
   const tagField = document.querySelector('[data-tag-field]');
   const tagList = document.querySelector('[data-tag-list]');
   const tagInput = document.querySelector('[data-tag-input]');
@@ -69,7 +86,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
   let rateCardFile = null;
   let ratePreviewUrl = '';
   const DRAFT_KEY = 'moca-creator-join-draft';
-  const submitLabel = submit?.textContent?.trim() || 'Submit';
+  const submitLabel = submit?.textContent?.trim() || 'Complete Profile';
 
   const maxTags = 5;
   const maxSocials = 6;
@@ -164,20 +181,49 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     submit.textContent = isSubmitting ? label : submitLabel;
   };
 
-  const showCreatorSuccess = (message) => {
-    successToast?.dispatchEvent(
-      new CustomEvent('moca:form-success', { detail: { message } }),
-    );
+  const showCreatorSuccess = () => {
+    if (form instanceof HTMLElement) form.hidden = true;
+    if (pageIntro instanceof HTMLElement) pageIntro.hidden = true;
+    if (successPanel instanceof HTMLElement) {
+      successPanel.hidden = false;
+      successPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const clearFieldError = (root) => {
+    if (!(root instanceof Element)) return;
+    root.querySelectorAll('[data-field-error]').forEach((el) => {
+      el.textContent = '';
+      el.hidden = true;
+    });
+  };
+
+  const setFieldError = (el, message) => {
+    if (!(el instanceof Element)) return;
+    const field =
+      el.closest('.creator-join-form__field') ||
+      el.closest('[data-validate-block]') ||
+      el.closest('.creator-join-form__section');
+    const error =
+      (field instanceof Element && field.querySelector(':scope > [data-field-error]')) ||
+      (el.parentElement instanceof Element && el.parentElement.querySelector('[data-field-error]')) ||
+      null;
+    if (error instanceof HTMLElement) {
+      error.textContent = message;
+      error.hidden = !message;
+    }
   };
 
   const clearInvalid = () => {
     form?.querySelectorAll('.is-invalid').forEach((el) => el.classList.remove('is-invalid'));
+    clearFieldError(form);
   };
 
-  const markInvalid = (el) => {
+  const markInvalid = (el, message = '') => {
     if (!(el instanceof Element)) return;
     el.classList.add('is-invalid');
     el.closest('.creator-join-form__field')?.classList.add('is-invalid');
+    if (message) setFieldError(el, message);
   };
 
   const focusInvalid = (el) => {
@@ -364,11 +410,16 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     { allowCustom: true },
   );
 
-  const languageCombo = setupCombo(
-    form?.querySelector('[data-combo="language"]'),
-    () => languageOptions,
-    { allowCustom: false },
-  );
+  const syncLanguages = () => {
+    if (!(languageValue instanceof HTMLInputElement)) return;
+    const selected = [...(languagesRoot?.querySelectorAll('input[type="checkbox"]:checked') ?? [])]
+      .map((input) => (input instanceof HTMLInputElement ? input.value : ''))
+      .filter(Boolean);
+    languageValue.value = selected.join(', ');
+    languagesRoot?.closest('.creator-join-form__field')?.classList.remove('is-invalid');
+  };
+
+  languagesRoot?.addEventListener('change', syncLanguages);
 
   countrySelect?.addEventListener('change', () => {
     currencyTouched = false;
@@ -529,6 +580,11 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       tagList.appendChild(chip);
     });
     tagValue.value = selectedTags.map((tag) => `#${tag}`).join(' ');
+    if (selectedTags.length) {
+      form?.querySelector('[data-validate-block="tags"]')?.classList.remove('is-invalid');
+      tagInput?.classList.remove('is-invalid');
+      clearFieldError(form?.querySelector('[data-validate-block="tags"]'));
+    }
   };
 
   const normalizeTag = (value) =>
@@ -662,7 +718,10 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     if (label) label.textContent = name || 'Select platform';
     row.querySelector('[data-platform-toggle]')?.classList.toggle('is-empty', !name);
     row.querySelector('.creator-join-form__field--platform')?.classList.remove('is-invalid');
+    row.classList.remove('is-invalid');
     input?.classList.remove('is-invalid');
+    clearFieldError(form?.querySelector('[data-validate-block="socials"]'));
+    form?.querySelector('[data-validate-block="socials"]')?.classList.remove('is-invalid');
     if (icon instanceof HTMLImageElement) {
       if (platform?.icon) {
         icon.src = platform.icon;
@@ -870,7 +929,6 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       scopeCount.textContent = String(count);
       scopeCount.hidden = count === 0;
     }
-    if (scopeEmpty) scopeEmpty.hidden = count > 0;
     if (addScope) addScope.hidden = count >= maxScopes;
   };
 
@@ -1015,7 +1073,10 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     if (target instanceof HTMLInputElement && target.hasAttribute('data-birthday')) formatBirthdayInput(target);
     target.classList.remove('is-invalid');
     target.closest('.creator-join-form__field')?.classList.remove('is-invalid');
+    target.closest('[data-social-item]')?.classList.remove('is-invalid');
     target.closest('[data-validate-block]')?.classList.remove('is-invalid');
+    clearFieldError(target.closest('.creator-join-form__field'));
+    clearFieldError(target.closest('[data-validate-block]'));
   });
 
   form?.addEventListener('change', (event) => {
@@ -1023,7 +1084,10 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     if (!(target instanceof Element)) return;
     target.classList.remove('is-invalid');
     target.closest('.creator-join-form__field')?.classList.remove('is-invalid');
+    target.closest('[data-social-item]')?.classList.remove('is-invalid');
     target.closest('[data-validate-block]')?.classList.remove('is-invalid');
+    clearFieldError(target.closest('.creator-join-form__field'));
+    clearFieldError(target.closest('[data-validate-block]'));
   });
 
   const validateForm = () => {
@@ -1034,12 +1098,14 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       if (!(field instanceof HTMLInputElement || field instanceof HTMLSelectElement)) continue;
       const value = String(field.value ?? '').trim();
       if (!value) {
-        markInvalid(field);
+        const message = field.getAttribute('data-error-empty') || 'This field is required.';
+        markInvalid(field, message);
         focusInvalid(field);
         return false;
       }
       if (field instanceof HTMLInputElement && field.type === 'email' && !isValidEmail(value)) {
-        markInvalid(field);
+        const message = field.getAttribute('data-error-invalid') || 'Please enter a valid email address.';
+        markInvalid(field, message);
         focusInvalid(field);
         return false;
       }
@@ -1047,9 +1113,9 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
     const birthday = form?.querySelector('[data-birthday]');
     if (birthday instanceof HTMLInputElement && birthday.value.trim() && !isValidBirthday(birthday.value.trim())) {
-      markInvalid(birthday);
+      const message = birthday.getAttribute('data-error-invalid') || 'Please use YYYY-MM-DD for birthday.';
+      markInvalid(birthday, message);
       focusInvalid(birthday);
-      setStatus('Please use YYYY-MM-DD for birthday.', 'info');
       return false;
     }
 
@@ -1069,9 +1135,16 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       if (!socialRows.length) addSocialRow();
       const firstPlatform = socialList?.querySelector('[data-social-platform]');
       const firstHandle = socialList?.querySelector('[data-social-handle]');
+      const firstRow = socialList?.querySelector('[data-social-item]');
+      const socialBlock = form?.querySelector('[data-validate-block="socials"]');
       markInvalid(firstPlatform instanceof Element ? firstPlatform : null);
       markInvalid(firstHandle instanceof Element ? firstHandle : null);
-      form?.querySelector('[data-validate-block="socials"]')?.classList.add('is-invalid');
+      firstRow?.classList.add('is-invalid');
+      socialBlock?.classList.add('is-invalid');
+      setFieldError(
+        socialBlock,
+        'Add at least one social media profile so brands can review your content.',
+      );
       focusInvalid(firstPlatform instanceof HTMLElement ? firstPlatform : null);
       return false;
     }
@@ -1083,10 +1156,28 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       const hasPlatform = Boolean(platform.value);
       const hasHandle = Boolean(handle.value.trim());
       if (hasPlatform !== hasHandle) {
-        markInvalid(hasPlatform ? handle : platform);
+        const socialBlock = form?.querySelector('[data-validate-block="socials"]');
+        if (hasPlatform) {
+          markInvalid(handle);
+          setFieldError(socialBlock, 'Add at least one social media profile so brands can review your content.');
+        } else {
+          markInvalid(platform);
+          setFieldError(socialBlock, 'Add at least one social media profile so brands can review your content.');
+        }
+        socialBlock?.classList.add('is-invalid');
+        row.classList.add('is-invalid');
         focusInvalid(hasPlatform ? handle : platform);
         return false;
       }
+    }
+
+    if (!selectedTags.length) {
+      const tagsBlock = form?.querySelector('[data-validate-block="tags"]');
+      tagsBlock?.classList.add('is-invalid');
+      tagInput?.classList.add('is-invalid');
+      setFieldError(tagsBlock, 'Please add at least one tag.');
+      focusInvalid(tagInput instanceof HTMLElement ? tagInput : null);
+      return false;
     }
 
     return true;
@@ -1102,6 +1193,10 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     syncTags();
     if (tagInput) tagInput.value = '';
     hideSuggest();
+    languagesRoot?.querySelectorAll('input[type="checkbox"]').forEach((input) => {
+      if (input instanceof HTMLInputElement) input.checked = false;
+    });
+    syncLanguages();
     socialList?.replaceChildren();
     ensureDefaultSocialRow();
     collabs?.replaceChildren();
@@ -1114,17 +1209,19 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
   const collectDraft = () => {
     if (!form) return null;
+    syncLanguages();
     const data = new FormData(form);
     const fields = {};
     for (const [key, value] of data.entries()) {
       if (typeof value !== 'string') continue;
-      if (key === 'categories' || key === 'company' || key === 'tags') continue;
+      if (key === 'categories' || key === 'company' || key === 'tags' || key === 'languages') continue;
       if (/^rate(Scope|Price)\d+$/.test(key)) continue;
       fields[key] = String(value);
     }
     return {
       fields,
       categories: data.getAll('categories').map(String),
+      languages: data.getAll('languages').map(String),
       tags: [...selectedTags],
       currencyTouched,
       socials: [...(socialList?.querySelectorAll('[data-social-item]') ?? [])]
@@ -1186,13 +1283,34 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     Object.entries(draft.fields || {}).forEach(([key, value]) => {
       const field = form.elements.namedItem(key);
       if (field instanceof RadioNodeList) return;
+      if (field instanceof HTMLInputElement && field.type === 'checkbox') {
+        field.checked = String(value ?? '') === field.value || String(value ?? '') === 'yes';
+        return;
+      }
       if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement || field instanceof HTMLTextAreaElement) {
         field.value = String(value ?? '');
       }
     });
 
     cityCombo?.syncFromHidden();
-    languageCombo?.syncFromHidden();
+    syncLanguages();
+    if (Array.isArray(draft.languages)) {
+      languagesRoot?.querySelectorAll('input[type="checkbox"]').forEach((input) => {
+        if (!(input instanceof HTMLInputElement)) return;
+        input.checked = draft.languages.includes(input.value);
+      });
+      syncLanguages();
+    } else if (draft.fields?.language) {
+      const items = String(draft.fields.language)
+        .split(',')
+        .map((item) => item.trim())
+        .filter(Boolean);
+      languagesRoot?.querySelectorAll('input[type="checkbox"]').forEach((input) => {
+        if (!(input instanceof HTMLInputElement)) return;
+        input.checked = items.includes(input.value);
+      });
+      syncLanguages();
+    }
     syncWhatsappDial();
     if (draft.fields?.whatsappDial && whatsappDial) {
       whatsappDial.textContent = String(draft.fields.whatsappDial);
@@ -1270,13 +1388,10 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       const raw = localStorage.getItem(DRAFT_KEY);
       if (!raw) return;
       applyDraft(JSON.parse(raw));
-      setStatus('Draft restored.', 'info');
     } catch {
       clearDraft();
     }
   };
-
-  draftBtn?.addEventListener('click', saveDraft);
 
   form?.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -1286,6 +1401,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     renameSocialRows();
     renameCollabRows();
     renameScopeRows();
+    syncLanguages();
     const data = new FormData(form);
     const get = (key) => String(data.get(key) ?? '').trim();
 
@@ -1328,6 +1444,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       `Country: ${get('country') || '—'}`,
       `City: ${get('city') || '—'}`,
       `Language: ${get('language') || '—'}`,
+      `Email updates opt-in: ${get('emailOptIn') === 'yes' ? 'Yes' : 'No'}`,
       `WhatsApp: ${
         get('whatsappNumber')
           ? `${get('whatsappDial') || ''} ${get('whatsappNumber')}`.trim()
@@ -1384,12 +1501,12 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       clearDraft();
       currencyTouched = false;
       cityCombo?.clear();
-      languageCombo?.clear();
+      syncLanguages();
       syncCurrencyFromCountry(true);
       syncWhatsappDial();
       updateRatePlaceholders();
       setStatus('', 'success');
-      showCreatorSuccess('Thanks! We got your application. We will contact you soon.');
+      showCreatorSuccess();
     } catch (error) {
       setStatus(error instanceof Error ? error.message : 'Could not submit. Please try again.', 'error');
     } finally {
@@ -1399,6 +1516,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
   syncCurrencyFromCountry(true);
   syncWhatsappDial();
+  syncLanguages();
   updateRatePlaceholders();
   refreshScopeOptions();
   syncScopeUi();
