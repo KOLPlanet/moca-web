@@ -28,17 +28,171 @@ const categories = [
 ];
 
 const languages = [
-  'English',
+  'Afrikaans',
+  'Albanian',
+  'Albanian (Tosk)',
+  'Amharic',
+  'Arabic',
+  'Arabic (Egyptian)',
+  'Armenian',
+  'Assamese',
+  'Asturian',
+  'Avaric',
+  'Azerbaijani',
+  'Azerbaijani, South',
+  'Bashkir',
+  'Bavarian',
+  'Belarusian',
+  'Bengali',
+  'Bicolano, Central',
+  'Bihari',
+  'Bishnupriya Manipuri',
+  'Bosnian',
+  'Bulgarian',
+  'Buriat, Russia',
+  'Burmese',
+  'Catalan',
+  'Cebuano',
+  'Central Khmer',
+  'Chavacano',
+  'Chechen',
   'Chinese',
-  'Bahasa Indonesia',
+  'Chuvash',
+  'Cornish',
+  'Corsican',
+  'Croatian',
+  'Czech',
+  'Danish',
+  'Dimli',
+  'Divehi',
+  'Dotyali',
+  'Dutch',
+  'Emiliano-Romagnolo',
+  'English',
+  'Erzya',
+  'Estonian',
+  'Finnish',
+  'French',
+  'Frisian, Northern',
+  'Frisian, Western',
+  'Gaelic (Scots)',
+  'Galician',
+  'Georgian',
+  'German',
+  'Greek',
+  'Guarani',
+  'Gujarati',
+  'Haitian',
+  'Hebrew',
   'Hindi',
-  'Thai',
-  'Malay',
-  'Tagalog',
-  'Vietnamese',
+  'Hungarian',
+  'Icelandic',
+  'Ido',
+  'Iloko',
+  'Indonesian',
+  'Interlingua',
+  'Interlingue',
+  'Irish',
+  'Italian',
   'Japanese',
+  'Javanese',
+  'Kalmyk',
+  'Kannada',
+  'Karachay-Balkar',
+  'Kazakh',
+  'Kinyarwanda',
+  'Kirghiz',
+  'Komi',
+  'Konkani, Goan',
   'Korean',
-  'Other',
+  'Kurdish',
+  'Kurdish, Central',
+  'Lao',
+  'Latvian',
+  'Lezghian',
+  'Limburgish',
+  'Lithuanian',
+  'Lojban',
+  'Lombard',
+  'Low German',
+  'Luri, Northern',
+  'Macedonian',
+  'Maithili',
+  'Malagasy',
+  'Malay',
+  'Malayalam',
+  'Manx',
+  'Marathi',
+  'Mari, Eastern',
+  'Mari, Western',
+  'Mazanderani',
+  'Minangkabau',
+  'Mingrelian',
+  'Mirandese',
+  'Mongolian',
+  'Nahuatl languages',
+  'Neapolitan',
+  'Nepali',
+  'Newari',
+  'Norwegian',
+  'Oriya (Odia/Odiya)',
+  'Ossetian',
+  'Pampanga',
+  'Persian',
+  'Pfaelzisch',
+  'Piedmontese',
+  'Polish',
+  'Portuguese',
+  'Punjabi',
+  'Punjabi, Western',
+  'Pushto',
+  'Raeto-Romance',
+  'Romanian',
+  'Russian',
+  'Rusyn',
+  'Sakha',
+  'Sanskrit',
+  'Sardinian',
+  'Scots',
+  'Serbian',
+  'Serbo-Croatian',
+  'Sicilian',
+  'Sindhi',
+  'Sinhala',
+  'Slovak',
+  'Slovenian',
+  'Somali',
+  'Sorbian, Lower',
+  'Sorbian, Upper',
+  'Spanish',
+  'Sundanese',
+  'Swahili',
+  'Swedish',
+  'Tagalog',
+  'Tajik',
+  'Tamil',
+  'Tatar',
+  'Telugu',
+  'Thai',
+  'Tibetan',
+  'Turkish',
+  'Turkmen',
+  'Tuvinian',
+  'Uighur',
+  'Ukrainian',
+  'Urdu',
+  'Uzbek',
+  'Venetian',
+  'Veps',
+  'Vietnamese',
+  'Waray',
+  'West Flemish',
+  'Wu Chinese',
+  'Xhosa',
+  'Yiddish',
+  'Yoruba',
+  'Yue Chinese',
+  'Zulu',
 ];
 
 const countries = [
@@ -114,7 +268,18 @@ const countries = [
   },
 ];
 
-const currencies = ['USD', 'CAD', 'IDR', 'MYR', 'SGD', 'THB', 'VND', 'PHP', 'INR', 'CNY', 'EUR'];
+const currencyOptions = [
+  { code: 'IDR', symbol: 'Rp' },
+  { code: 'INR', symbol: '₹' },
+  { code: 'SGD', symbol: 'S$' },
+  { code: 'MYR', symbol: 'RM' },
+  { code: 'PHP', symbol: '₱' },
+  { code: 'THB', symbol: '฿' },
+  { code: 'VND', symbol: '₫' },
+  { code: 'USD', symbol: '$' },
+  { code: 'CAD', symbol: 'CA$' },
+  { code: 'CNY', symbol: '¥' },
+];
 
 const socialPlatforms = [
   { name: 'Instagram', icon: '/images/social/instagram.svg' },
@@ -181,7 +346,8 @@ const tagSuggestions = [
 
 const rateScopeGroups = [
   {
-    label: 'Common Content',
+    label: 'Standard Deliverables',
+    kind: 'deliverable',
     items: [
       'IG Reel',
       'IG Story',
@@ -198,7 +364,8 @@ const rateScopeGroups = [
     ],
   },
   {
-    label: 'Extra Options',
+    label: 'Add-ons & Rights',
+    kind: 'addon',
     items: [
       'Content Usage (Digital)',
       'Post Retention',
@@ -234,10 +401,15 @@ const rateScopeGroups = [
       </p>
       <label class="creator-join-form__field">
         <span>Creator Name <i aria-hidden="true">*</i></span>
-        <input name="accountName" type="text" autocomplete="name" maxlength="120" required placeholder="Your name as a creator" data-required data-error-empty="Please enter your creator name." />
+        <input name="accountName" type="text" autocomplete="name" maxlength="120" required placeholder="Your name" data-required data-error-empty="Please enter your creator name." />
         <p class="creator-join-form__error" data-field-error hidden></p>
       </label>
       <div class="creator-join-form__row">
+        <label class="creator-join-form__field">
+          <span>Date of Birth</span>
+          <input name="birthday" type="text" inputmode="numeric" maxlength="10" placeholder="DD-MM-YYYY" autocomplete="bday" data-birthday data-error-invalid="Please use DD-MM-YYYY for birthday." />
+          <p class="creator-join-form__error" data-field-error hidden></p>
+        </label>
         <label class="creator-join-form__field">
           <span>Gender</span>
           <select name="gender">
@@ -246,11 +418,6 @@ const rateScopeGroups = [
             <option value="Female">Female</option>
             <option value="Other">Other</option>
           </select>
-          <p class="creator-join-form__error" data-field-error hidden></p>
-        </label>
-        <label class="creator-join-form__field">
-          <span>Date of Birth</span>
-          <input name="birthday" type="text" inputmode="numeric" maxlength="10" placeholder="YYYY-MM-DD" autocomplete="bday" data-birthday data-error-invalid="Please use YYYY-MM-DD for birthday." />
           <p class="creator-join-form__error" data-field-error hidden></p>
         </label>
       </div>
@@ -286,36 +453,43 @@ const rateScopeGroups = [
       </div>
       <div class="creator-join-form__field" data-language-field>
         <span>Language (Multiple)</span>
-        <div class="creator-join-form__chips creator-join-form__chips--compact" data-creator-languages>
-          {
-            languages.map((item) => (
-              <label class="creator-join-form__chip">
-                <input type="checkbox" name="languages" value={item} />
-                <span class="creator-join-form__chip-face">{item}</span>
-              </label>
-            ))
-          }
+        <div class="creator-join-form__tags creator-join-form__language-picker" data-language-picker>
+          <div class="creator-join-form__tag-list" data-language-list></div>
+          <div class="creator-join-form__tag-input-wrap">
+            <input
+              class="creator-join-form__tag-input"
+              type="text"
+              maxlength="40"
+              placeholder="Search languages"
+              autocomplete="off"
+              data-language-input
+              aria-autocomplete="list"
+              aria-controls="creator-language-options"
+              aria-expanded="false"
+            />
+            <ul class="creator-join-form__tag-suggest" id="creator-language-options" role="listbox" hidden data-language-suggest></ul>
+          </div>
+          <input type="hidden" name="language" value="" data-language-value />
         </div>
-        <input type="hidden" name="language" value="" data-language-value />
       </div>
     </section>
 
     <section class="creator-join-form__section">
       <h2>Contact</h2>
       <p class="creator-join-form__hint">We use this to send you brand collaboration opportunities.</p>
-      <label class="creator-join-form__field">
+      <div class="creator-join-form__field">
         <span>Email <i aria-hidden="true">*</i></span>
         <input name="email" type="email" autocomplete="email" maxlength="254" required placeholder="name@example.com" data-required data-error-empty="Please enter your email." data-error-invalid="Please enter a valid email address." />
         <p class="creator-join-form__error" data-field-error hidden></p>
-      </label>
-      <label class="creator-join-form__check">
-        <input type="checkbox" name="emailOptIn" value="yes" checked data-email-opt-in />
-        <span>I agree to receive brand collaboration opportunities and updates via email.</span>
-      </label>
+        <label class="creator-join-form__check">
+          <input type="checkbox" name="emailOptIn" value="yes" checked data-email-opt-in />
+          <span>I agree to receive brand collaboration opportunities and updates via email.</span>
+        </label>
+      </div>
       <div class="creator-join-form__field">
         <span>WhatsApp</span>
         <div class="creator-join-form__whatsapp">
-          <span class="creator-join-form__whatsapp-dial" data-whatsapp-dial>—</span>
+          <span class="creator-join-form__whatsapp-dial is-placeholder" data-whatsapp-dial>Country code</span>
           <input type="hidden" name="whatsappDial" value="" data-whatsapp-dial-value />
           <input
             name="whatsappNumber"
@@ -361,7 +535,13 @@ const rateScopeGroups = [
           </div>
           <label class="creator-join-form__field creator-join-form__field--handle">
             <span class="sr-only">Account or Link</span>
-            <input type="text" maxlength="300" placeholder="@username or profile link" data-social-handle />
+            <input
+              type="text"
+              maxlength="300"
+              placeholder="@username or profile link"
+              data-social-handle
+              data-error-invalid="Enter @username or a valid profile link."
+            />
           </label>
           <button class="creator-join-form__remove" type="button" data-remove-social aria-label="Remove platform">
             ×
@@ -436,13 +616,15 @@ const rateScopeGroups = [
               data-rate-file
             />
             <span class="creator-join-form__upload-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
                 <path d="M12 16V7m0 0-3.2 3.2M12 7l3.2 3.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M6.5 16.5v1.2c0 .7.6 1.3 1.3 1.3h8.4c.7 0 1.3-.6 1.3-1.3v-1.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
               </svg>
             </span>
-            <span>Upload your rate card</span>
-            <small>Support JPG / PNG / PDF.</small>
+            <span class="creator-join-form__upload-copy">
+              <span>Upload your rate card</span>
+              <small>Support JPG / PNG / PDF.</small>
+            </span>
           </label>
           <div class="creator-join-form__upload-preview" hidden data-rate-preview>
             <img alt="" data-rate-preview-image hidden />
@@ -477,8 +659,8 @@ const rateScopeGroups = [
             <span>Currency</span>
             <select name="currency" data-currency>
               <option value="" selected disabled hidden>Select currency</option>
-              {currencies.map((item) => (
-                <option value={item}>{item}</option>
+              {currencyOptions.map((item) => (
+                <option value={item.code}>{item.code} ({item.symbol})</option>
               ))}
             </select>
           </label>

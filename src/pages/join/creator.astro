@@ -7,6 +7,7 @@ import '../../styles/home.css';
 export const prerender = true;
 
 const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact';
+const mockCreatorSubmit = import.meta.env.DEV;
 ---
 
 <BaseLayout
@@ -33,33 +34,64 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
       <CreatorJoinForm />
       <div class="creator-join-success" data-creator-join-success hidden>
-        <div class="creator-join-success__card">
-          <span class="creator-join-success__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
-              <path d="m5 12.5 4.25 4.25L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </span>
-          <h2>Profile received!</h2>
-          <p>
-            Our team is reviewing your portfolio. We’ll reach out via email as soon as a matching
-            brand collaboration becomes available.
-          </p>
-          <a class="creator-join-success__home" href="/">Back to homepage</a>
+        <div class="creator-join-success__stage">
+          <div class="creator-join-success__glow" aria-hidden="true"></div>
+          <div class="creator-join-success__card">
+            <img
+              class="creator-join-success__brand"
+              src="/images/kolplanet/logo.svg"
+              alt="KOLPlanet"
+              width="132"
+              height="28"
+            />
+            <span class="creator-join-success__mark" aria-hidden="true">
+              <span class="creator-join-success__ring"></span>
+              <span class="creator-join-success__icon">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none">
+                  <path
+                    d="m5 12.5 4.25 4.25L19 7"
+                    stroke="currentColor"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </span>
+            </span>
+            <p class="creator-join-success__eyebrow">Application submitted</p>
+            <h2>Profile received!</h2>
+            <p class="creator-join-success__copy">
+              Our team is reviewing your portfolio. We’ll reach out via email as soon as a matching
+              brand collaboration becomes available.
+            </p>
+            <a class="creator-join-success__home" href="/">Back to homepage</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </BaseLayout>
 
-<script define:vars={{ contactEndpoint }}>
+<script define:vars={{ contactEndpoint, mockCreatorSubmit }}>
   const form = document.querySelector('[data-creator-join-form]');
   const status = document.querySelector('[data-creator-join-status]');
   const submit = document.querySelector('[data-creator-join-submit]');
   const successPanel = document.querySelector('[data-creator-join-success]');
   const pageIntro = document.querySelector('.creator-join-page__intro');
+  const previewParams = new URLSearchParams(window.location.search);
+  const useMockSubmit =
+    mockCreatorSubmit ||
+    previewParams.has('mock') ||
+    previewParams.get('preview') === 'success' ||
+    previewParams.has('previewSuccess');
   const categories = document.querySelector('[data-creator-categories]');
-  const languagesRoot = document.querySelector('[data-creator-languages]');
+  const languageField = document.querySelector('[data-language-field]');
+  const languagePicker = document.querySelector('[data-language-picker]');
+  const languageList = document.querySelector('[data-language-list]');
+  const languageInput = document.querySelector('[data-language-input]');
+  const languageSuggest = document.querySelector('[data-language-suggest]');
   const languageValue = document.querySelector('[data-language-value]');
+  const selectedLanguages = [];
   const socialList = document.querySelector('[data-social-list]');
   const addSocial = document.querySelector('[data-add-social]');
   const socialTemplate = document.querySelector('[data-social-template]');
@@ -182,6 +214,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
   };
 
   const showCreatorSuccess = () => {
+    document.querySelector('.creator-join-page')?.classList.add('is-success');
     if (form instanceof HTMLElement) form.hidden = true;
     if (pageIntro instanceof HTMLElement) pageIntro.hidden = true;
     if (successPanel instanceof HTMLElement) {
@@ -240,8 +273,8 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
   const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
   const isValidBirthday = (value) => {
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
-    const [year, month, day] = value.split('-').map(Number);
+    if (!/^\d{2}-\d{2}-\d{4}$/.test(value)) return false;
+    const [day, month, year] = value.split('-').map(Number);
     const date = new Date(Date.UTC(year, month - 1, day));
     return (
       date.getUTCFullYear() === year &&
@@ -252,17 +285,40 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     );
   };
 
+  const isValidSocialHandle = (raw) => {
+    const value = String(raw || '').trim();
+    if (!value || value.length > 300) return false;
+
+    if (/^https?:\/\//i.test(value)) {
+      try {
+        const url = new URL(value);
+        return Boolean(url.hostname && url.hostname.includes('.'));
+      } catch {
+        return false;
+      }
+    }
+
+    // Domain-style link without protocol: instagram.com/user, www.tiktok.com/@name
+    if (/^(www\.)?[\w-]+(\.[\w-]+)+([/?#].*)?$/i.test(value)) return true;
+
+    // @username or bare username (no spaces / mid-string @)
+    const handle = value.startsWith('@') ? value.slice(1) : value;
+    if (!handle || handle.includes('@') || /\s/.test(handle)) return false;
+    return /^[\p{L}\p{N}._\-#]{2,100}$/u.test(handle);
+  };
+
   const formatBirthdayInput = (input) => {
     const digits = input.value.replace(/\D/g, '').slice(0, 8);
     const parts = [];
-    if (digits.length > 0) parts.push(digits.slice(0, 4));
-    if (digits.length > 4) parts.push(digits.slice(4, 6));
-    if (digits.length > 6) parts.push(digits.slice(6, 8));
+    if (digits.length > 0) parts.push(digits.slice(0, 2));
+    if (digits.length > 2) parts.push(digits.slice(2, 4));
+    if (digits.length > 4) parts.push(digits.slice(4, 8));
     input.value = parts.join('-');
   };
 
   const currencySymbols = {
     USD: '$',
+    CAD: 'CA$',
     IDR: 'Rp',
     MYR: 'RM',
     SGD: 'S$',
@@ -297,10 +353,13 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
   const syncWhatsappDial = () => {
     if (!(countrySelect instanceof HTMLSelectElement)) return;
-    const dial = countrySelect.value ? countryDial[countrySelect.value] || '+' : '—';
-    if (whatsappDial) whatsappDial.textContent = dial;
+    const dial = countrySelect.value ? countryDial[countrySelect.value] || '+' : '';
+    if (whatsappDial) {
+      whatsappDial.textContent = dial || 'Country code';
+      whatsappDial.classList.toggle('is-placeholder', !dial);
+    }
     if (whatsappDialValue instanceof HTMLInputElement) {
-      whatsappDialValue.value = dial === '—' ? '' : dial;
+      whatsappDialValue.value = dial;
     }
   };
 
@@ -412,14 +471,126 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
   const syncLanguages = () => {
     if (!(languageValue instanceof HTMLInputElement)) return;
-    const selected = [...(languagesRoot?.querySelectorAll('input[type="checkbox"]:checked') ?? [])]
-      .map((input) => (input instanceof HTMLInputElement ? input.value : ''))
-      .filter(Boolean);
-    languageValue.value = selected.join(', ');
-    languagesRoot?.closest('.creator-join-form__field')?.classList.remove('is-invalid');
+    if (languageList) {
+      languageList.innerHTML = '';
+      selectedLanguages.forEach((lang) => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'creator-join-form__tag';
+        chip.innerHTML = `<span>${lang}</span><span aria-hidden="true">×</span>`;
+        chip.setAttribute('aria-label', `Remove ${lang}`);
+        chip.addEventListener('click', () => {
+          const index = selectedLanguages.indexOf(lang);
+          if (index >= 0) selectedLanguages.splice(index, 1);
+          syncLanguages();
+          renderLanguageSuggest(languageInput instanceof HTMLInputElement ? languageInput.value : '');
+          languageInput?.focus();
+        });
+        languageList.appendChild(chip);
+      });
+    }
+    languageValue.value = selectedLanguages.join(', ');
+    languageField?.classList.remove('is-invalid');
   };
 
-  languagesRoot?.addEventListener('change', syncLanguages);
+  const availableLanguages = () =>
+    languageOptions.filter(
+      (item) => !selectedLanguages.some((lang) => lang.toLowerCase() === String(item).toLowerCase()),
+    );
+
+  const rankLanguages = (query) => {
+    const q = String(query || '').trim().toLowerCase();
+    const pool = availableLanguages();
+    if (!q) return pool;
+    const starts = [];
+    const contains = [];
+    for (const item of pool) {
+      const lower = String(item).toLowerCase();
+      if (lower.startsWith(q)) starts.push(item);
+      else if (lower.includes(q)) contains.push(item);
+    }
+    return [...starts, ...contains];
+  };
+
+  const hideLanguageSuggest = () => {
+    if (!languageSuggest) return;
+    languageSuggest.hidden = true;
+    languageSuggest.innerHTML = '';
+    languageInput?.setAttribute('aria-expanded', 'false');
+  };
+
+  const renderLanguageSuggest = (query = '') => {
+    if (!languageSuggest || !languageInput) return;
+    const matches = rankLanguages(query);
+    if (!matches.length) {
+      hideLanguageSuggest();
+      return;
+    }
+    languageSuggest.innerHTML = matches
+      .map((item) => `<li role="option"><button type="button" data-language-option>${item}</button></li>`)
+      .join('');
+    languageSuggest.hidden = false;
+    languageInput.setAttribute('aria-expanded', 'true');
+  };
+
+  const addLanguage = (raw) => {
+    const typed = String(raw || '').trim();
+    if (!typed) return false;
+    const match = languageOptions.find((item) => String(item).toLowerCase() === typed.toLowerCase());
+    if (!match) {
+      setStatus('Please choose a language from the list.', 'info');
+      return false;
+    }
+    if (selectedLanguages.some((lang) => lang.toLowerCase() === match.toLowerCase())) {
+      setStatus('This language is already added.', 'info');
+      return false;
+    }
+    selectedLanguages.push(match);
+    syncLanguages();
+    setStatus('');
+    return true;
+  };
+
+  languageInput?.addEventListener('focus', () => renderLanguageSuggest(languageInput.value));
+  languageInput?.addEventListener('click', () => renderLanguageSuggest(languageInput.value));
+  languageInput?.addEventListener('input', () => renderLanguageSuggest(languageInput.value));
+  languageInput?.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === 'Tab') {
+      const first = languageSuggest?.querySelector('[data-language-option]');
+      const value = languageInput instanceof HTMLInputElement ? languageInput.value.trim() : '';
+      if (!value && !(first instanceof HTMLButtonElement)) return;
+      if (event.key === 'Tab' && !value) return;
+      event.preventDefault();
+      const pick = first instanceof HTMLButtonElement ? first.textContent || '' : value;
+      if (addLanguage(pick)) {
+        if (languageInput instanceof HTMLInputElement) languageInput.value = '';
+        renderLanguageSuggest('');
+      } else {
+        renderLanguageSuggest(value);
+      }
+    } else if (event.key === 'Backspace' && languageInput instanceof HTMLInputElement && !languageInput.value && selectedLanguages.length) {
+      selectedLanguages.pop();
+      syncLanguages();
+      renderLanguageSuggest('');
+    } else if (event.key === 'Escape') {
+      hideLanguageSuggest();
+    }
+  });
+
+  languageSuggest?.addEventListener('click', (event) => {
+    const button = event.target instanceof Element ? event.target.closest('[data-language-option]') : null;
+    if (!(button instanceof HTMLButtonElement)) return;
+    if (addLanguage(button.textContent || '')) {
+      if (languageInput instanceof HTMLInputElement) languageInput.value = '';
+      languageInput?.focus();
+      renderLanguageSuggest('');
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (languageField && event.composedPath().includes(languageField)) return;
+    hideLanguageSuggest();
+  });
 
   countrySelect?.addEventListener('change', () => {
     currencyTouched = false;
@@ -955,8 +1126,12 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
   };
 
   const scopeKind = (scopeName) => {
-    const addonGroup = rateScopeGroups.find((group) => /add-?ons/i.test(group.label || ''));
-    return addonGroup?.items?.includes(scopeName) ? 'addon' : 'deliverable';
+    for (const group of rateScopeGroups) {
+      if (!group.items?.includes(scopeName)) continue;
+      if (group.kind === 'addon' || group.kind === 'deliverable') return group.kind;
+      return /add-?ons|extra/i.test(group.label || '') ? 'addon' : 'deliverable';
+    }
+    return 'deliverable';
   };
 
   const refreshScopeOptions = () => {
@@ -966,7 +1141,12 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
       .map((group) => {
         const items = group.items || [];
         if (!items.length) return '';
-        const kind = /add-?ons/i.test(group.label || '') ? 'addon' : 'deliverable';
+        const kind =
+          group.kind === 'addon' || group.kind === 'deliverable'
+            ? group.kind
+            : /add-?ons|extra/i.test(group.label || '')
+              ? 'addon'
+              : 'deliverable';
         return `<div class="creator-join-form__scope-group" data-scope-kind="${kind}">
           <p class="creator-join-form__scope-menu-label">${group.label}</p>
           <ul>
@@ -1113,7 +1293,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
 
     const birthday = form?.querySelector('[data-birthday]');
     if (birthday instanceof HTMLInputElement && birthday.value.trim() && !isValidBirthday(birthday.value.trim())) {
-      const message = birthday.getAttribute('data-error-invalid') || 'Please use YYYY-MM-DD for birthday.';
+      const message = birthday.getAttribute('data-error-invalid') || 'Please use DD-MM-YYYY for birthday.';
       markInvalid(birthday, message);
       focusInvalid(birthday);
       return false;
@@ -1169,6 +1349,18 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
         focusInvalid(hasPlatform ? handle : platform);
         return false;
       }
+      if (hasHandle && !isValidSocialHandle(handle.value)) {
+        const socialBlock = form?.querySelector('[data-validate-block="socials"]');
+        const message =
+          handle.getAttribute('data-error-invalid') ||
+          'Enter @username or a valid profile link.';
+        markInvalid(handle);
+        socialBlock?.classList.add('is-invalid');
+        row.classList.add('is-invalid');
+        setFieldError(socialBlock, message);
+        focusInvalid(handle);
+        return false;
+      }
     }
 
     if (!selectedTags.length) {
@@ -1193,9 +1385,9 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     syncTags();
     if (tagInput) tagInput.value = '';
     hideSuggest();
-    languagesRoot?.querySelectorAll('input[type="checkbox"]').forEach((input) => {
-      if (input instanceof HTMLInputElement) input.checked = false;
-    });
+    selectedLanguages.length = 0;
+    if (languageInput instanceof HTMLInputElement) languageInput.value = '';
+    hideLanguageSuggest();
     syncLanguages();
     socialList?.replaceChildren();
     ensureDefaultSocialRow();
@@ -1221,7 +1413,7 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     return {
       fields,
       categories: data.getAll('categories').map(String),
-      languages: data.getAll('languages').map(String),
+      languages: [...selectedLanguages],
       tags: [...selectedTags],
       currencyTouched,
       socials: [...(socialList?.querySelectorAll('[data-social-item]') ?? [])]
@@ -1293,27 +1485,32 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     });
 
     cityCombo?.syncFromHidden();
-    syncLanguages();
+    selectedLanguages.length = 0;
     if (Array.isArray(draft.languages)) {
-      languagesRoot?.querySelectorAll('input[type="checkbox"]').forEach((input) => {
-        if (!(input instanceof HTMLInputElement)) return;
-        input.checked = draft.languages.includes(input.value);
+      draft.languages.forEach((lang) => {
+        if (typeof lang === 'string' && lang) {
+          const match = languageOptions.find((item) => String(item).toLowerCase() === lang.toLowerCase());
+          if (match) selectedLanguages.push(match);
+        }
       });
-      syncLanguages();
     } else if (draft.fields?.language) {
-      const items = String(draft.fields.language)
+      String(draft.fields.language)
         .split(',')
         .map((item) => item.trim())
-        .filter(Boolean);
-      languagesRoot?.querySelectorAll('input[type="checkbox"]').forEach((input) => {
-        if (!(input instanceof HTMLInputElement)) return;
-        input.checked = items.includes(input.value);
-      });
-      syncLanguages();
+        .filter(Boolean)
+        .forEach((lang) => {
+          const match = languageOptions.find((item) => String(item).toLowerCase() === lang.toLowerCase());
+          if (match && !selectedLanguages.includes(match)) selectedLanguages.push(match);
+        });
     }
+    syncLanguages();
+    if (languageInput instanceof HTMLInputElement) languageInput.value = '';
+    hideLanguageSuggest();
     syncWhatsappDial();
     if (draft.fields?.whatsappDial && whatsappDial) {
-      whatsappDial.textContent = String(draft.fields.whatsappDial);
+      const dial = String(draft.fields.whatsappDial);
+      whatsappDial.textContent = dial || 'Country code';
+      whatsappDial.classList.toggle('is-placeholder', !dial);
     }
     if (draft.fields?.whatsappDial && whatsappDialValue instanceof HTMLInputElement) {
       whatsappDialValue.value = String(draft.fields.whatsappDial);
@@ -1479,21 +1676,25 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
     setStatus('Submitting…', 'info');
 
     try {
-      if (rateCardFile) {
-        setCreatorSubmitting(true, 'Uploading…');
-        setStatus('Uploading photo…', 'info');
-        const attachment = await prepareRateCardFile(rateCardFile);
-        if (attachment) payload.set('rateCard', attachment);
-        setCreatorSubmitting(true);
-        setStatus('Submitting…', 'info');
+      if (useMockSubmit) {
+        await new Promise((resolve) => setTimeout(resolve, 500));
+      } else {
+        if (rateCardFile) {
+          setCreatorSubmitting(true, 'Uploading…');
+          setStatus('Uploading photo…', 'info');
+          const attachment = await prepareRateCardFile(rateCardFile);
+          if (attachment) payload.set('rateCard', attachment);
+          setCreatorSubmitting(true);
+          setStatus('Submitting…', 'info');
+        }
+        const response = await fetch(contactEndpoint, {
+          method: 'POST',
+          body: payload,
+          headers: { Accept: 'application/json' },
+        });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.message || 'Could not submit. Please try again.');
       }
-      const response = await fetch(contactEndpoint, {
-        method: 'POST',
-        body: payload,
-        headers: { Accept: 'application/json' },
-      });
-      const result = await response.json();
-      if (!response.ok) throw new Error(result.message || 'Could not submit. Please try again.');
 
       form.reset();
       resetDynamicFields();
@@ -1522,4 +1723,11 @@ const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || '/api/contact
   syncScopeUi();
   ensureDefaultSocialRow();
   restoreDraft();
+
+  if (
+    previewParams.get('preview') === 'success' ||
+    previewParams.has('previewSuccess')
+  ) {
+    showCreatorSuccess();
+  }
 </script>
