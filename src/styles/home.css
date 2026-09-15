@@ -2489,12 +2489,11 @@
   height: 48px;
   display: grid;
   place-items: center;
+  border: 1.5px solid #436d21;
   border-radius: 50%;
-  color: #fff;
-  background: linear-gradient(165deg, #74a246 0%, #619239 58%, #547f32 100%);
-  box-shadow:
-    0 8px 16px rgba(97, 146, 57, 0.22),
-    0 0 0 5px rgba(97, 146, 57, 0.08);
+  color: #436d21;
+  background: rgba(97, 146, 57, 0.14);
+  box-shadow: none;
   animation: creator-success-pop 640ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
