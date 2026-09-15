@@ -316,6 +316,38 @@ const mockCreatorSubmit = import.meta.env.DEV;
     input.value = parts.join('-');
   };
 
+  const formatRateAmount = (raw) => {
+    const cleaned = String(raw || '').replace(/[^\d.]/g, '');
+    if (!cleaned) return '';
+    const dot = cleaned.indexOf('.');
+    const intRaw = (dot === -1 ? cleaned : cleaned.slice(0, dot)).replace(/^0+(?=\d)/, '');
+    const decRaw = dot === -1 ? '' : cleaned.slice(dot + 1).replace(/\D/g, '').slice(0, 2);
+    const intPart = intRaw || (cleaned.startsWith('0') || dot === 0 ? '0' : '');
+    const withCommas = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    if (dot !== -1) return `${withCommas}.${decRaw}`;
+    return withCommas;
+  };
+
+  const formatRateAmountInput = (input) => {
+    const selection = input.selectionStart ?? input.value.length;
+    const digitsBefore = input.value.slice(0, selection).replace(/[^\d.]/g, '').length;
+    const next = formatRateAmount(input.value);
+    input.value = next;
+    let seen = 0;
+    let caret = next.length;
+    for (let i = 0; i < next.length; i += 1) {
+      if (/[\d.]/.test(next[i])) {
+        seen += 1;
+        if (seen >= digitsBefore) {
+          caret = i + 1;
+          break;
+        }
+      }
+    }
+    if (digitsBefore === 0) caret = next.startsWith('0.') ? 1 : 0;
+    input.setSelectionRange(caret, caret);
+  };
+
   const currencySymbols = {
     USD: '$',
     CAD: 'CA$',
@@ -1204,7 +1236,7 @@ const mockCreatorSubmit = import.meta.env.DEV;
     if (label) label.textContent = scopeName;
     if (price instanceof HTMLInputElement) {
       price.name = `ratePrice${count + 1}`;
-      price.value = priceValue;
+      price.value = formatRateAmount(priceValue);
     }
     if (row instanceof HTMLElement) {
       row.dataset.scopeKind = scopeKind(scopeName);
@@ -1251,6 +1283,12 @@ const mockCreatorSubmit = import.meta.env.DEV;
     const target = event.target;
     if (!(target instanceof Element)) return;
     if (target instanceof HTMLInputElement && target.hasAttribute('data-birthday')) formatBirthdayInput(target);
+    if (
+      target instanceof HTMLInputElement &&
+      (target.hasAttribute('data-rate-amount') || target.hasAttribute('data-scope-price'))
+    ) {
+      formatRateAmountInput(target);
+    }
     target.classList.remove('is-invalid');
     target.closest('.creator-join-form__field')?.classList.remove('is-invalid');
     target.closest('[data-social-item]')?.classList.remove('is-invalid');
