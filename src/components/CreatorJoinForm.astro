@@ -290,6 +290,7 @@ const socialPlatforms = [
   { name: 'WeChat', icon: '/images/social/wechat.svg' },
   { name: 'Telegram', icon: '/images/social/telegram.svg' },
   { name: 'X', icon: '/images/social/x.svg' },
+  { name: 'Threads', icon: '/images/social/threads.svg' },
   { name: 'LinkedIn', icon: '/images/social/linkedin.svg' },
   { name: 'Snapchat', icon: '/images/social/snapchat.svg' },
   { name: 'Pinterest', icon: '/images/social/pinterest.svg' },
@@ -302,7 +303,6 @@ const socialPlatforms = [
   { name: 'Moj', icon: '/images/social/moj.svg' },
   { name: 'Bilibili', icon: '/images/social/bilibili.svg' },
   { name: 'Shopee', icon: '/images/social/shopee.svg' },
-  { name: 'Threads', icon: '/images/social/threads.svg' },
   { name: 'Lemon8', icon: '/images/social/lemon8.svg' },
   { name: 'Discord', icon: '/images/social/discord.svg' },
 ];
@@ -406,23 +406,6 @@ const rateScopeGroups = [
       </label>
       <div class="creator-join-form__row">
         <label class="creator-join-form__field">
-          <span>Date of Birth</span>
-          <input name="birthday" type="text" inputmode="numeric" maxlength="10" placeholder="DD-MM-YYYY" autocomplete="bday" data-birthday data-error-invalid="Please use DD-MM-YYYY for birthday." />
-          <p class="creator-join-form__error" data-field-error hidden></p>
-        </label>
-        <label class="creator-join-form__field">
-          <span>Gender</span>
-          <select name="gender">
-            <option value="" selected disabled hidden>Select gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-          </select>
-          <p class="creator-join-form__error" data-field-error hidden></p>
-        </label>
-      </div>
-      <div class="creator-join-form__row">
-        <label class="creator-join-form__field">
           <span>Country <i aria-hidden="true">*</i></span>
           <select name="country" autocomplete="country-name" required data-country data-required data-error-empty="Please select your country.">
             <option value="" selected disabled hidden>Select country</option>
@@ -471,6 +454,23 @@ const rateScopeGroups = [
           </div>
           <input type="hidden" name="language" value="" data-language-value />
         </div>
+      </div>
+      <div class="creator-join-form__row">
+        <label class="creator-join-form__field">
+          <span>Gender</span>
+          <select name="gender">
+            <option value="" selected disabled hidden>Select gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+          <p class="creator-join-form__error" data-field-error hidden></p>
+        </label>
+        <label class="creator-join-form__field">
+          <span>Date of Birth</span>
+          <input name="birthday" type="text" inputmode="numeric" maxlength="10" placeholder="DD-MM-YYYY" autocomplete="bday" data-birthday data-error-invalid="Please use DD-MM-YYYY for birthday." />
+          <p class="creator-join-form__error" data-field-error hidden></p>
+        </label>
       </div>
     </section>
 
@@ -643,14 +643,6 @@ const rateScopeGroups = [
               Your Rates
               <b data-scope-count hidden>0</b>
             </h2>
-            <div class="creator-join-form__scope-add" data-scope-picker>
-              <button class="creator-join-form__add" type="button" data-add-scope>
-                <span aria-hidden="true">+</span> Add Rate
-              </button>
-              <div class="creator-join-form__scope-menu" hidden data-scope-menu>
-                <div class="creator-join-form__scope-groups" data-scope-options></div>
-              </div>
-            </div>
           </div>
           <p class="creator-join-form__hint">
             Set your base rates for common deliverables to get recommended to brands faster.
@@ -664,6 +656,14 @@ const rateScopeGroups = [
               ))}
             </select>
           </label>
+          <div class="creator-join-form__scope-add" data-scope-picker>
+            <button class="creator-join-form__add" type="button" data-add-scope>
+              <span aria-hidden="true">+</span> Add Rate
+            </button>
+            <div class="creator-join-form__scope-menu" hidden data-scope-menu>
+              <div class="creator-join-form__scope-groups" data-scope-options></div>
+            </div>
+          </div>
           <div class="creator-join-form__scope-list" data-scope-list></div>
           <template data-scope-template>
             <div class="creator-join-form__scope" data-scope-item>

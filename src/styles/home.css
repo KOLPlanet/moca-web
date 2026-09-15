@@ -2435,9 +2435,9 @@
   position: relative;
   z-index: 1;
   display: grid;
-  justify-items: center;
+  justify-items: stretch;
   gap: 0;
-  padding: 48px 36px 40px;
+  padding: 44px 36px 40px;
   overflow: hidden;
   border: 1px solid rgba(97, 146, 57, 0.12);
   background:
@@ -2445,7 +2445,7 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.9) inset,
     0 20px 40px rgba(16, 24, 16, 0.06);
-  text-align: center;
+  text-align: left;
   animation: creator-success-rise 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -2460,46 +2460,47 @@
 }
 
 .creator-join-success__brand {
+  display: block;
   width: auto;
-  height: 18px;
-  margin-bottom: 26px;
-  opacity: 0.88;
+  height: 20px;
+  margin: 0 auto 32px;
+  opacity: 0.9;
+}
+
+.creator-join-success__title {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+  min-width: 0;
 }
 
 .creator-join-success__mark {
   position: relative;
-  width: 72px;
-  height: 72px;
-  margin-bottom: 20px;
+  flex: none;
+  width: 48px;
+  height: 48px;
   display: grid;
   place-items: center;
 }
 
-.creator-join-success__ring {
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(97, 146, 57, 0.22);
-  border-radius: 50%;
-  animation: creator-success-ring 900ms cubic-bezier(0.22, 1, 0.36, 1) 120ms both;
-}
-
 .creator-join-success__icon {
-  width: 54px;
-  height: 54px;
+  width: 48px;
+  height: 48px;
   display: grid;
   place-items: center;
   border-radius: 50%;
   color: #fff;
   background: linear-gradient(165deg, #74a246 0%, #619239 58%, #547f32 100%);
   box-shadow:
-    0 8px 18px rgba(97, 146, 57, 0.22),
-    0 0 0 6px rgba(97, 146, 57, 0.07);
+    0 8px 16px rgba(97, 146, 57, 0.22),
+    0 0 0 5px rgba(97, 146, 57, 0.08);
   animation: creator-success-pop 640ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .creator-join-success__icon svg {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
 }
 
 .creator-join-success__icon svg path {
@@ -2509,18 +2510,8 @@
   animation: creator-success-check 520ms ease both 180ms;
 }
 
-.creator-join-success__eyebrow {
-  margin: 0 0 8px;
-  color: rgba(79, 122, 47, 0.88);
-  font-family: var(--font-sans);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
 .creator-join-success__card h2 {
-  margin: 0 0 12px;
+  margin: 0;
   color: rgba(16, 24, 16, 0.92);
   font-family: var(--font-display);
   font-size: clamp(1.45rem, 3.2vw, 1.7rem);
@@ -2531,13 +2522,14 @@
 
 .creator-join-success__copy {
   margin: 0 auto;
-  max-width: 21.5rem;
+  max-width: 26rem;
   color: rgba(16, 24, 16, 0.58);
   font-family: var(--font-sans);
   font-size: 0.9rem;
   font-weight: 400;
   letter-spacing: 0.005em;
   line-height: 1.7;
+  text-align: center;
   text-wrap: pretty;
 }
 
@@ -2545,10 +2537,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 168px;
-  min-height: 42px;
-  margin-top: 28px;
-  padding: 0 22px;
+  justify-self: center;
+  min-width: 176px;
+  min-height: 44px;
+  margin-top: 32px;
+  padding: 0 24px;
   border: 0;
   color: #fff;
   background: #619239;
@@ -2570,11 +2563,25 @@
 
 @media (max-width: 520px) {
   .creator-join-success__card {
-    padding: 40px 22px 34px;
+    padding: 36px 22px 32px;
+  }
+
+  .creator-join-success__title {
+    gap: 12px;
+  }
+
+  .creator-join-success__mark,
+  .creator-join-success__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .creator-join-success__icon svg {
+    width: 20px;
+    height: 20px;
   }
 
   .creator-join-success__copy {
-    max-width: 18.5rem;
     font-size: 0.875rem;
   }
 }
@@ -2594,17 +2601,6 @@
   from {
     opacity: 0;
     transform: scale(0.72);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes creator-success-ring {
-  from {
-    opacity: 0;
-    transform: scale(0.7);
   }
   to {
     opacity: 1;
@@ -2636,7 +2632,6 @@
 @media (prefers-reduced-motion: reduce) {
   .creator-join-success__glow,
   .creator-join-success__card,
-  .creator-join-success__ring,
   .creator-join-success__icon,
   .creator-join-success__icon svg path {
     animation: none;
@@ -3317,11 +3312,11 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 12px;
-  min-height: 56px;
-  padding: 12px 16px;
-  border: 1px dashed rgba(16, 24, 16, 0.22);
+  min-height: 88px;
+  padding: 18px 20px;
+  border: 1.5px dashed rgba(16, 24, 16, 0.28);
   color: rgba(0, 0, 0, 0.72);
   background: #fafbf8;
   font-family: var(--font-sans);
@@ -3329,6 +3324,13 @@
   font-weight: 500;
   text-align: left;
   cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.creator-join-form__upload-hit:hover,
+.creator-join-form__upload-hit:focus-within {
+  border-color: rgba(97, 146, 57, 0.7);
+  background: rgba(97, 146, 57, 0.04);
 }
 
 .creator-join-form__upload-input {
@@ -3346,9 +3348,18 @@
   display: grid;
   flex: 0 0 auto;
   place-items: center;
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   color: #436d21;
+  background: rgba(97, 146, 57, 0.14);
+  transition: color 160ms ease, background 160ms ease;
+}
+
+.creator-join-form__upload-hit:hover .creator-join-form__upload-icon,
+.creator-join-form__upload-hit:focus-within .creator-join-form__upload-icon {
+  color: #fff;
+  background: #619239;
 }
 
 .creator-join-form__upload-copy {
@@ -3415,7 +3426,6 @@
 .creator-join-form__scopes-head {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
 }
 
@@ -3441,14 +3451,15 @@
 
 .creator-join-form__scope-add {
   position: relative;
+  justify-self: start;
 }
 
 .creator-join-form__scope-menu {
   position: absolute;
   top: calc(100% + 8px);
   bottom: auto;
-  right: 0;
-  left: auto;
+  left: 0;
+  right: auto;
   z-index: 8;
   width: min(288px, calc(100vw - 28px));
   overflow: hidden;
@@ -3832,7 +3843,8 @@
   }
 
   .creator-join-form__scope-menu {
-    right: -4px;
+    left: 0;
+    right: auto;
     width: min(300px, calc(100vw - 24px));
   }
 
