@@ -2794,9 +2794,9 @@
 }
 
 .creator-join-form__check input {
-  width: 14px;
-  height: 14px;
-  margin-top: 2px;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
   accent-color: #619239;
 }
 
