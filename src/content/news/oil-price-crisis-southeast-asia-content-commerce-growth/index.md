@@ -4,7 +4,7 @@ slug: oil-price-crisis-southeast-asia-content-commerce-growth
 sourceUrl: https://www.moca-tech.net/news/oil-price-crisis-southeast-asia-content-commerce-growth.html
 canonicalUrl: https://www.moca-tech.net/news/oil-price-crisis-southeast-asia-content-commerce-growth.html
 title: "Oil Exceeds $102: Who’s Making Quiet Money in Southeast Asia"
-seoTitle: "Oil at $102, Hormuz Down 95%: Why Southeast Asia Content Commerce Is Accelerating"
+seoTitle: "Oil at $102: Content Commerce Surges in Southeast Asia"
 summary: Southeast Asia’s digital economy reached $300 billion GMV, with e-commerce contributing $185 billion at 15% annual growth (Google-Temasek-Bain e-Conomy SEA, 2025). E-commerce penetration sits at just 13% versus China’s 47%. TikTok Shop Southeast Asia doubled to $45.6 billion GMV in 2025, with Indonesia generating $13.1 billion (Momentum Works, February 2026). KOL marketing spend exceeded $2.1 billion (Statista, 2025), with branded influencer demand up 72% year-over-year (Vero ASEAN, 2025).
 description: Brent crude hits $102. SEA e-commerce reaches $185B at 15% growth. How brands use KOL marketing and TikTok Shop to offset rising shipping costs.
 publishedAt: 2026-03-27T05:20+00:00
