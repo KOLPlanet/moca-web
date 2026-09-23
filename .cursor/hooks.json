@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "hooks": {
+    "workspaceOpen": [
+      {
+        "command": ".cursor/hooks/start-dev.sh",
+        "timeout": 20
+      }
+    ],
+    "sessionStart": [
+      {
+        "command": ".cursor/hooks/start-dev.sh",
+        "timeout": 20
+      }
+    ]
+  }
+}
