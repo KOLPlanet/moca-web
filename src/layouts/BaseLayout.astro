@@ -110,6 +110,7 @@ const googleAnalyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID?.trim();
       rel="stylesheet"
     />
     <title>{pageTitle}</title>
+    <slot name="head" />
     <GoogleAnalytics measurementId={googleAnalyticsId} />
   </head>
   <body class:list={[{ 'layout-bare': bare }]}>
