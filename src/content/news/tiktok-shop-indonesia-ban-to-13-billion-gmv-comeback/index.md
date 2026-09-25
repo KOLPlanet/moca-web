@@ -8,7 +8,7 @@ seoTitle: "TikTok Shop Indonesia: From Ban to $13.1B GMV | MOCA"
 summary: "Key Takeaways: TikTok Shop Indonesia generated $13.1 billion in GMV in 2025, a 111% YoY increase after a 2023 government ban. Indonesia is now TikTok Shop’s second-largest global market. Success factors include price-anchoring content strategies, cultural localization for Indonesia’s Muslim-majority population, and meeting strict local compliance requirements (PT PMA entity, BPOM registration, Halal certification). Peak sales occur during the evening hours (around 7–10 PM WIB), with best-performing products generally priced under $20."
 description: TikTok Shop Indonesia hit $13.1B GMV in 2025 after a government ban. Key market trends, compliance needs, and brand strategies for Southeast Asia.
 publishedAt: 2026-03-17T07:53+00:00
-updatedAt: 2026-06-10T02:22+00:00
+updatedAt: 2026-09-25T15:00+00:00
 author:
   name: MOCA Technology
   type: Organization
@@ -59,12 +59,20 @@ faq:
   - question: Do foreign brands need a local entity to sell on TikTok Shop Indonesia?
     answer: Yes. TikTok Shop Indonesia requires sellers to hold an Indonesian business license and tax identification number. Foreign brands typically establish a PT PMA (foreign-owned limited liability company) or partner with a local distributor as seller of record. The setup process generally takes 4 to 8 weeks.
   - question: What types of creators perform best for TikTok Shop in Indonesia?
-    answer: Micro and mid-tier creators (10,000 to 500,000 followers) consistently deliver higher conversion rates than mega-influencers in the Indonesian market. Industry research shows these creators generate stronger purchase intent because their audiences perceive recommendations as personal endorsements.
+    answer: Creators who share their audience's cultural context and lead with price anchoring. Top-performing Indonesian livestream hosts open with the Salam greeting, show BPOM and MUI Halal certification on screen, and compare the TikTok Shop price with a marketplace or mall price in the first three seconds. MOCA's KOLPlanet platform helps brands find creators who work this way.
   - question: What are the peak selling hours on TikTok Shop Indonesia?
     answer: The peak transaction window falls in the evening hours, approximately 7:00 to 10:00 PM local time (WIB), when a significant share of daily transactions are concentrated.
   - question: What certifications do brands need to sell on TikTok Shop Indonesia?
     answer: "Key requirements include: a local company entity (PT PMA), import licenses (API/API-U), BPOM product registration (mandatory for cosmetics, food, and health supplements), MUI Halal certification (required for food and personal care products), and SNI compliance (mandatory for electronics and select consumer goods)."
-citations: []
+citations:
+  - name: "Indonesia: 2025 analysis of payments and ecommerce trends"
+    url: https://paymentscmi.com/insights/indonesia-ecommerce-payments-trends-2025/
+    publisher: PaymentsCMI
+    publishedAt: 2025-05-20
+  - name: "5 facts about Muslims and Christians in Indonesia"
+    url: https://www.pewresearch.org/short-reads/2024/03/28/5-facts-about-muslims-and-christians-in-indonesia/
+    publisher: Pew Research Center
+    publishedAt: 2024-03-28
 language: en-US
 draft: false
 scrapedAt: 2026-07-20T11:35:17.649Z
@@ -81,9 +89,9 @@ Banned once, then doubled. What exactly is happening in this market?
 
 TikTok Shop’s total Southeast Asian GMV reached $45.6 billion in 2025, effectively doubling from the prior year. Indonesia alone accounts for roughly one-third of that total.
 
-According to a 2025 Southeast Asia e-commerce influencer marketing report, 76% of Indonesian consumers have purchased products through creator-recommended content — the highest rate among all six Southeast Asian markets surveyed. Separately, PaymentsCMI research shows that 60% of Indonesian consumers have completed a purchase during a livestream session. Peak transaction hours fall in the evening window around 7:00 to 10:00 PM local time (WIB), when a significant share of daily transactions are concentrated.
+Six in ten Indonesian online shoppers bought through live shopping in 2024, according to Jakpat and YouGov survey data compiled by [PaymentsCMI](https://paymentscmi.com/insights/indonesia-ecommerce-payments-trends-2025/) (May 2025). Peak transaction hours fall in the evening window around 7:00 to 10:00 PM local time (WIB), when a significant share of daily transactions are concentrated.
 
-But average order values remain modest. Monthly e-commerce spending among Indonesian consumers sits at approximately $35 per user, and the best-performing products on TikTok Shop are generally priced under $20. High volume, low ticket size, fast decisions — that is the fundamental shape of social commerce in Indonesia.
+But average order values remain modest. Monthly e-commerce spending among Indonesian consumers sits at approximately $27 per user (PaymentsCMI, May 2025), and the best-performing products on TikTok Shop are generally priced under $20. High volume, low ticket size, fast decisions — that is the fundamental shape of social commerce in Indonesia.
 
 MOCA has operated in the Asia-Pacific market since 2012 with a local team in Indonesia, and has been closely tracking the evolution of Indonesia’s social commerce ecosystem. Here are three trends we believe deserve attention.
 
@@ -97,7 +105,7 @@ Videos that simply claim “murah banget” (super cheap) without a reference po
 
 ### Trust Is Built Through Cultural Details
 
-Approximately 87% of Indonesia’s 280 million citizens identify as Muslim. Top-performing local livestream hosts open with the Salam greeting (Assalamu’alaikum) before any product discussion. When showcasing beauty and food products, they proactively display both BPOM (Indonesia’s national food and drug authority) and MUI Halal certification (issued by the Indonesian Ulema Council) on screen. They avoid scheduling livestreams during Friday Jumu’ah prayers and the five daily prayer periods.
+Approximately 87% of Indonesians identify as Muslim, according to Ministry of Religious Affairs data reported by [Pew Research Center](https://www.pewresearch.org/short-reads/2024/03/28/5-facts-about-muslims-and-christians-in-indonesia/) (2024). Top-performing local livestream hosts open with the Salam greeting (Assalamu’alaikum) before any product discussion. When showcasing beauty and food products, they proactively display both BPOM (Indonesia’s national food and drug authority) and MUI Halal certification (issued by the Indonesian Ulema Council) on screen. They avoid scheduling livestreams during Friday Jumu’ah prayers and the five daily prayer periods.
 
 These may look like simple etiquette gestures, but multiple Indonesia market practitioners have observed that livestream rooms with proper cultural localization consistently achieve better viewer retention and engagement metrics. Indonesian academic research also confirms that certification displays and Islamic cultural courtesy are key factors in building trust with Muslim consumers — and watch time is a core metric in TikTok’s livestream traffic allocation algorithm.
 
@@ -144,7 +152,7 @@ Yes. TikTok Shop Indonesia requires sellers to hold an Indonesian business licen
 
 ### What types of creators perform best for TikTok Shop in Indonesia?
 
-Micro and mid-tier creators (10,000 to 500,000 followers) consistently deliver higher conversion rates than mega-influencers in the Indonesian market. Industry research shows these creators generate stronger purchase intent because their audiences perceive recommendations as personal endorsements. MOCA’s KOLPlanet platform helps brands identify and activate these creators at scale.
+Creators who share their audience’s cultural context and lead with price anchoring. Top-performing Indonesian livestream hosts open with the Salam greeting, show BPOM and MUI Halal certification on screen, and compare the TikTok Shop price with a marketplace or mall price in the first three seconds. MOCA’s KOLPlanet platform helps brands find creators who work this way.
 
 ### What are the peak selling hours on TikTok Shop Indonesia?
 
