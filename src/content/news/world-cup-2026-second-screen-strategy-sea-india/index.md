@@ -5,10 +5,10 @@ sourceUrl: https://www.moca-tech.net/news/world-cup-2026-second-screen-strategy-
 canonicalUrl: https://www.moca-tech.net/news/world-cup-2026-second-screen-strategy-sea-india.html
 title: "World Cup 2026: How Challenger Brands Win the Second Screen in Southeast Asia and India"
 seoTitle: "World Cup 2026: SEA & India Second Screen Strategy"
-summary: FIFA locked all 16 global sponsorship slots for World Cup 2026. Adidas, Coca-Cola, Visa, Hyundai-Kia, Aramco, Qatar Airways, and Lenovo hold every pitch-side position. TikTok is FIFA’s named preferred social video platform. North America hosting shifts match windows to morning-afternoon across Southeast Asia. India’s media rights fell 65% to USD 35M with no confirmed buyer. The second screen (creator content, local KOLs, short-form video) is where challenger brands can still compete.
+summary: "Challenger brands win World Cup 2026 on the second screen: local creator content on TikTok and YouTube Shorts, timed to the morning-to-midday match windows that North America hosting creates across Southeast Asia, and in India a creator-first campaign scaled with programmatic and UA. All 16 FIFA global sponsorship slots are sold, TikTok is FIFA’s named preferred social video platform, and India’s media rights asking price fell 65% to USD 35M with no confirmed buyer."
 description: FIFA locked all 16 World Cup sponsorships. TikTok is the preferred platform. India rights down 65%. How SEA brands win the second screen.
 publishedAt: 2026-05-04T02:18+00:00
-updatedAt: 2026-06-10T02:21+00:00
+updatedAt: 2026-09-25T15:00+00:00
 author:
   name: MOCA Technology
   type: Organization
@@ -63,13 +63,15 @@ scrapedAt: 2026-07-20T11:35:15.945Z
 sourceHash: 4c6c97a408ffcbff89578c5ddf936c05b2d6a3ae6754065ee7eb16724eeb685f
 ---
 
+Challenger brands cannot buy pitch-side visibility at World Cup 2026, because every FIFA global sponsorship slot is sold. They can still win the second screen: local creator content on TikTok and YouTube Shorts, published at match-day speed in the morning-to-midday windows Southeast Asian fans will watch in, and in India a creator-first campaign that programmatic and UA then scale. The sections below explain why each of those three moves works.
+
 ## Are the Sponsorship Gains Already Gone?
 
 FIFA completed all 16 global sponsorship positions for the 2026 World Cup ahead of schedule. Adidas, Coca-Cola, Visa, Hyundai-Kia, Aramco, Qatar Airways, and Lenovo have claimed every visible brand surface around the pitch. For challenger brands expanding into Southeast Asia and India, the conventional route to World Cup presence is closed.
 
 But the pitch is not where this tournament’s most consequential brand competition will take place. FIFA has named TikTok as the preferred social video platform for World Cup 2026 (the first time a short-form video platform has received that designation). [According to Marketing Week](https://www.marketingweek.com/), Unilever is treating this edition as its largest-ever social and creator activation window. The pattern is clear: World Cup content is moving from broadcast to short-form.
 
-Fans are not watching the match and then opening their phones. For a growing share of the audience, the phone is the primary screen. What stops the scroll is not a logo on a corner flag â it is a local meme or a three-second hook that catches a viewer mid-commute. That is the available brand surface. FIFA does not sell it.
+Fans are not watching the match and then opening their phones. For a growing share of the audience, the phone is the primary screen. What stops the scroll is not a logo on a corner flag. It is a local meme or a three-second hook that catches a viewer mid-commute. That is the available brand surface. FIFA does not sell it.
 
 > **Key finding:** FIFA named TikTok its preferred social video platform for World Cup 2026 (the first such designation in tournament history) while Unilever prepares its largest-ever creator activation, per Marketing Week. Creator-mediated content is now the primary open channel for brands without official sponsorship positions.
 
