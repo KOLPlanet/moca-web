@@ -30,6 +30,15 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) => !new URL(page).pathname.startsWith('/api/'),
+      // News pages declare canonical URLs without a trailing slash; list them the same way.
+      serialize: (item) => {
+        const url = new URL(item.url);
+        if (url.pathname.startsWith('/news/')) {
+          url.pathname = url.pathname.replace(/\/$/, '');
+          item.url = url.href;
+        }
+        return item;
+      },
     }),
     partytown({
       config: {
