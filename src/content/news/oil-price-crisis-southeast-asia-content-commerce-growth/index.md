@@ -5,10 +5,10 @@ sourceUrl: https://www.moca-tech.net/news/oil-price-crisis-southeast-asia-conten
 canonicalUrl: https://www.moca-tech.net/news/oil-price-crisis-southeast-asia-content-commerce-growth.html
 title: "Oil Exceeds $102: Who’s Making Quiet Money in Southeast Asia"
 seoTitle: "Oil at $102: Content Commerce Surges in Southeast Asia"
-summary: "The quiet money is going to brands that sell to Southeast Asia’s own shoppers through local creators and content commerce. Oil above $100 raises shipping costs, yet the region’s e-commerce grew 15% to $185 billion in 2025 (Google-Temasek-Bain e-Conomy SEA, 2025) and TikTok Shop’s Southeast Asia GMV doubled to $45.6 billion, with Indonesia at $13.1 billion (Momentum Works, February 2026). Influencers surveyed by Vero reported a 72% increase in sponsored content requests (Vero, December 2024)."
-description: Brent crude hits $102. SEA e-commerce reaches $185B at 15% growth. How brands use KOL marketing and TikTok Shop to offset rising shipping costs.
+summary: "The quiet money is going to brands that sell to Southeast Asia’s own shoppers through local creators and content commerce. Oil above $100 raises shipping costs, yet the region’s digital economy passed $300 billion in 2025 with e-commerce at $185 billion (Google-Temasek-Bain e-Conomy SEA, 2025) and TikTok Shop’s Southeast Asia GMV doubled to $45.6 billion, with Indonesia at $13.1 billion (Momentum Works, February 2026). Influencers surveyed by Vero reported a 72% increase in sponsored content requests (Vero, December 2024)."
+description: Brent crude hits $102. SEA e-commerce reaches $185B. How brands use KOL marketing and TikTok Shop to offset rising shipping costs.
 publishedAt: 2026-03-27T05:20+00:00
-updatedAt: 2026-09-25T15:00+00:00
+updatedAt: 2026-09-27T12:00+00:00
 author:
   name: MOCA Technology
   type: Organization
@@ -51,7 +51,7 @@ cover:
 keyTakeaways: []
 faq:
   - question: How large is Southeast Asia's e-commerce market in 2025?
-    answer: Southeast Asia's digital economy reached $300 billion in GMV in 2025, with e-commerce contributing approximately $185 billion at 15% year-over-year growth (Google-Temasek-Bain e-Conomy SEA, 2025). E-commerce penetration across the region remains at roughly 13%, compared to China's 47%.
+    answer: Southeast Asia's digital economy reached $300 billion in GMV in 2025, growing 15% year over year, with e-commerce contributing approximately $185 billion (Google-Temasek-Bain e-Conomy SEA, 2025). E-commerce penetration across the region remains at roughly 13%, compared to China's 47%.
   - question: How much did TikTok Shop generate in Southeast Asia in 2025?
     answer: TikTok Shop's Southeast Asia GMV doubled to $45.6 billion in 2025, according to Momentum Works (February 2026). Indonesia was the largest single market at $13.1 billion, making it TikTok Shop's second-biggest market globally.
   - question: Why is the oil crisis relevant to e-commerce brands in Southeast Asia?
@@ -61,6 +61,33 @@ faq:
   - question: Is brand demand for KOL marketing in Southeast Asia growing?
     answer: Yes. Influencers surveyed across Southeast Asia reported a 72% increase in sponsored content requests in 2024 (Vero, December 2024). With logistics costs rising, brands are moving budget away from one-off posts toward creator partnerships that have to prove conversion.
 citations:
+  - name: "e-Conomy SEA 2025"
+    url: https://www.bain.com/insights/e-conomy-sea-2025/
+    publisher: Google, Temasek and Bain & Company
+    publishedAt: 2025-11-11
+  - name: "Oil price March 24, 2026"
+    url: https://fortune.com/article/price-of-oil-03-24-2026/
+    publisher: Fortune
+    publishedAt: 2026-03-24
+  - name: "Strait of Hormuz traffic in March"
+    url: https://gulfbusiness.com/2026/trade/strait-of-hormuz-traffic-181-ships-march-70-percent-iranian/
+    publisher: Gulf Business
+    publishedAt: 2026-03-31
+  - name: "TikTok Southeast Asia doubles GMV year on year to $45.6B in 2025"
+    url: https://technode.global/2026/02/11/tiktoks-southeast-asia-doubles-gmv-year-on-year-to-45-6b-in-2025/
+    publisher: TechNode Global
+    publishedAt: 2026-02-11
+  - name: "Socio-economic situation in the fourth quarter and 2025"
+    url: https://www.nso.gov.vn/en/data-and-statistics/2026/01/socio-economic-situation-in-the-fourth-quarter-and-2025/
+    publisher: General Statistics Office of Vietnam
+    publishedAt: 2026-01-03
+  - name: "Southeast Asia e-commerce market 2026"
+    url: https://digitalinasia.com/southeast-asia-ecommerce-159-billion-market-2026/
+    publisher: Digital in Asia
+    publishedAt: 2026-03-27
+  - name: "WOWS investment highlights March 2025: Southeast Asia"
+    url: https://wowsglobal.com/resources/blogs-insights/wows-investment-highlights-march-2025-southeast-asia-powers-up-as-funds-flow-in/
+    publisher: WOWS Global
   - name: "Impact, Engagement, and the Future of Influencer Marketing in Southeast Asia"
     url: https://vero-asean.com/whitepaper/impact-engagement-and-the-future-of-influencer-marketing-in-southeast-asia/
     publisher: Vero
@@ -71,9 +98,9 @@ scrapedAt: 2026-07-20T11:35:17.085Z
 sourceHash: 322df70b024327be97298eaf3d9cbe26f2baf9fa635c2b9e67f0a7d986a9cec5
 ---
 
-The quiet money in Southeast Asia is going to brands that sell to the region’s own consumers through local creators. Oil above $100 makes cross-border shipping more expensive, but domestic demand keeps growing: e-commerce reached $185 billion in 2025 at 15% growth, and TikTok Shop’s regional GMV doubled to $45.6 billion. Brands that pair content commerce on platforms like TikTok Shop with ongoing local creator partnerships are best placed to protect margin. Brands relying on cheap cross-border shipping and one-off influencer posts are the most exposed.
+The quiet money in Southeast Asia is going to brands that sell to the region’s own consumers through local creators. Oil above $100 makes cross-border shipping more expensive, but domestic demand keeps growing: [e-commerce reached $185 billion in 2025](https://www.bain.com/insights/e-conomy-sea-2025/), and TikTok Shop’s regional GMV [doubled to $45.6 billion](https://technode.global/2026/02/11/tiktoks-southeast-asia-doubles-gmv-year-on-year-to-45-6b-in-2025/). Brands that pair content commerce on platforms like TikTok Shop with ongoing local creator partnerships are best placed to protect margin. Brands relying on cheap cross-border shipping and one-off influencer posts are the most exposed.
 
-On March 24, 2026, Brent crude closed at $102.47 per barrel (Fortune, March 2026). Traffic through the Strait of Hormuz had dropped 95% from pre-conflict levels. Oil prices climbed, pulling shipping and raw material costs along with them. Margins got squeezed. The immediate question for brands selling into [Southeast Asia](https://www.moca-tech.net/?p=6676): where should the marketing budget go now?
+On March 24, 2026, Brent crude closed at $102.47 per barrel ([Fortune](https://fortune.com/article/price-of-oil-03-24-2026/), March 24, 2026). Ship traffic through the Strait of Hormuz had fallen by more than 90% from pre-conflict levels ([Gulf Business, citing Lloyd’s List](https://gulfbusiness.com/2026/trade/strait-of-hormuz-traffic-181-ships-march-70-percent-iranian/), March 2026). Oil prices climbed, pulling shipping and raw material costs along with them. Margins got squeezed. The immediate question for brands selling into [Southeast Asia](https://www.moca-tech.net/?p=6676): where should the marketing budget go now?
 
 The numbers point in one direction. While global supply chains contract, Southeast Asia’s domestic consumer market continues to grow independently of global trade disruptions, where young, mobile-first consumers increasingly buy through creators they follow and trust.
 
@@ -81,11 +108,11 @@ The numbers point in one direction. While global supply chains contract, Southea
 
 Global supply chains are tightening. Southeast Asia’s local consumer market is moving in the opposite direction.
 
-The region’s digital economy crossed $300 billion in gross merchandise value in 2025, with e-commerce accounting for $185 billion of that total, growing at 15% year-over-year (Google-Temasek-Bain e-Conomy SEA, 2025). E-commerce penetration across the region stands at roughly 13%. China’s sits at 47%. That 34-point gap means hundreds of millions of consumers are still forming their first online shopping habits.
+The region’s digital economy crossed $300 billion in gross merchandise value in 2025, growing 15% year over year, with e-commerce accounting for $185 billion of that total ([Google-Temasek-Bain e-Conomy SEA, 2025](https://www.bain.com/insights/e-conomy-sea-2025/)). E-commerce penetration across the region stands at roughly 13%. China’s sits at 47% ([Digital in Asia](https://digitalinasia.com/southeast-asia-ecommerce-159-billion-market-2026/), March 2026). That 34-point gap means hundreds of millions of consumers are still forming their first online shopping habits.
 
-Speed matters too. Vietnam posted 8.02% GDP growth in 2025 (Vietnam General Statistics Office), one of the strongest performances in the region. TikTok Shop generated $45.6 billion in GMV across Southeast Asia in the same year, doubling from 2024. Indonesia alone contributed $13.1 billion, making it TikTok Shop’s second-largest market worldwide (Momentum Works, February 2026). For context on how Indonesia’s content commerce market recovered and scaled, see our analysis of [TikTok Shop’s comeback from a government ban to $13.1 billion](/news/tiktok-shop-indonesia-ban-to-13-billion-gmv-comeback).
+Speed matters too. Vietnam posted 8.02% GDP growth in 2025 ([Vietnam General Statistics Office](https://www.nso.gov.vn/en/data-and-statistics/2026/01/socio-economic-situation-in-the-fourth-quarter-and-2025/)), one of the strongest performances in the region. TikTok Shop generated $45.6 billion in GMV across Southeast Asia in the same year, doubling from 2024. Indonesia alone contributed $13.1 billion, making it TikTok Shop’s second-largest market worldwide (Momentum Works, February 2026, [via TechNode Global](https://technode.global/2026/02/11/tiktoks-southeast-asia-doubles-gmv-year-on-year-to-45-6b-in-2025/)). For context on how Indonesia’s content commerce market recovered and scaled, see our analysis of [TikTok Shop’s comeback from a government ban to $13.1 billion](/news/tiktok-shop-indonesia-ban-to-13-billion-gmv-comeback).
 
-Venture capital is following the same signal. VC funding in Southeast Asia surged 65% quarter-over-quarter in early 2025 (WOWS Global, 2025), flowing into payments, logistics, and telecom infrastructure. Better infrastructure means higher checkout completion, faster delivery, and more accurate campaign attribution. KOL marketing spend yields better returns when the underlying infrastructure improves.
+Venture capital is following the same signal. The number of venture deals in Southeast Asia rose 65% quarter over quarter in early 2025, and deal value rose 40% ([WOWS Global](https://wowsglobal.com/resources/blogs-insights/wows-investment-highlights-march-2025-southeast-asia-powers-up-as-funds-flow-in/), March 2025), flowing into payments, logistics, and telecom infrastructure. Better infrastructure means higher checkout completion, faster delivery, and more accurate campaign attribution. KOL marketing spend yields better returns when the underlying infrastructure improves.
 
 Consumer spending among Southeast Asia’s young population continues to grow, and the 13% e-commerce penetration rate suggests the growth curve is still early.
 
@@ -93,9 +120,9 @@ Consumer spending among Southeast Asia’s young population continues to grow, a
 
 Higher logistics costs do more than squeeze margins. They force a structural rethink of how marketing budgets get allocated.
 
-**The scatter-and-test model is breaking down.** When shipping from Shenzhen to Jakarta costs 30–40% more than it did six months ago, brands cannot absorb the logistics drag on low-conversion influencer campaigns. The era of booking dozens of creators for single-post placements and hoping for the best is ending. Every marketing dollar now faces a higher burden of proof.
+**The scatter-and-test model is breaking down.** When shipping from Shenzhen to Jakarta costs more than it did six months ago, brands cannot absorb the logistics drag on low-conversion influencer campaigns. The era of booking dozens of creators for single-post placements and hoping for the best is ending. Every marketing dollar now faces a higher burden of proof.
 
-**Digital infrastructure is expanding fast.** The same geopolitical instability pushing oil prices higher is accelerating capital flows into Southeast Asian digital systems. The 65% quarter-over-quarter jump in VC funding (WOWS Global, 2025) shows up concretely: better payment infrastructure, faster last-mile delivery, and sharper targeting data. For brands running influencer campaigns, this infrastructure buildout directly improves return on spend.
+**Digital infrastructure is expanding fast.** The same geopolitical instability pushing oil prices higher is accelerating capital flows into Southeast Asian digital systems. That jump in venture deal flow shows up concretely: better payment infrastructure, faster last-mile delivery, and sharper targeting data. For brands running influencer campaigns, this infrastructure buildout directly improves return on spend.
 
 **KOL marketing has moved past the trial phase.** Influencers surveyed across Southeast Asia reported a 72% increase in sponsored content requests (Vero, December 2024). This is structured, recurring investment from major consumer brands across FMCG, electronics, and financial services. Brands without local execution capability are falling further behind in conversion rates and repeat purchase metrics.
 
@@ -127,7 +154,7 @@ Influencer-driven brand equity has measurable financial impact. When logistics c
 
 ### How large is Southeast Asia’s e-commerce market in 2025?
 
-Southeast Asia’s digital economy reached $300 billion in GMV in 2025, with e-commerce contributing approximately $185 billion at 15% year-over-year growth (Google-Temasek-Bain e-Conomy SEA, 2025). E-commerce penetration across the region remains at roughly 13%, compared to China’s 47%.
+Southeast Asia’s digital economy reached $300 billion in GMV in 2025, growing 15% year over year, with e-commerce contributing approximately $185 billion (Google-Temasek-Bain e-Conomy SEA, 2025). E-commerce penetration across the region remains at roughly 13%, compared to China’s 47%.
 
 ### How much did TikTok Shop generate in Southeast Asia in 2025?
 

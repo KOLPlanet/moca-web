@@ -8,7 +8,7 @@ seoTitle: "Q1 2026 Social Ad Pricing: The K-Shaped Split"
 summary: Q1 2026 social ad pricing split into a K shape, with Meta CPM up 12%, Google search ad revenue up 19% to $60.4 billion, TikTok CPM rebounding 11% to an 18% budget-share high, and YouTube CPM down 21% as connected-TV spend rose 39%. The report covers what drove each move and how MOCA Technology reweights cross-border media budgets each quarter.
 description: "Q1 2026 social ad pricing diverged: Meta CPM up 12%, Google search up 19%, TikTok up 11%, YouTube down 21%. How to reweight cross-border budgets."
 publishedAt: 2026-05-28T10:57+00:00
-updatedAt: 2026-05-28T10:57+00:00
+updatedAt: 2026-09-27T12:00+00:00
 author:
   name: MOCA Technology
   type: Organization
@@ -68,7 +68,7 @@ citations:
     publisher: The Wall Street Journal
     publishedAt: 2026-04-29
   - name: Alphabet Q1 2026 Earnings Release
-    url: https://abc.xyz/investor/
+    url: https://www.sec.gov/Archives/edgar/data/1652044/000165204426000043/googexhibit991q12026.htm
     publisher: Alphabet
     publishedAt: 2026-04-29
   - name: Alphabet earnings Q1 2026
@@ -76,14 +76,14 @@ citations:
     publisher: The Wall Street Journal
     publishedAt: 2026-04-29
   - name: AI Adoption Rises as Retail Media Delivers Record Efficiency Gains in Q1
-    url: https://skai.io/newsroom
+    url: https://skai.io/press-releases/ai-adoption-rises-as-retail-media-delivers-record-efficiency-gains-in-q1-skai-data-shows/
     publisher: Skai
     publishedAt: 2026-04-28
   - name: Q1 2026 Digital Ads Benchmark Report
     url: https://tinuiti.com/research-insights/research/digital-ads-benchmark-report/
     publisher: Tinuiti
   - name: TikTok's middle class is gaining power
-    url: https://www.businessinsider.com/
+    url: https://www.businessinsider.com/tiktok-micro-influencers-gain-pricing-power-2026-5
     publisher: Business Insider
     publishedAt: 2026-05-20
 language: en-US
@@ -117,7 +117,7 @@ Prices rose 12%, but total impressions rose 19%. Each dollar buys more reach tha
 
 ### Google’s search pie is still intact
 
-[Alphabet’s Q1 2026 earnings](https://abc.xyz/investor/) reported search ad revenue of $60.4 billion, up 19% year over year. AI search tools such as Perplexity and ChatGPT are absorbing a large share of general web traffic, yet Google’s core search advertising held firm.
+[Alphabet’s Q1 2026 earnings](https://www.sec.gov/Archives/edgar/data/1652044/000165204426000043/googexhibit991q12026.htm) reported search ad revenue of $60.4 billion, up 19% year over year. AI search tools such as Perplexity and ChatGPT are absorbing a large share of general web traffic, yet Google’s core search advertising held firm.
 
 Head terms that everyone bids on, like “running shoes” or “rackets,” climbed alongside Meta. But once AI search took over knowledge-style queries such as “how to choose running shoes for your foot type,” it pushed the specific long-tail terms back to Google, where competition is lighter and clicks are cheaper. That long tail is now the better-value inventory.
 
@@ -127,9 +127,9 @@ Head terms that everyone bids on, like “running shoes” or “rackets,” cli
 
 ### TikTok is the most underrated platform this quarter
 
-[According to Skai’s Q1 report](https://skai.io/newsroom) (April 28), advertisers pushed TikTok’s budget share to an 18% five-quarter high. [Tinuiti’s Q1 data](https://tinuiti.com/research-insights/research/digital-ads-benchmark-report/) confirmed the turn: TikTok CPM rebounded 11% after four straight quarters of decline, while ad spend rose 14%.
+[According to Skai’s Q1 report](https://skai.io/press-releases/ai-adoption-rises-as-retail-media-delivers-record-efficiency-gains-in-q1-skai-data-shows/) (April 28), advertisers pushed TikTok’s budget share to an 18% five-quarter high. [Tinuiti’s Q1 data](https://tinuiti.com/research-insights/research/digital-ads-benchmark-report/) confirmed the turn: TikTok CPM rebounded 11% after four straight quarters of decline, while ad spend rose 14%.
 
-[Business Insider](https://www.businessinsider.com/) documented a finer split inside the platform. TikTok micro-influencers, with 15,000 to 50,000 followers, saw prices rise roughly 125% in Q1 2026, while mid-tier creators fell 29% and top-tier creators dropped 18%.
+[Business Insider](https://www.businessinsider.com/tiktok-micro-influencers-gain-pricing-power-2026-5) documented a finer split inside the platform. TikTok micro-influencers, with 15,000 to 50,000 followers, saw prices rise roughly 125% in Q1 2026, while mid-tier creators fell 29% and top-tier creators dropped 18%.
 
 The same split runs inside the creator market, tier by tier, not just across platforms. It also tracks the wider shift toward search-led discovery we covered in [TikTok’s search-first shift](/news/tiktok-search-first-shift-sea-2026).
 
