@@ -5,10 +5,10 @@ sourceUrl: https://www.moca-tech.net/news/tiktok-shop-indonesia-ban-to-13-billio
 canonicalUrl: https://www.moca-tech.net/news/tiktok-shop-indonesia-ban-to-13-billion-gmv-comeback.html
 title: "From Government Ban to $13.1 Billion: TikTok Shop’s Indonesia Comeback"
 seoTitle: "TikTok Shop Indonesia: From Ban to $13.1B GMV | MOCA"
-summary: "Key Takeaways: TikTok Shop Indonesia generated $13.1 billion in GMV in 2025, a 111% YoY increase after a 2023 government ban. Indonesia is now TikTok Shop’s second-largest global market. Success factors include price-anchoring content strategies, cultural localization for Indonesia’s Muslim-majority population, and meeting strict local compliance requirements (PT PMA entity, BPOM registration, Halal certification). Peak sales occur during the evening hours (around 7–10 PM WIB), with best-performing products generally priced under $20."
+summary: "Key Takeaways: TikTok Shop Indonesia generated $13.1 billion in GMV in 2025, a 111% YoY increase after a 2023 government ban. Indonesia is now TikTok Shop’s second-largest global market. Success factors include price-anchoring content strategies, cultural localization for Indonesia’s Muslim-majority population, and meeting strict local compliance requirements (PT PMA entity, BPOM registration, Halal certification). Peak sales occur during the evening hours (around 7–10 PM WIB)."
 description: TikTok Shop Indonesia hit $13.1B GMV in 2025 after a government ban. Key market trends, compliance needs, and brand strategies for Southeast Asia.
 publishedAt: 2026-03-17T07:53+00:00
-updatedAt: 2026-09-25T15:00+00:00
+updatedAt: 2026-09-27T12:00+00:00
 author:
   name: MOCA Technology
   type: Organization
@@ -65,6 +65,10 @@ faq:
   - question: What certifications do brands need to sell on TikTok Shop Indonesia?
     answer: "Key requirements include: a local company entity (PT PMA), import licenses (API/API-U), BPOM product registration (mandatory for cosmetics, food, and health supplements), MUI Halal certification (required for food and personal care products), and SNI compliance (mandatory for electronics and select consumer goods)."
 citations:
+  - name: "TikTok Southeast Asia doubles GMV year on year to $45.6B in 2025"
+    url: https://technode.global/2026/02/11/tiktoks-southeast-asia-doubles-gmv-year-on-year-to-45-6b-in-2025/
+    publisher: TechNode Global
+    publishedAt: 2026-02-11
   - name: "Indonesia: 2025 analysis of payments and ecommerce trends"
     url: https://paymentscmi.com/insights/indonesia-ecommerce-payments-trends-2025/
     publisher: PaymentsCMI
@@ -81,17 +85,17 @@ sourceHash: d7a557037b04da0d3a1a6f1ae4b6af18ded375034ae9976385e64c02a80e7463
 
 In October 2023, the Indonesian government shut down TikTok Shop overnight. Many observers assumed social commerce had hit a dead end in the country.
 
-TikTok responded by acquiring Tokopedia and relaunched in early 2024. According to the [Momentum Works](https://momentumworks.co) Southeast Asia E-commerce Report 2025, TikTok Shop Indonesia generated $13.1 billion in gross merchandise value (GMV) in 2025 — a 111% year-over-year increase. Indonesia is now TikTok Shop’s second-largest market globally, trailing only the United States at $15.1 billion.
+TikTok responded by acquiring Tokopedia and relaunched in early 2024. According to the Momentum Works Southeast Asia E-commerce Report 2025 ([via TechNode Global](https://technode.global/2026/02/11/tiktoks-southeast-asia-doubles-gmv-year-on-year-to-45-6b-in-2025/)), TikTok Shop Indonesia generated $13.1 billion in gross merchandise value (GMV) in 2025 — a 111% year-over-year increase. Indonesia is now TikTok Shop’s second-largest market globally, trailing only the United States at $15.1 billion.
 
 Banned once, then doubled. What exactly is happening in this market?
 
 ## The Real Picture of Indonesia’s TikTok Shop Market
 
-TikTok Shop’s total Southeast Asian GMV reached $45.6 billion in 2025, effectively doubling from the prior year. Indonesia alone accounts for roughly one-third of that total.
+TikTok Shop’s total Southeast Asian GMV [reached $45.6 billion in 2025](https://technode.global/2026/02/11/tiktoks-southeast-asia-doubles-gmv-year-on-year-to-45-6b-in-2025/), effectively doubling from the prior year. Indonesia alone accounts for roughly one-third of that total.
 
 Six in ten Indonesian online shoppers bought through live shopping in 2024, according to Jakpat and YouGov survey data compiled by [PaymentsCMI](https://paymentscmi.com/insights/indonesia-ecommerce-payments-trends-2025/) (May 2025). Peak transaction hours fall in the evening window around 7:00 to 10:00 PM local time (WIB), when a significant share of daily transactions are concentrated.
 
-But average order values remain modest. Monthly e-commerce spending among Indonesian consumers sits at approximately $27 per user (PaymentsCMI, May 2025), and the best-performing products on TikTok Shop are generally priced under $20. High volume, low ticket size, fast decisions — that is the fundamental shape of social commerce in Indonesia.
+But average order values remain modest. Monthly e-commerce spending among Indonesian consumers sits at approximately $27 per user (PaymentsCMI, May 2025). High volume, low ticket size, fast decisions — that is the fundamental shape of social commerce in Indonesia.
 
 MOCA has operated in the Asia-Pacific market since 2012 with a local team in Indonesia, and has been closely tracking the evolution of Indonesia’s social commerce ecosystem. Here are three trends we believe deserve attention.
 
