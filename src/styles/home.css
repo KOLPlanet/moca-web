@@ -322,10 +322,13 @@
 }
 
 .home-services {
-  background:
-    radial-gradient(circle at 18% 20%, rgba(97, 146, 57, 0.16), transparent 42%),
-    radial-gradient(circle at 88% 30%, rgba(97, 146, 57, 0.1), transparent 36%),
-    linear-gradient(180deg, #f4f8f0 0%, #ffffff 48%, #ffffff 100%);
+  position: relative;
+  isolation: isolate;
+  background-color: #f4ebe0;
+  background-image: url('/images/home-figma/services-bg.jpg');
+  background-position: center 46%;
+  background-size: cover;
+  background-repeat: no-repeat;
   box-sizing: border-box;
   height: 900px;
   min-height: 900px;
@@ -365,48 +368,6 @@
   margin: 0 auto;
   height: 680px;
   min-height: 0;
-}
-
-.services-orbit__halo {
-  position: absolute;
-  inset: 8% 10%;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle, rgba(97, 146, 57, 0.22) 0%, rgba(97, 146, 57, 0.08) 42%, transparent 72%);
-  filter: blur(8px);
-  animation: services-halo 7s ease-in-out infinite;
-  transition: opacity 480ms ease, transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.services-orbit[data-orbit-active="influencer"] .services-orbit__halo,
-.services-orbit[data-orbit-active="performance"] .services-orbit__halo,
-.services-orbit[data-orbit-active="community"] .services-orbit__halo {
-  opacity: 0.5;
-  transform: scale(1.05);
-}
-
-.services-orbit__ring {
-  position: absolute;
-  inset: 14% 16%;
-  border: 1.5px dashed rgba(97, 146, 57, 0.32);
-  border-radius: 50%;
-  animation: services-ring 36s linear infinite;
-  transition: opacity 480ms ease, transform 560ms ease;
-}
-
-.services-orbit__ring::before {
-  position: absolute;
-  inset: 12%;
-  border: 1px solid rgba(97, 146, 57, 0.16);
-  border-radius: 50%;
-  content: "";
-}
-
-.services-orbit[data-orbit-active="influencer"] .services-orbit__ring,
-.services-orbit[data-orbit-active="performance"] .services-orbit__ring,
-.services-orbit[data-orbit-active="community"] .services-orbit__ring {
-  opacity: 0.42;
-  animation-duration: 52s;
 }
 
 .services-orbit__core {
@@ -593,7 +554,7 @@
 }
 
 /* Organic ring: clear of the center card, uneven for rhythm */
-.services-orbit__slot--1 { top: calc(12% + 20px); bottom: auto; left: auto; right: 0; transform: none; } /* upper-right Growth */
+.services-orbit__slot--1 { top: calc(12% + 20px); bottom: auto; left: auto; right: -20px; transform: none; } /* upper-right Growth */
 .services-orbit__slot--2 { top: calc(40% + 25px); right: 1%; } /* mid-right Influencer */
 .services-orbit__slot--3 { display: none; }
 .services-orbit__slot--4 { top: calc(36% - 30px); bottom: auto; left: 0; transform: none; } /* mid-left Paid Media */
@@ -664,15 +625,15 @@
 
 .services-orbit__node small {
   grid-column: 2;
-  color: rgba(24, 32, 24, 0.5);
+  color: rgba(24, 32, 24, 0.62);
   font-family: var(--font-sans);
-  font-size: 0.66rem;
+  font-size: 0.78rem;
   line-height: 1.25;
   white-space: nowrap;
 }
 
 .services-orbit__node:not(.services-orbit__node--live) {
-  opacity: 0.55;
+  opacity: 1;
 }
 
 .services-orbit__node--live {
@@ -680,11 +641,11 @@
   align-items: center;
   grid-template-rows: auto auto;
   cursor: pointer;
-  border-color: rgba(97, 146, 57, 0.5);
-  background: rgba(97, 146, 57, 0.12);
+  border-color: rgba(97, 146, 57, 0.55);
+  background: rgba(232, 240, 220, 0.92);
   box-shadow:
-    0 0 0 3px rgba(97, 146, 57, 0.1),
-    0 8px 18px rgba(97, 146, 57, 0.1);
+    0 0 0 3px rgba(97, 146, 57, 0.12),
+    0 8px 18px rgba(40, 48, 32, 0.1);
   animation: services-node-pulse 3s ease-in-out infinite;
 }
 
@@ -721,10 +682,10 @@
   animation: none;
   transform: translateY(-2px);
   border-color: rgba(97, 146, 57, 0.72);
-  background: rgba(97, 146, 57, 0.18);
+  background: rgba(226, 236, 212, 0.96);
   box-shadow:
     0 0 0 5px rgba(97, 146, 57, 0.16),
-    0 10px 22px rgba(97, 146, 57, 0.14);
+    0 10px 22px rgba(40, 48, 32, 0.12);
 }
 
 .services-orbit__node--live:hover .services-orbit__icon,
@@ -734,10 +695,10 @@
 
 .services-orbit__node--live.is-active {
   border-color: #619239;
-  background: rgba(97, 146, 57, 0.2);
+  background: rgba(220, 232, 204, 0.96);
   box-shadow:
-    0 0 0 5px rgba(97, 146, 57, 0.16),
-    0 10px 22px rgba(97, 146, 57, 0.14);
+    0 0 0 5px rgba(97, 146, 57, 0.18),
+    0 10px 22px rgba(40, 48, 32, 0.12);
   animation: services-node-pulse 2.4s ease-in-out infinite;
 }
 
@@ -4481,7 +4442,7 @@ a.life-card:hover img {
   }
 
   .services-orbit__node small {
-    font-size: 0.66rem;
+    font-size: 0.76rem;
     white-space: nowrap;
   }
 
