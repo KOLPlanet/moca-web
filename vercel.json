@@ -4,6 +4,51 @@
   "installCommand": "npm install",
   "redirects": [
     {
+      "source": "/news/bstation-tap-into-indonesia-market-partnering-with-moca-to-conquer-the-anime-gaming-scene%EF%BF%BC.html",
+      "destination": "/news/bstation-tap-into-indonesia-market-partnering-with-moca-to-conquer-the-anime-gaming-scene-ef-bf-bc",
+      "permanent": true
+    },
+    {
+      "source": "/news/ctv-the-dominant-force-in-advertising%EF%BF%BC.html",
+      "destination": "/news/ctv-the-dominant-force-in-advertising-ef-bf-bc",
+      "permanent": true
+    },
+    {
+      "source": "/news/hybrid-monetization-leading-global-gaming-trends%EF%BF%BC.html",
+      "destination": "/news/hybrid-monetization-leading-global-gaming-trends-ef-bf-bc",
+      "permanent": true
+    },
+    {
+      "source": "/news/maximize-your-in-app-advertising-effectiveness%EF%BF%BC.html",
+      "destination": "/news/maximize-your-in-app-advertising-effectiveness-ef-bf-bc",
+      "permanent": true
+    },
+    {
+      "source": "/news/nano-influencers-unveiling-the-rising-stars-of-marketings-future%EF%BF%BC.html",
+      "destination": "/news/nano-influencers-unveiling-the-rising-stars-of-marketings-future-ef-bf-bc",
+      "permanent": true
+    },
+    {
+      "source": "/news/category/:a/:b/:c/page/:page",
+      "destination": "/news/category/:c",
+      "permanent": true
+    },
+    {
+      "source": "/news/category/:a/:b/page/:page",
+      "destination": "/news/category/:b",
+      "permanent": true
+    },
+    {
+      "source": "/news/category/:a/:b/:c",
+      "destination": "/news/category/:c",
+      "permanent": true
+    },
+    {
+      "source": "/news/category/:a/:b",
+      "destination": "/news/category/:b",
+      "permanent": true
+    },
+    {
       "source": "/news/:slug.html",
       "destination": "/news/:slug",
       "permanent": true
