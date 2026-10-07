@@ -449,24 +449,52 @@
 }
 
 .services-orbit__face-art {
+  --ip-scale: 1;
   position: absolute;
   left: 50%;
-  top: 38%;
+  top: 36%;
   z-index: 0;
-  width: min(130%, 400px);
-  max-height: 320px;
-  height: auto;
+  width: min(145%, 440px);
+  height: 270px;
+  max-height: none;
   object-fit: contain;
+  object-position: center center;
   display: block;
   background: transparent;
   opacity: 1;
   pointer-events: none;
-  transform: translateX(-50%) scale(0.97);
+  transform: translateX(-50%) scale(calc(var(--ip-scale) * 0.97));
   transition: transform 640ms cubic-bezier(0.22, 1, 0.36, 1), opacity 420ms ease;
 }
 
+/* Keep character bodies visually similar across different art aspect ratios */
+.services-orbit__face[data-orbit-face="overview"] .services-orbit__face-art {
+  --ip-scale: 0.88;
+  width: min(120%, 320px);
+  height: 280px;
+}
+
+.services-orbit__face[data-orbit-face="influencer"] .services-orbit__face-art {
+  --ip-scale: 1;
+  width: min(145%, 430px);
+  height: 270px;
+}
+
+.services-orbit__face[data-orbit-face="performance"] .services-orbit__face-art {
+  --ip-scale: 1.06;
+  width: min(150%, 450px);
+  height: 265px;
+  top: calc(36% + 20px);
+}
+
+.services-orbit__face[data-orbit-face="community"] .services-orbit__face-art {
+  --ip-scale: 1.28;
+  width: min(175%, 560px);
+  height: 285px;
+}
+
 .services-orbit__face.is-active .services-orbit__face-art {
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(var(--ip-scale));
 }
 
 .services-orbit[data-orbit-active]:not([data-orbit-active="overview"]) .services-orbit__face.is-active .services-orbit__face-art {
@@ -614,8 +642,8 @@
 .services-orbit__icon {
   grid-row: 1 / span 2;
   align-self: center;
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -3984,19 +4012,24 @@ a.life-card:hover img {
     min-height: 0;
   }
 
-  .services-orbit__face-art {
+  .services-orbit__face-art,
+  .services-orbit__face[data-orbit-face="overview"] .services-orbit__face-art,
+  .services-orbit__face[data-orbit-face="influencer"] .services-orbit__face-art,
+  .services-orbit__face[data-orbit-face="performance"] .services-orbit__face-art,
+  .services-orbit__face[data-orbit-face="community"] .services-orbit__face-art {
     position: relative;
     left: auto;
     top: auto;
-    width: min(78%, 260px);
-    max-height: 180px;
+    width: min(88%, 300px);
+    height: 170px;
+    max-height: none;
     margin: 0 auto 12px;
     opacity: 1;
-    transform: none;
+    transform: scale(var(--ip-scale, 1));
   }
 
   .services-orbit__face.is-active .services-orbit__face-art {
-    transform: none;
+    transform: scale(var(--ip-scale, 1));
   }
 
   .services-orbit__card {
@@ -4369,19 +4402,24 @@ a.life-card:hover img {
     transform: none;
   }
 
-  .services-orbit__face-art {
+  .services-orbit__face-art,
+  .services-orbit__face[data-orbit-face="overview"] .services-orbit__face-art,
+  .services-orbit__face[data-orbit-face="influencer"] .services-orbit__face-art,
+  .services-orbit__face[data-orbit-face="performance"] .services-orbit__face-art,
+  .services-orbit__face[data-orbit-face="community"] .services-orbit__face-art {
     position: relative;
     left: auto;
     top: auto;
-    width: min(72%, 200px);
-    max-height: 150px;
+    width: min(84%, 260px);
+    height: 150px;
+    max-height: none;
     margin: 0 auto 10px;
     opacity: 1;
-    transform: none;
+    transform: scale(var(--ip-scale, 1));
   }
 
   .services-orbit__face.is-active .services-orbit__face-art {
-    transform: none;
+    transform: scale(var(--ip-scale, 1));
   }
 
   .services-orbit__card {
@@ -4453,8 +4491,8 @@ a.life-card:hover img {
   }
 
   .services-orbit__node--live .services-orbit__icon {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     animation: none;
   }
 
