@@ -4040,7 +4040,7 @@ a.life-card:hover img {
   .services-orbit__nodes {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 10px;
     padding-top: 8px;
     transform: none;
@@ -4052,7 +4052,8 @@ a.life-card:hover img {
     right: auto !important;
     bottom: auto !important;
     left: auto !important;
-    width: auto;
+    width: 100% !important;
+    max-width: none !important;
     transform: none !important;
     opacity: 1 !important;
     filter: none !important;
@@ -4069,9 +4070,16 @@ a.life-card:hover img {
 
   .services-orbit__node {
     width: 100%;
+    max-width: none;
     min-height: 70px;
     padding: 12px;
     border-radius: 16px;
+    box-sizing: border-box;
+  }
+
+  .services-orbit__node strong,
+  .services-orbit__node small {
+    white-space: normal;
   }
 
   .services-orbit__node--live {
@@ -4438,7 +4446,8 @@ a.life-card:hover img {
     right: auto !important;
     bottom: auto !important;
     left: auto !important;
-    width: auto;
+    width: 100% !important;
+    max-width: none !important;
     transform: none !important;
     opacity: 1 !important;
     filter: none !important;
@@ -4454,19 +4463,21 @@ a.life-card:hover img {
 
   .services-orbit__node {
     width: 100%;
+    max-width: none;
     min-height: 64px;
     padding: 12px 14px;
     border-radius: 14px;
+    box-sizing: border-box;
   }
 
   .services-orbit__node strong {
     font-size: 0.78rem;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   .services-orbit__node small {
     font-size: 0.76rem;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   .services-orbit__node--live {
@@ -4725,11 +4736,6 @@ a.life-card:hover img {
   .home-container,
   .home-container--wide {
     width: min(calc(100% - 40px), 1200px);
-  }
-
-  .services-orbit__slot--2,
-  .services-orbit__slot--4 {
-    grid-column: 1 / -1;
   }
 
   .services-orbit__node--live {
