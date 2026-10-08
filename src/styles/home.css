@@ -621,6 +621,12 @@
   display: block;
 }
 
+/* Influencer artwork reads smaller; bump display size */
+.services-orbit__slot--2 .services-orbit__icon img {
+  width: 30px;
+  height: 30px;
+}
+
 /* Optical nudge: growth / PR artwork sits slightly left in the asset */
 .services-orbit__slot--1 .services-orbit__icon img,
 .services-orbit__slot--5 .services-orbit__icon img {
