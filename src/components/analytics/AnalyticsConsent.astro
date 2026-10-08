@@ -18,10 +18,9 @@ const { enabled, privacyHref } = Astro.props;
       aria-describedby="analytics-consent-description"
     >
       <div class="analytics-consent__copy">
-        <p class="analytics-consent__eyebrow">Privacy</p>
-        <h2 id="analytics-consent-title">Analytics cookies</h2>
+        <h2 id="analytics-consent-title">Privacy Analytics Cookies</h2>
         <p id="analytics-consent-description">
-          Optional analytics stay off until you allow them.
+          Optional analytics stay off until you allow them.{' '}
           <a href={privacyHref}>Privacy policy</a>
         </p>
       </div>
@@ -129,25 +128,15 @@ const { enabled, privacyHref } = Astro.props;
     max-width: 650px;
   }
 
-  .analytics-consent__eyebrow {
-    margin: 0 0 7px;
-    color: var(--green-700);
-    font-family: var(--font-display);
-    font-size: var(--text-label-size);
-    font-weight: var(--text-label-weight);
-    letter-spacing: var(--text-label-tracking);
-    line-height: 1.4;
-    text-transform: uppercase;
-  }
-
   .analytics-consent h2 {
     margin: 0;
     color: var(--ink-950);
     font-family: var(--font-display);
-    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
     font-weight: var(--text-title-weight);
     letter-spacing: var(--text-title-tracking);
-    line-height: 1.2;
+    line-height: 1.25;
+    white-space: nowrap;
   }
 
   .analytics-consent__copy > p:last-child {
@@ -243,12 +232,8 @@ const { enabled, privacyHref } = Astro.props;
       padding: 16px;
     }
 
-    .analytics-consent__eyebrow {
-      margin-bottom: 4px;
-    }
-
     .analytics-consent h2 {
-      font-size: 1.05rem;
+      font-size: 1rem;
     }
 
     .analytics-consent__copy > p:last-child {
@@ -280,8 +265,8 @@ const { enabled, privacyHref } = Astro.props;
       gap: 12px;
     }
 
-    .analytics-consent__eyebrow {
-      display: none;
+    .analytics-consent h2 {
+      font-size: 0.98rem;
     }
   }
 </style>

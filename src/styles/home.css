@@ -685,18 +685,24 @@
   position: absolute;
   top: -7px;
   right: -5px;
-  padding: 3px 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
   border-radius: 999px;
   background: #619239;
   color: #fff;
-  font-family: var(--font-sans);
-  font-size: 0.58rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  line-height: 1;
+  line-height: 0;
   box-shadow: 0 4px 10px rgba(97, 146, 57, 0.24);
   transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.services-orbit__tap svg {
+  display: block;
+  width: 12px;
+  height: 12px;
 }
 
 .services-orbit__node--live:hover,
@@ -4103,7 +4109,13 @@ a.life-card:hover img {
   .services-orbit__tap {
     top: -6px;
     right: -4px;
-    font-size: 0.56rem;
+    width: 20px;
+    height: 20px;
+  }
+
+  .services-orbit__tap svg {
+    width: 11px;
+    height: 11px;
   }
 
   .service-story {
@@ -4503,8 +4515,13 @@ a.life-card:hover img {
   .services-orbit__tap {
     top: -6px;
     right: 8px;
-    font-size: 0.54rem;
-    padding: 3px 6px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .services-orbit__tap svg {
+    width: 11px;
+    height: 11px;
   }
 
   .home-about {
