@@ -325,8 +325,8 @@
   position: relative;
   isolation: isolate;
   background-color: #f4ebe0;
-  background-image: url('/images/home-figma/services-bg.jpg');
-  background-position: center 46%;
+  background-image: url('/images/home-figma/services-bg.jpg?v=4');
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   box-sizing: border-box;
