@@ -16,9 +16,8 @@
   --reading-width: 780px;
   --shadow: 0 22px 70px rgba(31, 46, 25, 0.1);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  /* Body / UI copy — international corporate readable */
-  --font-sans: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /* Headings / nav / CTAs — geometric display contrast */
+  /* Single family sitewide — Manrope for body + display */
+  --font-sans: Manrope, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-display: Manrope, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   /* Shared type roles */
