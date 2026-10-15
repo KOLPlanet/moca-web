@@ -102,6 +102,7 @@ const jsonLd = {
           : { '@type': 'Person', name: data.author.name },
       publisher: { '@id': orgId },
       mainEntityOfPage: { '@id': pageUrl },
+      ...(data.video && { video: { '@id': `${pageUrl}#video` } }),
       articleSection: data.categories.map((item) => item.name),
       keywords: data.tags.map((item) => item.name).join(', '),
       ...(data.citations.length > 0 && {
@@ -118,6 +119,21 @@ const jsonLd = {
         })),
       }),
     },
+    ...(data.video
+      ? [
+          {
+            '@type': 'VideoObject',
+            '@id': `${pageUrl}#video`,
+            name: data.video.name,
+            description: data.video.description,
+            thumbnailUrl: new URL(data.video.poster, siteOrigin).href,
+            contentUrl: new URL(data.video.src, siteOrigin).href,
+            uploadDate: data.video.uploadDate.toISOString(),
+            duration: data.video.duration,
+            isPartOf: { '@id': pageUrl },
+          },
+        ]
+      : []),
     ...(data.faq.length > 0
       ? [
           {
