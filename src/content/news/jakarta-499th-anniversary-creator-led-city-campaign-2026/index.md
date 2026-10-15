@@ -37,11 +37,11 @@ tags:
   - name: MOCA
     slug: moca
 cover:
-  src: ./assets/cover.png
+  src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/news/jakarta-499th-anniversary-creator-led-city-campaign-2026
-  alt: "Jakarta at 499: a creator-led city campaign case study by MOCA Technology"
-  width: 1200
-  height: 630
+  alt: "Illustrated cover: Jakarta's Monas tower and three creator video screens, with the headline Jakarta Turns 499, No Promo Video, Just Local Creators"
+  width: 1916
+  height: 1198
 video:
   src: /videos/jakarta-499th-anniversary-creator-led-city-campaign-2026/case-study.mp4
   poster: /videos/jakarta-499th-anniversary-creator-led-city-campaign-2026/poster.jpg
@@ -123,7 +123,7 @@ citations:
     publisher: Spill Jakarta on Instagram
     publishedAt: 2026-08-28
 language: en-US
-draft: true
+draft: false
 scrapedAt: 2026-10-15T10:00+08:00
 sourceHash: native
 ---
