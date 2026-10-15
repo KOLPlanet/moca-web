@@ -56,6 +56,16 @@ const news = defineCollection({
           }),
         )
         .default([]),
+      video: z
+        .object({
+          src: z.string().startsWith('/'),
+          poster: z.string().startsWith('/'),
+          name: z.string(),
+          description: z.string(),
+          uploadDate: z.coerce.date(),
+          duration: z.string().regex(/^PT/),
+        })
+        .optional(),
       language: z.string().default('en-US'),
       draft: z.boolean().default(false),
       scrapedAt: z.coerce.date(),
