@@ -84,6 +84,9 @@ citations:
     url: https://marclaninternational.com/jakarta-499th-anniversary-2026/
     publisher: Marclan International
     publishedAt: 2026-06-22
+  - name: "Jakarta: foundation as Jayakarta on 22 June 1527"
+    url: https://en.wikipedia.org/wiki/Jakarta
+    publisher: Wikipedia
   - name: "Betawi Museum: National Museum of Betawi Cultural Heritage"
     url: https://www.indonesia.travel/gb/en/destination/java/jakarta/museum-betawi
     publisher: Indonesia.travel
@@ -136,7 +139,7 @@ A creator-led city campaign uses local creators instead of an official film to e
 
 ## What problem did Jakarta's 499th anniversary campaign have to solve?
 
-Jakarta turned 499 on June 22, 2026 ([Marclan International](https://marclaninternational.com/jakarta-499th-anniversary-2026/)), one year before its 500th. The provincial government marked the year with perks residents could use:
+Jakarta turned 499 on June 22, 2026 ([Marclan International](https://marclaninternational.com/jakarta-499th-anniversary-2026/)), one year before its 500th. The city counts its founding, under the name Jayakarta, from June 22, 1527 ([Wikipedia](https://en.wikipedia.org/wiki/Jakarta)). The provincial government marked the year with perks residents could use:
 
 | Perk | What it was | Dates (2026) |
 | --- | --- | --- |
