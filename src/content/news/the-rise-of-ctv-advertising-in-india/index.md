@@ -45,8 +45,29 @@ faq:
   - question: "Why are advertisers in India moving budget to CTV?"
     answer: "Indian audiences watch a large and growing amount of online video, younger viewers favor connected TV over traditional TV, and affordable smart TV brands have widened access to connected TVs."
   - question: "Where will new TV audiences in India come from?"
-    answer: "According to the Kantar and KPMG figures cited when this article was published in 2023, much of the growth in TV households was expected to come from rural markets, through both Pay TV and Free to Air services."
-citations: []
+    answer: "According to the KPMG figures cited when this article was published in 2023, much of the growth in TV households was expected to come from rural markets, through both Pay TV and Free to Air services."
+citations:
+  - name: "IAB 2021 Video Ad Spend & 2022 Outlook"
+    url: https://www.iab.com/wp-content/uploads/2022/04/IAB_Video_Ad_Spend_Report_2022.pdf
+    publisher: IAB
+  - name: "IAB 2023 Outlook Survey"
+    url: https://www.iab.com/insights/2023-outlook-survey/
+    publisher: IAB
+  - name: "CTV advertising in India to reach $395 million by 2027: Finecast-Kantar"
+    url: https://economictimes.indiatimes.com/industry/services/advertising/ctv-advertising-in-india-to-reach-395-million-by-2027-finecast-kantar/articleshow/96106640.cms
+    publisher: The Economic Times
+  - name: "Digital 2022: India"
+    url: https://datareportal.com/reports/digital-2022-india
+    publisher: DataReportal
+  - name: "Short-form video in India"
+    url: https://www.bain.com/about/media-center/press-releases/2022/short-form-video-india/
+    publisher: Bain & Company
+  - name: "Sports broadcasting on TV: A match made in heaven"
+    url: https://assets.kpmg.com/content/dam/kpmgsites/in/pdf/2022/11/Sports%20broadcasting%20on%20TV%20-%20A%20match%20made%20in%20heaven.pdf
+    publisher: KPMG in India
+  - name: "ICUBE 2020: Internet adoption in India"
+    url: https://www.iamai.in/sites/default/files/research/IAMAI-KANTAR-ICUBE-2020-Report.pdf
+    publisher: IAMAI and Kantar
 language: en-US
 draft: false
 scrapedAt: 2026-07-20T11:36:36.340Z
@@ -55,7 +76,7 @@ sourceHash: f8fdaf1e3e7cdeb4bde09a6392cb93ae1fa3879157e22c7dcc4eb4ae2749decd
 
 ![Illustration of a smart TV showing streaming, shopping and music apps, with the MOCA cactus mascot watching from a beanbag](./assets/cover.jpg)
 
-In 2023, Connected TV (CTV) will embark on a new era of efficiency for advertising. TV has been a mainstay of advertising for many years while the advent of connected TV has fundamentally changed the nature of television advertising and how success is measured. The data of Interactive Advertising Bureau shows it is estimated 73% media buyers and advertisers are shifting their budgets  away from linear TV to CTV and OTT. According to IAB, CTV is expected to lead 2023 digital media spending with 14.4% YoY growth. In India, by 2027, brands will spend $395 million on CTV advertising.
+In 2023, Connected TV (CTV) will embark on a new era of efficiency for advertising. TV has been a mainstay of advertising for many years while the advent of connected TV has fundamentally changed the nature of television advertising and how success is measured. According to the [IAB 2022 Video Ad Spend report](https://www.iab.com/wp-content/uploads/2022/04/IAB_Video_Ad_Spend_Report_2022.pdf), 73% of video buyers expected to fund increases in CTV spending by moving dollars away from linear TV. The [IAB 2023 Outlook Survey](https://www.iab.com/insights/2023-outlook-survey/) projected CTV to lead 2023 digital ad spend growth at 14.4%. In India, a GroupM Finecast and Kantar report forecast that brands will spend $395 million on CTV advertising by 2027, as [reported by The Economic Times](https://economictimes.indiatimes.com/industry/services/advertising/ctv-advertising-in-india-to-reach-395-million-by-2027-finecast-kantar/articleshow/96106640.cms).
 
 ## How is CTV different from traditional TV?
 
@@ -67,15 +88,15 @@ There is another TV available in the market: OTT. Many users are confused CTV wi
 
 ## Why is CTV growing in India?
 
-In recent years, Indians have had an insatiable appetite for video content. According to WeareSocial’s Feb 2022 India report, 95% of Indians watch videos weekly, 97.2% stream TV content online, and 54.5% watch streaming TV as a percentage of total TV time. A study by Bain and Company revealed India’s online video user base had scaled to over 350 million people, growing 24% between 2018 and 2020, nearly twice as fast as China and Indonesia.
+In recent years, Indians have had an insatiable appetite for video content. According to [DataReportal's Digital 2022: India report](https://datareportal.com/reports/digital-2022-india) (We Are Social and Kepios, February 2022), 95% of internet users aged 16 to 64 watch videos online each week, 97.2% stream TV content over the internet, and streaming accounts for 54.5% of their total TV viewing time. [Bain & Company reported](https://www.bain.com/about/media-center/press-releases/2022/short-form-video-india/) that India's online video user base had grown to more than 350 million people, growing 24% over 2018 to 2020, nearly twice as fast as markets such as China and Indonesia.
 
-Younger generations are particularly fond of the connected TV, while Traditional TV is becoming increasingly associated with older age groups. According to 2021 Global Video Advertising Market Trend released by Emarketer, in APAC, CTV audience age at 32 on average.
+Younger generations are particularly fond of connected TV, while traditional TV is becoming increasingly associated with older age groups.
 
-As per KPMG, India TV penetration in 2022 stood at around 70%, including 87% in urban and 61% in rural households. Another prime factor for the growth of CTV is the affordable smart TV brands available in the market. The market is dominated by MiTV, followed by Samsung and LG.
+According to [KPMG in India](https://assets.kpmg.com/content/dam/kpmgsites/in/pdf/2022/11/Sports%20broadcasting%20on%20TV%20-%20A%20match%20made%20in%20heaven.pdf) (November 2022), TV penetration in India stood at around 70%, including 87% of urban and 61% of rural households. Another prime factor for the growth of CTV is the affordable smart TV brands available in the market. The market is dominated by MiTV, followed by Samsung and LG.
 
 ## Where will new CTV audiences in India come from?
 
-Kantar report also showed there will be 900 million internet users in India by 2025 led by rural user growth. A substantial amount of growth in TV households is anticipated to stem from the rural markets, including 61% penetration contributed by all rural households. According to KPMG, this growth will primarily take the form of both Pay TV and Free to Air (FTA). All indications point to DD FreeDish reaching up to 52-55 million households, while an augmented offering of fresh content and increasingly reasonable prices mean more households than ever are expected to subscribe to Pay TV services, creating a host of attractive opportunities for advertisers targeting a broader consumer base.
+The [IAMAI and Kantar ICUBE 2020 report](https://www.iamai.in/sites/default/files/research/IAMAI-KANTAR-ICUBE-2020-Report.pdf) estimated that India will have more than 900 million active internet users by 2025. A substantial amount of growth in TV households is anticipated to stem from the rural markets, including 61% penetration contributed by all rural households. According to [KPMG](https://assets.kpmg.com/content/dam/kpmgsites/in/pdf/2022/11/Sports%20broadcasting%20on%20TV%20-%20A%20match%20made%20in%20heaven.pdf), this growth will primarily take the form of both Pay TV and Free to Air (FTA). All indications point to DD FreeDish reaching up to 52-55 million households, while an augmented offering of fresh content and increasingly reasonable prices mean more households than ever are expected to subscribe to Pay TV services, creating a host of attractive opportunities for advertisers targeting a broader consumer base.
 
 For later coverage, see [how India's smart TV boom is transforming CTV ads](/news/from-living-rooms-to-ad-platforms-ef-bc-8chow-indias-smart-tv-boom-is-transforming-ctv-ads) (2024) and [CTV and influencer strategies for IPL 2025](/news/ipl-2025-ctv-influencer-strategies-to-dominate-indias-150m-digital-audience).
 
@@ -95,6 +116,6 @@ Indian audiences watch a large and growing amount of online video, younger viewe
 
 ### Where will new TV audiences in India come from?
 
-According to the Kantar and KPMG figures cited when this article was published in 2023, much of the growth in TV households was expected to come from rural markets, through both Pay TV and Free to Air services.
+According to the KPMG figures cited when this article was published in 2023, much of the growth in TV households was expected to come from rural markets, through both Pay TV and Free to Air services.
 
-*First published March 20, 2023. Updated October 17, 2026 with a clearer structure, a summary and an FAQ. Figures are as reported in 2023.*
+*First published March 20, 2023. Updated October 17, 2026 with a clearer structure, a summary and an FAQ. Figures are as reported in 2023; source links added and wording aligned with the original reports in October 2026.*
