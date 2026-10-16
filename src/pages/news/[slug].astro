@@ -9,6 +9,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { site } from '../../config/site';
 import {
   getEstimatedReadingMinutes,
+  getRelatedNews,
   getTaxonomyCountMap,
   sortTaxonomyItemsByCount,
   sortNewsEntries,
@@ -32,6 +33,7 @@ export async function getStaticPaths() {
       taxonomyCounts,
       newerPost: posts[index - 1],
       olderPost: posts[index + 1],
+      related: getRelatedNews(post, posts),
     },
   }));
 }
@@ -44,9 +46,10 @@ interface Props {
   };
   newerPost?: CollectionEntry<'news'>;
   olderPost?: CollectionEntry<'news'>;
+  related: CollectionEntry<'news'>[];
 }
 
-const { post, taxonomyCounts, newerPost, olderPost } = Astro.props;
+const { post, taxonomyCounts, newerPost, olderPost, related } = Astro.props;
 const { data } = post;
 const { Content } = await render(post);
 const publishedAt = new Intl.DateTimeFormat('en', {
@@ -69,7 +72,6 @@ const orderedTags = sortTaxonomyItemsByCount(data.tags, taxonomyCounts.tags);
 const siteOrigin = Astro.site || Astro.url.origin;
 const pageUrl = new URL(`/news/${data.slug}`, siteOrigin).href;
 const orgId = new URL('/#organization', siteOrigin).href;
-const linkedIn = site.socialLinks.find((link) => link.icon === 'linkedin');
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -150,12 +152,20 @@ const jsonLd = {
     {
       '@type': 'Organization',
       '@id': orgId,
-      name: site.name,
+      name: 'MOCA Technology',
+      alternateName: ['Moca Technology', 'MOCA', '先人掌'],
       url: new URL('/', siteOrigin).href,
       logo: new URL('/images/moca-logo.svg', siteOrigin).href,
       foundingDate: '2012',
       email: site.contact.cooperationEmail,
-      ...(linkedIn && { sameAs: [linkedIn.href] }),
+      sameAs: site.socialLinks
+        .filter((link) => link.icon === 'linkedin' || link.icon === 'instagram')
+        .map((link) => link.href),
+      brand: {
+        '@type': 'Brand',
+        name: 'KOLPlanet',
+        url: 'https://www.kolplanet.com',
+      },
     },
     {
       '@type': 'BreadcrumbList',
@@ -315,6 +325,23 @@ const jsonLdHtml = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
           )
         }
       </div>
+
+      {
+        related.length > 0 && (
+          <section class="article-related" aria-labelledby="article-related-heading">
+            <p class="eyebrow">Keep reading</p>
+            <h2 id="article-related-heading">Related articles</h2>
+            <nav class="article-navigation" aria-label="Related articles">
+              {related.map((item) => (
+                <a href={`/news/${item.data.slug}`}>
+                  <span class="article-navigation__label">{item.data.categories[0]?.name || 'News'}</span>
+                  <strong>{item.data.title}</strong>
+                </a>
+              ))}
+            </nav>
+          </section>
+        )
+      }
 
       <nav class="article-navigation" aria-label="More news articles">
         {

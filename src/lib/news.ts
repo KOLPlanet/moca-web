@@ -52,6 +52,34 @@ export function sortNewsEntries(entries: NewsEntry[]) {
   );
 }
 
+/**
+ * Up to `limit` other articles ranked by shared categories + tags, newer first on ties.
+ * An article that shares nothing with any other falls back to the newest articles.
+ */
+export function getRelatedNews(
+  current: NewsEntry,
+  entries: NewsEntry[],
+  limit = 4,
+) {
+  const terms = (entry: NewsEntry) =>
+    new Set([
+      ...entry.data.categories.map((item) => `category:${item.slug}`),
+      ...entry.data.tags.map((item) => `tag:${item.slug}`),
+    ]);
+  const currentTerms = terms(current);
+  const others = sortNewsEntries(entries)
+    .filter((entry) => entry.id !== current.id)
+    .map((entry) => ({
+      entry,
+      shared: [...terms(entry)].filter((term) => currentTerms.has(term)).length,
+    }));
+  const related = others.filter(({ shared }) => shared > 0);
+
+  return (related.length > 0 ? related.sort((a, b) => b.shared - a.shared) : others) // sort is stable: newest first within a score
+    .slice(0, limit)
+    .map(({ entry }) => entry);
+}
+
 export function paginateNews(
   entries: NewsEntry[],
   currentPage: number,

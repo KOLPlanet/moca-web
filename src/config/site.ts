@@ -38,7 +38,7 @@ export const site = {
   socialLinks: [
     {
       label: 'Instagram',
-      href: 'https://www.instagram.com/p/DTxtwRJjNyT/',
+      href: 'https://www.instagram.com/moca.influencers/',
       icon: 'instagram',
     },
     {

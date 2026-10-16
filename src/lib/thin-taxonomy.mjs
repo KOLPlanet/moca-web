@@ -7,9 +7,9 @@ import { parse } from 'yaml';
 
 export const THIN_TAXONOMY_MIN = 3;
 
-/** Pathnames (no trailing slash) of thin tag and category archives. */
-export function thinTaxonomyPaths(newsDir = './src/content/news') {
-  const counts = { tag: new Map(), category: new Map() };
+/** Frontmatter of every non-draft article under the news content folder. */
+function readNewsData(newsDir) {
+  const articles = [];
   for (const slug of readdirSync(newsDir)) {
     let raw;
     try {
@@ -18,7 +18,25 @@ export function thinTaxonomyPaths(newsDir = './src/content/news') {
       continue;
     }
     const data = parse(raw.split(/^---$/m)[1] || '') || {};
-    if (data.draft) continue;
+    if (!data.draft) articles.push(data);
+  }
+  return articles;
+}
+
+/** Map of article pathname (/news/<slug>) to its last-modified ISO date. */
+export function newsLastmods(newsDir = './src/content/news') {
+  return new Map(
+    readNewsData(newsDir).map((data) => [
+      `/news/${data.slug}`,
+      new Date(data.updatedAt || data.publishedAt).toISOString(),
+    ]),
+  );
+}
+
+/** Pathnames (no trailing slash) of thin tag and category archives. */
+export function thinTaxonomyPaths(newsDir = './src/content/news') {
+  const counts = { tag: new Map(), category: new Map() };
+  for (const data of readNewsData(newsDir)) {
     for (const [kind, key] of [['tag', 'tags'], ['category', 'categories']]) {
       for (const s of new Set((data[key] || []).map((item) => item.slug))) {
         counts[kind].set(s, (counts[kind].get(s) || 0) + 1);
