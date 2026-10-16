@@ -130,7 +130,7 @@ sourceHash: native
 
 A creator-led city campaign uses local creators instead of an official film to explain a city's perks, places and culture. MOCA Technology ran one for the Jakarta Tourism Office in 2026. The occasion was Jakarta's 499th anniversary. The campaign had three tracks (residents' hopes, transit tests and cultural exploration) built on the city's perks: Rp1 transit fares and free museum days. Local creators and one campaign account, Spill Jakarta, turned those perks into steps residents could follow the same day.
 
-<video controls preload="metadata" playsinline width="360" poster="/videos/jakarta-499th-anniversary-creator-led-city-campaign-2026/poster.jpg">
+<video controls preload="none" playsinline width="360" poster="/videos/jakarta-499th-anniversary-creator-led-city-campaign-2026/poster.jpg">
   <source src="/videos/jakarta-499th-anniversary-creator-led-city-campaign-2026/case-study.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
