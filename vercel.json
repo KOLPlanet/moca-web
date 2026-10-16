@@ -39,7 +39,7 @@
       "permanent": true
     },
     {
-      "source": "/news/category/:a/:b/:c",
+      "source": "/news/category/:a/:b((?!page/)[^/]+)/:c",
       "destination": "/news/category/:c",
       "permanent": true
     },
