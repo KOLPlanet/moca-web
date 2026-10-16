@@ -4,7 +4,7 @@ export const categoryIntros: Record<string, string> = {
   campaigns:
     'Campaign write-ups covering festive-season app marketing, a new-model launch in Indonesia, OEM app store exposure, and the growth impact of influencer marketing.',
   'case-study':
-    'Case studies on consumer drink brands in the Indonesian market, an OTT-led partnership, and lessons drawn from a mistake made in public.',
+    'Campaign case studies from Indonesia, including two consumer beverage brands, plus an article on learning the right lessons from a mistake.',
   ctv:
     'Connected TV advertising in India and Southeast Asia: how CTV and OTT reshape reach, from smart TV growth and sports audiences to T-commerce.',
   'digital-advertising':
