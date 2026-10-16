@@ -4,6 +4,9 @@ import vercel from '@astrojs/vercel';
 import partytown from '@astrojs/partytown';
 import sitemap from '@astrojs/sitemap';
 import { loadEnv } from 'vite';
+import { thinTaxonomyPaths } from './src/lib/thin-taxonomy.mjs';
+
+const thinTaxonomy = thinTaxonomyPaths();
 
 const mode = process.env.NODE_ENV === 'development' ? 'development' : 'production';
 const env = loadEnv(mode, process.cwd(), '');
@@ -29,7 +32,11 @@ export default defineConfig({
   output: isStaticTarget ? 'static' : 'server',
   integrations: [
     sitemap({
-      filter: (page) => !new URL(page).pathname.startsWith('/api/'),
+      filter: (page) => {
+        const path = new URL(page).pathname.replace(/\/$/, '');
+        // Thin tag/category archives are noindex (see NewsArchive), so keep them out too.
+        return !path.startsWith('/api/') && !thinTaxonomy.has(path);
+      },
       // News pages declare canonical URLs without a trailing slash; list them the same way.
       serialize: (item) => {
         const url = new URL(item.url);

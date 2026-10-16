@@ -4,6 +4,7 @@ import {
   getArchivePageHref,
   getTaxonomySummaries,
 } from '../lib/news';
+import { THIN_TAXONOMY_MIN } from '../lib/thin-taxonomy.mjs';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import NewsCard from './NewsCard.astro';
 import Pagination from './Pagination.astro';
@@ -41,9 +42,11 @@ const categories = getTaxonomySummaries(allEntries, 'categories');
 const pageDescription =
   currentPage === 1 ? description : `${description} Page ${currentPage} of ${totalPages}.`;
 const canonicalUrl = getArchivePageHref(basePath, currentPage);
+const robots =
+  activeFilter && totalEntries < THIN_TAXONOMY_MIN ? 'noindex, follow' : undefined;
 ---
 
-<BaseLayout title={title} description={pageDescription} canonicalUrl={canonicalUrl}>
+<BaseLayout title={title} description={pageDescription} canonicalUrl={canonicalUrl} robots={robots}>
   <section class="page-hero page-hero--news">
     <div class="container">
       <p class="eyebrow eyebrow--light">{eyebrow}</p>
