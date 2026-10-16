@@ -18,7 +18,7 @@ categories:
   - name: E-commerce
     slug: e-commerce
   - name: Indonesia
-    slug: indonesia-2
+    slug: indonesia
   - name: Influencer Marketing
     slug: influencer
   - name: S.E.A.

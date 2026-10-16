@@ -18,7 +18,7 @@ categories:
   - name: India
     slug: india
   - name: Indonesia
-    slug: indonesia-2
+    slug: indonesia
 tags:
   - name: Gaming
     slug: gaming

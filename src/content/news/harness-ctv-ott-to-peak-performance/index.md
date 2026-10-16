@@ -18,7 +18,7 @@ categories:
   - name: Digital marketing
     slug: digital-marketing
   - name: OTT
-    slug: ott-indonesia
+    slug: ott
 tags:
   - name: CTV
     slug: ctv

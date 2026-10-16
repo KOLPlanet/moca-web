@@ -16,7 +16,7 @@ categories:
   - name: Digital Advertising
     slug: digital-advertising
   - name: Indonesia
-    slug: indonesia-2
+    slug: indonesia
   - name: S.E.A.
     slug: s-e-a
 tags:

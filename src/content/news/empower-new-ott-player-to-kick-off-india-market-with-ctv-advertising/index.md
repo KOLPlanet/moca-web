@@ -16,7 +16,7 @@ categories:
   - name: CTV
     slug: ctv
   - name: OTT
-    slug: ott-indonesia
+    slug: ott
 tags:
   - name: case study
     slug: case-study
