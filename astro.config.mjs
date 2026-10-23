@@ -4,9 +4,10 @@ import vercel from '@astrojs/vercel';
 import partytown from '@astrojs/partytown';
 import sitemap from '@astrojs/sitemap';
 import { loadEnv } from 'vite';
-import { thinTaxonomyPaths } from './src/lib/thin-taxonomy.mjs';
+import { newsLastmods, thinTaxonomyPaths } from './src/lib/thin-taxonomy.mjs';
 
 const thinTaxonomy = thinTaxonomyPaths();
+const articleLastmods = newsLastmods();
 
 const mode = process.env.NODE_ENV === 'development' ? 'development' : 'production';
 const env = loadEnv(mode, process.cwd(), '');
@@ -43,6 +44,8 @@ export default defineConfig({
         if (url.pathname.startsWith('/news/')) {
           url.pathname = url.pathname.replace(/\/$/, '');
           item.url = url.href;
+          const lastmod = articleLastmods.get(url.pathname);
+          if (lastmod) item.lastmod = lastmod;
         }
         return item;
       },

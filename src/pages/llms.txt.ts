@@ -1,18 +1,52 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { site } from '../config/site';
-import { sortNewsEntries } from '../lib/news';
+import { getTaxonomySummaries, sortNewsEntries, type NewsEntry } from '../lib/news';
 
 export const prerender = true;
 
-const LATEST_ARTICLES = 10;
+const MAX_ARTICLES = 30;
+
+// Company and corporate announcements (galas, greetings, awards, event recaps) add little for answer engines.
+const isCorporate = ({ data }: NewsEntry) =>
+  data.categories.some((item) => item.slug === 'company-news') ||
+  /^moca\b/i.test(data.title);
 
 // llms.txt spec: https://llmstxt.org
 export const GET: APIRoute = async ({ site: siteUrl }) => {
   const origin = siteUrl || new URL('http://localhost:4321');
-  const posts = sortNewsEntries(
+  const all = sortNewsEntries(
     await getCollection('news', ({ data }) => !data.draft),
-  ).slice(0, LATEST_ARTICLES);
+  );
+  const categories = getTaxonomySummaries(all, 'categories');
+  const rankOf = (slug: string) =>
+    categories.findIndex((category) => category.slug === slug);
+  // An article is listed under its largest category.
+  const primary = (entry: NewsEntry) =>
+    [...entry.data.categories].sort((a, b) => rankOf(a.slug) - rankOf(b.slug))[0];
+  const eligible = all.filter((entry) => !isCorporate(entry));
+
+  // Articles with FAQ or key takeaways first, then fill with the newest of each large category in turn.
+  const picked = new Set(
+    eligible.filter(({ data }) => data.faq.length > 0 || data.keyTakeaways.length > 0),
+  );
+  const queues = categories.map((category) =>
+    eligible.filter((entry) => primary(entry)?.slug === category.slug),
+  );
+  while (picked.size < MAX_ARTICLES && queues.some((queue) => queue.length > 0)) {
+    for (const queue of queues) {
+      while (queue.length > 0 && picked.has(queue[0])) queue.shift();
+      if (queue.length > 0 && picked.size < MAX_ARTICLES) picked.add(queue.shift()!);
+    }
+  }
+  const groups = categories
+    .map((category) => ({
+      name: category.name,
+      posts: eligible.filter(
+        (entry) => picked.has(entry) && primary(entry)?.slug === category.slug,
+      ),
+    }))
+    .filter((group) => group.posts.length > 0);
   const linkedIn = site.socialLinks.find((link) => link.icon === 'linkedin');
 
   const body = [
@@ -30,12 +64,17 @@ export const GET: APIRoute = async ({ site: siteUrl }) => {
     '- Content commerce activation: TikTok Shop, Shopee, Lazada, and Tokopedia campaigns',
     '- Branding solutions for cross-border and local brands',
     '',
-    '## Latest Articles',
+    '## Articles',
     '',
-    ...posts.map(
-      (post) =>
-        `- [${post.data.title}](${new URL(`/news/${post.data.slug}`, origin).href}): ${post.data.description}`,
-    ),
+    ...groups.flatMap((group) => [
+      `### ${group.name}`,
+      '',
+      ...group.posts.map(
+        (post) =>
+          `- [${post.data.title}](${new URL(`/news/${post.data.slug}`, origin).href}): ${post.data.description}`,
+      ),
+      '',
+    ]),
     '',
     `All articles: ${new URL('/news', origin).href}`,
     '',

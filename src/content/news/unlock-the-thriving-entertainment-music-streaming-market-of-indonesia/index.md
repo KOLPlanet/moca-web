@@ -18,7 +18,7 @@ categories:
   - name: Indonesia
     slug: indonesia
   - name: OTT
-    slug: ott-indonesia
+    slug: ott
 tags:
   - name: Entertainment
     slug: entertainment

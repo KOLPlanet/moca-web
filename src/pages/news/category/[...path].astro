@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import NewsArchive from '../../../components/NewsArchive.astro';
+import { categoryIntros } from '../../../lib/category-intros';
 import {
   filterNewsByTaxonomy,
   getTaxonomyLabel,
@@ -65,5 +66,6 @@ const label = getTaxonomyLabel(allEntries, 'categories', slug) || slug;
   totalPages={page.totalPages}
   totalEntries={page.totalEntries}
   basePath={`/news/category/${slug}`}
+  intro={page.currentPage === 1 ? categoryIntros[slug] : undefined}
   activeFilter={{ kind: 'category', label, slug }}
 />

@@ -1,6 +1,7 @@
 ---
 import type { NewsEntry } from '../lib/news';
 import {
+  NEWS_PAGE_SIZE,
   getArchivePageHref,
   getTaxonomySummaries,
 } from '../lib/news';
@@ -19,6 +20,7 @@ interface Props {
   totalPages: number;
   totalEntries: number;
   basePath: string;
+  intro?: string;
   activeFilter?: {
     kind: 'category' | 'tag';
     label: string;
@@ -36,6 +38,7 @@ const {
   totalPages,
   totalEntries,
   basePath,
+  intro,
   activeFilter,
 } = Astro.props;
 const categories = getTaxonomySummaries(allEntries, 'categories');
@@ -44,9 +47,32 @@ const pageDescription =
 const canonicalUrl = getArchivePageHref(basePath, currentPage);
 const robots =
   activeFilter && totalEntries < THIN_TAXONOMY_MIN ? 'noindex, follow' : undefined;
+const siteOrigin = Astro.site || Astro.url.origin;
+const pageUrl = new URL(canonicalUrl, siteOrigin).href;
+// Indexable archives only; thin (noindex) archives get no structured data.
+const jsonLdHtml = robots
+  ? undefined
+  : JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      '@id': pageUrl,
+      url: pageUrl,
+      name: title,
+      description: pageDescription,
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: entries.map((entry, index) => ({
+          '@type': 'ListItem',
+          position: (currentPage - 1) * NEWS_PAGE_SIZE + index + 1,
+          url: new URL(`/news/${entry.data.slug}`, siteOrigin).href,
+          name: entry.data.title,
+        })),
+      },
+    }).replace(/</g, '\\u003c');
 ---
 
 <BaseLayout title={title} description={pageDescription} canonicalUrl={canonicalUrl} robots={robots}>
+  {jsonLdHtml && <script type="application/ld+json" slot="head" is:inline set:html={jsonLdHtml} />}
   <section class="page-hero page-hero--news">
     <div class="container">
       <p class="eyebrow eyebrow--light">{eyebrow}</p>
@@ -54,6 +80,16 @@ const robots =
       <p>{description}</p>
     </div>
   </section>
+
+  {
+    intro && (
+      <section class="news-intro">
+        <div class="container">
+          <p>{intro}</p>
+        </div>
+      </section>
+    )
+  }
 
   <section class="news-archive">
     <div class="container news-page-layout">
