@@ -4,9 +4,9 @@ slug: moca-annual-gala-celebration-talent-in-every-sense
 sourceUrl: https://www.moca-tech.net/news/moca-annual-gala-celebration-talent-in-every-sense.html
 canonicalUrl: https://www.moca-tech.net/news/moca-annual-gala-celebration-talent-in-every-sense.html
 title: "MOCA Annual Gala: Celebration Talent in Every Sense"
-seoTitle: MOCA Technology Celebrates 13th Anniversary | Year of GRIT
+seoTitle: "MOCA Technology 13th Anniversary: Year of GRIT"
 summary: MOCA Technology, a Shanghai-based influencer marketing company, celebrates 13 years. Explore KOLPlanet, our AI platform for Asia Pacific campaigns.
-description: MOCA Technology, a Shanghai-based influencer marketing company, celebrates 13 years. Explore KOLPlanet, our AI platform for Asia Pacific campaigns.
+description: MOCA Technology marked its 13th anniversary with the Year of GRIT annual meeting, five gala awards and a talent show across six Asian markets.
 publishedAt: 2026-02-06T01:14+00:00
 updatedAt: 2026-02-06T01:16+00:00
 author:
@@ -35,7 +35,7 @@ tags:
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2026/02/%E5%85%AC%E4%BC%97%E5%8F%B7_20260205.jpg
-  alt: "MOCA Annual Gala: Celebration Talent in Every Sense"
+  alt: "Illustrated cartoon avatars of MOCA team members over a collage of team photos, with the large MOCA logo and the text Since 2012"
   width: 2350
   height: 1000
 keyTakeaways: []
@@ -157,3 +157,5 @@ MOCA Technology serves brands in gaming, e-commerce, fintech, consumer electroni
 
 **How can I contact MOCA Technology?**
 You can reach MOCA Technology at business@moca-tech.net or visit www.moca-tech.net for more information about influencer marketing solutions in Asia.
+
+Related reading: [MOCA Shines at ChinaJoy 2025](/news/moca-shines-at-chinajoy-2025-influencer-marketing-fuels-brand-expansion) and [MOCA Triumphs at ad:tech India](/news/moca-triumphs-at-adtech-india).
