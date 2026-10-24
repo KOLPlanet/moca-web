@@ -29,6 +29,26 @@
       "permanent": true
     },
     {
+      "source": "/news/category/indonesia-2/page/:page",
+      "destination": "/news/category/indonesia",
+      "permanent": true
+    },
+    {
+      "source": "/news/category/indonesia-2",
+      "destination": "/news/category/indonesia",
+      "permanent": true
+    },
+    {
+      "source": "/news/category/ott-indonesia/page/:page",
+      "destination": "/news/category/ott",
+      "permanent": true
+    },
+    {
+      "source": "/news/category/ott-indonesia",
+      "destination": "/news/category/ott",
+      "permanent": true
+    },
+    {
       "source": "/news/category/:a/:b/:c/page/:page",
       "destination": "/news/category/:c",
       "permanent": true
@@ -52,6 +72,17 @@
       "source": "/news/:slug.html",
       "destination": "/news/:slug",
       "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/news/rss.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/rss+xml; charset=utf-8"
+        }
+      ]
     }
   ]
 }

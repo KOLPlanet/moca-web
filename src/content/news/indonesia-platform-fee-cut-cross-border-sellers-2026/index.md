@@ -17,8 +17,6 @@ categories:
     slug: e-commerce
   - name: Indonesia
     slug: indonesia
-  - name: Indonesia
-    slug: indonesia-2
   - name: Influencer Marketing
     slug: influencer
 tags:

@@ -14,7 +14,7 @@ author:
   type: Organization
 categories:
   - name: Indonesia
-    slug: indonesia-2
+    slug: indonesia
   - name: Influencer Marketing
     slug: influencer
 tags:
