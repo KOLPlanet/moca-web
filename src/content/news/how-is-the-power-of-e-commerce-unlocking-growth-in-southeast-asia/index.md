@@ -4,11 +4,11 @@ slug: how-is-the-power-of-e-commerce-unlocking-growth-in-southeast-asia
 sourceUrl: https://www.moca-tech.net/news/how-is-the-power-of-e-commerce-unlocking-growth-in-southeast-asia.html
 canonicalUrl: https://www.moca-tech.net/news/how-is-the-power-of-e-commerce-unlocking-growth-in-southeast-asia.html
 title: How Is The Power Of E-commerce Unlocking Growth In Southeast Asia?
-seoTitle: How Is The Power Of E-commerce Unlocking Growth In Southeast Asia?
-summary: The E-commerce market has seen significant growth in the Southeast Asian region, despite companies capitalizing on the growth facing significant challenges.
-description: The E-commerce market has seen significant growth in the Southeast Asian region, despite companies capitalizing on the growth facing significant challenges.
+seoTitle: "E-commerce in Southeast Asia: Drivers and Forecasts"
+summary: "E-commerce is driving growth in Southeast Asia through pandemic-era shopping habits, e-wallet and buy-now-pay-later payments, new shoppers outside the big cities and regional integration. Google, Temasek and Bain forecast e-commerce GMV of US$234 billion by 2025 (2021 report), and eMarketer forecast US$89.67 billion in e-commerce sales for 2022."
+description: "Southeast Asia e-commerce: Google, Temasek and Bain forecast US$234B GMV by 2025. What drove growth and which markets led. First published 2022."
 publishedAt: 2022-09-07T12:49+00:00
-updatedAt: 2023-04-28T08:49+00:00
+updatedAt: 2026-10-25T10:00+08:00
 author:
   name: MOCA
   type: Organization
@@ -41,46 +41,118 @@ tags:
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2022/09/How-Is-The-Power-Of-E-commerce-Unlocking-Growth-In-Southeast-Asia-.jpg
-  alt: How Is The Power Of E-commerce Unlocking Growth In Southeast Asia?
+  alt: "Illustrated map of Southeast Asia with dotted arrows pointing to a smartphone showing a shopping basket, a payment card and chat icons, with the MOCA cactus logo"
   width: 1000
   height: 500
-keyTakeaways: []
-faq: []
-citations: []
+keyTakeaways:
+  - "Compare e-commerce forecasts only after checking what they measure: Google, Temasek and Bain report GMV, while eMarketer forecasts retail e-commerce sales."
+  - "Label every Southeast Asia market figure with its source and year, because the 2022 e-Conomy SEA edition revised the 2025 forecast."
+  - "Plan for shoppers outside the big cities, since most new digital consumers in 2021 came from non-metro areas."
+  - "Support e-wallet and buy-now-pay-later checkout, which the e-Conomy SEA 2021 report linked to a new wave of underbanked online shoppers."
+  - "Budget for engagement and repeat purchase, not only user acquisition, as platforms moved toward profitability in 2022."
+faq:
+  - question: "How big is e-commerce in Southeast Asia?"
+    answer: "According to the Google, Temasek and Bain e-Conomy SEA 2021 report, e-commerce GMV in Southeast Asia was US$120 billion in 2021 and was forecast to reach US$234 billion by 2025. eMarketer, using a different measure, forecast US$89.67 billion in e-commerce sales for 2022."
+  - question: "Which Southeast Asian countries have the fastest e-commerce growth?"
+    answer: "In its February 2022 forecast, eMarketer put the Philippines, Indonesia, Vietnam, Malaysia and Thailand in the top 10 of the markets it tracks for retail e-commerce sales growth in 2022."
+  - question: "What is driving e-commerce growth in Southeast Asia?"
+    answer: "The e-Conomy SEA 2021 report points to the pandemic, which raised purchase frequency and spend for one in two online shoppers, plus e-wallets and buy-now-pay-later options and new shoppers from non-metro areas. The ASEAN Economic Community Blueprint 2025 also aims at smoother movement of goods and services."
+  - question: "Does e-commerce GMV include sales made through social media?"
+    answer: "No. The e-Conomy SEA 2021 report excludes informal e-commerce, meaning sales started on social media and messaging apps but never recorded on a retail platform. It noted this is particularly popular in Thailand and Vietnam."
+  - question: "What challenges did Southeast Asian e-commerce companies face in 2022?"
+    answer: "The e-Conomy SEA 2022 report described players reducing promotions and discounts to improve profitability and shifting from user acquisition to engagement, while online grocery still faced freshness, delivery time and pricing concerns."
+citations:
+  - name: "e-Conomy SEA 2021"
+    url: https://services.google.com/fh/files/misc/e_conomy_sea_2021_report.pdf
+    publisher: Google, Temasek and Bain & Company
+  - name: "e-Conomy SEA 2022"
+    url: https://services.google.com/fh/files/misc/e_conomy_sea_2022_report.pdf
+    publisher: Google, Temasek and Bain & Company
+  - name: "Southeast Asia sees the fastest digital sales growth in the world"
+    url: https://www.emarketer.com/content/southeast-asia-sees-fastest-digital-sales-growth-world
+    publisher: eMarketer
+  - name: "Southeast Asia Ecommerce Forecast 2022"
+    url: https://www.emarketer.com/content/southeast-asia-ecommerce-forecast-2022
+    publisher: eMarketer
+  - name: "ASEAN Economic Community Blueprint 2025"
+    url: https://asean.org/book/asean-economic-community-blueprint-2025/
+    publisher: ASEAN Secretariat
 language: en-US
 draft: false
 scrapedAt: 2026-07-20T11:36:39.178Z
 sourceHash: d70d9ef2583b710237b0528750cde1fe9421dbeedf8d2d4f1d0f45710dc98d01
 ---
 
-There are possibilities that arise with E-commerce that are so exciting that someone who lives a life,  thinking 9-5 is the only way down can be lit up by them. Since the era of online entrepreneurship, freedom and fulfillment have never been so accessible. The E-commerce market has seen significant growth in the Southeast Asian region.
+![Illustrated map of Southeast Asia with dotted arrows pointing to a smartphone showing a shopping basket, a payment card and chat icons, with the MOCA cactus logo](./assets/cover.jpg)
 
-Despite companies capitalizing on the growth facing significant challenges, a boom in E-commerce sales in Southeast Asia over the next five years will continue. In a recent report by Google and Temasek, E-commerce sales in Southeast Asia are forecast to grow to US$240 billion by 2025.
+E-commerce is driving growth in Southeast Asia through pandemic-era shopping habits, e-wallet and buy-now-pay-later payments, new shoppers outside the big cities and closer regional integration. Google, Temasek and Bain forecast the region's e-commerce GMV at US$234 billion by 2025 (2021 report). This article, first published in September 2022, sets out those forecasts, the markets that led and the factors behind the growth. Figures are as reported in 2021 and 2022.
 
-**The Southeast Asian E-commerce Landscape**
+## How big is e-commerce in Southeast Asia?
 
-According to the latest data from Statista, the countries in Southeast Asia are leading the way toward a profitable E-commerce ecosystem which includes Indonesia, Thailand, Vietnam, Malaysia, the Philippines, and Singapore. These countries have quickly established themselves in the global E-commerce landscape and represent a unique opportunity for foreign merchants. The revenue generated in the E-commerce market in Southeast Asia is projected to reach US$142.70bn in 2022. Revenue is expected to show an annual growth rate of 15.08% (2022-2025), resulting in a projected market volume of US$ 217.50bn by 2025. The total E-commerce sales in Southeast Asia will be $89.67 billion in 2022, an increase of $16.31 billion over last year, and is expected to reach the $100 billion mark in the year 2023 according to the source eMarketers.
+In its [e-Conomy SEA 2021 report](https://services.google.com/fh/files/misc/e_conomy_sea_2021_report.pdf), Google, Temasek and Bain & Company put the region's e-commerce gross merchandise value (GMV) at US$120 billion in 2021 and forecast US$234 billion by 2025. The 2022 edition of the report revised that 2025 forecast downward, so treat it as a 2021 view rather than a current one.
 
-The revenue growth by segment (2021) for Indonesia was 10.21% for Thailand at 8.47%, Vietnam at 5.67%, Malaysia at 14.97%, the Philippines at 14.75%, and Singapore it was 16.1%. According to marketers and the Department of Statistics Singapore the E-commerce GMV per capita for Singapore would be $789, for Indonesia $157 and for Thailand $155 in 2025.
+[eMarketer](https://www.emarketer.com/content/southeast-asia-sees-fastest-digital-sales-growth-world) (February 2022) forecast that e-commerce sales in Southeast Asia would total US$89.67 billion in 2022, an increase of US$15.31 billion over 2021, and cross the US$100 billion mark in 2023.
 
-**Key players dominating the market**
+The two sets of numbers differ because they use different definitions and methods, so they should not be added or compared line by line.
 
-According to Statista, the key players in the Southeast Asian region grab the majority of the market share, it includes Shopee with the total visit per month of 197.8M in Southeast Asia, Lazada with 161.7M visits per month while Tokopedia with 72.4M visits, Bukalapak with 26.8M visits and Blibli 15.8M visits in Indonesia whereas, Tiki with 22.0M visits and Sendo with 11.4M visits in Vietnam.
+| Source | Measure | Figure | Year reported |
+| --- | --- | --- | --- |
+| Google, Temasek and Bain | E-commerce GMV, 2021 | US$120 billion | 2021 |
+| Google, Temasek and Bain | E-commerce GMV forecast, 2025 | US$234 billion | 2021 |
+| eMarketer | E-commerce sales forecast, 2022 | US$89.67 billion | 2022 |
+| eMarketer | E-commerce sales forecast, 2023 | Above US$100 billion | 2022 |
 
-Since the pandemic has damaged the economy in the past years, the three big E-commerce platforms have grown sales by offering regular sales promotions and extensive distribution coverage. The increasing role of these platforms is reflected in other engagement metrics, confirming a trend in consumers’ purchase preferences.
+Source: [e-Conomy SEA 2021](https://services.google.com/fh/files/misc/e_conomy_sea_2021_report.pdf) and [eMarketer](https://www.emarketer.com/content/southeast-asia-sees-fastest-digital-sales-growth-world).
 
-**What has made the explosion of E-commerce in Southeast Asia?**
+> **Key finding:** According to Google, Temasek and Bain's e-Conomy SEA 2021 report, Southeast Asia's e-commerce gross merchandise value was US$120 billion in 2021 and was forecast to reach US$234 billion by 2025. eMarketer separately forecast US$89.67 billion in e-commerce sales for 2022, crossing US$100 billion in 2023.
 
-Industrialization is an effective phenomenon in the Southeast Asian region that regulates its economy to the outer world.  By establishing the AEC, ASEAN deepened its economic integration by becoming a region where goods, services, investments, skilled labor, and capital can move freely.
+## Which Southeast Asian markets are growing fastest?
 
-By harnessing the online trade potential of Southeast Asia, the region can better integrate into international value chains, expand its market access and improve commercial ties within the region as a whole. Every country has its own skill that enables the economy to grow. Singapore is one of the most capitalistic societies in the world, as it is the de-facto financial hub of Southeast Asia. The city-state is home to one out of every six millionaires and its stable banking system, low taxes and immigration policies have attracted investors and entrepreneurs alike. Thailand, Myanmar, and the Philippines have significant textile and clothing industries, while Thailand and Indonesia have significant chemical industries.
+The Philippines, Indonesia, Vietnam, Malaysia and Thailand led growth in 2022, according to [eMarketer's February 2022 forecast](https://www.emarketer.com/content/southeast-asia-sees-fastest-digital-sales-growth-world), which placed all five among the top 10 markets measured by retail e-commerce sales growth. Both eMarketer and e-Conomy SEA cover six markets in total: Indonesia, Malaysia, the Philippines, Singapore, Thailand and Vietnam. eMarketer also expected Indonesia to account for the largest share of the region's sales, and its [regional report](https://www.emarketer.com/content/southeast-asia-ecommerce-forecast-2022) included a first forecast for Shopee and Bukalapak in Indonesia.
 
-As the consuming class expands in ASEAN, the size of E-commerce will be doubled by 2030. A wide range of products at low rates and fast delivery are looked for. Most Southeast Asia mid-tier cities such as Davao in the Philippines, Surabaya in Indonesia, and Penang in Malaysia has largely remained out of the E-commerce boom but the pandemic has made the fastest growth in E-commerce in the region. In Southeast Asia, 3.5 hours are spent on social media on average each day which has contributed to accelerating the E-commerce platforms. Shadow markets in social media are becoming increasingly important for E-commerce transactions.
+For how the pandemic changed buying habits in the region's largest market, see [what influence the pandemic had on e-commerce in Indonesia in 2021](/news/what-influence-did-the-pandemic-have-on-the-e-commerce-market-in-indonesia-in-2021).
 
-Increasing E-commerce volumes and reduced delivery costs will increase as ASEAN countries work to integrate a larger portion of their populations into the formal system.
+## What drove e-commerce growth in Southeast Asia?
 
-**About MOCA Technology**
+The sources point to four drivers: the pandemic, shoppers outside the big cities, digital payments and regional integration.
 
-MOCA is the largest OEM consolidator across the globe and an advertising innovator to help advertisers to make innovative formats & combinations for contextualized promotion.
+1. The pandemic. The e-Conomy SEA 2021 report found that one in two online shoppers in Southeast Asia indicated higher purchase frequency and spend since the pandemic started.
+2. Shoppers outside the big cities. The same report found that non-metro areas supplied the majority of new digital consumers in 2021.
+3. Digital payments. It described e-wallets and buy-now-pay-later options as enabling a new generation of underbanked consumers to shop online.
+4. Regional integration. The [ASEAN Economic Community Blueprint 2025](https://asean.org/book/asean-economic-community-blueprint-2025/) aims to facilitate the movement of goods, services, investment, capital and skilled labour within ASEAN, creating a more unified market for firms and consumers.
 
-MOCA wants to be the most trusted and reliable partner for marketers to provide one-stop service in improving efficiency and effective communications across all OEMs and top publishers, to help them to reach their target audiences and to be the top-of-mind brand.
+Sales that start on social media and messaging apps sit outside these totals. The e-Conomy SEA 2021 report calls this "informal e-commerce", says it is particularly popular in Thailand and Vietnam, and excludes it from its GMV figures because it is difficult to quantify.
+
+> **Key finding:** The e-Conomy SEA 2021 report found that one in two Southeast Asian online shoppers bought more often or spent more since the pandemic began, that non-metro areas supplied most new digital consumers in 2021, and that e-wallets and buy-now-pay-later options opened online shopping to underbanked consumers.
+
+## What challenges did e-commerce companies face?
+
+The [e-Conomy SEA 2022 report](https://services.google.com/fh/files/misc/e_conomy_sea_2022_report.pdf) described growth continuing but tapering from pandemic peaks. In it, e-commerce players were reducing promotions and discounts to improve profitability, and shifting from user acquisition to engagement, which it defined as boosting the frequency, value and loyalty of existing users. Online grocery still had to overcome concerns about freshness, delivery time and pricing.
+
+## Where does this leave brands in Southeast Asia?
+
+Brands entering the region should read market-size forecasts as ranges that depend on who measured them and when. For how creators now influence purchases on these platforms, see [how influencer marketing is shaping e-commerce growth in Southeast Asia](/news/how-influencer-marketing-is-shaping-e-commerce-growth-in-southeast-asia) (2025) and [Q-commerce and the future of e-commerce](/news/will-q-commerce-replace-e-commerce-to-be-the-future) (2021).
+
+## Frequently Asked Questions
+
+### How big is e-commerce in Southeast Asia?
+
+According to the Google, Temasek and Bain e-Conomy SEA 2021 report, e-commerce GMV in Southeast Asia was US$120 billion in 2021 and was forecast to reach US$234 billion by 2025. eMarketer, using a different measure, forecast US$89.67 billion in e-commerce sales for 2022.
+
+### Which Southeast Asian countries have the fastest e-commerce growth?
+
+In its February 2022 forecast, eMarketer put the Philippines, Indonesia, Vietnam, Malaysia and Thailand in the top 10 of the markets it tracks for retail e-commerce sales growth in 2022.
+
+### What is driving e-commerce growth in Southeast Asia?
+
+The e-Conomy SEA 2021 report points to the pandemic, which raised purchase frequency and spend for one in two online shoppers, plus e-wallets and buy-now-pay-later options and new shoppers from non-metro areas. The ASEAN Economic Community Blueprint 2025 also aims at smoother movement of goods and services.
+
+### Does e-commerce GMV include sales made through social media?
+
+No. The e-Conomy SEA 2021 report excludes informal e-commerce, meaning sales started on social media and messaging apps but never recorded on a retail platform. It noted this is particularly popular in Thailand and Vietnam.
+
+### What challenges did Southeast Asian e-commerce companies face in 2022?
+
+The e-Conomy SEA 2022 report described players reducing promotions and discounts to improve profitability and shifting from user acquisition to engagement, while online grocery still faced freshness, delivery time and pricing concerns.
+
+*First published September 7, 2022. Updated October 25, 2026 with a clearer structure, a summary and an FAQ. Figures are as reported in 2021 and 2022; source links added, the 2025 e-commerce forecast corrected from US$240 billion to the report's US$234 billion, and the eMarketer 2022 increase corrected to US$15.31 billion. Statistics without a traceable source were removed.*
