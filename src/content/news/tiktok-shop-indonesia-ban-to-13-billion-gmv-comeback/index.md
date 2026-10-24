@@ -128,11 +128,11 @@ TikTok Shop Indonesia operates on a local-to-local model. Pure cross-border ship
 | SNI Compliance | Mandatory for electronics and select consumer goods | Varies by category |
 | Local Warehouse | In-country fulfillment infrastructure required by TikTok Shop | Ongoing |
 
-The October 2023 ban was barely two years ago. Regulatory risk in Indonesia remains real. Brands should not treat policy stability as a default assumption.
+The October 2023 ban was barely two years ago. Regulatory risk in Indonesia remains real. Brands should not treat policy stability as a default assumption. For the fee side of Indonesia’s cross-border rules, see [Indonesia’s platform fee cut and cross-border sellers](/news/indonesia-platform-fee-cut-cross-border-sellers-2026).
 
 ## Depth Matters More Than Speed
 
-Indonesia’s TikTok commerce market is still evolving rapidly, and the competitive landscape has not yet solidified. But the rules of the game are already clear: success is not about who moves fastest, but who goes deepest.
+Indonesia’s TikTok commerce market is still evolving rapidly, and the competitive landscape has not yet solidified. But the rules of the game are already clear: success is not about who moves fastest, but who goes deepest. For the wider 2026 rule changes, see [TikTok Shop’s rule change and the search-first shift](/news/tiktok-shop-rule-change-search-first-content-sea-2026).
 
 For brands planning to enter the Indonesian market, five priorities stand out:
 

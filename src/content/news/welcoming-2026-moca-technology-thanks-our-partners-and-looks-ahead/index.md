@@ -6,7 +6,7 @@ canonicalUrl: https://www.moca-tech.net/news/welcoming-2026-moca-technology-than
 title: "Welcoming 2026: Moca Technology Thanks Our Partners and Looks Ahead"
 seoTitle: "2026 New Year: Moca Technology Thanks Our Partners"
 summary: As we step into 2026, the team at Moca Technology extends our warmest New Year wishes and sincere gratitude to all our partners, clients, and collaborators.
-description: As we step into 2026, the team at Moca Technology extends our warmest New Year wishes and sincere gratitude to all our partners, clients, and collaborators.
+description: Moca Technology thanks its partners, clients and collaborators for 2025 and sets out its 2026 commitments, data-driven work and partnership-first service.
 publishedAt: 2025-12-31T05:23+00:00
 updatedAt: 2025-12-31T05:33+00:00
 author:
@@ -31,7 +31,7 @@ tags:
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2025/12/2026_Cover1.jpg
-  alt: "Welcoming 2026: Moca Technology Thanks Our Partners and Looks Ahead"
+  alt: "Four cartoon cactus characters with headphones, a cap and a guitar celebrate under fireworks beside the text Happy New Year 2026 and the MOCA logo"
   width: 3840
   height: 2160
 keyTakeaways: []
@@ -89,3 +89,5 @@ Thank you for choosing Moca Technology. Here’s to a successful 2026 together.
 Moca Technology is a leading influencer marketing and performance advertising (UA) agency specializing in Southeast Asia and South Asia. With over 12 years of overseas digital advertising expertise, we operate local teams across five markets: China, Indonesia, the Philippines, Thailand, and India.
 
 Our approach combines deep regional insights gained from serving top local brands with strategic capabilities that empower Chinese enterprises going global. We help brands build lasting competitive advantages and drive long-term growth through authentic creator partnerships and data-driven performance campaigns.
+
+Related reading: [MOCA Annual Gala: Celebration Talent in Every Sense](/news/moca-annual-gala-celebration-talent-in-every-sense) and [MOCA Shines at ChinaJoy 2025](/news/moca-shines-at-chinajoy-2025-influencer-marketing-fuels-brand-expansion).
