@@ -4,9 +4,9 @@ slug: how-app-retention-strategies-help-brands-increase-their-user-base-in-the-c
 sourceUrl: https://www.moca-tech.net/news/how-app-retention-strategies-help-brands-increase-their-user-base-in-the-competitive-landscape-of-mobile-marketing.html
 canonicalUrl: https://www.moca-tech.net/news/how-app-retention-strategies-help-brands-increase-their-user-base-in-the-competitive-landscape-of-mobile-marketing.html
 title: How App Retention strategies help brands, increase their user base in the competitive landscape of mobile marketing
-seoTitle: How App Retention strategies help brands, increase their user base in the competitive landscape of mobile marketing
+seoTitle: "App Retention Strategies to Grow a User Base in India"
 summary: The number of smartphone users in India which was estimated to reach over 748 million in 2020 (Statista.com), has already crossed the 500million mark reaching a…
-description: The number of smartphone users in India which was estimated to reach over 748 million in 2020 (Statista.com), has already crossed the 500million mark reaching a…
+description: "Why retention decides app ROI, with steps for lean user acquisition, early retention analysis and using OEM app stores to reach new users and limit fraud."
 publishedAt: 2022-04-12T20:54+00:00
 updatedAt: 2023-04-28T09:21+00:00
 author:
@@ -37,10 +37,13 @@ tags:
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2022/04/12.jpg
-  alt: How App Retention strategies help brands, increase their user base in the competitive landscape of mobile marketing
+  alt: "Cartoon green cactus mascot in a cap holding a magnet and a megaphone as it steps out of a phone, surrounded by like, heart, comment and share icons on a green background"
   width: 1000
   height: 500
-keyTakeaways: []
+keyTakeaways:
+  - "Set up retention analysis and A/B testing from the first seed users, not after retention starts to fall."
+  - "Keep sign-up short and content engaging so new users stay and inactive ones come back."
+  - "Use OEM app stores to reach users who have not yet installed the app, while guarding against fraudulent installs."
 faq: []
 citations: []
 language: en-US
@@ -90,3 +93,5 @@ It is a common belief that consumers will never go back to the pre-covid era or 
 So, hop on to the band wagon and ride on!
 
 *The article is authored by Vishal Singh, India GM, and Global Commercials VP, Moca Technology Limited.*
+
+Related reading: [Passionate in Marketing in conversation with Mr. Vishal Singh, India GM & Global Commercial VP at Moca Technology Limited](/news/passionate-in-marketing-in-conversation-with-mr-vishal-singh-india-gm-global-commercial-vp-at-moca-technology-limited) and [Maximize Your In-App Advertising Effectiveness](/news/maximize-your-in-app-advertising-effectiveness-ef-bf-bc).

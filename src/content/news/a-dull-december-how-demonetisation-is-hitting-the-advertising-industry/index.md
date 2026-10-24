@@ -4,9 +4,9 @@ slug: a-dull-december-how-demonetisation-is-hitting-the-advertising-industry
 sourceUrl: https://www.moca-tech.net/news/a-dull-december-how-demonetisation-is-hitting-the-advertising-industry.html
 canonicalUrl: https://www.moca-tech.net/news/a-dull-december-how-demonetisation-is-hitting-the-advertising-industry.html
 title: "A dull December: How demonetisation is hitting the advertising industry"
-seoTitle: "A dull December: How demonetisation is hitting the advertising industry"
+seoTitle: "Demonetisation Hits India's Ad Industry in December"
 summary: With Christmas and New Year to cash in on, December is usually a busy – and profitable – month for the advertising sector. But this December is likely to be a…
-description: With Christmas and New Year to cash in on, December is usually a busy – and profitable – month for the advertising sector. But this December is likely to be a…
+description: "Agencies and media firms report falling ad spend and postponed FMCG launches after India's demonetisation, with the outlook for the next quarter unclear."
 publishedAt: 2019-10-11T10:08+00:00
 updatedAt: 2023-04-25T06:25+00:00
 author:
@@ -19,10 +19,13 @@ tags: []
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2019/10/A-dull..........1-jpg-300x150.jpg
-  alt: "A dull December: How demonetisation is hitting the advertising industry"
+  alt: "Two adults and a child push a shopping cart past packaged goods shelves in a supermarket aisle"
   width: 300
   height: 150
-keyTakeaways: []
+keyTakeaways:
+  - "Track consumer cash flow and sentiment, because ad budgets fall as soon as discretionary demand does."
+  - "Expect FMCG advertisers to pause or postpone launches during a liquidity shock, and keep campaigns ready to relaunch."
+  - "Treat ad spend as an early signal of consumer mood, but hold off forecasting the next quarter until policy changes settle."
 faq: []
 citations: []
 language: en-US
@@ -60,3 +63,5 @@ Most companies and advertisers have no option but to wait and watch, because of 
 So far, says Alikhan, advertising spends had been reflecting the country’s GDP growth in recent months, which was clocking 7%. “But now suddenly the mood has turned frosty, and the big question is how much of a hit the economy will take in the coming six to 12 months,” he said.
 
 Since there is almost no precedent to the kind of demonetisation that the Indian government is now attempting, what happens in the next few financial quarters will depend on how the government is able to manage the current liquidity crisis, says Alikhan.
+
+Related reading: [Brands must track Consumer’s Risk Footprint, in this time of Digital Hustle!](/news/brands-must-track-consumers-risk-footprint-in-this-time-of-digital-hustle) and [How Mobile marketing can cater to the advertising changes in the post-Covid era](/news/how-mobile-marketing-can-cater-to-the-advertising-changes-in-the-post-covid-era).

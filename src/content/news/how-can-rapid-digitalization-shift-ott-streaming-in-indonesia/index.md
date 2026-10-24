@@ -4,9 +4,9 @@ slug: how-can-rapid-digitalization-shift-ott-streaming-in-indonesia
 sourceUrl: https://www.moca-tech.net/news/how-can-rapid-digitalization-shift-ott-streaming-in-indonesia.html
 canonicalUrl: https://www.moca-tech.net/news/how-can-rapid-digitalization-shift-ott-streaming-in-indonesia.html
 title: How Can Rapid Digitalization Shift OTT Streaming In Indonesia?
-seoTitle: How Can Rapid Digitalization Shift OTT Streaming In Indonesia?
+seoTitle: "Indonesia OTT Streaming: Growth, Viewers and Ad Trends"
 summary: In Indonesia, the OTT market is anticipated to experience intensive growth over the past years due to the increasing popularity of smartphones and the internet…
-description: In Indonesia, the OTT market is anticipated to experience intensive growth over the past years due to the increasing popularity of smartphones and the internet…
+description: "How smartphones and faster internet are growing OTT video in Indonesia, who is watching, and how advertisers can use trackable OTT ads to drive sales."
 publishedAt: 2022-03-22T17:57+00:00
 updatedAt: 2023-05-05T03:37+00:00
 author:
@@ -35,10 +35,13 @@ tags:
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2022/03/4730716.jpg
-  alt: How Can Rapid Digitalization Shift OTT Streaming In Indonesia?
+  alt: "Three green cactus mascots using a laptop, a tablet and a phone, linked to a central yellow cloud labelled OTT over a green map background, with the title text at top left"
   width: 1000
   height: 500
-keyTakeaways: []
+keyTakeaways:
+  - "Invest in local original content, competitive pricing and local partnerships to win Indonesian OTT subscribers."
+  - "Plan campaigns around mobile viewing, especially among younger adults."
+  - "Use OTT video ads for their real-time trackable data, and send viewers straight to mobile app stores to shorten the path to purchase."
 faq: []
 citations: []
 language: en-US
@@ -68,3 +71,5 @@ As OTT advertising evolves, it will provide a one-to-one advertising experience,
 MOCA is the largest OEM consolidator across the globe and an advertising innovator to help advertisers to make innovative formats & combinations for contextualized promotion.
 
 MOCA wants to be the most trusted and reliable partner for marketers to provide one-stop service in improving efficiency and effectiveness communications across all OEMs and top publishers, to help them to reach the target audience and to be the top-of-mind brand.
+
+Related reading: [Unlock the Thriving Entertainment & Music Streaming Market of Indonesia](/news/unlock-the-thriving-entertainment-music-streaming-market-of-indonesia) and [Harness CTV & OTT to Peak Performance](/news/harness-ctv-ott-to-peak-performance).
