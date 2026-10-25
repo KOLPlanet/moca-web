@@ -97,7 +97,7 @@ The cost stack for cross-border sellers has thickened. Paid traffic fees, platfo
 
 Account risk is rising in parallel. TikTok Shop now governs storefronts through the AHR (Account Health Rating) system, where scores at 150, 100, 50, and 0 trigger increasingly severe enforcement actions: reduced traffic, listing freezes, and eventually full account closure. When a shop closes, the bound creator account loses commerce permissions at the same time, [according to the TikTok Shop Seller Enforcement Policy](https://seller-us.tiktok.com/) updated on March 13, 2026.
 
-Indonesia has moved even faster. The PP Tunas regulation took effect on March 28, 2026, and by the end of April, TikTok had deactivated approximately 1.7 million accounts belonging to users under 16, [as reported by AP News](https://apnews.com/) on April 29, 2026. Regulators are not stopping there. The under-16 restriction is being extended into e-commerce next, per coverage by [AFP and CNA](https://www.channelnewsasia.com/) on May 7, 2026.
+Indonesia has moved even faster. The PP Tunas regulation took effect on March 28, 2026, and by the end of April, TikTok had deactivated approximately 1.7 million accounts belonging to users under 16, [as reported by AP News](https://apnews.com/) on April 29, 2026. Regulators are not stopping there. The under-16 restriction is being extended into e-commerce next, per coverage by [AFP and CNA](https://www.channelnewsasia.com/) on May 7, 2026. For the fee side of Indonesia’s cross-border rules, see [Indonesia’s platform fee cut and cross-border sellers](/news/indonesia-platform-fee-cut-cross-border-sellers-2026).
 
 > **Key finding:** Indonesia’s PP Tunas rollout removed 1.7 million under-16 TikTok accounts within five weeks, and the same age gate is expanding to TikTok Shop. Brands built on younger Gen Z segments face structural traffic loss.
 
@@ -122,7 +122,7 @@ MOCA Technology recommends pressure-testing every TikTok brief against four sear
 3.  **Which keywords should be avoided?** Some high-volume terms pull content into the wrong audience. Some make exaggerated claims that increase compliance risk. Both burn budget without converting.
 4.  **Who checks the alignment?** Before a video goes live, someone needs to confirm that caption, subtitles, keywords, and on-screen visuals are all telling the same story. Catching mismatch after publishing is too late.
 
-This directly determines how efficiently paid media can scale the content downstream. Paid traffic is an amplifier. When the content direction is off, larger budgets only burn cash faster.
+This directly determines how efficiently paid media can scale the content downstream. Paid traffic is an amplifier. When the content direction is off, larger budgets only burn cash faster. The Shop-side effects are covered in [TikTok Shop’s rule change and the search-first shift](/news/tiktok-shop-rule-change-search-first-content-sea-2026).
 
 > **Key finding:** MOCA Technology recommends a four-question search-scenario gate: intent, local expression, exclusion keywords, and pre-publish alignment check, applied before any TikTok brief moves to creator production.
 

@@ -6,7 +6,7 @@ canonicalUrl: https://www.moca-tech.net/news/moca-shines-at-chinajoy-2025-influe
 title: "MOCA Shines at ChinaJoy 2025: Influencer Marketing Fuels Brand Expansion"
 seoTitle: MOCA Shines at ChinaJoy 2025
 summary: MOCA showcased cutting-edge influencer marketing solutions at ChinaJoy 2025 Shanghai. Discover how our KOLPlanet platform and local expertise in Indonesia, India, Philippines & Malaysia drive measurable brand growth across Asia’s $7 trillion influencer economy.
-description: MOCA showcased cutting-edge influencer marketing solutions at ChinaJoy 2025 Shanghai. Discover how our KOLPlanet platform and local expertise in Indonesia, India, Philippines & Malaysia drive measurable brand growth across Asia’s $7 trillion influencer economy.
+description: MOCA joined ChinaJoy 2025 in Shanghai, where 743 exhibitors gathered, and showed how KOLPlanet and local teams support influencer marketing across Asia.
 publishedAt: 2025-08-05T10:41+00:00
 updatedAt: 2025-08-06T03:14+00:00
 author:
@@ -27,7 +27,7 @@ tags:
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2025/08/Moca_ChinaJoy2025.jpg
-  alt: "MOCA Shines at ChinaJoy 2025: Influencer Marketing Fuels Brand Expansion"
+  alt: "Green ChinaJoy 2025 banner with MOCA and ChinaJoy logos over the exhibition hall entrance, with a cartoon cactus mascot wearing a VR headset"
   width: 1726
   height: 903
 keyTakeaways: []
@@ -54,4 +54,6 @@ At ChinaJoy 2025, MOCA unveiled a new suite of integrated solutions, including:
 
 MOCA covers India, Indonesia, Malaysia, Philippines, and beyond, offering localized expertise and a rich pool of influencer and media resources. Beyond influencer marketing, we deliver a full range of digital marketing services—from UA to brand building—providing one-stop solutions for every stage of international growth. We are deepening our local presence, expanding our service portfolio, and continuously refining our approach to help brands capture new opportunities worldwide, especially in Asia market.
 
-Contact us at [business@moca-tech.net](/news/business-moca-tech-net) to discover how MOCA’s influencer marketing and digital solutions can unlock new markets for you.
+Contact us at [business@moca-tech.net](mailto:business@moca-tech.net) to discover how MOCA’s influencer marketing and digital solutions can unlock new markets for you.
+
+Related reading: [MOCA Annual Gala: Celebration Talent in Every Sense](/news/moca-annual-gala-celebration-talent-in-every-sense) and [How Influencer Marketing is Shaping E-Commerce Growth in Southeast Asia](/news/how-influencer-marketing-is-shaping-e-commerce-growth-in-southeast-asia).
