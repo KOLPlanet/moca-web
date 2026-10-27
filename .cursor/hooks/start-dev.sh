@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Idempotent local Astro dev server starter for Cursor hooks / folder-open tasks.
-# Uses a detached Node child so the process survives after the hook exits.
+# Keeps http://localhost:4321/ up across Cursor restarts.
 set -euo pipefail
 
 ROOT="${CURSOR_PROJECT_DIR:-$(cd "$(dirname "$0")/../.." && pwd)}"
@@ -24,6 +24,7 @@ port_in_use() {
   /usr/sbin/lsof -nP -iTCP:"${PORT}" -sTCP:LISTEN >/dev/null 2>&1
 }
 
+# Already healthy on the preferred port.
 if port_in_use; then
   respond "already running"
   exit 0
@@ -40,24 +41,31 @@ if ! command -v node >/dev/null 2>&1 || ! command -v npm >/dev/null 2>&1; then
 fi
 
 # Fully detach so Cursor hooks cannot reap the child when the hook exits.
-MOCA_ROOT="$ROOT" MOCA_LOG="$LOG_FILE" MOCA_PID="$PID_FILE" node <<'NODE'
+# --ignore-lock avoids failing when a stale Astro instance from a prior
+# Cursor session is still around (often bound to 4322 instead of 4321).
+MOCA_ROOT="$ROOT" MOCA_LOG="$LOG_FILE" MOCA_PID="$PID_FILE" MOCA_PORT="$PORT" node <<'NODE'
 const { spawn } = require("child_process");
 const fs = require("fs");
 const root = process.env.MOCA_ROOT;
 const log = process.env.MOCA_LOG;
 const pidFile = process.env.MOCA_PID;
+const port = process.env.MOCA_PORT || "4321";
 const out = fs.openSync(log, "a");
-const child = spawn("npm", ["run", "dev"], {
-  cwd: root,
-  detached: true,
-  stdio: ["ignore", out, out],
-  env: process.env,
-});
+const child = spawn(
+  "npm",
+  ["run", "dev", "--", "--port", port, "--ignore-lock"],
+  {
+    cwd: root,
+    detached: true,
+    stdio: ["ignore", out, out],
+    env: process.env,
+  },
+);
 fs.writeFileSync(pidFile, String(child.pid));
 child.unref();
 NODE
 
-for _ in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15; do
+for _ in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20; do
   if port_in_use; then
     respond "started"
     exit 0

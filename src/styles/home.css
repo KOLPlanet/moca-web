@@ -2310,8 +2310,8 @@
 
 .join-card--brand img {
   position: absolute;
-  right: -10px;
-  bottom: -14px;
+  right: 9px;
+  bottom: -5px;
   z-index: 0;
   width: 152px;
   height: auto;

@@ -3,8 +3,8 @@
   "tasks": [
     {
       "label": "Auto-start Astro dev",
-      "type": "npm",
-      "script": "dev",
+      "type": "shell",
+      "command": "bash \"${workspaceFolder}/.cursor/hooks/start-dev.sh\"",
       "isBackground": true,
       "problemMatcher": {
         "owner": "astro-dev",
@@ -14,7 +14,7 @@
         "background": {
           "activeOnStart": true,
           "beginsPattern": ".",
-          "endsPattern": "Local\\s+http"
+          "endsPattern": "localhost:4321|already running|started|starting"
         }
       },
       "presentation": {
