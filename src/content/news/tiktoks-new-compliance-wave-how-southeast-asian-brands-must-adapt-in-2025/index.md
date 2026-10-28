@@ -5,10 +5,10 @@ sourceUrl: https://www.moca-tech.net/news/tiktoks-new-compliance-wave-how-southe
 canonicalUrl: https://www.moca-tech.net/news/tiktoks-new-compliance-wave-how-southeast-asian-brands-must-adapt-in-2025.html
 title: "TikTok’s New Compliance Wave: How Southeast Asian Brands Must Adapt in 2025"
 seoTitle: "TikTok Compliance Rules for Southeast Asia Brands"
-summary: "TikTok's documented rules for brands in Southeast Asia: sponsored-post disclosure, AI-generated content labels, commercial music, gambling and teen-ad limits, and a reported five-hashtag cap. Each rule is dated and linked to its source; claims that could not be sourced were removed."
-description: "TikTok rules for Southeast Asia brands, checked at the source: ad disclosure, AI labels, music licensing, gambling limits and the reported 5-hashtag cap."
+summary: "TikTok's documented rules for brands in Southeast Asia: sponsored-post disclosure, commercial music, gambling and teen-ad limits, a reported five-hashtag cap, and a short note on AI-content labels. Each rule is dated and linked to its source; claims that could not be sourced were removed."
+description: "TikTok rules for Southeast Asia brands, checked at the source: sponsored-post disclosure, music licensing, gambling limits and the reported 5-hashtag cap."
 publishedAt: 2025-08-29T06:05+00:00
-updatedAt: 2026-10-25T10:00+08:00
+updatedAt: 2026-10-29T10:00+08:00
 author:
   name: MOCA
   type: Organization
@@ -39,8 +39,8 @@ keyTakeaways:
 faq:
   - question: "Does TikTok require creators to disclose sponsored posts?"
     answer: "Yes. TikTok's Branded Content Policy requires creators to turn on the commercial content disclosure setting for content that promotes a brand in exchange for payment or another incentive. TikTok's help page says undisclosed commercial content may not be eligible for the For You feed."
-  - question: "Are AI-generated videos required to be labelled on TikTok?"
-    answer: "Yes, if they show realistic-looking scenes or people. TikTok's Community Guidelines require creators to label that content, and unlabeled content may be removed, restricted or labeled by TikTok. The labelling policy dates from 2023."
+  - question: "Can brands play TikTok Sounds during a LIVE stream?"
+    answer: "No. TikTok's Music Terms say Sounds and Commercial Sounds cannot be used in a live stream, and any other music needs rights the brand holds itself."
   - question: "Can brands use any TikTok music in their videos?"
     answer: "No. TikTok's help page says businesses cannot use the general music library commercially and should use the Commercial Music Library for organic content, video ads and branded content. TikTok's music terms add that Sounds and Commercial Sounds cannot be used in LIVE streams."
   - question: "Is there a five-hashtag limit on TikTok?"
@@ -54,18 +54,9 @@ citations:
   - name: "About the Commercial Content Disclosure setting for creators"
     url: https://ads.tiktok.com/resources/help/article/about-the-content-disclosure-setting-for-creators
     publisher: TikTok for Business
-  - name: "Integrity and Authenticity: Edited Media and AI-Generated Content"
-    url: https://www.tiktok.com/safety/en/policies-and-engagement/integrity-authenticity
-    publisher: TikTok
   - name: "New labels for disclosing AI-generated content"
     url: https://newsroom.tiktok.com/new-labels-for-disclosing-ai-generated-content?lang=en
     publisher: TikTok Newsroom
-  - name: "More ways to spot, shape and understand AI-generated content"
-    url: https://newsroom.tiktok.com/more-ways-to-spot-shape-and-understand-ai-content?lang=en
-    publisher: TikTok Newsroom
-  - name: "Supporting responsible, transparent AI-generated content"
-    url: https://www.tiktok.com/safety/en/policies-and-engagement/supporting-responsible-transparent-ai-generated-content
-    publisher: TikTok
   - name: "About the Commercial Music Library"
     url: https://ads.tiktok.com/resources/help/article/commercial-music-library?lang=en
     publisher: TikTok for Business
@@ -121,11 +112,9 @@ The original version of this article said creators need "#ad or #sponsored" tags
 
 TikTok requires creators to label AI-generated content that shows realistic-looking scenes or people, and has done so since 2023. TikTok [announced its AI-generated content label on 19 September 2023](https://newsroom.tiktok.com/new-labels-for-disclosing-ai-generated-content?lang=en) and described a synthetic media policy introduced earlier that year, covering realistic images, audio or video. This article first dated the rule to July 2025, which was wrong.
 
-The current [Community Guidelines](https://www.tiktok.com/safety/en/policies-and-engagement/integrity-authenticity) repeat the rule for AI-generated or significantly edited content. Unlabeled content may be removed, restricted or labeled by TikTok. TikTok's [AI-generated content page](https://www.tiktok.com/safety/en/policies-and-engagement/supporting-responsible-transparent-ai-generated-content) adds that it prohibits AI content that falsely shows public figures endorsing something, and does not allow the likeness of people under 18 or of private adults used without permission.
+The full TikTok rule, including its ban on AI content that falsely shows public figures endorsing something and its November 2025 labelling update, sits next to Meta's and YouTube's rules in [AI content labelling rules on Meta, YouTube and TikTok](/news/ai-content-regulations-tighten-how-global-social-media-platforms-are-cracking-down-on-ai-generated-content).
 
-In a [19 November 2025 update](https://newsroom.tiktok.com/more-ways-to-spot-shape-and-understand-ai-content?lang=en), TikTok said its labelling, which combines creator tools, detection models and C2PA Content Credentials, had labeled over 1.3 billion videos. It also said it was testing invisible watermarking.
-
-> **Key finding:** TikTok has required labels on realistic-looking AI content since 2023, and by November 2025 it said more than 1.3 billion videos had been labeled. Brands using virtual influencers or AI-edited footage should assume the label applies, and should never use AI to show a real person endorsing a product.
+> **Key finding:** TikTok has required labels on realistic-looking AI content since 2023. Brands using virtual influencers or AI-edited footage in Southeast Asia should assume the label applies to their branded content, and should never use AI to show a real person endorsing a product.
 
 ## Which music can brands use on TikTok?
 
@@ -213,9 +202,9 @@ TikTok's main recommendation feed, where undisclosed commercial content may not 
 
 Yes. TikTok's Branded Content Policy requires creators to turn on the commercial content disclosure setting for content that promotes a brand in exchange for payment or another incentive. TikTok's help page says undisclosed commercial content may not be eligible for the For You feed.
 
-### Are AI-generated videos required to be labelled on TikTok?
+### Can brands play TikTok Sounds during a LIVE stream?
 
-Yes, if they show realistic-looking scenes or people. TikTok's Community Guidelines require creators to label that content, and unlabeled content may be removed, restricted or labeled by TikTok. The labelling policy dates from 2023.
+No. TikTok's Music Terms say Sounds and Commercial Sounds cannot be used in a live stream, and any other music needs rights the brand holds itself.
 
 ### Can brands use any TikTok music in their videos?
 

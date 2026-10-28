@@ -4,11 +4,11 @@ slug: tiktok-shop-rule-change-search-first-content-sea-2026
 sourceUrl: https://www.moca-tech.net/news/tiktok-shop-rule-change-search-first-content-sea-2026.html
 canonicalUrl: https://www.moca-tech.net/news/tiktok-shop-rule-change-search-first-content-sea-2026.html
 title: "From Viral Hits to Search-First: TikTok Shop’s Rule Change Is Reshaping Southeast Asia"
-seoTitle: "TikTok Shop Rules: Search-First Content Wins in SEA"
-summary: TikTok daily search volume up 40% year-over-year (TikTok Newsroom, March 2026), 79% of Gen Z feel nostalgic for early TikTok (Harris Poll, 2026), Philippines and Indonesia tighten TikTok Shop compliance rules, SEA-wide Terms of Use rewritten effective April 1, and why MOCA Technology sees the content-search-trust combination as the next competitive moat for brands in the region.
-description: TikTok Shop’s search volume up 40% YoY. 79% of Gen Z distrust algorithm-fed content. New SEA compliance rules clear space for trust-first brand builders.
+seoTitle: "TikTok Shop Rule Changes in Southeast Asia, 2026"
+summary: "TikTok Shop rule changes in Southeast Asia, April 2026: the Philippines banned fake promotions, Indonesia's PP Tunas closed about 780,000 underage accounts, and TikTok rewrote its Terms of Use and Sale effective April 1. Search is rising at the same time, with TikTok daily search volume up 40% year-over-year (TikTok Newsroom, March 2026), and MOCA Technology explains why content, search and compliance now decide which brands stay on the platform."
+description: "TikTok Shop rule changes in SEA, April 2026: a Philippine fake-promo ban, Indonesia's PP Tunas age gate, new Terms of Use, and what brands must change."
 publishedAt: 2026-04-24T02:13+00:00
-updatedAt: 2026-09-27T12:00+00:00
+updatedAt: 2026-10-29T10:00+08:00
 author:
   name: MOCA Technology
   type: Organization
@@ -70,7 +70,7 @@ scrapedAt: 2026-07-20T11:35:16.517Z
 sourceHash: 66f44f3bc2b9c63101952cf38ac6713edaf28a20ef5ffd345bfab9a5064b430a
 ---
 
-TikTok Shop’s rules are changing. The playbook that worked (creator-driven viral hits, algorithm-powered feeds, flash-sale urgency) is being retired. What’s replacing it: content quality, search capability, and brand trust. This is a regime change, and it is happening across Southeast Asia at the same time.
+In April 2026, TikTok Shop’s rules changed in three ways across Southeast Asia: the Philippines banned fake promotions, Indonesia’s PP Tunas regulation raised TikTok’s minimum user age to 16, and rewritten Terms of Use and Sale took effect in all five Southeast Asian TikTok Shop markets on April 1. The playbook that worked (creator-driven viral hits, algorithm-powered feeds, flash-sale urgency) is being retired. What’s replacing it: content quality, search capability, and brand trust. This is a regime change, and it is happening across Southeast Asia at the same time.
 
 ## Why Is Search Replacing the Recommendation Feed?
 
@@ -78,7 +78,7 @@ According to [TikTok Newsroom](https://newsroom.tiktok.com/tiktok-for-business-i
 
 That matters for TikTok Shop sellers. Content that once relied entirely on recommendation algorithms for distribution now needs to rank in search results. Product videos optimized for viral sharing may never surface for users who type a specific query. Brands that built their TikTok Shop strategy around recommendation-feed exposure are discovering that a growing share of high-intent traffic flows through the search bar instead.
 
-The shift points to something deeper. Consumers in Southeast Asia are actively seeking brands they trust, rather than passively consuming whatever the algorithm serves. For MOCA Technology’s clients across the region, this changes the content brief: stop trying to go viral, start making content that is findable and credible. The same shift, seen from the creator-brief side, is in [TikTok’s search-first shift in Southeast Asia](/news/tiktok-search-first-shift-sea-2026).
+The shift points to something deeper. Consumers in Southeast Asia are actively seeking brands they trust, rather than passively consuming whatever the algorithm serves. For MOCA Technology’s clients across the region, this changes the content brief: stop trying to go viral, start making content that is findable and credible. For the creator brief itself, see [how to write a search-first TikTok content brief](/news/tiktok-search-first-shift-sea-2026).
 
 > **Key finding:** TikTok daily search volume grew over 40% year-over-year in 2026, with one in four users searching within 30 seconds of opening the app ([TikTok Newsroom](https://newsroom.tiktok.com/tiktok-for-business-introduces-watch-it-love-it-want-it), March 25, 2026). Brands must now optimize creator content for search visibility, not just algorithmic recommendation.
 
