@@ -14,6 +14,7 @@ export interface ContactMessage {
   email: string;
   subject: string;
   message: string;
+  sourcePage?: string;
   attachment?: ContactAttachment;
 }
 
@@ -44,14 +45,23 @@ const recipientFor = (contactType: ContactType) =>
       : 'CONTACT_CREATOR_TO_EMAIL',
   );
 
-const subjectFor = (subject: string) => {
+const subjectFor = (subject: string, sourcePage?: string) => {
   const prefix = process.env.CONTACT_SUBJECT_PREFIX?.trim() || '[MOCA Website]';
   const safeSubject = subject.replace(/[\r\n]+/g, ' ').trim();
-  return `${prefix} ${safeSubject}`;
+  const from = sourcePage
+    ? ` [from ${sourcePage.length > 70 ? `${sourcePage.slice(0, 69)}…` : sourcePage}]`
+    : '';
+  return `${prefix} ${safeSubject}${from}`;
 };
 
-const textFor = ({ name, email, message }: ContactMessage) =>
-  [`Name: ${name}`, `Email: ${email}`, '', message].join('\n');
+const textFor = ({ name, email, message, sourcePage }: ContactMessage) =>
+  [
+    `Name: ${name}`,
+    `Email: ${email}`,
+    ...(sourcePage ? [`Source page: ${sourcePage}`] : []),
+    '',
+    message,
+  ].join('\n');
 
 async function sendWithSmtp(contact: ContactMessage) {
   const host = required('SMTP_HOST');
@@ -93,7 +103,7 @@ async function sendWithSmtp(contact: ContactMessage) {
       name: contact.name,
       address: contact.email,
     },
-    subject: subjectFor(contact.subject),
+    subject: subjectFor(contact.subject, contact.sourcePage),
     text: textFor(contact),
     attachments: contact.attachment
       ? [
@@ -124,7 +134,7 @@ async function sendWithWebhook(contact: ContactMessage) {
       fromName: process.env.CONTACT_FROM_NAME?.trim() || 'MOCA Website',
       to,
       replyTo: contact.email,
-      subject: subjectFor(contact.subject),
+      subject: subjectFor(contact.subject, contact.sourcePage),
       text: textFor(contact),
       attachments: contact.attachment
         ? [

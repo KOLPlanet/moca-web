@@ -29,6 +29,81 @@
       "permanent": true
     },
     {
+      "source": "/news/bstation-tap-into-indonesia-market-partnering-with-moca-to-conquer-the-anime-gaming-scene%EF%BF%BC",
+      "destination": "/news/bstation-tap-into-indonesia-market-partnering-with-moca-to-conquer-the-anime-gaming-scene-ef-bf-bc",
+      "permanent": true
+    },
+    {
+      "source": "/news/ctv-the-dominant-force-in-advertising%EF%BF%BC",
+      "destination": "/news/ctv-the-dominant-force-in-advertising-ef-bf-bc",
+      "permanent": true
+    },
+    {
+      "source": "/news/hybrid-monetization-leading-global-gaming-trends%EF%BF%BC",
+      "destination": "/news/hybrid-monetization-leading-global-gaming-trends-ef-bf-bc",
+      "permanent": true
+    },
+    {
+      "source": "/news/maximize-your-in-app-advertising-effectiveness%EF%BF%BC",
+      "destination": "/news/maximize-your-in-app-advertising-effectiveness-ef-bf-bc",
+      "permanent": true
+    },
+    {
+      "source": "/news/nano-influencers-unveiling-the-rising-stars-of-marketings-future%EF%BF%BC",
+      "destination": "/news/nano-influencers-unveiling-the-rising-stars-of-marketings-future-ef-bf-bc",
+      "permanent": true
+    },
+    {
+      "source": "/news/from-living-rooms-to-ad-platforms%EF%BC%8Chow-indias-smart-tv-boom-is-transforming-ctv-ads.html",
+      "destination": "/news/from-living-rooms-to-ad-platforms-ef-bc-8chow-indias-smart-tv-boom-is-transforming-ctv-ads",
+      "permanent": true
+    },
+    {
+      "source": "/news/from-living-rooms-to-ad-platforms%EF%BC%8Chow-indias-smart-tv-boom-is-transforming-ctv-ads",
+      "destination": "/news/from-living-rooms-to-ad-platforms-ef-bc-8chow-indias-smart-tv-boom-is-transforming-ctv-ads",
+      "permanent": true
+    },
+    {
+      "source": "/news/tiktok-shop-indonesia-",
+      "destination": "/news/tiktok-shop-indonesia-ban-to-13-billion-gmv-comeback",
+      "permanent": true
+    },
+    {
+      "source": "/news/cracking-the-code-how-to-win-over-",
+      "destination": "/news/cracking-the-code-how-to-win-over-indonesias-next-gen-shoppers",
+      "permanent": true
+    },
+    {
+      "source": "/tiktok-shop-indonesia-ban-to-13-billion-gmv-comeback",
+      "destination": "/news/tiktok-shop-indonesia-ban-to-13-billion-gmv-comeback",
+      "permanent": true
+    },
+    {
+      "source": "/news/author/:path*",
+      "destination": "/news",
+      "permanent": true
+    },
+    {
+      "source": "/news/tag/:slug/feed",
+      "destination": "/news/rss.xml",
+      "permanent": true
+    },
+    {
+      "source": "/news/category/:path*/feed",
+      "destination": "/news/rss.xml",
+      "permanent": true
+    },
+    {
+      "source": "/news/category/:n(\\d+)",
+      "destination": "/news",
+      "permanent": true
+    },
+    {
+      "source": "/news/category/india/page/:n(4|5)",
+      "destination": "/news/category/india",
+      "permanent": true
+    },
+    {
       "source": "/news/category/indonesia-2/page/:page",
       "destination": "/news/category/indonesia",
       "permanent": true

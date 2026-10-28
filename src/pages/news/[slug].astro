@@ -292,6 +292,21 @@ const jsonLdHtml = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
     </div>
 
     <footer class="article-footer article-shell">
+      <aside class="sidebar-cta article-cta" aria-labelledby="article-cta-heading">
+        <p class="eyebrow eyebrow--light">Have a market question?</p>
+        <h2 id="article-cta-heading">Talk to MOCA about your market.</h2>
+        <p>Share your market, platform and goal with the MOCA team.</p>
+        <a
+          class="button button--light"
+          href="/#contact"
+          data-analytics-cta="news_article_contact"
+          data-analytics-location="news_article"
+          data-analytics-audience="brand"
+        >
+          Contact MOCA
+        </a>
+      </aside>
+
       <div class="article-taxonomy">
         <section aria-labelledby="article-categories-heading">
           <p class="eyebrow">Filed under</p>
@@ -368,6 +383,21 @@ const jsonLdHtml = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
 </BaseLayout>
 
 <script>
+  import { trackAnalyticsEvent } from '../../lib/analytics';
+  import { rememberNewsPage } from '../../lib/contact-source';
+
+  rememberNewsPage(window.location.pathname);
+  document.querySelectorAll<HTMLElement>('[data-analytics-cta]').forEach((cta) => {
+    cta.addEventListener('click', () => {
+      trackAnalyticsEvent('cta_click', {
+        cta_id: cta.dataset.analyticsCta,
+        cta_location: cta.dataset.analyticsLocation,
+        audience: cta.dataset.analyticsAudience,
+        source_page: window.location.pathname,
+      });
+    });
+  });
+
   const progress = document.querySelector<HTMLElement>('[data-reading-progress]');
   const article = document.querySelector<HTMLElement>('[data-reading-article]');
   let frame: number | undefined;
