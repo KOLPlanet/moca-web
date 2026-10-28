@@ -4,7 +4,7 @@ slug: tiktok-shop-indonesia-ban-to-13-billion-gmv-comeback
 sourceUrl: https://www.moca-tech.net/news/tiktok-shop-indonesia-ban-to-13-billion-gmv-comeback.html
 canonicalUrl: https://www.moca-tech.net/news/tiktok-shop-indonesia-ban-to-13-billion-gmv-comeback.html
 title: "From Government Ban to $13.1 Billion: TikTok Shop’s Indonesia Comeback"
-seoTitle: "TikTok Shop Indonesia: From Ban to $13.1B GMV | MOCA"
+seoTitle: "TikTok Shop Indonesia: From Ban to $13.1B GMV"
 summary: "Key Takeaways: TikTok Shop Indonesia generated $13.1 billion in GMV in 2025, a 111% YoY increase after a 2023 government ban. Indonesia is now TikTok Shop’s second-largest global market. Success factors include price-anchoring content strategies, cultural localization for Indonesia’s Muslim-majority population, and meeting strict local compliance requirements (PT PMA entity, BPOM registration, Halal certification). Peak sales occur during the evening hours (around 7–10 PM WIB)."
 description: TikTok Shop Indonesia hit $13.1B GMV in 2025 after a government ban. Key market trends, compliance needs, and brand strategies for Southeast Asia.
 publishedAt: 2026-03-17T07:53+00:00

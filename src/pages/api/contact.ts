@@ -93,6 +93,11 @@ const contactTypeFor = (value: FormDataEntryValue | null): ContactType | null =>
   const normalized = String(value ?? '').trim().toLowerCase();
   return normalized === 'business' || normalized === 'creator' ? normalized : null;
 };
+// A site-relative path only (sent by our own form); anything else is dropped, never echoed into a mail header.
+const sourcePageFor = (value: FormDataEntryValue | null) => {
+  const path = String(value ?? '').trim();
+  return /^\/[\w\-.~%/]{0,199}$/.test(path) ? path : undefined;
+};
 const mailUnavailableMessage = (contactType: ContactType) =>
   contactType === 'business'
     ? 'Mail delivery is temporarily unavailable. Please email business@moca-tech.net directly.'
@@ -128,6 +133,7 @@ export const POST: APIRoute = async ({ request }) => {
   const message = String(form.get('message') ?? '').trim();
   const company = String(form.get('company') ?? '').trim();
   const contactType = contactTypeFor(form.get('contactType'));
+  const sourcePage = sourcePageFor(form.get('sourcePage'));
 
   if (company) {
     return json(
@@ -170,7 +176,7 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   try {
-    await sendContactMail({ contactType, name, email, subject, message, attachment });
+    await sendContactMail({ contactType, name, email, subject, message, sourcePage, attachment });
     return json(
       { accepted: true, message: 'Thanks — your message has been sent.' },
       200,

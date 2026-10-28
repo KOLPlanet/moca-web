@@ -1708,6 +1708,15 @@ textarea {
   background: var(--ink-900);
 }
 
+.article-cta {
+  max-width: var(--reading-width);
+  margin-bottom: clamp(42px, 6vw, 64px);
+}
+
+.article-cta p:not(.eyebrow) {
+  margin: 12px 0 22px;
+}
+
 .sidebar-cta h2 {
   color: white;
   font-family: var(--font-display);
