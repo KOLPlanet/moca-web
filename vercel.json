@@ -79,6 +79,11 @@
       "permanent": true
     },
     {
+      "source": "/tiktok-shop-indonesia-ban-to-13-billion-gmv-comeback/",
+      "destination": "/news/tiktok-shop-indonesia-ban-to-13-billion-gmv-comeback",
+      "permanent": true
+    },
+    {
       "source": "/news/author/:path*",
       "destination": "/news",
       "permanent": true
