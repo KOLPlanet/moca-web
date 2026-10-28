@@ -8,7 +8,7 @@ seoTitle: "Social Media AI Content Rules: Meta, YouTube, TikTok"
 summary: "Meta, YouTube and TikTok already ask creators to label realistic AI-generated content, and October 2025 added WhatsApp's AI Providers terms, YouTube likeness detection and an Indian draft rule on AI labels. This explainer sets out what each platform requires, with official sources, and what brands and influencers should do."
 description: "How Meta, YouTube and TikTok label AI-generated content, what changed in October 2025 (WhatsApp, likeness detection, India) and what brands should do."
 publishedAt: 2025-10-24T04:01+00:00
-updatedAt: 2026-10-25T10:00+08:00
+updatedAt: 2026-10-29T10:00+08:00
 author:
   name: MOCA
   type: Organization
@@ -90,6 +90,12 @@ citations:
   - name: "Government Strengthens Regulatory Framework to Address AI-Generated Deepfakes"
     url: https://www.pib.gov.in/PressReleasePage.aspx?PRID=2295500
     publisher: Press Information Bureau, India
+  - name: "Supporting responsible, transparent AI-generated content"
+    url: https://www.tiktok.com/safety/en/policies-and-engagement/supporting-responsible-transparent-ai-generated-content
+    publisher: TikTok
+  - name: "More ways to spot, shape and understand AI-generated content"
+    url: https://newsroom.tiktok.com/more-ways-to-spot-shape-and-understand-ai-content?lang=en
+    publisher: TikTok Newsroom
 language: en-US
 draft: false
 scrapedAt: 2026-07-20T11:35:20.177Z
@@ -142,6 +148,10 @@ TikTok said in [May 2024](https://newsroom.tiktok.com/en-us/partnering-with-our-
 
 TikTok has since re-released its Community Guidelines. The [version released August 25, 2026 and effective September 24, 2026](https://www.tiktok.com/community-guidelines/en/integrity-authenticity) says creators must label AI-generated or significantly edited content that shows realistic-looking scenes or people, and that unlabeled content may be removed, restricted or labeled by TikTok, depending on the harm it could cause. The guidelines also do not allow AI-generated content that misleads about matters of public importance or harms individuals.
 
+TikTok's [AI-generated content page](https://www.tiktok.com/safety/en/policies-and-engagement/supporting-responsible-transparent-ai-generated-content) adds that it prohibits AI content that falsely shows public figures endorsing something, and does not allow the likeness of people under 18 or of private adults used without permission. In a [19 November 2025 update](https://newsroom.tiktok.com/more-ways-to-spot-shape-and-understand-ai-content?lang=en), TikTok said its labelling, which combines creator tools, detection models and C2PA Content Credentials, had labeled over 1.3 billion videos. It also said it was testing invisible watermarking.
+
+For TikTok's other rules for brands in Southeast Asia, such as sponsored-post disclosure, commercial music and gambling limits, see [TikTok compliance rules for Southeast Asia brands](/news/tiktoks-new-compliance-wave-how-southeast-asian-brands-must-adapt-in-2025).
+
 ## What is India's rule on AI labels?
 
 India proposed visible AI labels and permanent metadata in October 2025, then amended its IT Rules in February 2026. On October 22, 2025, the Ministry of Electronics and Information Technology (MeitY) published an [explanatory note](https://www.meity.gov.in/static/uploads/2025/10/8e40cdd134cd92dd783a37556428c370.pdf) on proposed changes to the IT Rules, 2021. In that draft:
@@ -191,12 +201,6 @@ The October 22, 2025 draft would have required tools that create synthetic conte
 ### Does disclosing AI content reduce reach or earnings on YouTube?
 
 YouTube says that disclosing AI content alone will not limit a video's audience or affect its eligibility to earn money. Creators who consistently choose not to disclose may get a label applied by YouTube or face penalties.
-
-## About MOCA
-
-MOCA is a digital advertising platform founded in 2012, specializing in influencer marketing and performance advertising (UA) across Southeast Asia and South Asia. MOCA operates local teams in China, Taiwan, Indonesia, the Philippines, Thailand and India, and helps Chinese companies expanding overseas build lasting brand advantages.
-
-Contact: [business@moca-tech.net](mailto:business@moca-tech.net) | [www.moca-tech.net](https://www.moca-tech.net)
 
 ## About MOCA Technology
 
