@@ -96,7 +96,7 @@ Cross-border marketers have spent the last six months complaining about the same
 
 Treating those four platforms as one ad market is now the most expensive assumption a brand can make.
 
-![Q1 2026 social ad pricing at a glance: Meta CPM plus 12 percent, Google search revenue plus 19 percent, TikTok CPM plus 11 percent, YouTube CPM minus 21 percent](./assets/q1-2026-platform-pricing-card.png)
+![Q1 2026 ad pricing, Meta CPM +12%, Google search revenue +19%, TikTok CPM +11%, YouTube CPM -21%](./assets/q1-2026-platform-pricing-card.png)
 
 *Q1 2026 ad pricing at a glance. Sources: platform earnings, Tinuiti, Skai.*
 

@@ -35,7 +35,7 @@ tags:
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2026/02/%E5%85%AC%E4%BC%97%E5%8F%B7_20260205.jpg
-  alt: "Illustrated cartoon avatars of MOCA team members over a collage of team photos, with the large MOCA logo and the text Since 2012"
+  alt: "Cartoon avatars of MOCA team members over a collage of team photos, with the MOCA logo and the text Since 2012"
   width: 2350
   height: 1000
 keyTakeaways: []

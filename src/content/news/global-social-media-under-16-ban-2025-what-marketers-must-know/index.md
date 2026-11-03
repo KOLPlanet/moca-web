@@ -39,7 +39,7 @@ tags:
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2025/12/%E5%AE%98%E7%BD%91_20251219.jpg
-  alt: "Green MOCA cover graphic titled Global Social Media Under-16 Ban 2025, showing a phone with a padlock and a 16+ badge next to the MOCA cactus mascot"
+  alt: "MOCA cover titled Global Social Media Under-16 Ban 2025, with a phone, a padlock, a 16+ badge and the cactus mascot"
   width: 2000
   height: 1000
 keyTakeaways:
@@ -110,7 +110,7 @@ scrapedAt: 2026-07-20T11:35:19.618Z
 sourceHash: 5cd24c33ba1de342a79b1858639f1d568b527e6ac2ed4c322d48f04cceef8f37
 ---
 
-![Green MOCA cover graphic titled Global Social Media Under-16 Ban 2025, showing a phone with a padlock and a 16+ badge next to the MOCA cactus mascot](./assets/cover.jpg)
+![MOCA cover titled Global Social Media Under-16 Ban 2025, with a phone, a padlock, a 16+ badge and the cactus mascot](./assets/cover.jpg)
 
 As of October 25, 2026, three markets are enforcing minimum-age rules for social media accounts: Australia since December 2025, Indonesia since March 2026 and Malaysia since June 2026. Brazil requires accounts for users under 16 to be [linked to a guardian](https://agenciabrasil.ebc.com.br/en/politica/noticia/2026-03/brazil-digital-statute-protect-minors-online-comes-force). Denmark and Norway are still drafting laws, and France's under-15 ban passed parliament in July 2026 but was struck down by the Constitutional Council in August. This guide lists each country's status with a dated official source and what it means for brands advertising to young audiences in Asia-Pacific.
 

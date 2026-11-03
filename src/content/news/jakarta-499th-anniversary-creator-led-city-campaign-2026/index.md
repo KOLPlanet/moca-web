@@ -39,7 +39,7 @@ tags:
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/news/jakarta-499th-anniversary-creator-led-city-campaign-2026
-  alt: "Illustrated cover: Jakarta's Monas tower and three creator video screens, with the headline Jakarta Turns 499, No Promo Video, Just Local Creators"
+  alt: "Monas tower and three creator video screens with the headline Jakarta Turns 499, No Promo Video, Just Local Creators"
   width: 1916
   height: 1198
 video:

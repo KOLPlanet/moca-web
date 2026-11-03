@@ -31,7 +31,7 @@ tags:
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2025/10/Moca_%E5%AE%98%E7%BD%91_251024.jpg
-  alt: "Three smartphones showing the Meta, YouTube and TikTok logos, each with a warning triangle and an AI label, under the headline New AI Regulations are Arriving"
+  alt: "Three phones with Meta, YouTube and TikTok logos, each with an AI label, under the headline New AI Regulations are Arriving"
   width: 2000
   height: 1000
 keyTakeaways:
@@ -102,7 +102,7 @@ scrapedAt: 2026-07-20T11:35:20.177Z
 sourceHash: ac879b0e682997563dc626ec930b65663e7f69186a0f4c14b8ce1cff3fd5c2c6
 ---
 
-![Three smartphones showing the Meta, YouTube and TikTok logos, each with a warning triangle and an AI label, under the headline New AI Regulations are Arriving](./assets/cover.jpg)
+![Three phones with Meta, YouTube and TikTok logos, each with an AI label, under the headline New AI Regulations are Arriving](./assets/cover.jpg)
 
 Meta, YouTube and TikTok all ask creators to label realistic AI-generated content, and October 2025 added three more pieces: WhatsApp's AI Providers terms, YouTube's likeness detection rollout and a draft AI-label rule in India. For brands and influencers the common thread is clear labeling, so viewers can tell at a glance whether content is synthetic. This guide sets out what each platform requires, with links to the official pages.
 

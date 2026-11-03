@@ -31,7 +31,7 @@ tags:
 cover:
   src: ./assets/cover.png
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2025/05/Influencer-marketing-indonesia-1.png
-  alt: "Green banner with the MOCA logo and the headline Master the Art of Influencer Marketing: Build Trust, Drive Results, beside pink and green diagonal stripes"
+  alt: "Green MOCA banner with the headline Master the Art of Influencer Marketing, Build Trust, Drive Results"
   width: 2560
   height: 1080
 keyTakeaways:
@@ -63,7 +63,7 @@ scrapedAt: 2026-07-20T11:35:23.316Z
 sourceHash: 8205fb8f7a761944535809918b38f6b6fb1f585cf4baeec2dfd305a937459d3d
 ---
 
-![Green banner with the MOCA logo and the headline Master the Art of Influencer Marketing: Build Trust, Drive Results, beside pink and green diagonal stripes](./assets/cover.png)
+![Green MOCA banner with the headline Master the Art of Influencer Marketing, Build Trust, Drive Results](./assets/cover.png)
 
 Influencer marketing in Indonesia drives growth when brands choose creators for audience fit and local relevance instead of follower count. According to [INSG.CO's 2025 analysis](https://www.insg.co/influencer-marketing-indonesia/), 76% of Indonesian users follow at least one influencer and 68% have bought an item an influencer or KOL recommended. The audience is large: [DataReportal](https://datareportal.com/reports/digital-2025-indonesia) counted 143 million social media user identities in Indonesia in January 2025, equal to 50.2% of the population.
 

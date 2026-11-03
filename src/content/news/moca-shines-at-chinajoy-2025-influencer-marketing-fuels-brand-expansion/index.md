@@ -27,7 +27,7 @@ tags:
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2025/08/Moca_ChinaJoy2025.jpg
-  alt: "Green ChinaJoy 2025 banner with MOCA and ChinaJoy logos over the exhibition hall entrance, with a cartoon cactus mascot wearing a VR headset"
+  alt: "ChinaJoy 2025 banner with MOCA and ChinaJoy logos over the hall entrance and the cactus mascot in a VR headset"
   width: 1726
   height: 903
 keyTakeaways: []

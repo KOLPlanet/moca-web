@@ -27,7 +27,7 @@ tags:
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2025/08/Moca_%E5%AE%98%E7%B6%B2_250821.jpg
-  alt: Green graphic titled Social Media Shakeup with three phones in chains showing Instagram, YouTube and TikTok, captioned cracking down on reposters, clean up re-skinned content and cut down on hashtags, beside the MOCA cactus mascot
+  alt: Social Media Shakeup graphic with three chained phones showing Instagram, YouTube and TikTok beside the MOCA cactus mascot
   width: 2000
   height: 1000
 keyTakeaways:
@@ -84,7 +84,7 @@ scrapedAt: 2026-07-20T11:35:21.900Z
 sourceHash: 7d4cf1dcc145a66f97359321a7d9bd61e02495e9aaad2f8e57c00ed3cd2e8231
 ---
 
-![Green graphic titled Social Media Shakeup with three phones in chains showing Instagram, YouTube and TikTok, captioned cracking down on reposters, clean up re-skinned content and cut down on hashtags, beside the MOCA cactus mascot](./assets/cover.jpg)
+![Social Media Shakeup graphic with three chained phones showing Instagram, YouTube and TikTok beside the MOCA cactus mascot](./assets/cover.jpg)
 
 In 2025, TikTok, YouTube and Instagram each tightened rules aimed at low-effort or spam-style content. TikTok began warning users who tried to add more than five hashtags in August, YouTube renamed and clarified its inauthentic content policy on July 15, and Instagram stopped recommending aggregator accounts, first for Reels in 2024 and then for photos and carousels on April 30, 2026. The sources describe three separate changes. Our reading is that they point the same way: fewer tags, more original work and less reposting.
 
