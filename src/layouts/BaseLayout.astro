@@ -1,5 +1,6 @@
 ---
 import type { ImageMetadata } from 'astro';
+import { getImage } from 'astro:assets';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import AnalyticsConsent from '../components/analytics/AnalyticsConsent.astro';
@@ -40,7 +41,21 @@ const pageTitle =
     : `${title} · ${site.shortName}`;
 const siteOrigin = Astro.site || Astro.url.origin;
 const canonical = new URL(canonicalUrl || Astro.url.pathname, siteOrigin).href;
-const socialImage = image || site.socialImage.src;
+// Imported covers can be multi-MB PNGs; share a resized JPEG instead of the original file.
+const sourceImage = image || site.socialImage.src;
+const socialImage =
+  typeof sourceImage === 'string'
+    ? sourceImage
+    : await getImage({
+        src: sourceImage,
+        width: Math.min(1200, sourceImage.width),
+        format: 'jpeg',
+        quality: 70,
+      }).then((img) => ({
+        src: img.src,
+        width: Number(img.attributes.width),
+        height: Number(img.attributes.height),
+      }));
 const imageUrl = new URL(
   typeof socialImage === 'string' ? socialImage : socialImage.src,
   siteOrigin,

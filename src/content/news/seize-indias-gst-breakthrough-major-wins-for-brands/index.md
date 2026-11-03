@@ -31,7 +31,7 @@ tags:
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2025/09/Moca_%E5%AE%98%E7%BD%91_250912.jpg
-  alt: Green illustration of India's map under the headline Seize India's GST Breakthrough, with arrows labeled tax rate reduction and new opportunities and the MOCA cactus mascot holding a magnifying glass
+  alt: India map under the headline Seize India's GST Breakthrough, with the MOCA cactus mascot holding a magnifying glass
   width: 2000
   height: 1000
 keyTakeaways:
@@ -78,7 +78,7 @@ scrapedAt: 2026-07-20T11:35:20.744Z
 sourceHash: 5d7231e6a0035e1cbec3529c22b739ddef0283f41a55ac12c0a0016f2cf91d94
 ---
 
-![Green illustration of India's map under the headline Seize India's GST Breakthrough, with arrows labeled tax rate reduction and new opportunities and the MOCA cactus mascot holding a magnifying glass](./assets/cover.jpg)
+![India map under the headline Seize India's GST Breakthrough, with the MOCA cactus mascot holding a magnifying glass](./assets/cover.jpg)
 
 India's 2025 GST reform gave brands lower consumer prices on everyday goods and appliances and a simpler rate structure: two main rates, 5% and 18%, plus a 40% rate for a select few goods and services. The 56th GST Council recommended the change in New Delhi on 3 September 2025, according to the [Press Information Bureau (PIB)](https://pib.gov.in/PressReleasePage.aspx?PRID=2163555), and almost all of it took effect on 22 September 2025, days before the festive shopping season.
 

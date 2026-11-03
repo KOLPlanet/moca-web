@@ -27,7 +27,7 @@ tags:
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2025/08/Moca_%E5%85%AC%E4%BC%97%E5%8F%B7_250829.jpg
-  alt: "Illustration of the MOCA cactus mascot in VR goggles holding a phone beside a neon security gate with labels for commercial content, AI disclosure and tag restrictions"
+  alt: "MOCA cactus mascot holding a phone beside a neon security gate labeled commercial content, AI disclosure and tag limits"
   width: 2350
   height: 999
 keyTakeaways:

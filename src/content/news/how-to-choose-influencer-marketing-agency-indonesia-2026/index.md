@@ -39,7 +39,7 @@ tags:
 cover:
   src: ./assets/cover.png
   originalUrl: https://www.moca-tech.net/news/how-to-choose-influencer-marketing-agency-indonesia-2026
-  alt: "MOCA cactus mascot with a magnifying glass and checklist beside the title How to Choose an Influencer Agency in Indonesia, 2026 Checklist"
+  alt: "MOCA cactus mascot with a magnifying glass and checklist beside the title How to Choose an Influencer Agency in Indonesia"
   width: 1920
   height: 817
 keyTakeaways:

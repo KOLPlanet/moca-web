@@ -31,7 +31,7 @@ tags:
 cover:
   src: ./assets/cover.jpg
   originalUrl: https://www.moca-tech.net/wp-content/uploads/2025/12/2026_Cover1.jpg
-  alt: "Four cartoon cactus characters with headphones, a cap and a guitar celebrate under fireworks beside the text Happy New Year 2026 and the MOCA logo"
+  alt: "Four cartoon cactus characters celebrate under fireworks beside the text Happy New Year 2026 and the MOCA logo"
   width: 3840
   height: 2160
 keyTakeaways: []
