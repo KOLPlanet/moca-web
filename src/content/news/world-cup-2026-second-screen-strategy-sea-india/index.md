@@ -8,7 +8,7 @@ seoTitle: "World Cup 2026: SEA & India Second Screen Strategy"
 summary: "Challenger brands win World Cup 2026 on the second screen: local creator content on TikTok and YouTube Shorts, timed to the morning-to-midday match windows that North America hosting creates across Southeast Asia, and in India a creator-first campaign scaled with programmatic and UA. All 16 FIFA global sponsorship slots are sold, TikTok is FIFA’s named preferred social video platform, and India’s media rights asking price fell 65% to USD 35M with no confirmed buyer."
 description: FIFA locked all 16 World Cup sponsorships. TikTok is the preferred platform. India rights down 65%. How SEA brands win the second screen.
 publishedAt: 2026-05-04T02:18+00:00
-updatedAt: 2026-11-04T23:55+08:00
+updatedAt: 2026-11-05T00:20+08:00
 author:
   name: MOCA Technology
   type: Organization
@@ -103,7 +103,7 @@ The 2026 World Cup is hosted in the United States, Canada, and Mexico. For South
 
 World Cup content has a short half-life. A conversation peak active at 9am may be cold by noon. Brands that route content through headquarters approval cycles and centralized design scheduling will consistently arrive after the moment has passed. Speed determines whether a brand captures a trending moment. Budget does not. For another creator-led example, see [Jakarta at 499: How Local Creators Carried a City Campaign](/news/jakarta-499th-anniversary-creator-led-city-campaign-2026).
 
-MOCA Technology’s local teams in Jakarta, Bangkok, Manila, and Ho Chi Minh City operate on market time, with content approval calibrated to platform velocity rather than headquarters business hours. Tournament time zones expose that difference.
+MOCA Technology’s local teams in Jakarta, Kuala Lumpur, Manila, Bangkok, Gurgaon, Mumbai, and Bangalore operate on market time, with content approval calibrated to platform velocity rather than headquarters business hours. Tournament time zones expose that difference.
 
 > **Key finding:** North America hosting shifts key World Cup 2026 match windows to morning and early afternoon across Southeast Asia, converting historically low-priority dayparts into high-attention slots. Brands with agile local content approval and in-market creator relationships hold a structural speed advantage over those operating through centralized creative pipelines.
 
