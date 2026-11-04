@@ -8,7 +8,7 @@ seoTitle: "MOCA Technology 13th Anniversary: Year of GRIT"
 summary: MOCA Technology, a Shanghai-based influencer marketing company, celebrates 13 years. Explore KOLPlanet, our AI platform for Asia Pacific campaigns.
 description: MOCA Technology marked its 13th anniversary with the Year of GRIT annual meeting, five gala awards and a talent show across six Asian markets.
 publishedAt: 2026-02-06T01:14+00:00
-updatedAt: 2026-02-06T01:16+00:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA
   type: Organization
@@ -47,7 +47,7 @@ scrapedAt: 2026-07-20T11:35:18.224Z
 sourceHash: e57f0e8f15723c44ee765fb55a8abd89e063d327422c3a1c6de0a593ce761d86
 ---
 
-In January 2026, Moca Technology (MOCA), a leading influencer marketing company headquartered in Shanghai, celebrated its 13th anniversary. Teams from China, India, Indonesia, Thailand, the Philippines, and Taiwan gathered virtually to reflect on a remarkable year and honor outstanding team members at the annual MOCA Gala Awards.
+In January 2026, Moca Technology (MOCA), an influencer marketing company headquartered in Shanghai, celebrated its 13th anniversary. Teams from China, India, Indonesia, Thailand, the Philippines, and Taiwan gathered virtually to reflect on a remarkable year and honor outstanding team members at the annual MOCA Gala Awards.
 
 ## Reflecting on 2025: The Year of GRIT
 
@@ -95,7 +95,7 @@ Company Overview:
 
 • Headquarters: Shanghai, China
 
-• Markets: China, India, Indonesia, Thailand, Philippines, Taiwan
+• Offices: Shanghai and Taiwan (China); Gurgaon, Mumbai, and Bangalore (India); Jakarta (Indonesia); Kuala Lumpur (Malaysia); Manila (Philippines); Bangkok (Thailand)
 
 • Services: Influencer Marketing, Performance Marketing, KOLPlanet Platform
 
@@ -125,7 +125,7 @@ KOLPlanet is MOCA’s AI-powered influencer marketing platform that helps brands
 
 Where does MOCA operate?
 
-MOCA is headquartered in Shanghai, China, with regional teams in India, Indonesia, Thailand, the Philippines, and Taiwan.
+MOCA is headquartered in Shanghai, China, with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 What services does MOCA offer?
 
@@ -150,7 +150,7 @@ MOCA Technology is a digital marketing company founded in 2012 in Shanghai, Chin
 KOLPlanet is MOCA Technology’s AI-powered influencer marketing platform designed for brands expanding into Southeast Asia and India. It provides data-driven influencer discovery, campaign management, and performance analytics.
 
 **Where is MOCA Technology headquartered?**
-MOCA Technology is headquartered in Shanghai, China, with regional teams operating across India, Indonesia, Thailand, Philippines, and Taiwan.
+MOCA Technology is headquartered in Shanghai, China, with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 **What industries does MOCA serve?**
 MOCA Technology serves brands in gaming, e-commerce, fintech, consumer electronics, and entertainment industries looking to expand their presence in Asian markets through influencer marketing.

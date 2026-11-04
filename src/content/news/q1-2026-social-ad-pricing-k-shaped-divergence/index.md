@@ -8,7 +8,7 @@ seoTitle: "Q1 2026 Social Ad Pricing: The K-Shaped Split"
 summary: Q1 2026 social ad pricing split into a K shape, with Meta CPM up 12%, Google search ad revenue up 19% to $60.4 billion, TikTok CPM rebounding 11% to an 18% budget-share high, and YouTube CPM down 21% as connected-TV spend rose 39%. The report covers what drove each move and how MOCA Technology reweights cross-border media budgets each quarter.
 description: "Q1 2026 social ad pricing diverged: Meta CPM up 12%, Google search up 19%, TikTok up 11%, YouTube down 21%. How to reweight cross-border budgets."
 publishedAt: 2026-05-28T10:57+00:00
-updatedAt: 2026-09-27T12:00+00:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA Technology
   type: Organization
@@ -48,16 +48,16 @@ keyTakeaways:
   - "Mind the creator tiers: TikTok micro-influencer (15K-50K) rates rose 125% while mid-tier fell 29% and top-tier fell 18%."
   - "Use the YouTube window: a 21% CPM drop with 72% of spend on connected TV is a short-term opening for awareness and CTV buyers."
 faq:
-  - question: What is a K-shaped split in social ad pricing?
-    answer: A K-shaped split means platform prices move in opposite directions at the same time instead of together. In Q1 2026, Meta (+12%) and Google (+19%) climbed while YouTube CPM fell 21% and TikTok rebounded 11% from a low base.
-  - question: Why did Meta CPM rise 12% in Q1 2026?
-    answer: The Wall Street Journal attributed Meta's Q1 2026 increase to accelerating advertiser demand and Meta passing its rising AI capital-expenditure costs on to advertisers. Impressions rose 19% over the same period.
-  - question: Is Google search advertising still worth it after AI search?
-    answer: Yes. Alphabet reported Q1 2026 search ad revenue of $60.4 billion, up 19%. AI search shifted knowledge-style queries away from Google but pushed cheaper, lower-competition long-tail terms back into search inventory.
-  - question: Why is TikTok ad pricing rebounding?
-    answer: Tinuiti's Q1 data shows TikTok CPM rose 11% after four quarters of decline, with ad spend up 14%, as advertisers moved budget share to an 18% five-quarter high (Skai, April 28). Micro-influencer rates rose 125% while mid- and top-tier creator rates fell.
-  - question: Why is YouTube cheaper in Q1 2026?
-    answer: YouTube CPM fell 21% even as connected-TV spend rose 39% year over year and 72% of video-ad spend went to TV screens (Tinuiti Q1 2026 Digital Ads Benchmark Report). Unit pricing has not kept pace with the shift to the living-room screen, opening a short-term window for awareness and CTV buyers.
+  - question: "What is a K-shaped split in social ad pricing?"
+    answer: "A K-shaped split means platform prices move in opposite directions at the same time instead of rising or falling together. In Q1 2026, Meta (+12%) and Google (+19%) climbed while YouTube CPM fell 21% and TikTok rebounded 11% from a low base."
+  - question: "Why did Meta CPM rise 12% in Q1 2026?"
+    answer: "The Wall Street Journal attributed Meta’s Q1 2026 increase to accelerating advertiser demand and Meta passing its rising AI capital-expenditure costs on to advertisers. Impressions rose 19% over the same period."
+  - question: "Is Google search advertising still worth it after AI search?"
+    answer: "Yes. Alphabet reported Q1 2026 search ad revenue of $60.4 billion, up 19%. AI search shifted knowledge-style queries away from Google, but pushed cheaper, lower-competition long-tail terms back into search inventory."
+  - question: "Why is TikTok ad pricing rebounding?"
+    answer: "Tinuiti’s Q1 data shows TikTok CPM rose 11% after four quarters of decline, with ad spend up 14%, as advertisers moved budget share to an 18% five-quarter high (Skai, April 28). Micro-influencer rates rose 125% while mid- and top-tier creator rates fell."
+  - question: "Why is YouTube cheaper in Q1 2026?"
+    answer: "YouTube CPM fell 21% even as connected-TV spend rose 39% year over year and 72% of video-ad spend went to TV screens (Tinuiti Q1 2026 Digital Ads Benchmark Report). Unit pricing has not kept pace with the shift to the living-room screen, opening a short-term window for awareness and CTV buyers."
 citations:
   - name: Meta Reports First Quarter 2026 Results
     url: https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/default.aspx
@@ -187,7 +187,7 @@ YouTube CPM fell 21% even as connected-TV spend rose 39% year over year and 72% 
 
 Founded in 2012, MOCA Technology is an influencer marketing and programmatic advertising platform serving brands across Asia-Pacific. MOCA operates [KOLPlanet](https://www.kolplanet.com), a creator marketplace connecting brands with influencers across Indonesia, Thailand, Vietnam, the Philippines, Malaysia, Japan, South Korea, Taiwan, and India.
 
-MOCA Technology’s core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with local teams in Jakarta, Bangkok, Manila, Taipei, and Mumbai, anchored by 14 years of operating experience across Southeast Asia and India.
+MOCA Technology’s core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok), anchored by 14 years of operating experience across Southeast Asia and India.
 
 **Rebalancing your 2026 ad budget across Meta, Google, TikTok, and YouTube?** Talk to our Asia-Pacific team about quarterly platform reweighting, creator-tier selection, and cross-platform media planning.
 

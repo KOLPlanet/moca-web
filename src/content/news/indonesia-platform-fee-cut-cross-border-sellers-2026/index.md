@@ -8,7 +8,7 @@ seoTitle: Indonesia’s 50% Fee Cut Excludes Cross-Border Sellers
 summary: Indonesia’s June 17, 2026 regulation cuts platform commissions 50% for verified local micro and small sellers of domestically made goods, filed via Sapa UMKM, excluding cross-border sellers. TikTok Shop’s May-June 2026 Content and Product Listing Policy updates tie violations to its 200-point Account Health Rating, with milestone enforcement at 150, 100, 50, and account deactivation at 0. TikTok Shop’s Vietnam seller policy log recorded 16 seller-facing and 6 creator-facing policy updates in June 2026 alone, as of the June 24, 2026 snapshot.
 description: Indonesia’s June 2026 rule cuts platform fees 50% for verified local sellers only. TikTok Shop’s AHR system also raises SEA compliance stakes.
 publishedAt: 2026-07-02T05:07+00:00
-updatedAt: 2026-07-02T05:13+00:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA Technology
   type: Organization
@@ -46,16 +46,16 @@ keyTakeaways:
   - Track TikTok Shop’s policy log weekly, not quarterly; the pace logged through May-June 2026 outstrips most SOP cycles.
   - Complete NFC identity verification before July 1, 2026 if onboarding as a new seller.
 faq:
-  - question: What is Indonesia's Sapa UMKM platform fee program?
-    answer: Sapa UMKM is the Indonesian government portal through which verified local micro and small enterprises selling domestically made goods apply for a 50% cut to platform commissions on Shopee, TikTok Shop, and Lazada, under a regulation effective June 17, 2026.
-  - question: Do cross-border sellers qualify for Indonesia's 50% fee cut?
-    answer: No. Platforms can reject or stop the discount if a seller lists imported or non-domestic products, according to Tech in Asia's June 22, 2026 report.
-  - question: What triggers a TikTok Shop Account Health Rating violation?
-    answer: Exaggerated claims, fake discounts, filter-altered visuals, false scarcity messaging, and mismatches between listing images or video ads and the actual product all deduct points from a seller's 200-point starting score.
-  - question: How many TikTok Shop seller policies changed in June 2026?
-    answer: TikTok Shop's Vietnam seller policy log recorded 16 seller-facing and 6 creator-facing policy updates in June 2026, as of the June 24, 2026 snapshot, including changes to payment settlement timing, dispatch-rate calculation, and brand circumvention rules.
-  - question: When does TikTok Shop's NFC identity verification take effect?
-    answer: Starting July 1, 2026, new sellers must complete NFC identity verification before onboarding.
+  - question: "What is Indonesia’s Sapa UMKM platform fee program?"
+    answer: "Sapa UMKM is the Indonesian government portal through which verified local micro and small enterprises selling domestically made goods apply for a 50% cut to platform commissions on Shopee, TikTok Shop, and Lazada, under a regulation effective June 17, 2026."
+  - question: "Do cross-border sellers qualify for Indonesia’s 50% fee cut?"
+    answer: "No. Platforms can reject or stop the discount if a seller lists imported or non-domestic products, according to Tech in Asia’s June 22, 2026 report."
+  - question: "How should sellers respond to Indonesia’s fee cut and TikTok Shop’s policy cadence?"
+    answer: "Verify Sapa UMKM eligibility before assuming the fee cut applies, because cross-border status disqualifies a seller regardless of order volume. Then track TikTok Shop’s policy calendar weekly rather than quarterly, and treat compliance process as infrastructure, not a checklist item."
+  - question: "How many TikTok Shop seller policies changed in June 2026?"
+    answer: "TikTok Shop’s Vietnam seller policy log recorded 16 seller-facing and 6 creator-facing policy updates in June 2026, as of the June 24, 2026 snapshot, including changes to payment settlement timing, dispatch-rate calculation, and brand circumvention rules."
+  - question: "When does TikTok Shop’s NFC identity verification take effect?"
+    answer: "Starting July 1, 2026, new sellers must complete NFC identity verification before onboarding."
 citations:
   - name: Indonesia orders Shopee, TikTok Shop, Lazada to cut fees
     url: https://www.techinasia.com/news/indonesia-orders-shopee-tiktok-shop-lazada-to-cut-fees
@@ -127,7 +127,7 @@ The sellers left standing at the end of this cycle will not be the ones who reac
 ## What Should Sellers Do Now?
 
 1.  **Verify Sapa UMKM eligibility before assuming the fee cut applies.** Cross-border status disqualifies a seller regardless of order volume.
-2.  **Audit content and listing pages against AHR triggers before enforcement escalates.** Check every listing image and video ad claim against the actual product.
+2.  **Audit content and listing pages against AHR triggers before enforcement escalates.** Check every listing image and video ad claim against the actual product. For the wider set of 2026 TikTok Shop rule changes, see [TikTok Shop’s rule changes](/news/tiktok-shop-rule-change-search-first-content-sea-2026).
 3.  **Track TikTok Shop’s policy calendar weekly, not quarterly.** A quarterly SOP review misses most of what changed in the interim, based on the pace logged through May and June 2026.
 4.  **Treat compliance process as infrastructure, not a checklist item.** The July 1 NFC identity verification requirement is one deadline among many; the process that catches the next one matters more than catching this one.
 
@@ -159,9 +159,9 @@ Sapa UMKM is the Indonesian government portal through which verified local micro
 
 No. Platforms can reject or stop the discount if a seller lists imported or non-domestic products, according to Tech in Asia’s June 22, 2026 report.
 
-### What triggers a TikTok Shop Account Health Rating violation?
+### How should sellers respond to Indonesia’s fee cut and TikTok Shop’s policy cadence?
 
-Exaggerated claims, fake discounts, filter-altered visuals, false scarcity messaging, and mismatches between listing images or video ads and the actual product all deduct points from a seller’s 200-point starting score.
+Verify Sapa UMKM eligibility before assuming the fee cut applies, because cross-border status disqualifies a seller regardless of order volume. Then track TikTok Shop’s policy calendar weekly rather than quarterly, and treat compliance process as infrastructure, not a checklist item.
 
 ### How many TikTok Shop seller policies changed in June 2026?
 
@@ -175,7 +175,7 @@ Starting July 1, 2026, new sellers must complete NFC identity verification befor
 
 Founded in 2012, MOCA Technology is an influencer marketing and programmatic advertising platform serving brands across Asia-Pacific. MOCA operates [KOLPlanet](https://www.kolplanet.com), a creator marketplace connecting brands with influencers across Indonesia, Thailand, Vietnam, the Philippines, Malaysia, Japan, South Korea, Taiwan, and India.
 
-MOCA’s core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with a local team in Jakarta and regional operations across Southeast Asia.
+MOCA’s core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 **Tracking Sapa UMKM eligibility or auditing TikTok Shop content against the Account Health Rating?** Talk to MOCA Technology’s Jakarta team about compliance-ready campaign structuring.
 

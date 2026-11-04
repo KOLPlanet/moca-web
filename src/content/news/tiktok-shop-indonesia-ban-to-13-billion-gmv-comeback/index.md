@@ -8,7 +8,7 @@ seoTitle: "TikTok Shop Indonesia: From Ban to $13.1B GMV"
 summary: "Key Takeaways: TikTok Shop Indonesia generated $13.1 billion in GMV in 2025, a 111% YoY increase after a 2023 government ban. Indonesia is now TikTok Shop’s second-largest global market. Success factors include price-anchoring content strategies, cultural localization for Indonesia’s Muslim-majority population, and meeting strict local compliance requirements (PT PMA entity, BPOM registration, Halal certification). Peak sales occur during the evening hours (around 7–10 PM WIB)."
 description: TikTok Shop Indonesia hit $13.1B GMV in 2025 after a government ban. Key market trends, compliance needs, and brand strategies for Southeast Asia.
 publishedAt: 2026-03-17T07:53+00:00
-updatedAt: 2026-09-27T12:00+00:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA Technology
   type: Organization
@@ -54,15 +54,15 @@ cover:
   height: 1344
 keyTakeaways: []
 faq:
-  - question: How large is TikTok Shop Indonesia's market?
-    answer: TikTok Shop Indonesia generated approximately $13.1 billion in gross merchandise value (GMV) in 2025, making it the second-largest TikTok Shop market in the world after the United States ($15.1 billion). Indonesia accounts for roughly one-third of TikTok Shop's total Southeast Asian GMV of $45.6 billion.
-  - question: Do foreign brands need a local entity to sell on TikTok Shop Indonesia?
-    answer: Yes. TikTok Shop Indonesia requires sellers to hold an Indonesian business license and tax identification number. Foreign brands typically establish a PT PMA (foreign-owned limited liability company) or partner with a local distributor as seller of record. The setup process generally takes 4 to 8 weeks.
-  - question: What types of creators perform best for TikTok Shop in Indonesia?
-    answer: Creators who share their audience's cultural context and lead with price anchoring. Top-performing Indonesian livestream hosts open with the Salam greeting, show BPOM and MUI Halal certification on screen, and compare the TikTok Shop price with a marketplace or mall price in the first three seconds. MOCA's KOLPlanet platform helps brands find creators who work this way.
-  - question: What are the peak selling hours on TikTok Shop Indonesia?
-    answer: The peak transaction window falls in the evening hours, approximately 7:00 to 10:00 PM local time (WIB), when a significant share of daily transactions are concentrated.
-  - question: What certifications do brands need to sell on TikTok Shop Indonesia?
+  - question: "How large is TikTok Shop Indonesia’s market?"
+    answer: "TikTok Shop Indonesia generated approximately $13.1 billion in gross merchandise value (GMV) in 2025, making it the second-largest TikTok Shop market in the world after the United States ($15.1 billion). Indonesia accounts for roughly one-third of TikTok Shop’s total Southeast Asian GMV of $45.6 billion."
+  - question: "Do foreign brands need a local entity to sell on TikTok Shop Indonesia?"
+    answer: "Yes. TikTok Shop Indonesia requires sellers to hold an Indonesian business license and tax identification number. Foreign brands typically establish a PT PMA (foreign-owned limited liability company) or partner with a local distributor as seller of record. The setup process generally takes 4 to 8 weeks."
+  - question: "What types of creators perform best for TikTok Shop in Indonesia?"
+    answer: "Creators who share their audience’s cultural context and lead with price anchoring. Top-performing Indonesian livestream hosts open with the Salam greeting, show BPOM and MUI Halal certification on screen, and compare the TikTok Shop price with a marketplace or mall price in the first three seconds. MOCA’s KOLPlanet platform helps brands find creators who work this way."
+  - question: "What are the peak selling hours on TikTok Shop Indonesia?"
+    answer: "The peak transaction window falls in the evening hours, approximately 7:00 to 10:00 PM local time (WIB), when a significant share of daily transactions are concentrated. Brands should prioritize scheduling livestream sessions and publishing creator content during this window to maximize conversion rates."
+  - question: "What certifications do brands need to sell on TikTok Shop Indonesia?"
     answer: "Key requirements include: a local company entity (PT PMA), import licenses (API/API-U), BPOM product registration (mandatory for cosmetics, food, and health supplements), MUI Halal certification (required for food and personal care products), and SNI compliance (mandatory for electronics and select consumer goods)."
 citations:
   - name: "TikTok Southeast Asia doubles GMV year on year to $45.6B in 2025"
@@ -170,7 +170,7 @@ Key requirements include: a local company entity (PT PMA), import licenses (API/
 
 Founded in 2012, MOCA Technology is an influencer marketing and programmatic advertising platform serving brands across Asia-Pacific. MOCA operates [KOLPlanet](https://www.kolplanet.com), a creator marketplace connecting brands with influencers across Indonesia, Thailand, Vietnam, the Philippines, Malaysia, Japan, South Korea, Taiwan, and India.
 
-MOCA’s core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with a local team in Jakarta and regional operations across Southeast Asia.
+MOCA’s core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 **Exploring TikTok Shop Indonesia in 2026?** Talk to our Indonesia team about creator partnerships for your category and local market insights.
 

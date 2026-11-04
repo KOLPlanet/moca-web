@@ -8,7 +8,7 @@ seoTitle: "India GST Reform 2025: What Changed for Brands"
 summary: "India's 56th GST Council met on 3 September 2025 and recommended two main GST rates, 5% and 18%, plus a 40% rate for a select few goods and services. Almost all changes took effect on 22 September 2025, with tobacco-related goods handled separately. This explainer lists the main rate changes, early e-commerce and tax-collection data, and what brands should check."
 description: "India's 2025 GST reform set 5% and 18% rates plus a 40% slab, effective 22 September 2025. See what changed and what it means for brands."
 publishedAt: 2025-09-12T03:44+00:00
-updatedAt: 2026-10-25T10:00+08:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA
   type: Organization
@@ -191,7 +191,7 @@ Redseer reported that online retail GMV grew 23% to 25% year on year on 22 and 2
 
 Founded in 2012, MOCA Technology is an influencer marketing and programmatic advertising platform serving brands across Asia-Pacific. MOCA operates [KOLPlanet](https://www.kolplanet.com), a creator marketplace connecting brands with influencers across Indonesia, Thailand, Vietnam, the Philippines, Malaysia, Japan, South Korea, Taiwan, and India.
 
-MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with a local team in Jakarta and regional operations across Southeast Asia.
+MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 **Planning an India campaign around the new GST rates?** Talk to our team about creator-led and mobile campaigns for India's festive season.
 

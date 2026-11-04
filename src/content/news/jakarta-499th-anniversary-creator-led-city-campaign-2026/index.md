@@ -8,7 +8,7 @@ seoTitle: "Jakarta at 499: Creator-Led City Campaign Case Study"
 summary: "The Jakarta Tourism Office commissioned MOCA to make sure residents used the perks for the city's 499th anniversary on June 22, 2026, and MOCA ran the story through local creators and one information account, Spill Jakarta, instead of a promo film. The perks were a flat Rp1 fare on Transjakarta, MRT Jakarta and LRT Jakarta on June 22, 27 and 28, plus free entry to city museums, Ragunan Zoo and Monas (detikNews and detikEdu, June 2026). Content ran in three tracks between June 14 and late August 2026: resident hopes, transit tests and cultural exploration."
 description: "Jakarta turned 499 with Rp1 transit fares and free museums. See how MOCA used three local creator tracks, not a promo film, to get residents moving."
 publishedAt: 2026-10-15T10:00+08:00
-updatedAt: 2026-10-15T10:00+08:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA Technology
   type: Organization
@@ -280,7 +280,7 @@ It needs cultural knowledge to find shared memories such as a Rp1 fare or Betawi
 
 Founded in 2012, MOCA Technology is an influencer marketing and programmatic advertising platform serving brands across Asia-Pacific. MOCA operates [KOLPlanet](https://www.kolplanet.com), a creator marketplace connecting brands with influencers across Indonesia, Thailand, Vietnam, the Philippines, Malaysia, Japan, South Korea, Taiwan, and India.
 
-MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with a local team in Jakarta and regional operations across Southeast Asia.
+MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 **Planning a city-moment campaign in Southeast Asia?** Talk to our Indonesia team about creator-led campaigns for anniversaries, festivals and public programs.
 

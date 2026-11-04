@@ -8,7 +8,7 @@ seoTitle: "Under-16 Social Media Ban: Which Countries Enforce It?"
 summary: "As of October 25, 2026, Australia (since December 2025), Indonesia (March 2026) and Malaysia (June 2026) enforce minimum-age rules for social media accounts, while France's under-15 ban was struck down on August 14, 2026. This guide tracks each country's status from official sources and explains the impact on brand targeting, content and compliance in Asia-Pacific."
 description: "Australia, Indonesia and Malaysia enforce under-16 social media rules; France's ban was struck down. See each country's status and the marketing impact."
 publishedAt: 2025-12-19T04:07+00:00
-updatedAt: 2026-10-25T03:00+08:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA
   type: Organization
@@ -264,7 +264,7 @@ Re-baseline youth audience estimates market by market, add age-related content c
 
 Founded in 2012, MOCA Technology is an influencer marketing and programmatic advertising platform serving brands across Asia-Pacific. MOCA operates [KOLPlanet](https://www.kolplanet.com), a creator marketplace connecting brands with influencers across Indonesia, Thailand, Vietnam, the Philippines, Malaysia, Japan, South Korea, Taiwan, and India.
 
-MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with a local team in Jakarta and regional operations across Southeast Asia.
+MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 **Planning youth-facing campaigns under the new age rules?** Talk to our team about audience checks and compliant creator-led campaigns across Southeast Asia and India.
 
