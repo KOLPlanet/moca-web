@@ -8,7 +8,7 @@ seoTitle: "Diwali 2026 Influencer Budgets: The Motorola Case"
 summary: "India's 2026 Diwali sale grew orders 31% while average order value fell 10% in the first week (Unicommerce), and Counterpoint expects festive smartphone volumes to fall about 12% while value rises about 5%. Motorola's public case reports 833 creators split by funnel task, 406 million views and about 1 million clicks to its Flipkart store pages, but no sales figures. MOCA Technology explains what the case proves, what it does not, and how brands in India and Indonesia should allocate creator budgets by task."
 description: "Diwali 2026: orders up 31%, order value down 10%, phone volumes forecast down 12%. What Motorola's 833-creator split proves for influencer budgets."
 publishedAt: 2026-10-31T10:00+08:00
-updatedAt: 2026-10-31T10:00+08:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA Technology
   type: Organization
@@ -57,10 +57,10 @@ faq:
     answer: "Motorola's paid native-content account reports 833 creators on Instagram and YouTube, 406 million views, about 1 million link clicks to its Flipkart store pages, more than 3.31 million engagements and over 250,000 new followers. It did not disclose purchases or sales contribution."
   - question: "Should influencer budgets follow funnel tasks or follower counts?"
     answer: "MOCA Technology recommends assigning each budget line a funnel task and a metric, then testing the mix against a holdout. Large creators can still deliver reach: in Motorola's case one viral creator delivered almost all of the reported YouTube viral views."
-  - question: "What should brands do for Harbolnas 2026 creator campaigns?"
-    answer: "Plan content around local products and live shopping, with local voices rather than translated campaigns. 80% of Harbolnas 2025 shoppers used live shopping, and local products made up 45.6% of its transaction value, according to Media Indonesia and the Ministry of Trade."
   - question: "How big is Indonesia's Harbolnas 2026 target?"
     answer: "Indonesia's government targets Rp40 trillion in Harbolnas 2026 transactions, about 10% above the Rp36.4 trillion recorded in 2025. Local products made up 45.6% of Harbolnas 2025 transaction value, according to the Ministry of Trade."
+  - question: "What should brands do for Harbolnas 2026 creator campaigns?"
+    answer: "Plan content around local products and live shopping, with local voices rather than translated campaigns. 80% of Harbolnas 2025 shoppers used live shopping, and local products made up 45.6% of its transaction value, according to Media Indonesia and the Ministry of Trade."
 citations:
   - name: "Ecom order volumes rise 31% in first week of festive sales: Unicommerce"
     url: https://www.business-standard.com/industry/news/ecom-order-volumes-rise-31-in-first-week-of-festive-sales-unicommerce-126101401136_1.html
@@ -256,7 +256,7 @@ Indian cities and towns outside the largest metros, grouped by population and ec
 A method that leaves one city cluster or audience group out of a campaign, so its results can be compared with the group that saw the campaign.
 
 **MOCA Technology**
-An influencer marketing and programmatic advertising platform founded in 2012 and headquartered in Shanghai, with local teams across Southeast Asia and India.
+An influencer marketing and programmatic advertising platform founded in 2012 and headquartered in Shanghai, with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 **KOLPlanet**
 MOCA Technology's creator marketplace connecting brands with influencers across Asia-Pacific.
@@ -291,7 +291,7 @@ Plan content around local products and live shopping, with local voices rather t
 
 Founded in 2012, MOCA Technology is an influencer marketing and programmatic advertising platform serving brands across Asia-Pacific. MOCA operates [KOLPlanet](https://www.kolplanet.com), a creator marketplace connecting brands with influencers across Indonesia, Thailand, Vietnam, the Philippines, Malaysia, Japan, South Korea, Taiwan, and India.
 
-MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with local teams in Indonesia, India, Malaysia, the Philippines and Thailand, and regional operations across Southeast Asia.
+MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 **Planning creator campaigns for Diwali or Harbolnas?** Talk to MOCA Technology's India and Indonesia teams about task-tiered creator plans and local-language briefs.
 

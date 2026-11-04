@@ -8,7 +8,7 @@ seoTitle: "How to Choose an Influencer Agency in Indonesia (2026)"
 summary: "To choose an influencer marketing agency in Indonesia in 2026, check its written compliance process first (the Etika Pariwara Indonesia ad code, BPOM product rules and platform disclosure settings), then compare creator vetting, cost structure and reporting. Indonesia counted 180 million social media user identities in October 2025 (DataReportal), and BPOM found 26.12% of cosmetics ads non-compliant in 2024. Cosmetics sold in Indonesia also need a halal certificate by 17 October 2026, according to BPOM and BPJPH."
 description: "Compare influencer agencies in Indonesia on compliance, creator vetting, cost and reporting, with 12 questions to ask, red flags and a pilot-first process."
 publishedAt: 2026-10-29T10:00+08:00
-updatedAt: 2026-10-29T10:00+08:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA Technology
   type: Organization
@@ -312,7 +312,7 @@ MOCA Technology's creator marketplace, connecting brands with influencers across
 
 **MOCA Technology**
 
-An influencer marketing and programmatic advertising platform founded in 2012, headquartered in Shanghai, with a local team in Jakarta.
+An influencer marketing and programmatic advertising platform founded in 2012, headquartered in Shanghai, with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 ## Frequently Asked Questions
 
@@ -340,7 +340,7 @@ Liability can reach beyond the creator. Indonesia's Consumer Protection Law, UU 
 
 Founded in 2012, MOCA Technology is an influencer marketing and programmatic advertising platform serving brands across Asia-Pacific. MOCA operates [KOLPlanet](https://www.kolplanet.com), a creator marketplace connecting brands with influencers across Indonesia, Thailand, Vietnam, the Philippines, Malaysia, Japan, South Korea, Taiwan, and India.
 
-MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with a local team in Jakarta and regional operations across Southeast Asia.
+MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 **Comparing influencer agencies for an Indonesia launch?** Talk to MOCA Technology's Indonesia team about influencer marketing strategy and creator matchmaking through KOLPlanet.
 

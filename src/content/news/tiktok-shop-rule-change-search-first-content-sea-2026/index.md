@@ -8,7 +8,7 @@ seoTitle: "TikTok Shop Rule Changes in Southeast Asia, 2026"
 summary: "TikTok Shop rule changes in Southeast Asia, April 2026: the Philippines banned fake promotions, Indonesia's PP Tunas closed about 780,000 underage accounts, and TikTok rewrote its Terms of Use and Sale effective April 1. Search is rising at the same time, with TikTok daily search volume up 40% year-over-year (TikTok Newsroom, March 2026), and MOCA Technology explains why content, search and compliance now decide which brands stay on the platform."
 description: "TikTok Shop rule changes in SEA, April 2026: a Philippine fake-promo ban, Indonesia's PP Tunas age gate, new Terms of Use, and what brands must change."
 publishedAt: 2026-04-24T02:13+00:00
-updatedAt: 2026-10-29T10:00+08:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA Technology
   type: Organization
@@ -44,12 +44,14 @@ cover:
   height: 1440
 keyTakeaways: []
 faq:
-  - question: "How much has TikTok search volume grown in 2026?"
-    answer: "According to TikTok Newsroom (March 25, 2026), daily search volume on TikTok grew over 40% year-over-year. One in four users enters the search function within 30 seconds of opening the app."
-  - question: "Why are Gen Z users losing trust in TikTok’s algorithm?"
-    answer: "A 2026 Harris Poll survey found that 79% of Gen Z respondents feel nostalgic for early TikTok, reporting that the algorithm feels broken and content appears increasingly performative."
+  - question: "What did TikTok Shop change in the Philippines in April 2026?"
+    answer: "TikTok Shop banned fake promotions and recalculated shipping fee structures, closing the gray-area tactics brands used to manufacture urgency and subsidize artificially low prices (TikTok Shop PH, April 16, 2026)."
   - question: "What TikTok Shop compliance changes took effect in Southeast Asia in 2026?"
     answer: "The Philippines banned fake promotions and recalculated shipping fees. Indonesia’s PP Tunas raised the minimum age to 16, closing about 780,000 accounts. All five SEA markets rewrote Terms of Use effective April 1, 2026."
+  - question: "When did TikTok Shop rewrite its Terms of Use in Southeast Asia?"
+    answer: "Across all five Southeast Asian TikTok Shop markets, the platform rewrote its Terms of Use and Sale effective April 1, 2026 (TikTok Seller Center, April 2026)."
+  - question: "Which brands are being filtered out by TikTok Shop’s compliance rules?"
+    answer: "Brands that relied on fake urgency, inflated stock scarcity, or artificially discounted pricing are being filtered out. The platform is redirecting that traffic toward sellers who invest in quality content."
   - question: "How should brands adapt their TikTok Shop strategy?"
     answer: "MOCA Technology recommends building on three fronts: creator content optimized for trust and search, full platform compliance, and systematic creator-brand matching through KOLPlanet."
 citations:
@@ -116,17 +118,21 @@ Certainty and sustainable growth. That is what stays.
 
 ## Frequently Asked Questions
 
-### How much has TikTok search volume grown in 2026?
+### What did TikTok Shop change in the Philippines in April 2026?
 
-According to TikTok Newsroom (March 25, 2026), daily search volume on TikTok grew over 40% year-over-year. One in four users enters the search function within 30 seconds of opening the app.
-
-### Why are Gen Z users losing trust in TikTok’s algorithm?
-
-A 2026 Harris Poll survey found that 79% of Gen Z respondents feel nostalgic for early TikTok, reporting that the algorithm feels broken and content appears increasingly performative.
+TikTok Shop banned fake promotions and recalculated shipping fee structures, closing the gray-area tactics brands used to manufacture urgency and subsidize artificially low prices (TikTok Shop PH, April 16, 2026).
 
 ### What TikTok Shop compliance changes took effect in Southeast Asia in 2026?
 
 The Philippines banned fake promotions and recalculated shipping fees. Indonesia’s PP Tunas raised the minimum age to 16, closing about 780,000 accounts. All five SEA markets rewrote Terms of Use effective April 1, 2026.
+
+### When did TikTok Shop rewrite its Terms of Use in Southeast Asia?
+
+Across all five Southeast Asian TikTok Shop markets, the platform rewrote its Terms of Use and Sale effective April 1, 2026 (TikTok Seller Center, April 2026).
+
+### Which brands are being filtered out by TikTok Shop’s compliance rules?
+
+Brands that relied on fake urgency, inflated stock scarcity, or artificially discounted pricing are being filtered out. The platform is redirecting that traffic toward sellers who invest in quality content.
 
 ### How should brands adapt their TikTok Shop strategy?
 
@@ -136,7 +142,7 @@ MOCA Technology recommends building on three fronts: creator content optimized f
 
 Founded in 2012, MOCA Technology is an influencer marketing and programmatic advertising platform serving brands across Asia-Pacific. MOCA operates [KOLPlanet](https://www.kolplanet.com), a creator marketplace connecting brands with influencers across Indonesia, Thailand, Vietnam, the Philippines, Malaysia, Japan, South Korea, Taiwan, and India.
 
-MOCA’s core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with local teams in Jakarta, Bangkok, Manila, and Ho Chi Minh City and regional operations across Southeast Asia.
+MOCA’s core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 **Working on TikTok Shop strategy in Southeast Asia?** Talk to our regional team about search-first content, compliant creator campaigns, and brand-building through KOLPlanet.
 

@@ -8,7 +8,7 @@ seoTitle: "Social Media AI Content Rules: Meta, YouTube, TikTok"
 summary: "Meta, YouTube and TikTok already ask creators to label realistic AI-generated content, and October 2025 added WhatsApp's AI Providers terms, YouTube likeness detection and an Indian draft rule on AI labels. This explainer sets out what each platform requires, with official sources, and what brands and influencers should do."
 description: "How Meta, YouTube and TikTok label AI-generated content, what changed in October 2025 (WhatsApp, likeness detection, India) and what brands should do."
 publishedAt: 2025-10-24T04:01+00:00
-updatedAt: 2026-10-29T10:00+08:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA
   type: Organization
@@ -206,7 +206,7 @@ YouTube says that disclosing AI content alone will not limit a video's audience 
 
 Founded in 2012, MOCA Technology is an influencer marketing and programmatic advertising platform serving brands across Asia-Pacific. MOCA operates [KOLPlanet](https://www.kolplanet.com), a creator marketplace connecting brands with influencers across Indonesia, Thailand, Vietnam, the Philippines, Malaysia, Japan, South Korea, Taiwan, and India.
 
-MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with a local team in Jakarta and regional operations across Southeast Asia.
+MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 **Planning influencer or creator campaigns in Southeast Asia or India?** Talk to MOCA Technology about strategy and creator matchmaking through KOLPlanet.
 

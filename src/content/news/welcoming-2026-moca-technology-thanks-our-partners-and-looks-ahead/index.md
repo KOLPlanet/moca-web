@@ -8,7 +8,7 @@ seoTitle: "2026 New Year: Moca Technology Thanks Our Partners"
 summary: As we step into 2026, the team at Moca Technology extends our warmest New Year wishes and sincere gratitude to all our partners, clients, and collaborators.
 description: Moca Technology thanks its partners, clients and collaborators for 2025 and sets out its 2026 commitments, data-driven work and partnership-first service.
 publishedAt: 2025-12-31T05:23+00:00
-updatedAt: 2025-12-31T05:33+00:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: Moca Technology
   type: Organization
@@ -86,7 +86,7 @@ Thank you for choosing Moca Technology. Here’s to a successful 2026 together.
 
 ## About Moca Technology
 
-Moca Technology is a leading influencer marketing and performance advertising (UA) agency specializing in Southeast Asia and South Asia. With over 12 years of overseas digital advertising expertise, we operate local teams across five markets: China, Indonesia, the Philippines, Thailand, and India.
+Moca Technology is an influencer marketing and performance advertising (UA) agency specializing in Southeast Asia and South Asia. With over 12 years of overseas digital advertising expertise, we operate offices in China (Shanghai and Taiwan), India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 Our approach combines deep regional insights gained from serving top local brands with strategic capabilities that empower Chinese enterprises going global. We help brands build lasting competitive advantages and drive long-term growth through authentic creator partnerships and data-driven performance campaigns.
 

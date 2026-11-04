@@ -8,7 +8,7 @@ seoTitle: "TikTok Search-First Content Brief for SEA Brands"
 summary: "The four-question search-scenario brief MOCA Technology applies before any Southeast Asia TikTok activation moves to creator production, and why it matters now: TikTok World 2026 launched Search Hubs, creators gained direct keyword management, TikTok Shop's AHR enforcement thresholds sit at 150, 100, 50 and 0, and Indonesia's PP Tunas deactivated 1.7 million under-16 accounts within five weeks."
 description: "A four-question search-first brief for TikTok in Southeast Asia: search intent, local expressions, keywords to avoid and a pre-publish alignment check."
 publishedAt: 2026-05-20T15:37+00:00
-updatedAt: 2026-10-29T10:00+08:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA Technology
   type: Organization
@@ -50,35 +50,34 @@ cover:
   height: 817
 keyTakeaways: []
 faq:
-  - question: What is TikTok Shop's AHR system?
-    answer: AHR (Account Health Rating) is TikTok Shop's seller scoring system. Stores are governed by thresholds at 150, 100, 50, and 0, with each lower tier triggering more severe enforcement, up to account closure and loss of bound creator commerce permissions (TikTok Shop Seller Enforcement Policy, March 13, 2026).
-  - question: How is Indonesia's PP Tunas regulation changing TikTok in 2026?
-    answer: Indonesia's PP Tunas took effect on March 28, 2026. By the end of April, TikTok had deactivated approximately 1.7 million under-16 accounts, and regulators are extending the same age gate into e-commerce (AP News, April 29, 2026; AFP/CNA, May 7, 2026).
-  - question: Can TikTok creators control their own video search keywords?
-    answer: Yes. Since the April 2026 update, creators can remove irrelevant keywords and add more accurate ones on their own videos, subject to platform review (Social Media Today, April 26, 2026).
-  - question: What are TikTok Search Hubs?
-    answer: TikTok Search Hubs are paid branded search zones launched at TikTok World on May 13, 2026. Brands can buy a dedicated search surface so branded queries return the brand's content at the top of results.
-  - question: What should a search-first TikTok content brief include?
+  - question: "How is Indonesia’s PP Tunas regulation changing TikTok in 2026?"
+    answer: "Indonesia’s PP Tunas took effect on March 28, 2026. By the end of April, TikTok had deactivated approximately 1.7 million under-16 accounts, and regulators are extending the same age gate into e-commerce (ANTARA, April 28, 2026; AFP via The Straits Times, May 6, 2026)."
+  - question: "Can TikTok creators control their own video search keywords?"
+    answer: "Yes. Since the April 2026 update, creators can remove irrelevant keywords and add more accurate ones on their own videos, subject to platform review (Social Media Today, April 26, 2026)."
+  - question: "What are TikTok Search Hubs?"
+    answer: "TikTok Search Hubs are paid branded search zones launched at TikTok World on May 13, 2026. Brands can buy a dedicated search surface so branded queries return the brand’s content at the top of results."
+  - question: "What should a search-first TikTok content brief include?"
     answer: "Four elements: which search intent the content serves, which local-language and mixed-language expressions need to appear, which keywords to avoid, and who validates that caption, subtitles, keywords, and visuals are aligned before publishing."
+  - question: "Why is the volume-buying playbook failing for cross-border TikTok sellers?"
+    answer: "Paid traffic fees, platform commissions, fulfillment, and creator splits now layer on top of each other for cross-border sellers, while account suspensions and regional regulation add risk at the same time. That combination is why the volume-buying playbook is breaking down."
 citations:
-  - name: TikTok Shop Seller Enforcement Policy
-    url: https://seller-us.tiktok.com/
+  - name: TikTok Shop Seller Enforcement Policy (United States)
+    url: https://seller-us.tiktok.com/university/essay?knowledge_id=2380042836166443&lang=en
     publisher: TikTok Shop
-    publishedAt: 2026-03-13
-  - name: Indonesia deactivates 1.7M under-16 TikTok accounts
-    url: https://apnews.com/
-    publisher: AP News
-    publishedAt: 2026-04-29
-  - name: Indonesia to extend under-16 restrictions to e-commerce
-    url: https://www.channelnewsasia.com/
-    publisher: Channel News Asia
-    publishedAt: 2026-05-07
+  - name: TikTok deactivates 1.7 million underage accounts in Indonesia
+    url: https://en.antaranews.com/news/413984/tiktok-deactivates-17-million-underage-accounts-in-indonesia
+    publisher: ANTARA
+    publishedAt: 2026-04-28
+  - name: Indonesia eyeing e-commerce ban for those under 16, says minister
+    url: https://www.straitstimes.com/asia/se-asia/indonesia-eyeing-e-commerce-ban-for-those-under-16-says-minister
+    publisher: The Straits Times (AFP)
+    publishedAt: 2026-05-06
   - name: TikTok creators gain video search keyword control
-    url: https://www.socialmediatoday.com/
+    url: https://www.socialmediatoday.com/news/tiktok-lets-users-add-relevant-keywords-to-metadata/818507/
     publisher: Social Media Today
     publishedAt: 2026-04-26
   - name: TikTok World 2026 launches Search Hubs
-    url: https://www.tiktok.com/business/
+    url: https://newsroom.tiktok.com/tiktok-world-26-turning-discovery-into-business-growth-with-ai-powered-innovations-vertical-experiences-and-high-impact-brand-solutions?lang=en
     publisher: TikTok
     publishedAt: 2026-05-13
 language: en-US
@@ -95,19 +94,19 @@ The direction TikTok is pushing toward is clear: search-driven discovery is repl
 
 The cost stack for cross-border sellers has thickened. Paid traffic fees, platform commissions, fulfillment, and creator splits now layer on top of each other in ways they did not two years ago.
 
-Account risk is rising in parallel. TikTok Shop now governs storefronts through the AHR (Account Health Rating) system, where scores at 150, 100, 50, and 0 trigger increasingly severe enforcement actions: reduced traffic, listing freezes, and eventually full account closure. When a shop closes, the bound creator account loses commerce permissions at the same time, [according to the TikTok Shop Seller Enforcement Policy](https://seller-us.tiktok.com/) updated on March 13, 2026.
+Account risk is rising in parallel. TikTok Shop now governs storefronts through the AHR (Account Health Rating) system, where scores at 150, 100, 50, and 0 trigger increasingly severe enforcement actions: reduced traffic, listing freezes, and eventually full account closure. When a shop closes, the bound creator account loses commerce permissions at the same time, [according to TikTok Shop’s US Seller Enforcement Policy](https://seller-us.tiktok.com/university/essay?knowledge_id=2380042836166443&lang=en) updated on March 13, 2026.
 
-Indonesia has moved even faster. The PP Tunas regulation took effect on March 28, 2026, and by the end of April, TikTok had deactivated approximately 1.7 million accounts belonging to users under 16, [as reported by AP News](https://apnews.com/) on April 29, 2026. Regulators are not stopping there. The under-16 restriction is being extended into e-commerce next, per coverage by [AFP and CNA](https://www.channelnewsasia.com/) on May 7, 2026. For the fee side of Indonesia’s cross-border rules, see [Indonesia’s platform fee cut and cross-border sellers](/news/indonesia-platform-fee-cut-cross-border-sellers-2026).
+Indonesia has moved even faster. The PP Tunas regulation took effect on March 28, 2026, and by the end of April, TikTok had deactivated approximately 1.7 million accounts belonging to users under 16, [as reported by ANTARA](https://en.antaranews.com/news/413984/tiktok-deactivates-17-million-underage-accounts-in-indonesia) on April 28, 2026. Regulators are not stopping there. The under-16 restriction is being extended into e-commerce next, per [AFP reporting carried by The Straits Times](https://www.straitstimes.com/asia/se-asia/indonesia-eyeing-e-commerce-ban-for-those-under-16-says-minister) on May 6, 2026. For the fee side of Indonesia’s cross-border rules, see [Indonesia’s platform fee cut and cross-border sellers](/news/indonesia-platform-fee-cut-cross-border-sellers-2026).
 
 > **Key finding:** Indonesia’s PP Tunas rollout removed 1.7 million under-16 TikTok accounts within five weeks, and the same age gate is expanding to TikTok Shop. Brands built on younger Gen Z segments face structural traffic loss.
 
 ## How Are Creators Gaining Search Keyword Control?
 
-For the first time, TikTok creators can manage the search keywords attached to their own videos. They can remove irrelevant terms and add ones that match what the content is actually about, then submit the changes for platform review, [as reported by Social Media Today](https://www.socialmediatoday.com/) on April 26, 2026.
+For the first time, TikTok creators can manage the search keywords attached to their own videos. They can remove irrelevant terms and add ones that match what the content is actually about, then submit the changes for platform review, [as reported by Social Media Today](https://www.socialmediatoday.com/news/tiktok-lets-users-add-relevant-keywords-to-metadata/818507/) on April 26, 2026.
 
 On paper this sounds minor. For brands it matters because the question of whether the right user can find your content is moving from algorithm into your hands.
 
-TikTok is reinforcing the search layer from the platform side too. At [TikTok World](https://www.tiktok.com/business/) on May 13, 2026, the company launched Search Hubs, dedicated branded search zones that surface at the top of results when a user searches a related term. Keyword-bid paid search ads continue to expand in parallel. Higher bids on the right terms now translate directly into top placement for branded queries.
+TikTok is reinforcing the search layer from the platform side too. At [TikTok World](https://newsroom.tiktok.com/tiktok-world-26-turning-discovery-into-business-growth-with-ai-powered-innovations-vertical-experiences-and-high-impact-brand-solutions?lang=en) on May 13, 2026, the company launched Search Hubs, dedicated branded search zones that surface at the top of results when a user searches a related term. Keyword-bid paid search ads continue to expand in parallel. Higher bids on the right terms now translate directly into top placement for branded queries.
 
 > **Key finding:** TikTok’s Search Hubs launch and creator-side keyword management together signal that search visibility is becoming a paid plus owned discipline, not a downstream consequence of feed performance.
 
@@ -136,13 +135,9 @@ MOCA Technology, which has operated across Southeast Asia and India since 2012, 
 
 ## Frequently Asked Questions
 
-### What is TikTok Shop’s AHR system?
-
-AHR (Account Health Rating) is TikTok Shop’s seller scoring system. Stores are governed by thresholds at 150, 100, 50, and 0, with each lower tier triggering more severe enforcement, up to account closure and loss of bound creator commerce permissions (TikTok Shop Seller Enforcement Policy, March 13, 2026).
-
 ### How is Indonesia’s PP Tunas regulation changing TikTok in 2026?
 
-Indonesia’s PP Tunas took effect on March 28, 2026. By the end of April, TikTok had deactivated approximately 1.7 million under-16 accounts, and regulators are extending the same age gate into e-commerce (AP News, April 29, 2026; AFP/CNA, May 7, 2026).
+Indonesia’s PP Tunas took effect on March 28, 2026. By the end of April, TikTok had deactivated approximately 1.7 million under-16 accounts, and regulators are extending the same age gate into e-commerce (ANTARA, April 28, 2026; AFP via The Straits Times, May 6, 2026).
 
 ### Can TikTok creators control their own video search keywords?
 
@@ -156,11 +151,15 @@ TikTok Search Hubs are paid branded search zones launched at TikTok World on May
 
 Four elements: which search intent the content serves, which local-language and mixed-language expressions need to appear, which keywords to avoid, and who validates that caption, subtitles, keywords, and visuals are aligned before publishing.
 
+### Why is the volume-buying playbook failing for cross-border TikTok sellers?
+
+Paid traffic fees, platform commissions, fulfillment, and creator splits now layer on top of each other for cross-border sellers, while account suspensions and regional regulation add risk at the same time. That combination is why the volume-buying playbook is breaking down.
+
 ## About MOCA Technology
 
 Founded in 2012, MOCA Technology is an influencer marketing and programmatic advertising platform serving brands across Asia-Pacific. MOCA operates [KOLPlanet](https://www.kolplanet.com), a creator marketplace connecting brands with influencers across Indonesia, Thailand, Vietnam, the Philippines, Malaysia, Japan, South Korea, Taiwan, and India.
 
-MOCA Technology’s core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with local teams in Jakarta, Bangkok, Manila, Taipei, and Mumbai, anchored by 14 years of operating experience across Southeast Asia and India.
+MOCA Technology’s core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok), anchored by 14 years of operating experience across Southeast Asia and India.
 
 **Rebuilding your TikTok playbook for the search-driven shift?** Talk to our Southeast Asia team about search-scenario briefs, AHR-safe creator activation, and localized keyword strategy.
 

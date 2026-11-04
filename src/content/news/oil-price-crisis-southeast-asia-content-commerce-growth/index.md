@@ -8,7 +8,7 @@ seoTitle: "Oil at $102: Content Commerce Surges in Southeast Asia"
 summary: "The quiet money is going to brands that sell to Southeast Asia’s own shoppers through local creators and content commerce. Oil above $100 raises shipping costs, yet the region’s digital economy passed $300 billion in 2025 with e-commerce at $185 billion (Google-Temasek-Bain e-Conomy SEA, 2025) and TikTok Shop’s Southeast Asia GMV doubled to $45.6 billion, with Indonesia at $13.1 billion (Momentum Works, February 2026). Influencers surveyed by Vero reported a 72% increase in sponsored content requests (Vero, December 2024)."
 description: Brent crude hits $102. SEA e-commerce reaches $185B. How brands use KOL marketing and TikTok Shop to offset rising shipping costs.
 publishedAt: 2026-03-27T05:20+00:00
-updatedAt: 2026-09-27T12:00+00:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA Technology
   type: Organization
@@ -50,16 +50,16 @@ cover:
   height: 540
 keyTakeaways: []
 faq:
-  - question: How large is Southeast Asia's e-commerce market in 2025?
-    answer: Southeast Asia's digital economy reached $300 billion in GMV in 2025, growing 15% year over year, with e-commerce contributing approximately $185 billion (Google-Temasek-Bain e-Conomy SEA, 2025). E-commerce penetration across the region remains at roughly 13%, compared to China's 47%.
-  - question: How much did TikTok Shop generate in Southeast Asia in 2025?
-    answer: TikTok Shop's Southeast Asia GMV doubled to $45.6 billion in 2025, according to Momentum Works (February 2026). Indonesia was the largest single market at $13.1 billion, making it TikTok Shop's second-biggest market globally.
-  - question: Why is the oil crisis relevant to e-commerce brands in Southeast Asia?
-    answer: Higher oil prices and reduced Strait of Hormuz shipping capacity have increased logistics costs for cross-border sellers. This compresses margins and forces brands to rethink marketing allocation, shifting investment toward higher-ROI channels like professional influencer partnerships and localized content rather than broad, low-conversion campaigns.
-  - question: What is Southeast Asia's e-commerce penetration rate compared to China?
-    answer: Southeast Asia's e-commerce penetration is approximately 13%, while China's is 47% (Google-Temasek-Bain, 2025). This 34-point gap represents a significant growth runway as hundreds of millions of consumers are still forming their initial online shopping habits.
-  - question: Is brand demand for KOL marketing in Southeast Asia growing?
-    answer: Yes. Influencers surveyed across Southeast Asia reported a 72% increase in sponsored content requests in 2024 (Vero, December 2024). With logistics costs rising, brands are moving budget away from one-off posts toward creator partnerships that have to prove conversion.
+  - question: "How large is Southeast Asia’s e-commerce market in 2025?"
+    answer: "Southeast Asia’s digital economy reached $300 billion in GMV in 2025, growing 15% year over year, with e-commerce contributing approximately $185 billion (Google-Temasek-Bain e-Conomy SEA, 2025). E-commerce penetration across the region remains at roughly 13%, compared to China’s 47%."
+  - question: "How much did TikTok Shop generate in Southeast Asia in 2025?"
+    answer: "TikTok Shop’s Southeast Asia GMV doubled to $45.6 billion in 2025, according to Momentum Works (February 2026). Indonesia was the largest single market at $13.1 billion, making it TikTok Shop’s second-biggest market globally."
+  - question: "Why is the oil crisis relevant to e-commerce brands in Southeast Asia?"
+    answer: "Higher oil prices and reduced Strait of Hormuz shipping capacity have increased logistics costs for cross-border sellers. This compresses margins and forces brands to rethink marketing allocation, shifting investment toward higher-ROI channels like professional influencer partnerships and localized content rather than broad, low-conversion campaigns."
+  - question: "What is Southeast Asia’s e-commerce penetration rate compared to China?"
+    answer: "Southeast Asia’s e-commerce penetration is approximately 13%, while China’s is 47% (Google-Temasek-Bain, 2025). This 34-point gap represents a significant growth runway as hundreds of millions of consumers are still forming their initial online shopping habits."
+  - question: "Is brand demand for KOL marketing in Southeast Asia growing?"
+    answer: "Yes. Influencers surveyed across Southeast Asia reported a 72% increase in sponsored content requests in 2024 (Vero, December 2024). With logistics costs rising, brands are moving budget away from one-off posts toward creator partnerships that have to prove conversion."
 citations:
   - name: "e-Conomy SEA 2025"
     url: https://www.bain.com/insights/e-conomy-sea-2025/
@@ -176,7 +176,7 @@ Yes. Influencers surveyed across Southeast Asia reported a 72% increase in spons
 
 Founded in 2012, MOCA Technology is an influencer marketing and programmatic advertising platform serving brands across Asia-Pacific. MOCA operates [KOLPlanet](https://www.kolplanet.com), a creator marketplace connecting brands with influencers across Indonesia, Thailand, Vietnam, the Philippines, Malaysia, Japan, South Korea, Taiwan, and India.
 
-MOCA’s core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with a local team in Jakarta and regional operations across Southeast Asia.
+MOCA’s core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 **Building content commerce strategies for Southeast Asia?** Talk to our Southeast Asia team about localized influencer partnerships that drive measurable returns.
 

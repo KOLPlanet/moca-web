@@ -8,7 +8,7 @@ seoTitle: "TikTok 5-Hashtag Limit, YouTube & Instagram Rules 2025"
 summary: "In 2025 TikTok began warning users at five hashtags per post, YouTube renamed its repetitious content rule to inauthentic content on July 15, and Instagram's rule against recommending aggregator accounts, set for Reels in 2024, reached photos and carousels in 2026. This explainer sets out what each platform said, what the sources do not confirm, and what creators and brands should check."
 description: "TikTok's 5-hashtag warning, YouTube's inauthentic content rule and Instagram's aggregator limits: what changed, with sources, and what to do."
 publishedAt: 2025-08-21T03:16+00:00
-updatedAt: 2026-10-25T10:00+08:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA
   type: Organization
@@ -43,8 +43,8 @@ faq:
     answer: "On July 15, 2025, YouTube renamed its repetitious content policy to inauthentic content and clarified that it covers content that is repetitive or mass-produced. YouTube says this type of content has always been ineligible for monetization. The separate reused content policy for commentary, clips, compilations and reaction videos did not change."
   - question: "Does Instagram stop recommending accounts that repost other people's content?"
     answer: "Yes. Instagram said in April 2024 that accounts which repeatedly post content they did not create or enhance would stop being recommended. On April 30, 2026, it extended the rule from Reels to photos and carousels. Followers still see these accounts, and an account can regain eligibility when most of its recent posts are original over 30 days."
-  - question: "Do creators have to label AI-generated content on TikTok?"
-    answer: "Yes, for realistic content. TikTok's Community Guidelines require a label when AI-generated or significantly changed content shows realistic-looking scenes or people, and unlabeled posts can be removed, restricted or labeled by TikTok, depending on the harm. This reflects the version effective September 24, 2026."
+  - question: "What should creators do after the 2025 platform policy changes?"
+    answer: "Keep TikTok captions to five hashtags or fewer, give every YouTube upload its own script, footage and angle, and add your own commentary or graphics when building on someone else’s work on Instagram. Concentrate on one or two platforms you can feed with original work. That is MOCA Technology’s view, and no platform requires it."
   - question: "How many TikTok Shop stores are there in Indonesia?"
     answer: "AfterShip's TikTok Shop statistics list 54.28K stores in Indonesia, which is 20.52% of the 264.48K stores it tracks and the largest share of any country in its table. The figures count stores rather than individual sellers, and AfterShip does not date the snapshot on the page."
 citations:
@@ -130,7 +130,7 @@ In Indonesia, [AfterShip's TikTok Shop statistics](https://www.aftership.com/eco
 ## What should creators do?
 
 1. Keep TikTok captions to five hashtags or fewer, and pick tags that describe the video.
-2. Apply TikTok's AI label to videos that show realistic scenes or people created or heavily changed by AI.
+2. Apply TikTok's AI label to videos that show realistic scenes or people created or heavily changed by AI. The cross-platform labeling rules are in [AI content regulations](/news/ai-content-regulations-tighten-how-global-social-media-platforms-are-cracking-down-on-ai-generated-content).
 3. Give every YouTube upload its own script, footage and angle, so no channel reads as mass-produced or repetitive.
 4. On Instagram, add your own commentary or graphics to material built on someone else's work, or share it through story shares, the repost button or collab posts.
 5. Concentrate on one or two platforms you can feed with original work, rather than posting the same clip everywhere. That is our view and no platform requires it.
@@ -157,9 +157,9 @@ On July 15, 2025, YouTube renamed its repetitious content policy to inauthentic 
 
 Yes. Instagram said in April 2024 that accounts which repeatedly post content they did not create or enhance would stop being recommended. On April 30, 2026, it extended the rule from Reels to photos and carousels. Followers still see these accounts, and an account can regain eligibility when most of its recent posts are original over 30 days.
 
-### Do creators have to label AI-generated content on TikTok?
+### What should creators do after the 2025 platform policy changes?
 
-Yes, for realistic content. TikTok's Community Guidelines require a label when AI-generated or significantly changed content shows realistic-looking scenes or people, and unlabeled posts can be removed, restricted or labeled by TikTok, depending on the harm. This reflects the version effective September 24, 2026.
+Keep TikTok captions to five hashtags or fewer, give every YouTube upload its own script, footage and angle, and add your own commentary or graphics when building on someone else’s work on Instagram. Concentrate on one or two platforms you can feed with original work. That is MOCA Technology’s view, and no platform requires it.
 
 ### How many TikTok Shop stores are there in Indonesia?
 
@@ -169,7 +169,7 @@ AfterShip's TikTok Shop statistics list 54.28K stores in Indonesia, which is 20.
 
 Founded in 2012, MOCA Technology is an influencer marketing and programmatic advertising platform serving brands across Asia-Pacific. MOCA operates [KOLPlanet](https://www.kolplanet.com), a creator marketplace connecting brands with influencers across Indonesia, Thailand, Vietnam, the Philippines, Malaysia, Japan, South Korea, Taiwan, and India.
 
-MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with a local team in Jakarta and regional operations across Southeast Asia.
+MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 **Adjusting a creator plan to new platform rules?** Talk to our Indonesia team about creator-led campaigns that fit each platform's current rules.
 

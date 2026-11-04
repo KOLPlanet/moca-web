@@ -8,7 +8,7 @@ seoTitle: "World Cup 2026: SEA & India Second Screen Strategy"
 summary: "Challenger brands win World Cup 2026 on the second screen: local creator content on TikTok and YouTube Shorts, timed to the morning-to-midday match windows that North America hosting creates across Southeast Asia, and in India a creator-first campaign scaled with programmatic and UA. All 16 FIFA global sponsorship slots are sold, TikTok is FIFA’s named preferred social video platform, and India’s media rights asking price fell 65% to USD 35M with no confirmed buyer."
 description: FIFA locked all 16 World Cup sponsorships. TikTok is the preferred platform. India rights down 65%. How SEA brands win the second screen.
 publishedAt: 2026-05-04T02:18+00:00
-updatedAt: 2026-09-27T12:00+00:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA Technology
   type: Organization
@@ -65,6 +65,10 @@ citations:
     url: https://economictimes.indiatimes.com/industry/media/entertainment/media/fifa-cuts-india-media-rights-price-to-35-million-still-no-takers-for-world-cups/articleshow/130123422.cms
     publisher: The Economic Times
     publishedAt: 2026-04-09
+  - name: "Unilever and TikTok on gearing up for the World Cup"
+    url: https://www.marketingweek.com/unilever-tiktok-fifa-26/
+    publisher: Marketing Week
+    publishedAt: 2026-03-20
 language: en-US
 draft: false
 scrapedAt: 2026-07-20T11:35:15.945Z
@@ -77,11 +81,11 @@ Challenger brands cannot buy pitch-side visibility at World Cup 2026, because ev
 
 FIFA completed all 16 global sponsorship positions for the 2026 World Cup ahead of schedule ([FIFA, March 27, 2026](https://inside.fifa.com/tournament-organisation/commercial/media-releases/global-sponsorship-packages-for-fifa-world-cup-2026-tm-sold-out)). Adidas, Coca-Cola, Visa, Hyundai-Kia, Aramco, Qatar Airways, and Lenovo have claimed every visible brand surface around the pitch. For challenger brands expanding into Southeast Asia and India, the conventional route to World Cup presence is closed.
 
-But the pitch is not where this tournament’s most consequential brand competition will take place. FIFA has named TikTok as the preferred social video platform for World Cup 2026 (the first time a short-form video platform has received that designation). [According to Marketing Week](https://www.marketingweek.com/), Unilever is treating this edition as its largest-ever social and creator activation window. The pattern is clear: World Cup content is moving from broadcast to short-form.
+But the pitch is not where this tournament’s most consequential brand competition will take place. FIFA has named TikTok as the preferred social video platform for World Cup 2026 (the first time a short-form video platform has received that designation). [According to Marketing Week](https://www.marketingweek.com/unilever-tiktok-fifa-26/), Unilever is treating this edition as its biggest social activation yet. The pattern is clear: World Cup content is moving from broadcast to short-form.
 
 Fans are not watching the match and then opening their phones. For a growing share of the audience, the phone is the primary screen. What stops the scroll is not a logo on a corner flag. It is a local meme or a three-second hook that catches a viewer mid-commute. That is the available brand surface. FIFA does not sell it.
 
-> **Key finding:** FIFA named TikTok its preferred social video platform for World Cup 2026 (the first such designation in tournament history) while Unilever prepares its largest-ever creator activation, per Marketing Week. Creator-mediated content is now the primary open channel for brands without official sponsorship positions.
+> **Key finding:** FIFA named TikTok its preferred social video platform for World Cup 2026 (the first such designation in tournament history) while Unilever prepares its biggest social activation yet, per Marketing Week. Creator-mediated content is now the primary open channel for brands without official sponsorship positions.
 
 ## Why Southeast Asia Is the Critical Market for Second Screen Strategy
 

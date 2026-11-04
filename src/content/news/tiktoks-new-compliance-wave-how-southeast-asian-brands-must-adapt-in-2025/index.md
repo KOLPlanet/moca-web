@@ -8,7 +8,7 @@ seoTitle: "TikTok Compliance Rules for Southeast Asia Brands"
 summary: "TikTok's documented rules for brands in Southeast Asia: sponsored-post disclosure, commercial music, gambling and teen-ad limits, a reported five-hashtag cap, and a short note on AI-content labels. Each rule is dated and linked to its source; claims that could not be sourced were removed."
 description: "TikTok rules for Southeast Asia brands, checked at the source: sponsored-post disclosure, music licensing, gambling limits and the reported 5-hashtag cap."
 publishedAt: 2025-08-29T06:05+00:00
-updatedAt: 2026-10-29T10:00+08:00
+updatedAt: 2026-11-04T23:55+08:00
 author:
   name: MOCA
   type: Organization
@@ -43,8 +43,8 @@ faq:
     answer: "No. TikTok's Music Terms say Sounds and Commercial Sounds cannot be used in a live stream, and any other music needs rights the brand holds itself."
   - question: "Can brands use any TikTok music in their videos?"
     answer: "No. TikTok's help page says businesses cannot use the general music library commercially and should use the Commercial Music Library for organic content, video ads and branded content. TikTok's music terms add that Sounds and Commercial Sounds cannot be used in LIVE streams."
-  - question: "Is there a five-hashtag limit on TikTok?"
-    answer: "A five-hashtag cap was reported in August 2025 by Net Influencer, citing Social Media Today. TikTok had not released an official statement, so treat it as a reported limit rather than a published policy."
+  - question: "Why does Southeast Asia matter to TikTok?"
+    answer: "According to the We Are Social and Meltwater Digital 2025: July Statshot, as reported by LBB, Southeast Asia holds nearly one-quarter of TikTok’s global advertising audience, and Thailand has the second-highest share of monthly TikTok users worldwide, at more than eight in ten."
   - question: "Is gambling content allowed in TikTok branded content in Southeast Asia?"
     answer: "It depends on the market. TikTok's Branded Content Policy does not allow it in Indonesia, Malaysia or Thailand, and restricts it to users over 18 in the Philippines, Singapore and Vietnam."
 citations:
@@ -128,7 +128,7 @@ The original article said LIVE was limited to TikTok's music library and that vi
 
 It was reported in August 2025, but TikTok did not announce it. [Net Influencer reported on 20 August 2025](https://www.netinfluencer.com/tiktok-caps-hashtags-at-five-per-post/), citing Social Media Today, that TikTok had added a five-hashtag limit and that users were seeing in-app notices. The report says TikTok had not released an official statement and had not confirmed whether the limit applied to all users.
 
-The original article presented this as official policy and said irrelevant hashtags trigger algorithm penalties. We found no TikTok source for the penalties, so that claim was removed. The practical advice still stands: use at most five hashtags, and make each one relevant to the video.
+The original article presented this as official policy and said irrelevant hashtags trigger algorithm penalties. We found no TikTok source for the penalties, so that claim was removed. The practical advice still stands: use at most five hashtags, and make each one relevant to the video. The full comparison with YouTube and Instagram changes is in [platform policy tightening in 2025](/news/platform-policy-tightening-2025-how-tiktok-youtube-instagram-are-reshaping-the-creator-economy).
 
 ## How do gambling and under-18 ad rules differ by market?
 
@@ -210,9 +210,9 @@ No. TikTok's Music Terms say Sounds and Commercial Sounds cannot be used in a li
 
 No. TikTok's help page says businesses cannot use the general music library commercially and should use the Commercial Music Library for organic content, video ads and branded content. TikTok's music terms add that Sounds and Commercial Sounds cannot be used in LIVE streams.
 
-### Is there a five-hashtag limit on TikTok?
+### Why does Southeast Asia matter to TikTok?
 
-A five-hashtag cap was reported in August 2025 by Net Influencer, citing Social Media Today. TikTok had not released an official statement, so treat it as a reported limit rather than a published policy.
+According to the We Are Social and Meltwater Digital 2025: July Statshot, as reported by LBB, Southeast Asia holds nearly one-quarter of TikTok’s global advertising audience, and Thailand has the second-highest share of monthly TikTok users worldwide, at more than eight in ten.
 
 ### Is gambling content allowed in TikTok branded content in Southeast Asia?
 
@@ -222,7 +222,7 @@ It depends on the market. TikTok's Branded Content Policy does not allow it in I
 
 Founded in 2012, MOCA Technology is an influencer marketing and programmatic advertising platform serving brands across Asia-Pacific. MOCA operates [KOLPlanet](https://www.kolplanet.com), a creator marketplace connecting brands with influencers across Indonesia, Thailand, Vietnam, the Philippines, Malaysia, Japan, South Korea, Taiwan, and India.
 
-MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with a local team in Jakarta and regional operations across Southeast Asia.
+MOCA's core services include influencer marketing strategy and execution, creator-brand matchmaking through KOLPlanet, innovative branding solutions, and cross-platform programmatic advertising. The company is headquartered in Shanghai with offices in Taiwan, India (Gurgaon, Mumbai, and Bangalore), Indonesia (Jakarta), Malaysia (Kuala Lumpur), the Philippines (Manila), and Thailand (Bangkok).
 
 **Running creator campaigns on TikTok in Southeast Asia?** Talk to our Indonesia team about creator briefs, disclosure settings and market-by-market policy checks.
 
