@@ -1044,10 +1044,11 @@
 }
 
 .about-panel__header p {
-  margin: 0;
-  color: rgba(24, 32, 24, 0.72);
+  max-width: 620px;
+  margin: 0 auto;
+  color: rgba(0, 0, 0, 0.55);
   font-family: var(--font-sans);
-  font-size: clamp(var(--text-lede-size), 1.4vw, 1.2rem);
+  font-size: var(--text-lede-size);
   font-weight: 400;
   line-height: 1.7;
 }
