@@ -119,6 +119,16 @@
       "permanent": true
     },
     {
+      "source": "/news/category/indonesia/ott-indonesia",
+      "destination": "/news/category/ott",
+      "permanent": true
+    },
+    {
+      "source": "/news/category/indonesia/ott-indonesia/",
+      "destination": "/news/category/ott",
+      "permanent": true
+    },
+    {
       "source": "/news/category/ott-indonesia/page/:page",
       "destination": "/news/category/ott",
       "permanent": true
