@@ -16,6 +16,7 @@ interface ImportMetaEnv {
   readonly CONTACT_FROM_EMAIL?: string;
   readonly CONTACT_FROM_NAME?: string;
   readonly CONTACT_SUBJECT_PREFIX?: string;
+  readonly CONTACT_FORM_SECRET?: string;
   readonly SMTP_HOST?: string;
   readonly SMTP_PORT?: string;
   readonly SMTP_SECURE?: string;

@@ -4,6 +4,12 @@ import {
   sendContactMail,
   type ContactType,
 } from '../../lib/contact-mail';
+import {
+  allowSubmission,
+  checkFormToken,
+  clientKeyFor,
+  issueFormToken,
+} from '../../lib/contact-guard';
 
 const isStaticDeployment = ['github-pages', 'cloudflare-pages'].includes(
   process.env.DEPLOY_TARGET ?? '',
@@ -103,8 +109,40 @@ const mailUnavailableMessage = (contactType: ContactType) =>
     ? 'Mail delivery is temporarily unavailable. Please email business@moca-tech.net directly.'
     : 'Mail delivery is temporarily unavailable. Please email collaboration@kolplanet.com directly.';
 
-export const GET: APIRoute = () =>
-  json({ message: 'The contact endpoint only accepts POST requests.' }, 405);
+// What a silently dropped submission gets back: the same reply as a real one, so bots
+// cannot tell they were filtered.
+const dropped = (origin: string | null, reason: string, request: Request) => {
+  console.warn(
+    `[contact] Dropped submission (${reason}); ua=${JSON.stringify(
+      request.headers.get('user-agent') ?? '',
+    )}`,
+  );
+  return json(
+    { accepted: false, message: 'Thanks — your message has been sent.' },
+    200,
+    origin,
+  );
+};
+
+const clientKey = (request: Request, clientAddress: () => string) => {
+  try {
+    return clientKeyFor(request, clientAddress());
+  } catch {
+    return clientKeyFor(request);
+  }
+};
+
+// GET /api/contact?token issues the signed form token the pages fetch before submitting.
+export const GET: APIRoute = ({ request, url }) => {
+  if (!url.searchParams.has('token')) {
+    return json({ message: 'The contact endpoint only accepts POST requests.' }, 405);
+  }
+  const origin = permittedOrigin(request);
+  if (origin === false) {
+    return json({ message: 'Origin is not allowed.' }, 403);
+  }
+  return json({ token: issueFormToken() ?? '' }, 200, origin);
+};
 
 export const OPTIONS: APIRoute = ({ request }) => {
   const origin = permittedOrigin(request);
@@ -114,10 +152,25 @@ export const OPTIONS: APIRoute = ({ request }) => {
   return new Response(null, { status: 204, headers: responseHeaders(origin) });
 };
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, clientAddress }) => {
   const origin = permittedOrigin(request);
   if (origin === false) {
     return json({ message: 'Origin is not allowed.' }, 403);
+  }
+  // Browsers always send Origin on a POST; scripts posting straight to the API usually do not.
+  if (origin === null) {
+    return dropped(origin, 'no origin', request);
+  }
+
+  if (!allowSubmission(clientKey(request, () => clientAddress))) {
+    return json(
+      {
+        message:
+          'Too many messages were sent from your network. Please try again later or email us directly.',
+      },
+      429,
+      origin,
+    );
   }
 
   const contentLength = Number(request.headers.get('content-length') ?? 0);
@@ -139,6 +192,21 @@ export const POST: APIRoute = async ({ request }) => {
     return json(
       { accepted: false, message: 'Thanks — your message has been received.' },
       200,
+      origin,
+    );
+  }
+
+  const tokenCheck = checkFormToken(form.get('formToken'));
+  if (tokenCheck === 'missing' || tokenCheck === 'invalid') {
+    return dropped(origin, `form token ${tokenCheck}`, request);
+  }
+  if (tokenCheck === 'too_fast') {
+    return json({ message: 'Please wait a moment and send again.' }, 400, origin);
+  }
+  if (tokenCheck === 'expired') {
+    return json(
+      { message: 'This form has expired. Please refresh the page and send again.' },
+      400,
       origin,
     );
   }
