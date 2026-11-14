@@ -952,6 +952,7 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
 <script>
   import { trackAnalyticsEvent } from '../lib/analytics';
   import { contactSourcePage } from '../lib/contact-source';
+  import { createContactTokenSource } from '../lib/contact-token';
 
   const sectionIds = [
     'top',
@@ -1090,6 +1091,8 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
   const submit = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
   const successToast = document.querySelector<HTMLElement>('[data-form-success-toast]');
   const submitLabel = submit?.textContent?.trim() || 'Send';
+  const contactToken = form ? createContactTokenSource(form.action) : undefined;
+  form?.addEventListener('focusin', () => contactToken?.prefetch());
 
   const setContactSubmitting = (isSubmitting: boolean) => {
     if (!submit) return;
@@ -1118,6 +1121,7 @@ const advertiserLink = site.joinLinks.find((item) => item.type === 'advertiser')
       const sourcePage = contactSourcePage();
       const formData = new FormData(form);
       formData.set('sourcePage', sourcePage);
+      formData.set('formToken', (await contactToken?.take()) ?? '');
       const response = await fetch(form.action, {
         method: 'POST',
         body: formData,

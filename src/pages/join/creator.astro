@@ -84,6 +84,31 @@ const mockCreatorSubmit = import.meta.env.DEV;
     previewParams.has('mock') ||
     previewParams.get('preview') === 'success' ||
     previewParams.has('previewSuccess');
+  // Signed token /api/contact requires (see src/lib/contact-token.ts; inline scripts cannot import it).
+  const fetchFormToken = async () => {
+    try {
+      const url = new URL(contactEndpoint, window.location.href);
+      url.searchParams.set('token', '1');
+      const response = await fetch(url.toString(), {
+        headers: { Accept: 'application/json' },
+        cache: 'no-store',
+      });
+      if (!response.ok) return '';
+      const result = await response.json();
+      return typeof result.token === 'string' ? result.token : '';
+    } catch {
+      return '';
+    }
+  };
+  let pendingFormToken;
+  const takeFormToken = async () => {
+    const token = await (pendingFormToken ?? fetchFormToken());
+    pendingFormToken = fetchFormToken();
+    return token;
+  };
+  form?.addEventListener('focusin', () => {
+    if (!useMockSubmit) pendingFormToken ??= fetchFormToken();
+  });
   const categories = document.querySelector('[data-creator-categories]');
   const languageField = document.querySelector('[data-language-field]');
   const languagePicker = document.querySelector('[data-language-picker]');
@@ -1725,6 +1750,7 @@ const mockCreatorSubmit = import.meta.env.DEV;
           setCreatorSubmitting(true);
           setStatus('Submitting…', 'info');
         }
+        payload.set('formToken', await takeFormToken());
         const response = await fetch(contactEndpoint, {
           method: 'POST',
           body: payload,
